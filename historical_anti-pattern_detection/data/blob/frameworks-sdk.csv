@@ -1,0 +1,10 @@
+com.android.sdkmanager.Main;
+com.android.sdkuilib.internal.repository.UpdaterWindowImpl;
+com.android.ide.eclipse.adt.internal.editors.layout.configuration.ConfigurationComposite;
+com.android.ide.eclipse.adt.internal.editors.uimodel.UiElementNode;
+com.android.sdklib.SdkManager;
+com.android.ddmlib.testrunner.InstrumentationResultParser;
+sdkmanager.libs.sdkuilib.tests.com.android.sdkuilib.internal.repository.sdkman2.PackagesDiffLogicTest;
+traceview.src.com.android.traceview.TimeLineView;
+ddms.libs.ddmuilib.src.com.android.ddmuilib.logcat.LogPanel;
+hierarchyviewer.src.com.android.hierarchyviewer.ui.Workspace;

@@ -1,0 +1,8 @@
+proposal.sandbox.antlib.src.main.org.apache.tools.ant.Project;
+src.main.org.apache.tools.ant.Project;
+src.main.org.apache.tools.ant.taskdefs.Javadoc;
+org.apache.tools.ant.taskdefs.Zip;
+org.apache.tools.ant.types.Commandline;
+org.apache.tools.ant.taskdefs.Java;
+org.apache.tools.ant.types.Path;
+src.main.org.apache.tools.ant.taskdefs.optional.net.FTP;
