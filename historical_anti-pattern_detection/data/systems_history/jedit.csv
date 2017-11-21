@@ -1,4 +1,4 @@
-CommitNumber;Entity;Method;Change
+Snapshot;Entity;Code;Change
 b141388c8a83e8c5aede21ff89c91daf05703bed;METHOD;org.gjt.sp.jedit.ActionListHandler.endElement(String);MODIFIED
 b141388c8a83e8c5aede21ff89c91daf05703bed;METHOD;org.gjt.sp.jedit.BeanShell.showEvaluateDialog(View);MODIFIED
 b141388c8a83e8c5aede21ff89c91daf05703bed;METHOD;org.gjt.sp.jedit.BeanShellAction.isSelected(View);MODIFIED
