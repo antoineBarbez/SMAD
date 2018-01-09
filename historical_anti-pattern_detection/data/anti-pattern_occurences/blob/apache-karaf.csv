@@ -1,0 +1,4 @@
+webconsole.gogo.src.main.java.org.apache.karaf.webconsole.gogo.Terminal
+util.src.main.java.org.apache.karaf.util.collections.CopyOnWriteArrayIdentityList
+jaas.modules.src.main.java.org.apache.karaf.jaas.modules.ldap.LDAPLoginModule
+features.core.src.main.java.org.apache.karaf.features.internal.service.FeaturesServiceImpl

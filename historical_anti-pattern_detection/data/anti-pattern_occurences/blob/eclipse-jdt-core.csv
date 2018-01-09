@@ -1,0 +1,3 @@
+org.eclipse.jdt.internal.core.SourceMapper
+org.eclipse.jdt.internal.core.JavaModelManager
+org.eclipse.jdt.internal.core.DeltaProcessor

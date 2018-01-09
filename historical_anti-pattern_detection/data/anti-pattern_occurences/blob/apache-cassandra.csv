@@ -1,0 +1,2 @@
+src.java.org.apache.cassandra.cli.CliClient
+src.java.org.apache.cassandra.thrift.CassandraServer

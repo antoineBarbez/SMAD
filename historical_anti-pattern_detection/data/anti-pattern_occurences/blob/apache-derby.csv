@@ -1,0 +1,8 @@
+java.engine.org.apache.derby.impl.store.access.btree.ControlRow
+java.engine.org.apache.derby.impl.jdbc.EmbedConnection
+java.engine.org.apache.derby.impl.sql.compile.PredicateList
+java.engine.org.apache.derby.impl.sql.compile.FromBaseTable
+java.engine.org.apache.derby.impl.sql.conn.GenericLanguageConnectionContext
+java.engine.org.apache.derby.impl.sql.execute.AlterTableConstantAction
+java.engine.org.apache.derby.impl.jdbc.EmbedResultSet
+java.engine.org.apache.derby.impl.store.raw.data.StoredPage

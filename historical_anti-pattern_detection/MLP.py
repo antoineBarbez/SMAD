@@ -17,7 +17,7 @@ num_nodes_1= 40
 num_nodes_2 = 20
 beta = 0.01
 
-input_size = 4
+input_size = 5
 num_labels = 2
 
 graph = tf.Graph()
@@ -28,7 +28,7 @@ with graph.as_default():
 
     dataset_x , dataset_y = shuffle.shuffle(instances , labels)
 
-    data_x, data_y = shuffle.rebalanceData(1,dataset_x,dataset_y)
+    data_x, data_y = shuffle.rebalanceData(2,dataset_x,dataset_y)
 
     validSet_start_idx = int(math.ceil(len(data_x)*0.7))
 
@@ -88,10 +88,13 @@ with graph.as_default():
 
 
 
-num_steps = 1000
+num_steps = 4000
 losses = []
-bestStep = 0
+fm = []
+bestLossStep = 0
 bestLoss = 100
+bestFMStep = 0
+bestFM = 0
 
 with tf.Session(graph=graph) as session:
     session.run(tf.global_variables_initializer())
@@ -101,17 +104,24 @@ with tf.Session(graph=graph) as session:
 
         feed_dict = {x: batch_data, y_: batch_labels}
         session.run(optimizer, feed_dict=feed_dict)
-        l = session.run(loss, feed_dict={x:x_valid, y_:y_valid})
+        l, f = session.run([loss, f_mesure], feed_dict={x:x_valid, y_:y_valid})
         losses.append(l)
+        fm.append(f)
 
         if l < bestLoss:
             bestLoss = l
-            bestStep = step
+            bestLossStep = step
+
+        if f > bestFM:
+            bestFM = f
+            bestFMStep = step
 
 
     print(session.run([precision, recall, f_mesure], feed_dict={x: x_valid,
                                         y_: y_valid}))
 
-    print('Best loss :',bestLoss,' at step :',bestStep)
-    plt.plot(range(num_steps),losses)
+    print('Best loss :',bestLoss,' at step :',bestLossStep)
+    print('Best f-mesure :',bestFM,' at step :',bestFMStep)
+
+    plt.plot(range(num_steps),losses,range(num_steps),fm)
     plt.show()
