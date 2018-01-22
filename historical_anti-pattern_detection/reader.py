@@ -76,10 +76,12 @@ def getCoocMatrix(changes):
             oneHotCommit[reverseDictionnary[className],0] = 1;
 
         coocMatrix += oneHotCommit.dot(oneHotCommit.T)
+
+    bar.finish()
     return reverseDictionnary , coocMatrix
 
 
-#only use for test purpose
+#only used for test purpose
 def getReverseDictionnary(csvFile):
     changes = readHistory(csvFile)
 
@@ -109,22 +111,12 @@ def saveCoocMatrices():
     for path,dirs,files in os.walk('./data/systems_history'):
 
         for f in fnmatch.filter(files,'*.csv'):
-            historyFile = './data/systems_history/' + f
-            fName = f.split('.')[0]
-            coocFile = './data/co-occurence_matrices/' + fName + '.pickle'
+            systemName = f.split('.')[0]
+            saveCoocMatrice(systemName)
 
-            changes = readHistory(historyFile)
-            reverseDictionnary , coocMatrix = getCoocMatrix(changes)
-            data = (reverseDictionnary , coocMatrix)
-
-            with open(coocFile, 'wb') as file:
-                pickle.dump(data, file, protocol=pickle.HIGHEST_PROTOCOL)
-
-def saveCoocMatrices2():
-    f = 'frameworks-base.csv'
-    historyFile = './data/systems_history/' + f
-    fName = f.split('.')[0]
-    coocFile = './data/co-occurence_matrices/' + fName + '.pickle'
+def saveCoocMatrice(systemName):
+    historyFile = './data/systems_history/' + systemName + '.csv'
+    coocFile = './data/co-occurence_matrices/' + systemName + '.pickle'
 
     changes = readHistory(historyFile)
     reverseDictionnary , coocMatrix = getCoocMatrix(changes)
@@ -133,21 +125,6 @@ def saveCoocMatrices2():
     with open(coocFile, 'wb') as file:
         pickle.dump(data, file, protocol=pickle.HIGHEST_PROTOCOL)
 
-def test():
-    fileName = 'frameworks-tool-base.csv'
-    #coocFile = './data/co-occurence_matrices/' + f
-    historyFile = './data/systems_history/' + fileName
-    blobOccurencesFile = './data/blob/' + fileName
-
-    reverseDictionnary = getReverseDictionnary(historyFile)
-
-    blobOccurences = np.zeros(len(reverseDictionnary))
-
-    with open(blobOccurencesFile, 'rb') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-
-        for row in reader:
-            blobOccurences[reverseDictionnary[row[0]]] = 1
 
 #return the conditional probability matrix of the different classes
 def getCPM(coocMatrix):
@@ -162,6 +139,7 @@ def getCPM(coocMatrix):
     CPM = coocMatrix*DIV
 
     return CPM
+
 
 ''' return instances and labels that will be used to train some models later.
     The instances represents classes of a software 
@@ -208,137 +186,115 @@ def constructDataset():
     return instances , labels
 
 
-''' Same but here the instances are of the form of a vector [x1,x2,x3], where 
+''' Same but here the instances are of the form of a vector [x1,x2,x3,x4], where 
     x1 = mean(P(ci|cj)) for P(ci|cj) != 0
     x2 = mean(P(cj|ci)) for P(cj|ci) != 0
-    x3 = nb P != 0 / nb cj'''
+    x3 = nb P != 0 / nb cj
+    x4 = nbCommit where ci appeared / nbCommit total
+
+'''
 def constructDataset2():
-    instances = []
-    labels = np.array([]).reshape(0,2)
+
+    #Setting up the progress bar
+    nbFiles = 0
+    for path,dirs,files in os.walk('./data/co-occurence_matrices'):
+        for f in fnmatch.filter(files,'*.pickle'):
+            nbFiles = nbFiles + 1
+
+    bar = progressbar.ProgressBar(maxval=nbFiles, \
+        widgets=['Constructing dataset : ' ,progressbar.Percentage()])
+    bar.start()
+    
+    #Start making real job
+    nbFiles = 0
+    instances = np.empty(shape=[0,4])
+    labels = np.empty(shape=[0,2])
     
     for path,dirs,files in os.walk('./data/co-occurence_matrices'):
 
         for f in fnmatch.filter(files,'*.pickle'):
-            fileName = f.split('.')[0]
-            coocFile = './data/co-occurence_matrices/' + f
-            blobOccurencesFile = './data/blob/' + fileName + '.csv'
-
-            with open(coocFile, 'r') as open_file:
-                reverseDictionnary , coocMatrix = pickle.load(open_file)
-                CPM = getCPM(coocMatrix)
-
-            size = len(reverseDictionnary)
-            zeros = np.zeros(size)
-            ones = np.ones(size)
-
-            with open(blobOccurencesFile, 'rb') as csvfile:
-                reader = csv.reader(csvfile, delimiter=';')
-
-                for row in reader:
-                    zeros[reverseDictionnary[row[0]]] = 1
-                    ones[reverseDictionnary[row[0]]] = 0
-
-                blobOccurences = np.append(zeros,ones).reshape(2,size).T
-                #print(blobOccurences.shape)
-                #print(blobOccurences)
-                labels = np.concatenate((labels, blobOccurences), axis=0)
-
-
+            nbFiles = nbFiles + 1
             
-            for i in range(len(reverseDictionnary)):
-                c1 = CPM[:,i]
-                c2 = CPM[i,:]
-                c1 = np.delete(c1,i)
-                c2 = np.delete(c2,i)
+            systemName = f.split('.')[0]
+            systemInstances , systemLabels = system2Data(systemName)
 
-                idx = np.nonzero(c1)[0]
-                if idx.size != 0:
-                    x1 = np.mean([c1[i] for i in idx])
-                    x2 = np.mean([c2[i] for i in idx])
-                else:
-                    x1 = 0
-                    x2 = 0
-                x3 = idx.size/len(c1)
+            instances = np.concatenate((instances, systemInstances), axis=0)
+            labels = np.concatenate((labels, systemLabels), axis=0)
 
-                x = [x1,x2,x3]
-                instances.append(x)
+            bar.update(nbFiles)
+    bar.finish()
+
+    return instances , labels
+
+def system2Data(systemName):
+    coocFile = './data/co-occurence_matrices/' + systemName + '.pickle'
+    blobOccurencesFile = './data/anti-pattern_occurences/blob/' + systemName + '.csv'
+    historyFile = './data/systems_history/' + systemName + '.csv'
+    systemMethodsFile = './data/systems_methods/' + systemName + '.csv'
+
+    #Get nb Commit
+    changes = readHistory(historyFile)
+    commits = []
+    for i, change in enumerate(changes):
+        commits.append(change['Snapshot'])
+
+    nbCommit = len(set(commits))
+
+    #Get Cooccurence Matrix
+    with open(coocFile, 'r') as open_file:
+        reverseDictionnary , coocMatrix = pickle.load(open_file)
+        CPM = getCPM(coocMatrix)
     
+    #Get Smells occurences
+    blobOccurences = []
+    with open(blobOccurencesFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
 
-    return np.array(instances) , labels
+        for row in reader:
+            blobOccurences.append(row[0])
 
-def constructDataset3():
+    
+    #Create Instances
     instances = []
-    labels = np.array([]).reshape(0,2)
-    
-    for path,dirs,files in os.walk('./data/co-occurence_matrices'):
+    labels = []
+    with open(systemMethodsFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
 
-        for f in fnmatch.filter(files,'*.pickle'):
-            fileName = f.split('.')[0]
-            coocFile = './data/co-occurence_matrices/' + f
-            blobOccurencesFile = './data/anti-pattern_occurences/blob/' + fileName + '.csv'
-            historyFile = './data/systems_history/' + fileName + '.csv'
-            systemMethodsFile = './data/systems_methods/' + fileName + '.csv'
+        for row in reader:
+            try:
+                i = reverseDictionnary[row[0]]
 
-            changes = readHistory(historyFile)
-            commits = []
-            for i, change in enumerate(changes):
-                commits.append(change['Snapshot'])
+                instance = getInstance(i, coocMatrix, CPM, nbCommit)
+                instances.append(instance)
 
-            print(len(set(commits)))
-
-            with open(coocFile, 'r') as open_file:
-                reverseDictionnary , coocMatrix = pickle.load(open_file)
-                CPM = getCPM(coocMatrix)
-
-            size = len(reverseDictionnary)
-            zeros = np.zeros(size)
-            ones = np.ones(size)
-
-            with open(blobOccurencesFile, 'rb') as csvfile:
-                reader = csv.reader(csvfile, delimiter=';')
-
-                for row in reader:
-                    zeros[reverseDictionnary[row[0]]] = 1
-                    ones[reverseDictionnary[row[0]]] = 0
-
-                blobOccurences = np.append(zeros,ones).reshape(2,size).T
-                #print(blobOccurences.shape)
-                #print(blobOccurences)
-                labels = np.concatenate((labels, blobOccurences), axis=0)
-
-
-            
-            for i in range(len(reverseDictionnary)):
-                c1 = CPM[:,i]
-                c2 = CPM[i,:]
-                c1 = np.delete(c1,i)
-                c2 = np.delete(c2,i)
-
-                idx = np.nonzero(c1)[0]
-                if idx.size != 0:
-                    x1 = np.mean([c1[i] for i in idx])
-                    x2 = np.mean([c2[i] for i in idx])
+                if row[0] in blobOccurences:
+                    labels.append([1,0])
                 else:
-                    x1 = 0
-                    x2 = 0
-                x3 = idx.size/len(c1)
-                x4 = coocMatrix[i,i]/len(set(commits))
-                x5 = 0
+                    labels.append([0,1])
 
-                x = [x1,x2,x3,x4,x5]
-                instances.append(x)
+            except KeyError:
+                pass 
 
-            with open(systemMethodsFile, 'rb') as csvfile:
-                reader = csv.reader(csvfile, delimiter=';')
+    return np.array(instances) , np.array(labels)
 
-                for row in reader:
-                    try:
-                        instances[reverseDictionnary[row[0]]][4] = 1
-                    except KeyError:
-                        pass
-    
+def getInstance(i, coocMatrix, CPM, nbCommit):
+    c1 = CPM[:,i]
+    c2 = CPM[i,:]
+    c1 = np.delete(c1,i)
+    c2 = np.delete(c2,i)
 
-    return np.array(instances) , labels
+    idx = np.nonzero(c1)[0]
+    if idx.size != 0:
+        x1 = np.mean([c1[i] for i in idx])
+        x2 = np.mean([c2[i] for i in idx])
+    else:
+        x1 = 0
+        x2 = 0
+    x3 = idx.size/len(c1)
+    x4 = coocMatrix[i,i]/nbCommit
+
+    return [x1,x2,x3,x4]
+
 
 #used to test an idea, not important ....
 def read(csvFile):
@@ -409,7 +365,7 @@ if __name__ == "__main__":
     #print(x[1800])
     #print(y.shape)
     #print(y.sum())
-    saveCoocMatrices()
+    #saveCoocMatrice('apache-struts')
 
 
     

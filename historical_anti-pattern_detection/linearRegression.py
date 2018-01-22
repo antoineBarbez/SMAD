@@ -5,11 +5,11 @@ from __future__ import print_function
 import argparse
 import sys
 import reader
-import shuffle
 import math
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
+import transformData as td
 import tensorflow as tf
 import matplotlib.pyplot as plt
 import numpy as np
@@ -23,9 +23,9 @@ def main(_):
 
   instances , labels = reader.constructDataset2()
 
-  dataset_x , dataset_y = shuffle.shuffle(instances , labels)
+  dataset_x , dataset_y = td.shuffle(instances , labels)
 
-  data_x, data_y = shuffle.rebalanceData(2,dataset_x,dataset_y)
+  data_x, data_y = td.rebalanceData(2,dataset_x,dataset_y)
 
   validSet_start_idx = int(math.ceil(len(data_x)*0.7))
 
