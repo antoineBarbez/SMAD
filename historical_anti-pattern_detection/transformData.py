@@ -3,6 +3,7 @@ from __future__ import division
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
 
 def shuffle(instances, labels):
 	if len(instances) != len(labels):
@@ -86,6 +87,12 @@ def rebalanceData(constante, instances, labels):
 
 	return rebalanceDataByRemovingInstances(x,y)
 
+def standardizeData(data_x):
+	scaler = StandardScaler().fit(data_x)
+	rescaledX = scaler.transform(data_x)
+
+	return rescaledX
+
 def plotData(data_x, data_y):
 	class1Idx = np.nonzero(data_y[:,0])[0]
 	class2Idx = np.nonzero(data_y[:,1])[0]
@@ -110,6 +117,14 @@ def plotData(data_x, data_y):
 
 
 if __name__ == "__main__":
-	#instances  = [np.arange(6).reshape(3,2),np.zeros((3,2)),np.ones((3,2)),np.random.random((3,2))]
-	#labels = np.array([0,1,1,0])
-	#shuffle(instances,labels)
+	'''
+	instances  = [np.arange(6).reshape(3,2),np.zeros((3,2)),np.ones((3,2)),np.random.random((3,2))]
+	labels = np.array([0,1,1,0])
+	shuffle(instances,labels)
+	'''
+
+	x = np.array([[1,2,0.1],[2,0,0.2],[3,-2,0.3],[2,-1,0.2]])
+
+	y = standardizeData(x)
+
+	print(y)
