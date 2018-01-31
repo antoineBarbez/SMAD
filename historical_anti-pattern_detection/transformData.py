@@ -1,9 +1,11 @@
-from __future__ import division
+from __future__            import division
+from sklearn.preprocessing import StandardScaler
+
+import numpy             as np
+import matplotlib.pyplot as plt
 
 import random
-import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.preprocessing import StandardScaler
+import reader
 
 def shuffle(instances, labels):
 	if len(instances) != len(labels):
@@ -88,7 +90,11 @@ def rebalanceData(constante, instances, labels):
 	return rebalanceDataByRemovingInstances(x,y)
 
 def standardizeData(data_x):
-	scaler = StandardScaler().fit(data_x)
+	scaler = StandardScaler(copy=False)
+	scaler.scale_ = [0.31417215, 0.18947536, 0.27931839, 0.0159487]
+	scaler.mean_ = [0.48356614, 0.38954064, 0.28556114, 0.00525554]
+	scaler.var_ = [0.09870414, 0.03590091, 0.07801877, 0.00025436]
+
 	rescaledX = scaler.transform(data_x)
 
 	return rescaledX
@@ -123,8 +129,13 @@ if __name__ == "__main__":
 	shuffle(instances,labels)
 	'''
 
-	x = np.array([[1,2,0.1],[2,0,0.2],[3,-2,0.3],[2,-1,0.2]])
+	'''
+	instances , labels = reader.constructDataset2()
+	scaler = StandardScaler().fit(instances)
 
-	y = standardizeData(x)
+	print(scaler.scale_)
+	print(scaler.mean_)
+	print(scaler.var_)
+	'''
 
-	print(y)
+

@@ -1,30 +1,20 @@
-import tensorflow as tf
-import transformData as td
-import numpy as np
+from __future__    import print_function
+from model         import *
+from transformData import *
+from evaluateModel import *
+
+import tensorflow        as tf
+import numpy             as np
 import matplotlib.pyplot as plt
 
 import reader
 import math
+import os
 
-from model import *
+os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 
 
 tf.reset_default_graph()
-
-
-def evaluate_model(output, labels):
-    true_positive = tf.cast(tf.equal(tf.argmax(output,1) + tf.argmax(labels,1), 0), tf.float32)
-    positive = tf.cast(tf.equal(tf.argmax(labels,1), 0), tf.float32)
-    detected = tf.cast(tf.equal(tf.argmax(output,1), 0), tf.float32)
-    correct_prediction = tf.equal(tf.argmax(output, 1), tf.argmax(labels,1))
-
-    precision = tf.reduce_sum(true_positive)/tf.reduce_sum(detected)
-    recall = tf.reduce_sum(true_positive)/tf.reduce_sum(positive)
-    f_mesure = 2*precision*recall/(precision+recall)
-    accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
-
-    return precision, recall, f_mesure, accuracy
-    
 
 #constants
 starter_learning_rate = 0.26
@@ -34,8 +24,8 @@ num_steps = 1000
 
 # Create datasets
 instances , labels = reader.constructDataset2()
-dataset_x , dataset_y = td.shuffle(instances , labels)
-dataset_x = td.standardizeData(dataset_x)
+dataset_x , dataset_y = shuffle(instances , labels)
+dataset_x = standardizeData(dataset_x)
 
 validSet_start_idx = int(math.ceil(len(dataset_x)*0.7))
 
@@ -62,14 +52,13 @@ p_y = tf.placeholder(tf.float32,[None, output_size])
 
 model = Model(p_x, p_y)
 
+# To save and restore a trained model
+saver = tf.train.Saver()
+
 losses_train = []
 losses_valid = []
-#fm = []
-#lrates = []
 bestLossStep = 0
 bestLoss = 100
-#bestFMStep = 0
-#bestFM = 0
 with tf.Session() as session:
 	session.run(tf.global_variables_initializer())
 
@@ -89,15 +78,25 @@ with tf.Session() as session:
 			bestLoss = l_valid
 			bestLossStep = step
 
-	output = session.run(model.inference, feed_dict=feed_dict_valid)
-	precision, recall, f_mesure, accuracy = evaluate_model(output, y_valid)
+	# Save the model
+	save_path = saver.save(session, "./data/trained_models/model", global_step=num_steps)
+  	print("Model saved in path: %s" % save_path)
 
-	print('Precision :', precision.eval())
-	print('Recall :', recall.eval())
-	print('F-Mesure :', f_mesure.eval())
-	print('Accuracy :', accuracy.eval())
+  	# Evaluate the model on the validation set
+	output = session.run(model.inference, feed_dict=feed_dict_valid)
+	#precision, recall, f_mesure, accuracy = evaluate_model(output, y_valid)
+	pre = precision(output, y_valid)
+	rec = recall(output, y_valid)
+	f_m = f_mesure(output, y_valid)
+	acc = accuracy(output, y_valid)
+
 	print('\n')
-	print('Best loss :',bestLoss,' at step :',bestLossStep)
+	print('Precision :', "{0:.3f}".format(pre.eval()))
+	print('Recall :', "{0:.3f}".format(rec.eval()))
+	print('F-Mesure :', "{0:.3f}".format(f_m.eval()))
+	print('Accuracy :', "{0:.3f}".format(acc.eval()))
+	print('\n')
+	print('Best loss :',"{0:.3f}".format(bestLoss),' at step :',bestLossStep)
 
 	plt.plot(range(num_steps), losses_train, range(num_steps), losses_valid)
 	plt.show()
