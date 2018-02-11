@@ -53,7 +53,7 @@ p_y = tf.placeholder(tf.float32,[None, output_size])
 model = Model(p_x, p_y)
 
 # To save and restore a trained model
-saver = tf.train.Saver()
+#saver = tf.train.Saver()
 
 losses_train = []
 losses_valid = []
@@ -79,8 +79,8 @@ with tf.Session() as session:
 			bestLossStep = step
 
 	# Save the model
-	save_path = saver.save(session, "./data/trained_models/model", global_step=num_steps)
-  	print("Model saved in path: %s" % save_path)
+	#save_path = saver.save(session, "./data/trained_models/model", global_step=num_steps)
+  	#print("Model saved in path: %s" % save_path)
 
   	# Evaluate the model on the validation set
 	output = session.run(model.inference, feed_dict=feed_dict_valid)

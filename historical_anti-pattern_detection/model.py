@@ -14,7 +14,7 @@ class Layer(object):
 
 
 class Model(object):
-	def __init__(self, instances, labels=None, shape=[32,16,8], starter_learning_rate=0.28, beta=0):
+	def __init__(self, instances, labels=None, shape=[32,16,8], starter_learning_rate=0.26, beta=0):
 		self.instances = instances
 		self.labels = labels
 
