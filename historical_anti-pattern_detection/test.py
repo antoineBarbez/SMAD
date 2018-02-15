@@ -53,7 +53,7 @@ saver = tf.train.Saver()
 
 with tf.Session() as session:
 
-	saver.restore(session, "./data/trained_models/model-1000")
+	saver.restore(session, "./assets/trained_models/model-1000")
 	print("Model restored.")
 
 	F = open("results.txt", 'a')

@@ -1,8 +1,0 @@
-src.java.fr.jayasoft.ivy.resolver.BasicResolver
-src.java.fr.jayasoft.ivy.repository.vsftp.VsftpRepository
-src.java.fr.jayasoft.ivy.xml.XmlModuleDescriptorParser
-src.java.fr.jayasoft.ivy.Ivy
-test.java.fr.jayasoft.ivy.ResolveTest
-src.java.fr.jayasoft.ivy.IvyNode
-src.java.fr.jayasoft.ivy.DefaultModuleDescriptor
-src.java.fr.jayasoft.ivy.DefaultDependencyDescriptor

@@ -1,0 +1,13 @@
+src.java.com.android.internal.telephony.DataConnection
+src.java.com.android.internal.telephony.CallManager
+src.java.com.android.internal.telephony.DataConnectionTracker
+src.java.com.android.internal.telephony.PhoneBase
+src.java.com.android.internal.telephony.gsm.SIMRecords
+src.java.com.android.internal.telephony.IccCard
+src.java.com.android.internal.telephony.cdma.CdmaLteServiceStateTracker
+src.java.com.android.internal.telephony.DataConnectionTracker
+src.java.com.android.internal.telephony.cdma.CdmaServiceStateTracker
+src.java.com.android.internal.telephony.gsm.GsmServiceStateTracker
+src.java.com.android.internal.telephony.gsm.GsmDataConnectionTracker
+src.java.com.android.internal.telephony.cdma.CdmaDataConnectionTracker
+src.java.com.android.internal.telephony.cdma.sms.BearerData

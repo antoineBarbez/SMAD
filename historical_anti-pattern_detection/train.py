@@ -79,7 +79,7 @@ with tf.Session() as session:
 			bestLossStep = step
 
 	# Save the model
-	#save_path = saver.save(session, "./data/trained_models/model", global_step=num_steps)
+	#save_path = saver.save(session, "./assets/trained_models/model", global_step=num_steps)
   	#print("Model saved in path: %s" % save_path)
 
   	# Evaluate the model on the validation set

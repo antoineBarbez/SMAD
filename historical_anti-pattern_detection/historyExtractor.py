@@ -165,14 +165,20 @@ def createHistoryFile(mainDirectory, historyFilePath, granularity):
 	F.close()
 
 
-#create a csv file containing all the classes contained in the main directory
-def createClassesFile(mainDirectory, classesFilePath):
-	F = open(classesFilePath, 'w')
+#create a csv file containing all the classes/methods contained in the main directory
+def createInstanceFile(mainDirectory, filePath, granularity):
+	F = open(filePath, 'w')
 	
 	for path,dirs,files in os.walk('./' + mainDirectory):
 		for f in fnmatch.filter(files,'*.java'):
 			className = getClassName(os.path.join(path,f)[2:], mainDirectory)
-			F.write(className + '\n')
+			if granularity == "C":
+				F.write(className + '\n')
+
+			if granularity == "M":
+				methods = getMethodsInFile(os.path.join(path,f))
+				for method in methods:
+					F.write(className + '.' + methodName + '\n')
 
 	F.close()
 
@@ -185,10 +191,16 @@ def extractChangeHistory(repositoryURL, systemName, snapshot, mainDirectory, gra
 	os.chdir(systemName)
 	subprocess.call('git checkout -f '+ snapshot, shell=True)
 
-	classFile = cwd + '/data/systems_methods/' + systemName + '.csv'
-	historyFile = cwd + '/data/systems_history/' + systemName + '.csv'
-	#createClassesFile(mainDirectory, classFile)
-	createHistoryFile(mainDirectory, historyFile, granularity)
+	if granularity == "C":
+		instanceFilePath = cwd + '/data/instances/classes/' + systemName + '.csv'
+		historyFilePath = cwd + '/data/history/class_changes/' + systemName + '.csv'
+
+	if granularity == "M":
+		instanceFilePath = cwd + '/data/instances/methods/' + systemName + '.csv'
+		historyFilePath = cwd + '/data/history/method_changes/' + systemName + '.csv'
+
+	createInstanceFile(mainDirectory, instanceFilePath, granularity)
+	createHistoryFile(mainDirectory, historyFilePath, granularity)
 
 	subprocess.call('git checkout master', shell=True)
 	os.chdir(cwd)
@@ -199,28 +211,34 @@ def extractChangeHistory(repositoryURL, systemName, snapshot, mainDirectory, gra
 
 
 if __name__ == "__main__":
-	#extractSmellOccurences()
-	#extractChangeHistory('https://git-wip-us.apache.org/repos/asf/ant.git', 'apache-ant', 'e7734def8b0961af37c37eb1964a7e9ffdd052ca', 'src/main/')
-	#extractChangeHistory('https://android.googlesource.com/platform/frameworks/support', 'android-platform-support', '38fc0cf9d7e38258009f1a053d35827e24563de6', '')
-	#extractChangeHistory('https://git-wip-us.apache.org/repos/asf/cassandra.git', 'apache-cassandra', '4f9e551', '')
-	#extractChangeHistory('https://github.com/apache/commons-codec.git', 'apache-commons-codec', 'c6c8ae7a', '')
-	#extractChangeHistory('https://github.com/apache/commons-io.git', 'apache-commons-io', '99c5008d71b61f84a114038b064d58c837ee7ed6', '')
-	#extractChangeHistory('https://github.com/apache/commons-lang.git', 'apache-commons-lang', 'f957d81625a3aa70385f50d87f036ebe2c54613f', '')
 	#extractChangeHistory('https://github.com/apache/commons-logging.git', 'apache-commons-logging', 'd821ed3e', '')
-	#extractChangeHistory('https://github.com/apache/derby.git', 'apache-derby', '562a9252', '')
-	#extractChangeHistory('https://github.com/apache/tomcat.git', 'apache-tomcat', '398ca7ee', '')
-	#extractChangeHistory('https://github.com/eclipse/eclipse.jdt.core.git', 'eclipse-jdt-core', '0eb04df7', 'org.eclipse.jdt.core/model/')
-	#extractChangeHistory('https://github.com/google/guava.git', 'google-guava', 'e8959ed0', '') #YES
-	#extractChangeHistory('https://svn.code.sf.net/p/jedit/svn/jEdit/trunk/', 'jedit', 'ffb4fb679e305e9e74fd9134a8965838c982825d', '') #used git svn
-	#extractChangeHistory('https://github.com/mongodb/mongo-java-driver.git', 'mongodb', 'b67c0c43', '')
+	#extractChangeHistory('https://github.com/apache/commons-lang.git', 'apache-commons-lang', 'f957d81625a3aa70385f50d87f036ebe2c54613f', '')
+	#extractChangeHistory('https://github.com/apache/commons-io.git', 'apache-commons-io', '99c5008d71b61f84a114038b064d58c837ee7ed6', '')
+	#extractChangeHistory('https://github.com/apache/commons-codec.git', 'apache-commons-codec', 'c6c8ae7a', '')
+	#extractChangeHistory('https://github.com/google/guava.git', 'google-guava1', 'e8959ed0', '')
+	#extractChangeHistory('https://github.com/google/guava.git', 'google-guava2', 'e7c525b3310b07221b263ff48b3978d4ed54f811', '')
 	#extractChangeHistory('https://android.googlesource.com/platform/frameworks/opt/telephony', 'android-frameworks-opt-telephony', 'c241cad754ecf27c96b09f1e585b8be341dfcb71', '')
-	#extractChangeHistory('https://android.googlesource.com/platform/tools/base', 'android-frameworks-tool-base', 'c03df13c68e4470f71da54732db3aee5051f706c', '') #YES
-	#extractChangeHistory('https://android.googlesource.com/platform/frameworks/base', 'android-frameworks-base', '9066cfe9886ac131c34d59ed0e2d287b0e3c0087', '')
 	#extractChangeHistory('https://android.googlesource.com/platform/sdk', 'android-frameworks-sdk', '04b07a76650a6ffd719c55f593b21fb1d92c84d2', '')
-	#extractChangeHistory('https://github.com/apache/ant-ivy', 'apache-ivy', 'eb93c4dc62e24ecf0778539782a3d90a9a712e01', '')
-	#extractChangeHistory('https://github.com/apache/karaf.git', 'apache-karaf', 'cf84f16070327f9ee0b310977ff2d6a454ae20bb', '')
-	#extractChangeHistory('https://github.com/apache/log4j.git', 'apache-log4j', '7cf64b6c9692e596193a0b11e38367721cf1c938', '')
-	#extractChangeHistory('https://github.com/apache/pig.git', 'apache-pig', 'a8c680cf28ad4c2ab824c268a3dbe2783667dd94', '')
-	#extractChangeHistory('https://github.com/apache/struts.git', 'apache-struts', '9ad9404bfac2b936e1b5f0f5e828335bc5a51b48', 'core/src/main/')
+	#extractChangeHistory('https://android.googlesource.com/platform/frameworks/support', 'android-platform-support', '38fc0cf9d7e38258009f1a053d35827e24563de6', '')
+	#extractChangeHistory('https://git-wip-us.apache.org/repos/asf/ant.git', 'apache-ant', 'e7734def8b0961af37c37eb1964a7e9ffdd052ca', 'src/main/')
+	#extractChangeHistory('https://github.com/apache/log4j.git', 'apache-log4j1', '7cf64b6c9692e596193a0b11e38367721cf1c938', '')
+	#extractChangeHistory('https://github.com/apache/log4j.git', 'apache-log4j2', '0663eb2a1301f7622f017496c5983789b1cbae38', '')
+	#extractChangeHistory('https://github.com/apache/tomcat.git', 'apache-tomcat', '398ca7ee', '')
+	#extractChangeHistory('https://github.com/mongodb/mongo-java-driver.git', 'mongodb', 'b67c0c43', '')
+	#extractChangeHistory('https://github.com/apache/struts.git', 'apache-struts1', '9ad9404bfac2b936e1b5f0f5e828335bc5a51b48', 'core/src/main/')
+	#extractChangeHistory('https://github.com/apache/struts.git', 'apache-struts2', 'b9964b9e867c3d2512d087c87450601145a651c7', 'core/src/main/')
+	#extractChangeHistory('https://svn.code.sf.net/p/jedit/svn/jEdit/trunk/', 'jedit', 'e343491b611efdd7a5313e7ba87d6a2d1d6f8804', '') #used git svn
+	#extractChangeHistory('https://github.com/apache/derby.git', 'apache-derby1', '7a5b1d07853497727812cc9ada20209eea7b6a77', '')
+	#extractChangeHistory('https://github.com/apache/derby.git', 'apache-derby2', 'fe8446d216a95529b9c165099b0d4d04c2c77be4', '')
+	#extractChangeHistory('https://github.com/apache/cayenne.git', 'apache-cayenne1', 'fc5de25f422e7a8a9494a593638073215a752eae', '')
+	#extractChangeHistory('https://github.com/apache/cayenne.git', 'apache-cayenne2', 'f820acff650eaa0325862efb89d316353501096f', '')
+	#extractChangeHistory('https://github.com/junit-team/junit4.git', 'junit1', '30f2b16525dabb477373be9ed3e76bb98b200806', '')
+	#extractChangeHistory('https://github.com/junit-team/junit4.git', 'junit2', 'd9c908b9aab5f610e2f42aba1863ce25e36423f2', '')
+	#extractChangeHistory('https://github.com/apache/tapestry4.git', 'apache-tapestry1', '2f9be52a0001202f850a47e98a9f796759358ec8', '')
+	#extractChangeHistory('https://github.com/apache/tapestry4.git', 'apache-tapestry2', 'fa9d5b3a416e60a70637a7f9c411070c517d26ca', '')
+	#extractChangeHistory('https://github.com/cobertura/cobertura.git', 'cobertura1', '0e90a9877baa84d9c9d3f4d025446eaac17fe3ad', '')
+	#extractChangeHistory('https://github.com/cobertura/cobertura.git', 'cobertura2', '7aa8877f03181e170ad638af2a3ad5e4fa68afa5', '')
+	#extractChangeHistory('https://github.com/internetarchive/heritrix3.git', 'heritrix1', 'b2a0495a081c93b7f7dc5ad7f28e602134e5bf6e', '')
+	#extractChangeHistory('https://github.com/internetarchive/heritrix3.git', 'heritrix2', '18d459f6b9ebb732cda2c1d1f2ef9336e5a274dc', '')
 
-
+	

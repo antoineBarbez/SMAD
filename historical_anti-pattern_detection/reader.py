@@ -29,7 +29,31 @@ def readHistory(csvFile):
                 change['Class'] = className
                 changes.append(change)
 
-            if row['Entity'] == 'CLASS':
+            if (row['Entity'] == 'CLASS'):
+                change = {}
+                change['Snapshot'] = row['Snapshot']
+                change['Class'] = row['Code']
+                changes.append(change)
+
+        return changes
+
+def readHistory2(csvFile):
+    with open(csvFile, 'rb') as csvfile:
+        #print('start readind file :', csvFile)
+        reader = csv.DictReader(csvfile, delimiter=';')
+        changes = []
+        for row in reader:
+            if row['Entity'] == 'METHOD':
+                code = row['Method'].split('.')
+                code.pop()
+                className = '.'.join(code)
+
+                change = {}
+                change['Snapshot'] = row['CommitNumber']
+                change['Class'] = className
+                changes.append(change)
+
+            if (row['Entity'] == 'CLASS'):
                 change = {}
                 change['Snapshot'] = row['Snapshot']
                 change['Class'] = row['Code']

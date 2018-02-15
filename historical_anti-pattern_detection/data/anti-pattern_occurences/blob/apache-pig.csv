@@ -1,5 +1,0 @@
-src.org.apache.pig.tools.pigstats.ScriptState
-src.org.apache.pig.PigServer
-src.org.apache.pig.impl.plan.OperatorPlan
-src.org.apache.pig.backend.hadoop.executionengine.physicalLayer.relationalOperators.POLocalRearrange
-src.org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer

@@ -1,6 +1,0 @@
-ddmlib.src.main.java.com.android.ddmlib.Device
-ddmlib.src.main.java.com.android.ddmlib.Client
-sdklib.src.main.java.com.android.sdklib.devices.DeviceParser
-sdk_common.src.main.java.com.android.ide.common.resources.ValueResourceParser
-ddmlib.src.main.java.com.android.ddmlib.testrunner.XmlTestRunListener
-ddmlib.src.main.java.com.android.ddmlib.AndroidDebugBridge
