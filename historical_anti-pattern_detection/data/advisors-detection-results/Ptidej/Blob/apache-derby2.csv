@@ -1,0 +1,9 @@
+ClassName;Type;Value;Bound
+org.apache.derby.iapi.sql.dictionary.ConstraintDescriptor;LargeClass;49.0;46.0
+org.apache.derby.iapi.sql.dictionary.TableDescriptor;LargeClass;86.0;46.0
+org.apache.derby.iapi.sql.dictionary.SPSDescriptor;LargeClass;61.0;46.0
+org.apache.derby.iapi.sql.dictionary.TriggerDescriptor;LargeClass;66.0;46.0
+org.apache.derby.impl.drda.DRDAResultSet;LargeClass;71.0;46.0
+org.apache.derby.impl.drda.DRDAStatement;LargeClass;149.0;46.0
+org.apache.derby.impl.load.ImportReadData;LargeClass;68.0;46.0
+org.apache.derby.impl.services.cache.Clock;LargeClass;52.0;46.0

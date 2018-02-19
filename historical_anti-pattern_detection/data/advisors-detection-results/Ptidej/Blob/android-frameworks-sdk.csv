@@ -1,0 +1,4 @@
+ClassName;Type;Value;Bound
+com.android.glesv2debugger.GLServerShader;ControllerClass;0;0
+com.android.glesv2debugger.GLServerState;ControllerClass;0;0
+com.android.glesv2debugger.GLServerVertex;ControllerClass;0;0
