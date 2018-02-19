@@ -6,7 +6,6 @@ def true_positive(output, labels):
 
 	return tp
 
-
 def precision(output, labels):
 	tp = true_positive(output, labels)
 	detected = tf.cast(tf.equal(tf.argmax(output,1), 0), tf.float32)
