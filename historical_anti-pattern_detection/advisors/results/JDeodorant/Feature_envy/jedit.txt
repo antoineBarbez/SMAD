@@ -1,0 +1,35 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	installer.TarEntry::parseTarHeader(installer.TarHeader, byte[]):void	installer.TarHeader	0/14	
+Move Method	installer.TarEntry::nameTarHeader(installer.TarHeader, java.lang.String):void	installer.TarHeader	0/13	
+Move Method	bsh.BSHAllocationExpression::constructWithInterfaceBody(java.lang.Class, java.lang.Object[], bsh.BSHBlock, bsh.CallStack, bsh.Interpreter):java.lang.Object	bsh.CallStack	0/3	
+Move Method	org.gjt.sp.jedit.Buffer::checkFileForSave(org.gjt.sp.jedit.View, org.gjt.sp.jedit.io.VFS, java.lang.String):boolean	org.gjt.sp.jedit.io.VFS	0/3	
+Move Method	org.gjt.sp.jedit.textarea.ChunkCache::xToSubregionOffset(org.gjt.sp.jedit.textarea.ChunkCache.LineInfo, int, boolean):int	org.gjt.sp.jedit.textarea.ChunkCache.LineInfo	0/3	
+Move Method	org.gjt.sp.jedit.textarea.Selection.Rect::getColumnOnOtherLine(org.gjt.sp.jedit.buffer.JEditBuffer, int, int):int	org.gjt.sp.jedit.buffer.JEditBuffer	0/3	
+Move Method	bsh.BSHAllocationExpression::arrayNewInstance(java.lang.Class, bsh.BSHArrayDimensions, bsh.CallStack):java.lang.Object	bsh.BSHArrayDimensions	0/2	
+Move Method	gnu.regexp.RE::getMinMax(char[], int, gnu.regexp.IntPair, gnu.regexp.RESyntax):int	gnu.regexp.IntPair	0/2	
+Move Method	org.gjt.sp.jedit.buffer.BufferLoadRequest::readMarkers(org.gjt.sp.jedit.Buffer, java.io.InputStream):void	org.gjt.sp.jedit.Buffer	0/2	
+Move Method	org.gjt.sp.jedit.gui.DockableWindowFactory::loadDockableWindows(org.gjt.sp.jedit.PluginJAR, java.net.URL, org.gjt.sp.jedit.PluginJAR.PluginCacheEntry):void	org.gjt.sp.jedit.PluginJAR.PluginCacheEntry	0/2	
+Move Method	org.gjt.sp.jedit.gui.ToolBarManager::addToolBar(java.awt.Container, java.util.ArrayList, org.gjt.sp.jedit.gui.ToolBarManager.Entry):void	org.gjt.sp.jedit.gui.ToolBarManager.Entry	0/2	
+Move Method	org.gjt.sp.jedit.pluginmgr.ManagePanel.EntryCompare::compareNames(org.gjt.sp.jedit.pluginmgr.ManagePanel.Entry, org.gjt.sp.jedit.pluginmgr.ManagePanel.Entry):int	org.gjt.sp.jedit.pluginmgr.ManagePanel.Entry	0/2	
+Move Method	bsh.BSHAllocationExpression::constructObject(java.lang.Class, java.lang.Object[], bsh.CallStack):java.lang.Object	bsh.CallStack	0/1	
+Move Method	org.gjt.sp.jedit.browser.BrowserCommandsMenu::createPluginMenu(org.gjt.sp.jedit.browser.VFSBrowser):javax.swing.JMenu	org.gjt.sp.jedit.browser.VFSBrowser	0/1	
+Move Method	org.gjt.sp.jedit.buffer.BufferSaveRequest::writeMarkers(org.gjt.sp.jedit.Buffer, java.io.OutputStream):void	org.gjt.sp.jedit.Buffer	0/1	
+Move Method	org.gjt.sp.jedit.syntax.TokenMarker::substitute(gnu.regexp.REMatch, char[]):char[]	gnu.regexp.REMatch	0/1	
+Move Method	org.gjt.sp.util.WorkThread::doRequest(org.gjt.sp.util.WorkThreadPool.Request):void	org.gjt.sp.util.WorkThreadPool.Request	0/1	
+Move Method	org.gjt.sp.jedit.textarea.SelectionManager::getSelectionStartAndEnd(int, int, org.gjt.sp.jedit.textarea.Selection):int[]	org.gjt.sp.jedit.textarea.JEditTextArea	1/8	
+Move Method	org.gjt.sp.jedit.syntax.DisplayTokenHandler::canMerge(org.gjt.sp.jedit.syntax.Chunk, org.gjt.sp.jedit.syntax.Chunk, javax.swing.text.Segment):boolean	org.gjt.sp.jedit.syntax.Chunk	1/4	
+Move Method	org.gjt.sp.jedit.textarea.JEditTextArea::setText(java.lang.String):void	org.gjt.sp.jedit.buffer.JEditBuffer	1/4	
+Move Method	org.gjt.sp.jedit.textarea.JEditTextArea::addExplicitFold(int, int, int, int):int	org.gjt.sp.jedit.buffer.JEditBuffer	1/4	
+Move Method	org.gjt.sp.jedit.textarea.StructureMatcher.Highlight::getOffsets(int, org.gjt.sp.jedit.textarea.StructureMatcher.Match):int[]	org.gjt.sp.jedit.textarea.JEditTextArea	1/4	
+Move Method	org.gjt.sp.jedit.View::handleEditPaneUpdate(org.gjt.sp.jedit.msg.EditPaneUpdate):void	org.gjt.sp.jedit.gui.StatusBar	1/3	
+Move Method	org.gjt.sp.jedit.textarea.ExtensionManager::paintScreenLineRange(org.gjt.sp.jedit.textarea.JEditTextArea, java.awt.Graphics2D, int, int, int, int):void	org.gjt.sp.jedit.textarea.JEditTextArea	1/3	
+Move Method	org.gjt.sp.jedit.PluginJAR::startPlugin():void	org.gjt.sp.jedit.EditPlugin	1/2	
+Move Method	installer.TarEntry::writeEntryHeader(byte[]):void	installer.TarHeader	2/13	
+Move Method	org.gjt.sp.jedit.textarea.JEditTextArea::tallCaretDelete(org.gjt.sp.jedit.textarea.Selection.Rect, boolean):void	org.gjt.sp.jedit.buffer.JEditBuffer	2/6	
+Move Method	org.gjt.sp.jedit.EditPane::saveCaretInfo():void	org.gjt.sp.jedit.textarea.JEditTextArea	2/4	
+Move Method	org.gjt.sp.jedit.browser.VFSFileNameField::goToParent():void	org.gjt.sp.jedit.browser.VFSBrowser	2/4	
+Move Method	org.gjt.sp.jedit.textarea.SelectionManager::insideSelection(int, int):boolean	org.gjt.sp.jedit.textarea.JEditTextArea	2/4	
+Move Method	org.gjt.sp.jedit.Buffer::checkFileForLoad(org.gjt.sp.jedit.View, org.gjt.sp.jedit.io.VFS, java.lang.String):boolean	org.gjt.sp.jedit.io.VFS	2/3	
+Move Method	org.gjt.sp.jedit.EditPane::addMarker():void	org.gjt.sp.jedit.textarea.JEditTextArea	2/3	
+Move Method	org.gjt.sp.jedit.gui.MarkerViewer::goToSelectedMarker():void	org.gjt.sp.jedit.View	2/3	
+Move Method	org.gjt.sp.jedit.textarea.StructureMatcher.Highlight::paintHighlight(java.awt.Graphics, int, int, int, int, org.gjt.sp.jedit.textarea.StructureMatcher.Match):void	org.gjt.sp.jedit.textarea.JEditTextArea	2/3	

@@ -1,4 +1,0 @@
-ClassName;Type;Value;Bound
-org.apache.catalina.deploy.WebXml;LargeClass;132.0;45.0
-org.apache.catalina.servlets.WebdavServlet;LargeClass;54.0;45.0
-org.apache.coyote.RequestInfo;LargeClass;50.0;45.0

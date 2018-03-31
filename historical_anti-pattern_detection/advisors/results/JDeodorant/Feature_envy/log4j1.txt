@@ -1,0 +1,5 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	org.apache.log4j.lbel.LBELEventEvaluator::evaluate(org.apache.log4j.lbel.Node, org.apache.log4j.spi.LoggingEvent):boolean	org.apache.log4j.lbel.Node	1/4	
+Move Method	org.apache.log4j.lbel.Parser::getPropertyKey():java.lang.String	org.apache.log4j.lbel.TokenStream	1/2	
+Move Method	org.apache.log4j.spi.LoggingEvent::writeLevel(java.io.ObjectOutputStream):void	org.apache.log4j.Priority	1/2	
+Move Method	org.apache.log4j.AsyncAppender.DiscardSummary::createEvent():org.apache.log4j.spi.LoggingEvent	org.apache.log4j.spi.LoggingEvent	2/3	

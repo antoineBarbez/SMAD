@@ -1,9 +1,0 @@
-ClassName;Type;Value;Bound
-com.opensymphony.xwork2.SimpleAnnotationAction;LargeClass;45.0;28.0
-com.opensymphony.xwork2.SimpleAction;LargeClass;62.0;28.0
-com.opensymphony.xwork2.util.Foo;LargeClass;58.0;28.0
-org.apache.struts2.json.SMDActionTest1;LargeClass;48.0;28.0
-org.apache.struts2.json.TestAction;LargeClass;51.0;28.0
-org.apache.struts2.showcase.freemarker.CustomFreemarkerManager;ControllerClass;0;0
-org.apache.struts2.showcase.model.Employee;LargeClass;42.0;28.0
-org.demo.rest.example.OrdersController;ControllerClass;0;0

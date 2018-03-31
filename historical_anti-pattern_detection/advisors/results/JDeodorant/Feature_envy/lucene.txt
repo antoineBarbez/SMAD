@@ -1,0 +1,9 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	org.apache.lucene.index.IndexWriter::deleteFiles(java.util.Vector, org.apache.lucene.store.Directory):void	org.apache.lucene.store.Directory	0/1	
+Move Method	org.apache.lucene.index.TermVectorsReader::checkValidFormat(org.apache.lucene.store.InputStream):void	org.apache.lucene.store.InputStream	0/1	
+Move Method	org.apache.lucene.index.FieldInfos::read(org.apache.lucene.store.InputStream):void	org.apache.lucene.store.InputStream	1/3	
+Move Method	org.apache.lucene.index.TermVectorsReader::readTermVector(java.lang.String, long):org.apache.lucene.index.SegmentTermVector	org.apache.lucene.store.InputStream	1/3	
+Move Method	org.apache.lucene.index.CompoundFileWriter::copyFile(org.apache.lucene.index.CompoundFileWriter.FileEntry, org.apache.lucene.store.OutputStream, byte[]):void	org.apache.lucene.store.OutputStream	1/2	
+Move Method	org.apache.lucene.index.IndexWriter::readDeleteableFiles():java.util.Vector	org.apache.lucene.store.Directory	1/2	
+Move Method	org.apache.lucene.index.IndexWriter::writeDeleteableFiles(java.util.Vector):void	org.apache.lucene.store.Directory	1/2	
+Move Method	org.apache.lucene.index.FieldInfos::write(org.apache.lucene.store.OutputStream):void	org.apache.lucene.store.OutputStream	2/3	
