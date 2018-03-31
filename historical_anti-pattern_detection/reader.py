@@ -8,6 +8,9 @@ import fnmatch
 import pickle
 import progressbar
 
+sys.path.insert(0, 'advisors/detection/Hist/')
+import hist3 as hist
+
 import numpy as np
 
 ''' This file contains all the methods that we will use to extract the data from 
@@ -59,6 +62,72 @@ def readHistory2(csvFile):
             changes.append(change)
 
         return changes
+
+#returns a dictionnary which's keys are the classes of the system, and values are JDeodorant Blob detection results 
+def getJDBlobResults(systemName):
+    classFile = 'data/instances/classes/' + systemName + '.csv'
+    JDBlobFile = 'advisors/results/JDeodorant/Blob/' + systemName + '.txt'
+
+    classes = []
+    with open(classFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+
+        for row in reader:
+            classes.append(row[0])
+
+    dictionnary = {classes[i]: 0 for i in range(len(classes))}
+
+    with open(JDBlobFile, 'r') as file:
+        for line in file:
+            className = line.split()[0]
+            try:
+               dictionnary[className] += 1
+            except KeyError:
+                pass
+
+    return dictionnary
+
+#returns a dictionnary which's keys are the classes of the system, and values are DECOR Blob detection results
+def getDecorBlobResults(systemName):
+    classFile = 'data/instances/classes/' + systemName + '.csv'
+    DecorBlobFile = 'advisors/results/Decor/Blob/' + systemName + '.csv'
+
+    classes = []
+    with open(classFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+
+        for row in reader:
+            classes.append(row[0])
+
+    dictionnary = {classes[i]: 0 for i in range(len(classes))}
+
+    with open(DecorBlobFile, 'rb') as csvfile:
+        reader = csv.DictReader(csvfile, delimiter=';')
+
+        for row in reader:
+            try:
+                dictionnary[row['ClassName']] = getDecorMetric( row['NMD+NAD'],
+                                                                row['nmdNadBound'], 
+                                                                row['LCOM5'], 
+                                                                row['lcom5Bound'], 
+                                                                row['ControllerClass'], 
+                                                                row['nbDataClass'])
+            except KeyError:
+                pass
+
+    return dictionnary
+
+def getDecorMetric(nmdNad, nmdNadBound, lcom5, lcom5Bound, cc, nbDataClass):
+    dataClass = min(int(nbDataClass), 3)
+    nmdnad = min(float(nmdNad)/float(nmdNadBound),6)
+    lcom = min(float(lcom5)/float(lcom5Bound), 2)
+
+    return (0.5 + dataClass) * (nmdnad + 0.5*(lcom + int(cc)))
+
+#returns a dictionnary which's keys are the classes of the system, and values are HIST Blob detection results
+def getHistBlobResults(systemName):
+
+    return hist.getRescaledOccurences(systemName)
 
 
 #return the co-occurence matrix of the different classes
@@ -389,6 +458,10 @@ if __name__ == "__main__":
     #print(y.shape)
     #print(y.sum())
     #saveCoocMatrice('apache-struts')
+
+    dic = getHistBlobResults('apache-ant')
+
+    print(dic)
 
 
     

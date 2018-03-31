@@ -26,8 +26,8 @@ def extractSmellOccurencesWithPtidej(system, aSmell):
 	subprocess.call('git checkout master', shell=True)
 	os.chdir(cwd)
 
-	#removeDirCommand = "rm -rf " + system['name']
-	#subprocess.call(removeDirCommand, shell=True)
+	removeDirCommand = "rm -rf " + system['name']
+	subprocess.call(removeDirCommand, shell=True)
 
 if __name__ == "__main__":
 
