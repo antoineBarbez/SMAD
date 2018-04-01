@@ -129,7 +129,50 @@ def getHistBlobResults(systemName):
 
     return hist.getRescaledOccurences(systemName)
 
+def getAdvisorsBlobData(systemName):
+    classFile = 'data/instances/classes/' + systemName + '.csv'
+    blobFile = 'data/labels/Blob/test/' + systemName + '.csv'
 
+    JDDictionnary = getJDBlobResults(systemName)
+    DecorDictionnary = getDecorBlobResults(systemName)
+    HistDictionnary = getHistBlobResults(systemName)
+
+    #Get hand validated Blobs of the system
+    blobs = []
+    with open(blobFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+
+        for row in reader:
+            blobs.append(row[0])
+
+    #Create Instances
+    instances = []
+    labels = []
+    with open(classFile, 'rb') as csvfile:
+        reader = csv.reader(csvfile, delimiter=';')
+
+        for row in reader:
+            className = row[0]
+
+            instance = []
+            instance.append(JDDictionnary[className])
+            instance.append(DecorDictionnary[className])
+            instance.append(HistDictionnary[className])
+                           
+            instances.append(instance)
+
+            if className in blobs:
+                labels.append([1,0])
+            else:
+                labels.append([0,1])
+
+
+    return np.array(instances) , np.array(labels)
+
+
+
+
+'''
 #return the co-occurence matrix of the different classes
 def getCoocMatrix(changes):
     print('start getting cooccurence matrix...')
@@ -220,8 +263,8 @@ def saveCoocMatrice(systemName):
 
 #return the conditional probability matrix of the different classes
 def getCPM(coocMatrix):
-    '''concidering ci=True if the class i change in a commit ,
-    CPM(i,j) = P(cj|ci) = coocMatrix(i,j)/coocMatrix(i,i)'''
+    #concidering ci=True if the class i change in a commit ,
+    #CPM(i,j) = P(cj|ci) = coocMatrix(i,j)/coocMatrix(i,i)
     size = len(coocMatrix)
     eye = np.identity(size)
     ones = np.ones(size).reshape(size,1)
@@ -233,15 +276,14 @@ def getCPM(coocMatrix):
     return CPM
 
 
-''' return instances and labels that will be used to train some models later.
-    The instances represents classes of a software 
-    and are of the form of a (nbClasses - 1 , 2) matrix where 
-    nbClasses is the number of classes in the given system.
+    #Return instances and labels that will be used to train some models later.
+    #The instances represents classes of a software 
+    #and are of the form of a (nbClasses - 1 , 2) matrix where 
+    #nbClasses is the number of classes in the given system.
 
-    concidering I the instance corresponding to the ith class (ci) of a system,
-    I(j,0) = P(ci | cj) and I(j, 1) = P(cj | ci)
+    #concidering I the instance corresponding to the ith class (ci) of a system,
+    #I(j,0) = P(ci | cj) and I(j, 1) = P(cj | ci)
     
-'''
 def constructDataset():
     instances = []
     labels = np.array([])
@@ -278,13 +320,13 @@ def constructDataset():
     return instances , labels
 
 
-''' Same but here the instances are of the form of a vector [x1,x2,x3,x4], where 
-    x1 = mean(P(ci|cj)) for P(ci|cj) != 0
-    x2 = mean(P(cj|ci)) for P(cj|ci) != 0
-    x3 = nb P != 0 / nb cj
-    x4 = nbCommit where ci appeared / nbCommit total
+    #Same but here the instances are of the form of a vector [x1,x2,x3,x4], where 
+    #x1 = mean(P(ci|cj)) for P(ci|cj) != 0
+    #x2 = mean(P(cj|ci)) for P(cj|ci) != 0
+    #x3 = nb P != 0 / nb cj
+    #x4 = nbCommit where ci appeared / nbCommit total
 
-'''
+
 def constructDataset2():
 
     #Setting up the progress bar
@@ -418,7 +460,7 @@ def data2Text(csvFile):
         commit = commit + ' ' +change['Methode']
 
     f.close()
-
+'''
 
 if __name__ == "__main__":
     '''changes = [
@@ -459,9 +501,9 @@ if __name__ == "__main__":
     #print(y.sum())
     #saveCoocMatrice('apache-struts')
 
-    dic = getHistBlobResults('apache-ant')
-
-    print(dic)
+    instances, labels = getAdvisorsBlobData('apache-ant')
+    print(instances[31])
+    print(labels[31])
 
 
     
