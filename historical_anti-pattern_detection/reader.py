@@ -1,6 +1,8 @@
 from __future__ import print_function
 from __future__ import division
 
+from sklearn.preprocessing import StandardScaler
+
 import csv
 import os
 import sys
@@ -10,6 +12,7 @@ import progressbar
 
 sys.path.insert(0, 'advisors/detection/Hist/')
 import hist3 as hist
+import dataConstruction.systems as systems
 
 import numpy as np
 
@@ -166,8 +169,29 @@ def getAdvisorsBlobData(systemName):
             else:
                 labels.append([0,1])
 
+    instances = np.array(instances).astype(float)
+    
+    scaler = StandardScaler()
+    scaler.fit(instances)
+    rescaledInstances = scaler.transform(instances)
 
-    return np.array(instances) , np.array(labels)
+    sizes = []
+    for system in (systems.systems_git + systems.systems_svn):
+        count = 0
+        with open('data/instances/classes/' + system['name'] + '.csv', 'rb') as csvfile:
+            reader = csv.reader(csvfile, delimiter=';')
+            for className in reader:
+                count = count + 1
+        sizes.append(count)
+
+    sizes = np.array(sizes).astype(float)
+    scaler.fit(sizes.reshape(-1, 1))
+    rescaledSize = scaler.transform(np.array([len(instances)]).astype(float).reshape(-1, 1))
+
+    size = np.ones(len(instances)).reshape(-1, 1)*rescaledSize.reshape(-1)[0]
+
+
+    return np.concatenate((rescaledInstances, size), axis=1) , np.array(labels)
 
 
 

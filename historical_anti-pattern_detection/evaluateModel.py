@@ -10,17 +10,20 @@ def precision(output, labels):
 	tp = true_positive(output, labels)
 	detected = tf.cast(tf.equal(tf.argmax(output,1), 0), tf.float32)
 
+
 	return tf.reduce_sum(tp)/tf.reduce_sum(detected)
 
 def recall(output, labels):
 	tp = true_positive(output, labels)
 	positive = tf.cast(tf.equal(tf.argmax(labels,1), 0), tf.float32)
 
+
 	return tf.reduce_sum(tp)/tf.reduce_sum(positive)
 
 def f_mesure(output, labels):
 	prec = precision(output, labels)
 	rec = recall(output, labels)
+
 
 	return 2*prec*rec/(prec+rec)
 

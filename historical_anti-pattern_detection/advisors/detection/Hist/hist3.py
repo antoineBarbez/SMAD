@@ -2,9 +2,11 @@ from __future__ import print_function
 from __future__ import division
 from sklearn.preprocessing import StandardScaler
 
-from reader import *
+#from reader import *
+import reader as r
 
 import math
+import csv
 import dataConstruction.systems as systems
 import matplotlib.pyplot as plt
 import numpy as np
@@ -54,7 +56,7 @@ def getRescaledOccurences(systemName):
 			classes.append(row[0])
 
 	reverseDictionnary = {classes[i]: i for i in range(len(classes))}
-	changes = readHistory2(historyFile)
+	changes = r.readHistory2(historyFile)
 
 
 	data = []
@@ -88,12 +90,15 @@ def getRescaledOccurences(systemName):
 				idx = reverseDictionnary[className]
 				occurences[idx] = occurences[idx] + 1
 
+	#occurences = np.array(occurences).astype(float)
+	
+	#scaler = StandardScaler()
+	#scaler.fit(occurences.reshape(-1, 1))
+	#rescaledOcc = scaler.transform(occurences.reshape(-1, 1))
 
-	scaler = StandardScaler()
-	scaler.fit(np.array(occurences).reshape(-1, 1))
-	rescaledOcc = scaler.transform(np.array(occurences).reshape(-1, 1))
+	#return {classes[i]:rescaledOcc.reshape(-1)[i] for i in range(len(classes))}
 
-	return {classes[i]:rescaledOcc.reshape(-1)[i] for i in range(len(classes))}
+	return {classes[i]: occurences[i] for i in range(len(classes))}
 
 
 def blob(systemName, alpha):

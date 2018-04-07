@@ -8,17 +8,20 @@ class Layer(object):
 	def __init__(self, input, n_in, n_out, activation=tf.tanh):
 		self.w = tf.Variable(tf.truncated_normal(shape=[n_in, n_out]))
 		self.b = tf.Variable(tf.zeros([n_out]))
+		#initializer=tf.contrib.layers.xavier_initializer()
+		#self.w = tf.Variable(initializer([n_in, n_out]))
+		#self.b = tf.Variable(initializer([n_out]))
 
 		self.input = input
 		self.output = activation(tf.matmul(self.input,self.w) + self.b)
 
 
 class Model(object):
-	def __init__(self, instances, labels=None, shape=[32,16,8], starter_learning_rate=0.26, beta=0):
+	def __init__(self, instances, labels=None, shape=[16,8], starter_learning_rate=0.26, beta=0):
 		self.instances = instances
 		self.labels = labels
 
-		self.input_size = 4
+		self.input_size = int(instances.shape[1])
 		self.output_size = 2
 		self.shape = shape
 		self.shape.append(self.output_size)
@@ -38,7 +41,7 @@ class Model(object):
 
 
 		# Loss function
-		self.loss = 1 - f_mesure_approx(self.logits, self.labels, 2)
+		self.loss = 1 - f_mesure_approx(self.logits, self.labels, 4)
 		self.loss = tf.reduce_mean(self.loss + beta * self.L2)
 
 		# Learning mecanism with learning rate decay
@@ -46,7 +49,7 @@ class Model(object):
 		self.learning_rate = tf.train.exponential_decay(
 			starter_learning_rate,
 			self.global_step,
-			100,
+			250,
 			0.9,
 			staircase=True)
 
