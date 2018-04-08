@@ -82,7 +82,10 @@ class HistoryExtractor(object):
 
 	def __createHistoryFile(self, historyFilePath, granularity):
 		F = open(historyFilePath, 'w')
-		F.write('Snapshot;Date;Directory;Code;ChangeType\n')
+		if granularity == 'C':
+			F.write('Snapshot;Date;Directory;Code;ChangeType\n')
+		if granularity == 'M':
+			F.write('Snapshot;Date;Class;Code;ChangeType\n')
 
 		ps1 = subprocess.Popen(['git','log','--pretty=format:%H_%aD'], stdout=subprocess.PIPE)
 		output1, error1 = ps1.communicate()
@@ -139,7 +142,11 @@ class HistoryExtractor(object):
 						F.write(className + '\n')
 
 					if granularity == "M":
-						methods = self.__getMethodsInFile(os.path.join(path,f))
+						try:
+							methods = self.__getMethodsInFile(os.path.join(path,f))
+						except:
+							methods = self.__getMethodsInFileWithRegex(os.path.join(path,f))
+
 						for methodName in methods:
 							F.write(className + '.' + methodName + '\n')
 
@@ -199,7 +206,10 @@ class HistoryExtractor(object):
 
 		if changeType == "A":
 			self.__updateWorkingFile("../actualFile.java", filePath, SHA)
-			methods = self.__getMethodsInFile("../actualFile.java")
+			try:
+				methods = self.__getMethodsInFile(filePath, "../actualFile.java")
+			except:
+				methods = self.__getMethodsInFileWithRegex("../actualFile.java")
 
 			for method in methods:
 				change = method + ";" + "ADDED"
@@ -207,7 +217,10 @@ class HistoryExtractor(object):
 
 		if changeType == "D":
 			self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
-			methods = self.__getMethodsInFile("../previousFile.java")
+			try:
+				methods = self.__getMethodsInFile(filePath, "../previousFile.java")
+			except:
+				methods = self.__getMethodsInFileWithRegex("../previousFile.java")
 		
 			for method in methods:
 				change = method + ";" + "DELETED"
@@ -233,14 +246,80 @@ class HistoryExtractor(object):
 
 
 		lines = ""
-		className = self.__getClassName(filePath)
+
+		className = ""
+		if filePath in self.path_name_dictionary:
+			className = self.path_name_dictionary[filePath]
+		else:
+			try:
+				if os.path.isfile(filePath):
+					className = self.__getClassName(filePath)
+				else:
+					if changeType == 'D':
+						self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
+						className = self.__getClassName(filePath, "../previousFile.java")
+				
+					else:
+						self.__updateWorkingFile("../actualFile.java", filePath, SHA)
+						className = self.__getClassName(filePath, "../actualFile.java")
+
+				self.path_name_dictionary[filePath] = className
+			except:
+				className = filePath
+				self.exceptionPaths.append(filePath)
+
+
 		for change in set(changes):
-			lines = lines + SHA + ';' + date + ';' + 'METHOD' + ';' + className + '.' + change + '\n'
+			lines = lines + SHA + ';' + date + ';' + className + ';' + className + '.' + change + '\n'
 
 		return lines
 
 
-	def __getMethodsInFile(self, filePath):
+	def __getMethodsInFile(self, filePath, wFilePath=None):
+		className = filePath.split('/')[-1]
+		className = name[:len(name)-len('.java')]
+
+		if wFilePath is not None:
+			java_source = open(wFilePath, 'r')
+		else:
+			java_source = open(filePath, 'r')
+
+		tree = javalang.parse.parse(java_source.read())
+		
+		InnerClassMethods = []
+		for pc, klass in tree.filter(javalang.tree.ClassDeclaration):
+			if klass.name != className:
+				for p, method in klass.filter(javalang.tree.MethodDeclaration):
+					InnerClassMethods.append(method)
+			
+		methods = []
+		for p, method in tree.filter(javalang.tree.MethodDeclaration):
+			if method not in InnerClassMethods:
+				name = method.name
+				parameters = []
+				hasNext = False
+				for path, node in method:
+					if hasNext == True:
+						if issubclass(type(node), javalang.tree.Type) & hasNext:
+							hasNext = False
+							parameters.append(node.name)
+					else:
+						if type(node) == javalang.tree.FormalParameter:
+							hasNext = True
+
+				string = name + '('
+				for i, param in enumerate(parameters):
+					if i < len(parameters)-1:
+						string = string + param + ', '
+					else:
+						string = string + param
+				string = string + ')'
+				methods.append(string)
+
+		return methods
+
+	#works but does not ignore methods from inner classes
+	def __getMethodsInFileWithRegex(self, filePath):
 		regex = '((public|protected|private|static|\s) +[\w\<\>\[\]]+\s+(\w+) *\([^\)]*\)\s*(\{))'
 
 		methods = []
@@ -251,9 +330,12 @@ class HistoryExtractor(object):
 				name = re.search('(\w+) *\([^\)]*\)', method[0]).groups()[0]
 				params = re.search('\w+ *(\([^\)]*\))', method[0]).groups()[0]
 				params = re.sub('\s+', ' ', params)
+				params = params[1:-1].split(", ")
+				params = [p.split(' ')[0] for p in params]
+				params = '(' + ', '.join(params) + ')'
 				
-				methodName = name + params
-				methods.append(methodName)
+				string = name + params
+				methods.append(string)
 
 		return methods
 
@@ -271,9 +353,11 @@ class HistoryExtractor(object):
 		if re.search('method added', line) is not None:
 			ct = "ADDED"
 
-		if re.search('code changed', line) is not None:
+		if re.search('code \w* in', line) is not None:
 			ct = "BODY_MODIFIED"
 
+		#code removed in createAntlib(Project, URL, String)
+		#code added in createAntlib(Project, URL, String)
 		return method, ct
 
 
@@ -303,6 +387,20 @@ if __name__ == "__main__":
 		he.setup(system)
 		he.extractChangeHistory("C")
 		he.close()'''
+
+	s = {
+	"name"     :'jhotdraw', 
+	"url"      :'https://svn.code.sf.net/p/jhotdraw/svn/trunk', 
+	"snapshot" :'58d8df336c3c48a1943427754f6bbb6e991c2e41', 
+	"directory":['jhotdraw7/src/main/']
+	}
+
+	he = HistoryExtractor()
+	he.setup(s)
+	he.extractChangeHistory("M")
+	#he.close()
+
+
 
 
 
