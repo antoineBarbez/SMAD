@@ -1,0 +1,8 @@
+org.apache.log4j.Hierarchy
+src/java/org/apache/log4j/Category.java
+org.apache.log4j.HTMLLayout
+org.apache.log4j.chainsaw.ChainsawCyclicBufferTableModel
+org.apache.log4j.chainsaw.LogUI
+org.apache.log4j.lf5.viewer.LogBrokerMonitor
+org.apache.log4j.xml.DOMConfigurator
+org.apache.log4j.spi.LoggingEvent

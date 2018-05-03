@@ -1,0 +1,10 @@
+org.apache.log4j.Hierarchy
+org.apache.log4j.Category
+org.apache.log4j.PropertyConfigurator
+org.apache.log4j.AsyncAppender
+org.apache.log4j.HTMLLayout
+org.apache.log4j.net.SMTPAppender
+org.apache.log4j.net.JMSAppender
+org.apache.log4j.net.SyslogAppender
+org.apache.log4j.varia.LogFilePatternReceiver
+org.apache.log4j.spi.LoggingEvent

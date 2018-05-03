@@ -1,0 +1,4 @@
+org.apache.lucene.index.IndexWriter
+org.apache.lucene.queryParser.QueryParser
+org.apache.lucene.analysis.ru.RussianAnalyzer
+org.apache.lucene.index.SegmentReader

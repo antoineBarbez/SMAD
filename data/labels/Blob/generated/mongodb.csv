@@ -1,0 +1,5 @@
+org.bson.BasicBSONEncoder
+com.mongodb.DBCursor
+com.mongodb.DBApiLayer
+com.mongodb.Mongo
+com.mongodb.DBCollection

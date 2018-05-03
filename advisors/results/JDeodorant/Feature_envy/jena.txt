@@ -1,0 +1,29 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	com.hp.hpl.jena.rdf.arp.states.WantPropertyElement::mustBeEmpty(com.hp.hpl.jena.rdf.arp.impl.AttributeLexer, org.xml.sax.Attributes, int):boolean	com.hp.hpl.jena.rdf.arp.impl.AttributeLexer	0/3	
+Move Method	com.hp.hpl.jena.graph.impl.GraphMatcher.Bucket::bind(com.hp.hpl.jena.graph.impl.GraphMatcher.AnonResource, com.hp.hpl.jena.graph.impl.GraphMatcher.Bucket, com.hp.hpl.jena.graph.impl.GraphMatcher.AnonResource):boolean	com.hp.hpl.jena.graph.impl.GraphMatcher.AnonResource	0/2	
+Move Method	com.hp.hpl.jena.graph.impl.SimpleReifier::matchesStatement(com.hp.hpl.jena.graph.Node):boolean	com.hp.hpl.jena.graph.Node	0/2	
+Move Method	com.hp.hpl.jena.mem.GraphMemBase::isSafeForEquality(com.hp.hpl.jena.graph.Triple):boolean	com.hp.hpl.jena.graph.Triple	0/2	
+Move Method	com.hp.hpl.jena.assembler.assemblers.ModelAssembler::addContent(com.hp.hpl.jena.rdf.model.Resource, com.hp.hpl.jena.rdf.model.Model, com.hp.hpl.jena.assembler.Content):void	com.hp.hpl.jena.assembler.Content	0/1	
+Move Method	com.hp.hpl.jena.assembler.assemblers.UnionModelAssembler::addSubModels(com.hp.hpl.jena.assembler.Assembler, com.hp.hpl.jena.rdf.model.Resource, com.hp.hpl.jena.graph.compose.MultiUnion, com.hp.hpl.jena.assembler.Mode):void	com.hp.hpl.jena.graph.compose.MultiUnion	0/1	
+Move Method	com.hp.hpl.jena.graph.impl.ReificationWrapper::tripleFromRSPO(com.hp.hpl.jena.graph.query.Domain):com.hp.hpl.jena.graph.Triple	com.hp.hpl.jena.graph.query.Domain	0/1	
+Move Method	com.hp.hpl.jena.graph.impl.ReificationWrapper::tripleFromSPO(com.hp.hpl.jena.graph.query.Domain):com.hp.hpl.jena.graph.Triple	com.hp.hpl.jena.graph.query.Domain	0/1	
+Move Method	com.hp.hpl.jena.graph.impl.SimpleReifierFragmentsMap::explodeFragments(com.hp.hpl.jena.graph.Triple, com.hp.hpl.jena.graph.Node, com.hp.hpl.jena.graph.impl.Fragments):com.hp.hpl.jena.util.iterator.ExtendedIterator<com.hp.hpl.jena.graph.Triple>	com.hp.hpl.jena.graph.impl.Fragments	0/1	
+Move Method	com.hp.hpl.jena.graph.query.ConstraintStage::evalConstraint(com.hp.hpl.jena.graph.query.Domain, com.hp.hpl.jena.graph.query.ValuatorSet):boolean	com.hp.hpl.jena.graph.query.ValuatorSet	0/1	
+Move Method	com.hp.hpl.jena.graph.query.SimpleTreeQueryPlan::asPattern(com.hp.hpl.jena.graph.Node):com.hp.hpl.jena.graph.Node	com.hp.hpl.jena.graph.Node	0/1	
+Move Method	com.hp.hpl.jena.graph.query.SimpleTripleSorter::bc(com.hp.hpl.jena.graph.Node, com.hp.hpl.jena.graph.Node):int	com.hp.hpl.jena.graph.Node	0/1	
+Move Method	com.hp.hpl.jena.mem.GraphMem.GraphMemStatisticsHandler::countInMap(com.hp.hpl.jena.graph.Node, com.hp.hpl.jena.mem.NodeToTriplesMapMem):long	com.hp.hpl.jena.graph.Node	0/1	
+Move Method	com.hp.hpl.jena.rdf.arp.states.WantPropertyElement::propertyAttributeDescription(org.xml.sax.Attributes, com.hp.hpl.jena.rdf.arp.impl.AttributeLexer, int):java.lang.String	com.hp.hpl.jena.rdf.arp.impl.AttributeLexer	0/1	
+Move Method	com.hp.hpl.jena.reasoner.TriplePattern::variantOf(com.hp.hpl.jena.graph.Node, com.hp.hpl.jena.graph.Node, java.util.Map<com.hp.hpl.jena.graph.Node,com.hp.hpl.jena.graph.Node>):boolean	com.hp.hpl.jena.graph.Node	0/1	
+Move Method	com.hp.hpl.jena.reasoner.TriplePattern::nodeEqual(com.hp.hpl.jena.graph.Node, com.hp.hpl.jena.graph.Node):boolean	com.hp.hpl.jena.graph.Node	0/1	
+Move Method	com.hp.hpl.jena.reasoner.transitiveReasoner.GraphNode::addSiblings(java.util.Set<com.hp.hpl.jena.reasoner.transitiveReasoner.GraphNode>, com.hp.hpl.jena.reasoner.transitiveReasoner.GraphNode):void	com.hp.hpl.jena.reasoner.transitiveReasoner.GraphNode.Siblings	0/1	
+Move Method	com.hp.hpl.jena.rdf.model.impl.NTripleReader::skipWhiteSpace():void	com.hp.hpl.jena.rdf.model.impl.IStream	1/3	
+Move Method	com.hp.hpl.jena.reasoner.rulesys.impl.FRuleEngine::matchRuleBody(int, com.hp.hpl.jena.reasoner.rulesys.impl.BFRuleContext):boolean	com.hp.hpl.jena.reasoner.rulesys.impl.BFRuleContext	1/3	
+Move Method	com.hp.hpl.jena.enhanced.EnhNode::isResource():boolean	com.hp.hpl.jena.graph.Node	1/2	
+Move Method	com.hp.hpl.jena.ontology.OntDocumentManager::fetchLoadedImportModel(com.hp.hpl.jena.ontology.OntModelSpec, java.lang.String):com.hp.hpl.jena.rdf.model.Model	com.hp.hpl.jena.ontology.OntModelSpec	1/2	
+Move Method	com.hp.hpl.jena.rdf.model.impl.NTripleReader::readLang():java.lang.String	com.hp.hpl.jena.rdf.model.impl.IStream	1/2	
+Move Method	com.hp.hpl.jena.reasoner.rulesys.FBRuleInfGraph::addBRules(java.util.List<com.hp.hpl.jena.reasoner.rulesys.Rule>):void	com.hp.hpl.jena.reasoner.rulesys.impl.LPBRuleEngine	1/2	
+Move Method	com.hp.hpl.jena.n3.turtle.Turtle2NTriples::outputNode(com.hp.hpl.jena.graph.Node):void	com.hp.hpl.jena.graph.Node	2/8	
+Move Method	com.hp.hpl.jena.rdf.arp.states.WantPropertyElement::descriptionOfCases(com.hp.hpl.jena.rdf.arp.impl.AttributeLexer, int, java.lang.String):java.lang.String	com.hp.hpl.jena.rdf.arp.impl.AttributeLexer	2/3	
+Move Method	com.hp.hpl.jena.rdf.arp.states.WantPropertyElement::pairwiseIncompatibleErrorMessage(int, com.hp.hpl.jena.rdf.arp.impl.AttributeLexer, java.lang.String):java.lang.String	com.hp.hpl.jena.rdf.arp.impl.AttributeLexer	2/3	
+Move Method	com.hp.hpl.jena.rdf.arp.states.WantPropertyElement::complicatedErrorMessage(int, com.hp.hpl.jena.rdf.arp.impl.AttributeLexer, java.lang.String):java.lang.String	com.hp.hpl.jena.rdf.arp.impl.AttributeLexer	2/3	
+Move Method	com.hp.hpl.jena.shared.LockMRSW.LockState::clean():void	com.hp.hpl.jena.shared.LockMRSW	2/3	

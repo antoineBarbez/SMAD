@@ -1,0 +1,10 @@
+org.gjt.sp.jedit.JARClassLoader.loadPluginClass(String);org.gjt.sp.jedit.browser.MouseHandler
+org.gjt.sp.jedit.buffer.UndoManager.contentRemoved(int, int, String, boolean);org.gjt.sp.jedit.browser.MouseHandler
+org.gjt.sp.jedit.textarea.MouseHandler.mouseReleased(MouseEvent);org.gjt.sp.jedit.textarea.JEditTextArea
+org.gjt.sp.jedit.PluginJAR.generateCache();org.gjt.sp.jedit.browser.MouseHandler
+org.gjt.sp.jedit.textarea.JEditTextArea.xToOffset(int, int, boolean);org.gjt.sp.jedit.textarea.TextAreaPainter
+org.gjt.sp.jedit.search.SearchAndReplace.replace(View, Buffer, int, int);org.gjt.sp.jedit.textarea.JEditTextArea
+org.gjt.sp.jedit.PluginJAR.activatePlugin();org.gjt.sp.jedit.browser.MouseHandler
+org.gjt.sp.jedit.syntax.XModeHandler.endElement(String);org.gjt.sp.jedit.browser.MouseHandler
+org.gjt.sp.jedit.Buffer.recoverAutosave(org.gjt.sp.jedit.View);org.gjt.sp.jedit.io.VFS
+org.gjt.sp.jedit.gui.OptionsDialog.addOptionPane(org.gjt.sp.jedit.OptionPane, org.gjt.sp.jedit.OptionGroup);org.gjt.sp.jedit.OptionGroup

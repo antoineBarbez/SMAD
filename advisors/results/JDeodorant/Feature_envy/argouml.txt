@@ -1,0 +1,13 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	org.argouml.model.uml.EventListenerList::getListenerCount(java.lang.Object[], org.argouml.model.uml.EventKey):int	org.argouml.model.uml.EventKey	0/2	
+Move Method	org.argouml.cognitive.Designer::isConsidering(org.argouml.cognitive.Decision):boolean	org.argouml.cognitive.Decision	0/1	
+Move Method	org.argouml.cognitive.critics.Critic::postItem(org.argouml.cognitive.ToDoItem, java.lang.Object, org.argouml.cognitive.Designer):void	org.argouml.cognitive.Designer	0/1	
+Move Method	org.argouml.model.uml.NSUMLModelEventPump::register(java.util.Map, org.argouml.model.uml.NSUMLEventListener):void	org.argouml.model.uml.NSUMLEventListener	0/1	
+Move Method	org.argouml.uml.diagram.static_structure.ui.FigPackage::createClassDiagram(java.lang.Object, java.lang.String, org.argouml.kernel.Project):void	org.argouml.kernel.Project	0/1	
+Move Method	org.argouml.uml.reveng.DiagramInterface::findDiagramMemberByUniqueName(org.argouml.kernel.Project, java.lang.String):org.argouml.kernel.ProjectMember	org.argouml.kernel.Project	0/1	
+Move Method	org.argouml.uml.ui.ActionSaveAllGraphics::getFileChooser(org.argouml.kernel.Project):javax.swing.JFileChooser	org.argouml.kernel.Project	0/1	
+Move Method	org.argouml.cognitive.ToDoItem::getOffenders():org.argouml.cognitive.ListSet	org.argouml.cognitive.ListSet	1/2	
+Move Method	org.argouml.uml.reveng.java.Modeller::getAttribute(java.lang.String, java.lang.String, java.lang.Object):java.lang.Object	org.argouml.uml.reveng.java.ParseState	1/2	
+Move Method	org.argouml.model.uml.EventListenerList::remove(org.argouml.model.uml.EventKey, ru.novosoft.uml.MElementListener):void	org.argouml.model.uml.EventKey	2/3	
+Move Method	org.argouml.uml.reveng.DiagramInterface::addClass(java.lang.Object, boolean):void	org.argouml.uml.diagram.static_structure.ClassDiagramGraphModel	2/3	
+Move Method	org.argouml.uml.reveng.DiagramInterface::addInterface(java.lang.Object, boolean):void	org.argouml.uml.diagram.static_structure.ClassDiagramGraphModel	2/3	
