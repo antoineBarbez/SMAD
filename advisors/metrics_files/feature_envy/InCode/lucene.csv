@@ -1,0 +1,1111 @@
+Class;Method;DeclaringClass;NbFields
+org.apache.lucene.queryParser.QueryParserTokenManager;setDebugStream(PrintStream);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStopAtPos(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;2
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStartNfaWithStates_3(int, int, int);org.apache.lucene.queryParser.QueryParserTokenManager;4
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveStringLiteralDfa0_3();org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjCheckNAdd(int);org.apache.lucene.queryParser.QueryParserTokenManager;4
+org.apache.lucene.queryParser.QueryParserTokenManager;jjAddStates(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;3
+org.apache.lucene.queryParser.QueryParserTokenManager;jjCheckNAddStates(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjCheckNAddStates(int);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveNfa_3(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;7
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStopStringLiteralDfa_1(int, long);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStartNfaWithStates_1(int, int, int);org.apache.lucene.queryParser.QueryParserTokenManager;4
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveStringLiteralDfa0_1();org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveStringLiteralDfa1_1(long);org.apache.lucene.queryParser.QueryParserTokenManager;2
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveNfa_1(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;7
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveNfa_0(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;7
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStopStringLiteralDfa_2(int, long);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjStartNfaWithStates_2(int, int, int);org.apache.lucene.queryParser.QueryParserTokenManager;4
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveStringLiteralDfa0_2();org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveStringLiteralDfa1_2(long);org.apache.lucene.queryParser.QueryParserTokenManager;2
+org.apache.lucene.queryParser.QueryParserTokenManager;jjMoveNfa_2(int, int);org.apache.lucene.queryParser.QueryParserTokenManager;7
+org.apache.lucene.queryParser.QueryParserTokenManager;jjCanMove_0(int, int, int, long, long);org.apache.lucene.queryParser.QueryParserTokenManager;2
+org.apache.lucene.queryParser.QueryParserTokenManager;QueryParserTokenManager(CharStream);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;ReInit(CharStream);org.apache.lucene.queryParser.QueryParserTokenManager;5
+org.apache.lucene.queryParser.QueryParserTokenManager;ReInitRounds();org.apache.lucene.queryParser.QueryParserTokenManager;2
+org.apache.lucene.queryParser.QueryParserTokenManager;SwitchTo(int);org.apache.lucene.queryParser.QueryParserTokenManager;1
+org.apache.lucene.queryParser.QueryParserTokenManager;jjFillToken();org.apache.lucene.queryParser.QueryParserTokenManager;3
+org.apache.lucene.queryParser.QueryParserTokenManager;getNextToken();org.apache.lucene.queryParser.QueryParserTokenManager;7
+org.apache.lucene.queryParser.TokenMgrError;getMessage();java.lang.Throwable;1
+org.apache.lucene.queryParser.TokenMgrError;TokenMgrError(int, String);org.apache.lucene.queryParser.TokenMgrError;1
+org.apache.lucene.queryParser.ParseException;ParseException(int, String, Token);org.apache.lucene.queryParser.ParseException;4
+org.apache.lucene.queryParser.ParseException;ParseException();org.apache.lucene.queryParser.ParseException;1
+org.apache.lucene.queryParser.ParseException;ParseException(String);org.apache.lucene.queryParser.ParseException;1
+org.apache.lucene.queryParser.ParseException;getMessage();java.lang.Throwable;1
+org.apache.lucene.queryParser.ParseException;getMessage();org.apache.lucene.queryParser.ParseException;5
+org.apache.lucene.queryParser.QueryParser;QueryParser(Analyzer, String);org.apache.lucene.queryParser.QueryParser;2
+org.apache.lucene.queryParser.QueryParser;parse(String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;setPhraseSlop(int);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getPhraseSlop();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;setOperator(int);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getOperator();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;setLowercaseWildcardTerms(boolean);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getLowercaseWildcardTerms();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;setLocale(Locale);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getLocale();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;addClause(int, int, Query, Vector);org.apache.lucene.queryParser.QueryParser;7
+org.apache.lucene.queryParser.QueryParser;getFieldQuery(Analyzer, String, String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getFieldQuery(Analyzer, int, String, String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getRangeQuery(Analyzer, boolean, String, String, String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getRangeQuery(Analyzer, boolean, String, String, String);java.text.DateFormat;3
+org.apache.lucene.queryParser.QueryParser;getWildcardQuery(String, String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;getPrefixQuery(String, String);org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;main(String);java.lang.System;1
+org.apache.lucene.queryParser.QueryParser;Conjunction();org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;Modifiers();org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;Query(String);org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;Clause(String);org.apache.lucene.queryParser.QueryParser;3
+org.apache.lucene.queryParser.QueryParser;Term(String);org.apache.lucene.queryParser.QueryParser;10
+org.apache.lucene.queryParser.QueryParser;jj_2_1(int);org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.QueryParser;jj_la1_0();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;jj_la1_1();org.apache.lucene.queryParser.QueryParser;1
+org.apache.lucene.queryParser.QueryParser;QueryParser(CharStream);org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;ReInit(CharStream);org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;QueryParser(QueryParserTokenManager);org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;ReInit(QueryParserTokenManager);org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;jj_consume_token(int);org.apache.lucene.queryParser.QueryParser.JJCalls;3
+org.apache.lucene.queryParser.QueryParser;jj_consume_token(int);org.apache.lucene.queryParser.QueryParser;7
+org.apache.lucene.queryParser.QueryParser;jj_scan_token(int);org.apache.lucene.queryParser.QueryParser;7
+org.apache.lucene.queryParser.QueryParser;getNextToken();org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.QueryParser;getToken(int);org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.QueryParser;jj_ntk();org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.QueryParser;jj_add_error_token(int, int);org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.QueryParser;generateParseException();org.apache.lucene.queryParser.QueryParser;9
+org.apache.lucene.queryParser.QueryParser;jj_rescan_token();org.apache.lucene.queryParser.QueryParser.JJCalls;4
+org.apache.lucene.queryParser.QueryParser;jj_rescan_token();org.apache.lucene.queryParser.QueryParser;6
+org.apache.lucene.queryParser.QueryParser;jj_save(int, int);org.apache.lucene.queryParser.QueryParser.JJCalls;4
+org.apache.lucene.queryParser.QueryParser;jj_save(int, int);org.apache.lucene.queryParser.QueryParser;4
+org.apache.lucene.queryParser.FastCharStream;FastCharStream(Reader);org.apache.lucene.queryParser.FastCharStream;1
+org.apache.lucene.queryParser.FastCharStream;readChar();org.apache.lucene.queryParser.FastCharStream;3
+org.apache.lucene.queryParser.FastCharStream;refill();org.apache.lucene.queryParser.FastCharStream;6
+org.apache.lucene.queryParser.FastCharStream;BeginToken();org.apache.lucene.queryParser.FastCharStream;2
+org.apache.lucene.queryParser.FastCharStream;backup(int);org.apache.lucene.queryParser.FastCharStream;1
+org.apache.lucene.queryParser.FastCharStream;GetImage();org.apache.lucene.queryParser.FastCharStream;3
+org.apache.lucene.queryParser.FastCharStream;GetSuffix(int);org.apache.lucene.queryParser.FastCharStream;2
+org.apache.lucene.queryParser.FastCharStream;Done();java.lang.System;1
+org.apache.lucene.queryParser.FastCharStream;Done();org.apache.lucene.queryParser.FastCharStream;1
+org.apache.lucene.queryParser.FastCharStream;getColumn();org.apache.lucene.queryParser.FastCharStream;2
+org.apache.lucene.queryParser.FastCharStream;getEndColumn();org.apache.lucene.queryParser.FastCharStream;2
+org.apache.lucene.queryParser.FastCharStream;getBeginColumn();org.apache.lucene.queryParser.FastCharStream;2
+org.apache.lucene.queryParser.Token;toString();org.apache.lucene.queryParser.Token;1
+org.apache.lucene.queryParser.MultiFieldQueryParser;parse(Analyzer, int, String, String);org.apache.lucene.queryParser.MultiFieldQueryParser;2
+org.apache.lucene.analysis.CharTokenizer;next();org.apache.lucene.analysis.CharTokenizer;7
+org.apache.lucene.analysis.TokenFilter;TokenFilter(TokenStream);org.apache.lucene.analysis.TokenFilter;1
+org.apache.lucene.analysis.TokenFilter;close();org.apache.lucene.analysis.TokenFilter;1
+org.apache.lucene.analysis.PorterStemFilter;PorterStemFilter(TokenStream);org.apache.lucene.analysis.PorterStemFilter;1
+org.apache.lucene.analysis.PorterStemFilter;next();org.apache.lucene.analysis.PorterStemFilter;1
+org.apache.lucene.analysis.ru.RussianLowerCaseFilter;RussianLowerCaseFilter(char, TokenStream);org.apache.lucene.analysis.ru.RussianLowerCaseFilter;1
+org.apache.lucene.analysis.ru.RussianLowerCaseFilter;next();org.apache.lucene.analysis.ru.RussianLowerCaseFilter;1
+org.apache.lucene.analysis.ru.RussianStemFilter;RussianStemFilter(char, TokenStream);org.apache.lucene.analysis.ru.RussianStemFilter;1
+org.apache.lucene.analysis.ru.RussianStemFilter;next();org.apache.lucene.analysis.ru.RussianStemFilter;2
+org.apache.lucene.analysis.ru.RussianStemFilter;setStemmer(RussianStemmer);org.apache.lucene.analysis.ru.RussianStemFilter;1
+org.apache.lucene.analysis.ru.RussianCharsets;toLowerCase(char, char);org.apache.lucene.analysis.ru.RussianCharsets;3
+org.apache.lucene.analysis.ru.RussianLetterTokenizer;RussianLetterTokenizer(char, Reader);org.apache.lucene.analysis.ru.RussianLetterTokenizer;1
+org.apache.lucene.analysis.ru.RussianLetterTokenizer;isTokenChar(char);java.lang.Character;1
+org.apache.lucene.analysis.ru.RussianLetterTokenizer;isTokenChar(char);org.apache.lucene.analysis.ru.RussianLetterTokenizer;1
+org.apache.lucene.analysis.ru.RussianStemmer;RussianStemmer(char);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;adjectival(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;4
+org.apache.lucene.analysis.ru.RussianStemmer;derivational(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;3
+org.apache.lucene.analysis.ru.RussianStemmer;derivational(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;findEnding(char, int, StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;findAndRemoveEnding(char, StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;findAndRemoveEnding(char, char, StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;markPositions(String);org.apache.lucene.analysis.ru.RussianStemmer;4
+org.apache.lucene.analysis.ru.RussianStemmer;isVowel(char);org.apache.lucene.analysis.ru.RussianStemmer;2
+org.apache.lucene.analysis.ru.RussianStemmer;noun(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;perfectiveGerund(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;3
+org.apache.lucene.analysis.ru.RussianStemmer;reflexive(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;removeI(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;2
+org.apache.lucene.analysis.ru.RussianStemmer;removeI(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;removeSoft(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;2
+org.apache.lucene.analysis.ru.RussianStemmer;removeSoft(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;setCharset(char);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;setEndings();org.apache.lucene.analysis.ru.RussianStemmer;36
+org.apache.lucene.analysis.ru.RussianStemmer;stem(String);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;superlative(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;undoubleN(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianStemmer;undoubleN(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.ru.RussianStemmer;verb(StringBuffer);org.apache.lucene.analysis.ru.RussianStemmer;3
+org.apache.lucene.analysis.ru.RussianStemmer;stem(char, String);org.apache.lucene.analysis.ru.RussianStemmer;1
+org.apache.lucene.analysis.ru.RussianAnalyzer;RussianAnalyzer();org.apache.lucene.analysis.ru.RussianAnalyzer;2
+org.apache.lucene.analysis.ru.RussianAnalyzer;RussianAnalyzer(char);org.apache.lucene.analysis.ru.RussianAnalyzer;2
+org.apache.lucene.analysis.ru.RussianAnalyzer;RussianAnalyzer(char, String);org.apache.lucene.analysis.ru.RussianAnalyzer;2
+org.apache.lucene.analysis.ru.RussianAnalyzer;makeStopWords(char);org.apache.lucene.analysis.ru.RussianAnalyzer;1
+org.apache.lucene.analysis.ru.RussianAnalyzer;RussianAnalyzer(char, Hashtable);org.apache.lucene.analysis.ru.RussianAnalyzer;2
+org.apache.lucene.analysis.ru.RussianAnalyzer;tokenStream(Reader, String);org.apache.lucene.analysis.ru.RussianAnalyzer;2
+org.apache.lucene.analysis.LetterTokenizer;isTokenChar(char);java.lang.Character;1
+org.apache.lucene.analysis.standard.StandardAnalyzer;StandardAnalyzer();org.apache.lucene.analysis.standard.StandardAnalyzer;1
+org.apache.lucene.analysis.standard.StandardAnalyzer;StandardAnalyzer(String);org.apache.lucene.analysis.standard.StandardAnalyzer;1
+org.apache.lucene.analysis.standard.StandardAnalyzer;tokenStream(Reader, String);org.apache.lucene.analysis.standard.StandardAnalyzer;1
+org.apache.lucene.analysis.standard.StandardFilter;next();org.apache.lucene.analysis.standard.StandardFilter;2
+org.apache.lucene.analysis.standard.StandardTokenizer;next();org.apache.lucene.analysis.standard.StandardTokenizer;3
+org.apache.lucene.analysis.standard.StandardTokenizer;jj_la1_0();org.apache.lucene.analysis.standard.StandardTokenizer;1
+org.apache.lucene.analysis.standard.StandardTokenizer;StandardTokenizer(CharStream);org.apache.lucene.analysis.standard.StandardTokenizer;5
+org.apache.lucene.analysis.standard.StandardTokenizer;ReInit(CharStream);org.apache.lucene.analysis.standard.StandardTokenizer;5
+org.apache.lucene.analysis.standard.StandardTokenizer;StandardTokenizer(StandardTokenizerTokenManager);org.apache.lucene.analysis.standard.StandardTokenizer;5
+org.apache.lucene.analysis.standard.StandardTokenizer;ReInit(StandardTokenizerTokenManager);org.apache.lucene.analysis.standard.StandardTokenizer;5
+org.apache.lucene.analysis.standard.StandardTokenizer;jj_consume_token(int);org.apache.lucene.analysis.standard.StandardTokenizer;5
+org.apache.lucene.analysis.standard.StandardTokenizer;getNextToken();org.apache.lucene.analysis.standard.StandardTokenizer;4
+org.apache.lucene.analysis.standard.StandardTokenizer;getToken(int);org.apache.lucene.analysis.standard.StandardTokenizer;2
+org.apache.lucene.analysis.standard.StandardTokenizer;jj_ntk();org.apache.lucene.analysis.standard.StandardTokenizer;4
+org.apache.lucene.analysis.standard.StandardTokenizer;generateParseException();org.apache.lucene.analysis.standard.StandardTokenizer;7
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;setDebugStream(PrintStream);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;1
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCheckNAdd(int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;4
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjAddStates(int, int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;3
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCheckNAddStates(int, int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;1
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCheckNAddStates(int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;1
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjMoveNfa_0(int, int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;7
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCanMove_0(int, int, int, long, long);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;5
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCanMove_1(int, int, int, long, long);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;7
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjCanMove_2(int, int, int, long, long);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;2
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;StandardTokenizerTokenManager(CharStream);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;1
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;ReInit(CharStream);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;5
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;ReInitRounds();org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;2
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;SwitchTo(int);org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;1
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;jjFillToken();org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;3
+org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;getNextToken();org.apache.lucene.analysis.standard.StandardTokenizerTokenManager;6
+org.apache.lucene.analysis.standard.TokenMgrError;getMessage();java.lang.Throwable;1
+org.apache.lucene.analysis.standard.TokenMgrError;TokenMgrError(int, String);org.apache.lucene.analysis.standard.TokenMgrError;1
+org.apache.lucene.analysis.standard.ParseException;ParseException(int, String, Token);org.apache.lucene.analysis.standard.ParseException;4
+org.apache.lucene.analysis.standard.ParseException;ParseException();org.apache.lucene.analysis.standard.ParseException;1
+org.apache.lucene.analysis.standard.ParseException;ParseException(String);org.apache.lucene.analysis.standard.ParseException;1
+org.apache.lucene.analysis.standard.ParseException;getMessage();java.lang.Throwable;1
+org.apache.lucene.analysis.standard.ParseException;getMessage();org.apache.lucene.analysis.standard.ParseException;5
+org.apache.lucene.analysis.standard.FastCharStream;FastCharStream(Reader);org.apache.lucene.analysis.standard.FastCharStream;1
+org.apache.lucene.analysis.standard.FastCharStream;readChar();org.apache.lucene.analysis.standard.FastCharStream;3
+org.apache.lucene.analysis.standard.FastCharStream;refill();org.apache.lucene.analysis.standard.FastCharStream;6
+org.apache.lucene.analysis.standard.FastCharStream;BeginToken();org.apache.lucene.analysis.standard.FastCharStream;2
+org.apache.lucene.analysis.standard.FastCharStream;backup(int);org.apache.lucene.analysis.standard.FastCharStream;1
+org.apache.lucene.analysis.standard.FastCharStream;GetImage();org.apache.lucene.analysis.standard.FastCharStream;3
+org.apache.lucene.analysis.standard.FastCharStream;GetSuffix(int);org.apache.lucene.analysis.standard.FastCharStream;2
+org.apache.lucene.analysis.standard.FastCharStream;Done();java.lang.System;1
+org.apache.lucene.analysis.standard.FastCharStream;Done();org.apache.lucene.analysis.standard.FastCharStream;1
+org.apache.lucene.analysis.standard.FastCharStream;getColumn();org.apache.lucene.analysis.standard.FastCharStream;2
+org.apache.lucene.analysis.standard.FastCharStream;getEndColumn();org.apache.lucene.analysis.standard.FastCharStream;2
+org.apache.lucene.analysis.standard.FastCharStream;getBeginColumn();org.apache.lucene.analysis.standard.FastCharStream;2
+org.apache.lucene.analysis.standard.Token;toString();org.apache.lucene.analysis.standard.Token;1
+org.apache.lucene.analysis.PorterStemmer;PorterStemmer();org.apache.lucene.analysis.PorterStemmer;3
+org.apache.lucene.analysis.PorterStemmer;reset();org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;add(char);org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;toString();org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;getResultLength();org.apache.lucene.analysis.PorterStemmer;1
+org.apache.lucene.analysis.PorterStemmer;getResultBuffer();org.apache.lucene.analysis.PorterStemmer;1
+org.apache.lucene.analysis.PorterStemmer;cons(int);org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;m();org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;vowelinstem();org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;doublec(int);org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;cvc(int);org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;ends(String);org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;setto(String);org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;r(String);org.apache.lucene.analysis.PorterStemmer;1
+org.apache.lucene.analysis.PorterStemmer;step1();org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;step2();org.apache.lucene.analysis.PorterStemmer;3
+org.apache.lucene.analysis.PorterStemmer;step3();org.apache.lucene.analysis.PorterStemmer;3
+org.apache.lucene.analysis.PorterStemmer;step4();org.apache.lucene.analysis.PorterStemmer;2
+org.apache.lucene.analysis.PorterStemmer;step5();org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;step6();org.apache.lucene.analysis.PorterStemmer;3
+org.apache.lucene.analysis.PorterStemmer;stem(char, int, int);org.apache.lucene.analysis.PorterStemmer;3
+org.apache.lucene.analysis.PorterStemmer;stem(int);org.apache.lucene.analysis.PorterStemmer;4
+org.apache.lucene.analysis.PorterStemmer;main(String);java.lang.Character;1
+org.apache.lucene.analysis.PorterStemmer;main(String);java.lang.System;1
+org.apache.lucene.analysis.Tokenizer;Tokenizer(Reader);org.apache.lucene.analysis.Tokenizer;1
+org.apache.lucene.analysis.Tokenizer;close();org.apache.lucene.analysis.Tokenizer;1
+org.apache.lucene.analysis.de.GermanStemFilter;GermanStemFilter(TokenStream);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanStemFilter;GermanStemFilter(Hashtable, TokenStream);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanStemFilter;GermanStemFilter(Set, TokenStream);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanStemFilter;next();org.apache.lucene.analysis.de.GermanStemFilter;3
+org.apache.lucene.analysis.de.GermanStemFilter;setStemmer(GermanStemmer);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanStemFilter;setExclusionTable(Hashtable);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanStemFilter;setExclusionSet(Set);org.apache.lucene.analysis.de.GermanStemFilter;1
+org.apache.lucene.analysis.de.GermanAnalyzer;GermanAnalyzer();org.apache.lucene.analysis.de.GermanAnalyzer;2
+org.apache.lucene.analysis.de.GermanAnalyzer;GermanAnalyzer(String);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;GermanAnalyzer(Hashtable);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;GermanAnalyzer(File);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;setStemExclusionTable(String);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;setStemExclusionTable(Hashtable);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;setStemExclusionTable(File);org.apache.lucene.analysis.de.GermanAnalyzer;1
+org.apache.lucene.analysis.de.GermanAnalyzer;tokenStream(Reader, String);org.apache.lucene.analysis.de.GermanAnalyzer;2
+org.apache.lucene.analysis.de.GermanStemmer;stem(String);org.apache.lucene.analysis.de.GermanStemmer;2
+org.apache.lucene.analysis.de.GermanStemmer;isStemmable(String);java.lang.Character;1
+org.apache.lucene.analysis.de.GermanStemmer;strip(StringBuffer);org.apache.lucene.analysis.de.GermanStemmer;1
+org.apache.lucene.analysis.de.GermanStemmer;optimize(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.de.GermanStemmer;substitute(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.de.GermanStemmer;substitute(StringBuffer);org.apache.lucene.analysis.de.GermanStemmer;1
+org.apache.lucene.analysis.de.GermanStemmer;resubstitute(StringBuffer);java.lang.StringBuffer;1
+org.apache.lucene.analysis.de.WordlistLoader;getWordtable(String, String);org.apache.lucene.analysis.de.WordlistLoader;1
+org.apache.lucene.analysis.de.WordlistLoader;getWordtable(String);org.apache.lucene.analysis.de.WordlistLoader;1
+org.apache.lucene.analysis.de.WordlistLoader;getWordtable(File);org.apache.lucene.analysis.de.WordlistLoader;1
+org.apache.lucene.analysis.StopFilter;StopFilter(String, TokenStream);org.apache.lucene.analysis.StopFilter;1
+org.apache.lucene.analysis.StopFilter;StopFilter(Hashtable, TokenStream);org.apache.lucene.analysis.StopFilter;1
+org.apache.lucene.analysis.StopFilter;StopFilter(Set, TokenStream);org.apache.lucene.analysis.StopFilter;1
+org.apache.lucene.analysis.StopFilter;next();org.apache.lucene.analysis.StopFilter;1
+org.apache.lucene.analysis.WhitespaceTokenizer;isTokenChar(char);java.lang.Character;1
+org.apache.lucene.analysis.Token;Token(int, int, String);org.apache.lucene.analysis.Token;3
+org.apache.lucene.analysis.Token;Token(int, int, String, String);org.apache.lucene.analysis.Token;4
+org.apache.lucene.analysis.Token;setPositionIncrement(int);org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.Token;getPositionIncrement();org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.Token;termText();org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.Token;startOffset();org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.Token;endOffset();org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.Token;type();org.apache.lucene.analysis.Token;1
+org.apache.lucene.analysis.StopAnalyzer;StopAnalyzer();org.apache.lucene.analysis.StopAnalyzer;2
+org.apache.lucene.analysis.StopAnalyzer;StopAnalyzer(String);org.apache.lucene.analysis.StopAnalyzer;1
+org.apache.lucene.analysis.StopAnalyzer;tokenStream(Reader, String);org.apache.lucene.analysis.StopAnalyzer;1
+org.apache.lucene.analysis.PerFieldAnalyzerWrapper;PerFieldAnalyzerWrapper(Analyzer);org.apache.lucene.analysis.PerFieldAnalyzerWrapper;1
+org.apache.lucene.analysis.PerFieldAnalyzerWrapper;addAnalyzer(Analyzer, String);org.apache.lucene.analysis.PerFieldAnalyzerWrapper;1
+org.apache.lucene.analysis.PerFieldAnalyzerWrapper;tokenStream(Reader, String);org.apache.lucene.analysis.PerFieldAnalyzerWrapper;2
+org.apache.lucene.util.BitVector;BitVector(int);org.apache.lucene.util.BitVector;2
+org.apache.lucene.util.BitVector;set(int);org.apache.lucene.util.BitVector;2
+org.apache.lucene.util.BitVector;clear(int);org.apache.lucene.util.BitVector;2
+org.apache.lucene.util.BitVector;get(int);org.apache.lucene.util.BitVector;1
+org.apache.lucene.util.BitVector;size();org.apache.lucene.util.BitVector;1
+org.apache.lucene.util.BitVector;count();org.apache.lucene.util.BitVector;3
+org.apache.lucene.util.BitVector;write(Directory, String);org.apache.lucene.util.BitVector;1
+org.apache.lucene.util.BitVector;BitVector(Directory, String);org.apache.lucene.util.BitVector;3
+org.apache.lucene.util.PriorityQueue;initialize(int);org.apache.lucene.util.PriorityQueue;3
+org.apache.lucene.util.PriorityQueue;put(Object);org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.util.PriorityQueue;insert(Object);org.apache.lucene.util.PriorityQueue;3
+org.apache.lucene.util.PriorityQueue;top();org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.util.PriorityQueue;pop();org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.util.PriorityQueue;size();org.apache.lucene.util.PriorityQueue;1
+org.apache.lucene.util.PriorityQueue;clear();org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.util.PriorityQueue;upHeap();org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.util.PriorityQueue;downHeap();org.apache.lucene.util.PriorityQueue;2
+org.apache.lucene.document.DateField;MAX_DATE_STRING();org.apache.lucene.document.DateField;1
+org.apache.lucene.document.DateField;MAX_DATE_STRING();java.lang.Character;1
+org.apache.lucene.document.DateField;dateToString(Date);java.util.Date;1
+org.apache.lucene.document.DateField;timeToString(long);org.apache.lucene.document.DateField;1
+org.apache.lucene.document.DateField;timeToString(long);java.lang.Character;1
+org.apache.lucene.document.DateField;stringToTime(String);java.lang.Character;1
+org.apache.lucene.document.Document;setBoost(float);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;getBoost();org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;add(Field);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;removeField(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;removeFields(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;getField(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;get(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;fields();org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;getFields(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;getValues(String);org.apache.lucene.document.Document;1
+org.apache.lucene.document.Document;toString();org.apache.lucene.document.Document;1
+org.apache.lucene.document.Field;setBoost(float);org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;getBoost();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;Text(boolean, Reader, String);org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;name();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;stringValue();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;readerValue();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;Field(boolean, boolean, boolean, boolean, String, String);org.apache.lucene.document.Field;6
+org.apache.lucene.document.Field;Field(Reader, String);org.apache.lucene.document.Field;2
+org.apache.lucene.document.Field;isStored();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;isIndexed();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;isTokenized();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;isTermVectorStored();org.apache.lucene.document.Field;1
+org.apache.lucene.document.Field;toString();org.apache.lucene.document.Field;6
+org.apache.lucene.search.PhraseQuery;setSlop(int);org.apache.lucene.search.PhraseQuery;1
+org.apache.lucene.search.PhraseQuery;getSlop();org.apache.lucene.search.PhraseQuery;1
+org.apache.lucene.search.PhraseQuery;add(Term);org.apache.lucene.search.PhraseQuery;2
+org.apache.lucene.search.PhraseQuery;getTerms();org.apache.lucene.search.PhraseQuery;1
+org.apache.lucene.search.PhraseQuery;createWeight(Searcher);org.apache.lucene.search.PhraseQuery;1
+org.apache.lucene.search.PhraseQuery;toString(String);org.apache.lucene.search.PhraseQuery;3
+org.apache.lucene.search.PhraseQuery;equals(Object);org.apache.lucene.search.PhraseQuery;2
+org.apache.lucene.search.PhraseQuery;hashCode();org.apache.lucene.search.PhraseQuery;2
+org.apache.lucene.search.PhraseQuery.PhraseWeight;PhraseWeight(Searcher);org.apache.lucene.search.PhraseQuery.PhraseWeight;1
+org.apache.lucene.search.PhraseQuery.PhraseWeight;getValue();org.apache.lucene.search.PhraseQuery.PhraseWeight;1
+org.apache.lucene.search.PhraseQuery.PhraseWeight;sumOfSquaredWeights();org.apache.lucene.search.PhraseQuery;1
+org.apache.lucene.search.PhraseQuery.PhraseWeight;sumOfSquaredWeights();org.apache.lucene.search.PhraseQuery.PhraseWeight;3
+org.apache.lucene.search.PhraseQuery.PhraseWeight;normalize(float);org.apache.lucene.search.PhraseQuery.PhraseWeight;4
+org.apache.lucene.search.PhraseQuery.PhraseWeight;scorer(IndexReader);org.apache.lucene.search.PhraseQuery;3
+org.apache.lucene.search.PhraseQuery.PhraseWeight;scorer(IndexReader);org.apache.lucene.search.PhraseQuery.PhraseWeight;1
+org.apache.lucene.search.PhraseQuery.PhraseWeight;explain(IndexReader, int);org.apache.lucene.search.PhraseQuery;2
+org.apache.lucene.search.PhraseQuery.PhraseWeight;explain(IndexReader, int);org.apache.lucene.search.PhraseQuery.PhraseWeight;4
+org.apache.lucene.search.Sort;Sort(String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;Sort(boolean, String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;Sort(String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;Sort(SortField);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;Sort(SortField);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;setSort(String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;setSort(boolean, String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;setSort(String);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;setSort(SortField);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;setSort(SortField);org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Sort;toString();org.apache.lucene.search.Sort;1
+org.apache.lucene.search.Similarity;setDefault(Similarity);org.apache.lucene.search.Similarity;1
+org.apache.lucene.search.Similarity;getDefault();org.apache.lucene.search.Similarity;1
+org.apache.lucene.search.Similarity;decodeNorm(byte);org.apache.lucene.search.Similarity;1
+org.apache.lucene.search.RangeQuery;RangeQuery(boolean, Term, Term);org.apache.lucene.search.RangeQuery;3
+org.apache.lucene.search.RangeQuery;rewrite(IndexReader);org.apache.lucene.search.RangeQuery;4
+org.apache.lucene.search.RangeQuery;getField();org.apache.lucene.search.RangeQuery;2
+org.apache.lucene.search.RangeQuery;getLowerTerm();org.apache.lucene.search.RangeQuery;1
+org.apache.lucene.search.RangeQuery;getUpperTerm();org.apache.lucene.search.RangeQuery;1
+org.apache.lucene.search.RangeQuery;isInclusive();org.apache.lucene.search.RangeQuery;1
+org.apache.lucene.search.RangeQuery;toString(String);org.apache.lucene.search.RangeQuery;4
+org.apache.lucene.search.FilteredQuery;FilteredQuery(Filter, Query);org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FilteredQuery;createWeight(Searcher);org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FilteredQuery;scorer(IndexReader);org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FilteredQuery;rewrite(IndexReader);org.apache.lucene.search.FilteredQuery;1
+org.apache.lucene.search.FilteredQuery;getQuery();org.apache.lucene.search.FilteredQuery;1
+org.apache.lucene.search.FilteredQuery;toString(String);org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FilteredQuery;equals(Object);org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FilteredQuery;hashCode();org.apache.lucene.search.FilteredQuery;2
+org.apache.lucene.search.FuzzyTermEnum;FuzzyTermEnum(IndexReader, Term);org.apache.lucene.search.FuzzyTermEnum;4
+org.apache.lucene.search.FuzzyTermEnum;termCompare(Term);org.apache.lucene.search.FuzzyTermEnum;6
+org.apache.lucene.search.FuzzyTermEnum;difference();org.apache.lucene.search.FuzzyTermEnum;3
+org.apache.lucene.search.FuzzyTermEnum;endEnum();org.apache.lucene.search.FuzzyTermEnum;1
+org.apache.lucene.search.FuzzyTermEnum;editDistance(int, int, String, String);org.apache.lucene.search.FuzzyTermEnum;1
+org.apache.lucene.search.FuzzyTermEnum;close();org.apache.lucene.search.FuzzyTermEnum;3
+org.apache.lucene.search.BooleanQuery;getMaxClauseCount();org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;setMaxClauseCount(int);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;add(BooleanClause);org.apache.lucene.search.BooleanQuery;2
+org.apache.lucene.search.BooleanQuery;getClauses();org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;rewrite(IndexReader);java.util.Vector;1
+org.apache.lucene.search.BooleanQuery;rewrite(IndexReader);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;clone();org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;toString(String);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;equals(Object);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery;hashCode();org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;BooleanWeight(Searcher);org.apache.lucene.search.BooleanQuery.BooleanWeight;2
+org.apache.lucene.search.BooleanQuery.BooleanWeight;BooleanWeight(Searcher);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;sumOfSquaredWeights();org.apache.lucene.search.BooleanQuery.BooleanWeight;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;sumOfSquaredWeights();org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;normalize(float);org.apache.lucene.search.BooleanQuery.BooleanWeight;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;normalize(float);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;scorer(IndexReader);org.apache.lucene.search.BooleanQuery.BooleanWeight;2
+org.apache.lucene.search.BooleanQuery.BooleanWeight;scorer(IndexReader);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.BooleanQuery.BooleanWeight;explain(IndexReader, int);org.apache.lucene.search.BooleanQuery.BooleanWeight;2
+org.apache.lucene.search.BooleanQuery.BooleanWeight;explain(IndexReader, int);org.apache.lucene.search.BooleanQuery;1
+org.apache.lucene.search.TermScorer;TermScorer(byte, Similarity, TermDocs, Weight);org.apache.lucene.search.TermScorer;6
+org.apache.lucene.search.TermScorer;doc();org.apache.lucene.search.TermScorer;1
+org.apache.lucene.search.TermScorer;next();org.apache.lucene.search.TermScorer;6
+org.apache.lucene.search.TermScorer;next();java.lang.Integer;1
+org.apache.lucene.search.TermScorer;score();org.apache.lucene.search.TermScorer;7
+org.apache.lucene.search.TermScorer;skipTo(int);org.apache.lucene.search.TermScorer;6
+org.apache.lucene.search.TermScorer;skipTo(int);java.lang.Integer;1
+org.apache.lucene.search.TermScorer;explain(int);org.apache.lucene.search.TermScorer;6
+org.apache.lucene.search.TermScorer;toString();org.apache.lucene.search.TermScorer;1
+org.apache.lucene.search.FilteredTermEnum;setEnum(TermEnum);org.apache.lucene.search.FilteredTermEnum;2
+org.apache.lucene.search.FilteredTermEnum;docFreq();org.apache.lucene.search.FilteredTermEnum;1
+org.apache.lucene.search.FilteredTermEnum;next();org.apache.lucene.search.FilteredTermEnum;2
+org.apache.lucene.search.FilteredTermEnum;term();org.apache.lucene.search.FilteredTermEnum;1
+org.apache.lucene.search.FilteredTermEnum;close();org.apache.lucene.search.FilteredTermEnum;2
+org.apache.lucene.search.FieldDoc;FieldDoc(Comparable, float, int);org.apache.lucene.search.FieldDoc;1
+org.apache.lucene.search.SloppyPhraseScorer;SloppyPhraseScorer(byte, int, Similarity, TermPositions, Weight);org.apache.lucene.search.SloppyPhraseScorer;1
+org.apache.lucene.search.SloppyPhraseScorer;phraseFreq();org.apache.lucene.search.SloppyPhraseScorer;1
+org.apache.lucene.search.FieldCacheImpl;lookup(IndexReader, int, String);org.apache.lucene.search.FieldCacheImpl;1
+org.apache.lucene.search.FieldCacheImpl;lookup(IndexReader, Object, String);org.apache.lucene.search.FieldCacheImpl;1
+org.apache.lucene.search.FieldCacheImpl;store(IndexReader, int, Object, String);org.apache.lucene.search.FieldCacheImpl;1
+org.apache.lucene.search.FieldCacheImpl;store(IndexReader, Object, Object, String);org.apache.lucene.search.FieldCacheImpl;1
+org.apache.lucene.search.FieldCacheImpl;getAuto(IndexReader, String);org.apache.lucene.search.FieldCacheImpl;3
+org.apache.lucene.search.FieldCacheImpl.Entry;Entry(IndexReader, int, String);org.apache.lucene.search.FieldCacheImpl.Entry;5
+org.apache.lucene.search.FieldCacheImpl.Entry;Entry(IndexReader, Object, String);org.apache.lucene.search.FieldCacheImpl.Entry;5
+org.apache.lucene.search.FieldCacheImpl.Entry;equals(Object);org.apache.lucene.search.FieldCacheImpl.Entry;4
+org.apache.lucene.search.FieldCacheImpl.Entry;hashCode();org.apache.lucene.search.FieldCacheImpl.Entry;1
+org.apache.lucene.search.TermQuery;TermQuery(Term);org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery;getTerm();org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery;toString(String);org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery;equals(Object);org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery;hashCode();org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery.TermWeight;TermWeight(Searcher);org.apache.lucene.search.TermQuery.TermWeight;1
+org.apache.lucene.search.TermQuery.TermWeight;getValue();org.apache.lucene.search.TermQuery.TermWeight;1
+org.apache.lucene.search.TermQuery.TermWeight;sumOfSquaredWeights();org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery.TermWeight;sumOfSquaredWeights();org.apache.lucene.search.TermQuery.TermWeight;3
+org.apache.lucene.search.TermQuery.TermWeight;normalize(float);org.apache.lucene.search.TermQuery.TermWeight;4
+org.apache.lucene.search.TermQuery.TermWeight;scorer(IndexReader);org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery.TermWeight;scorer(IndexReader);org.apache.lucene.search.TermQuery.TermWeight;1
+org.apache.lucene.search.TermQuery.TermWeight;explain(IndexReader, int);org.apache.lucene.search.TermQuery;1
+org.apache.lucene.search.TermQuery.TermWeight;explain(IndexReader, int);org.apache.lucene.search.TermQuery.TermWeight;4
+org.apache.lucene.search.FieldSortedHitQueue;FieldSortedHitQueue(IndexReader, int, SortField);org.apache.lucene.search.FieldSortedHitQueue;3
+org.apache.lucene.search.FieldSortedHitQueue;lessThan(Object, Object);org.apache.lucene.search.FieldSortedHitQueue;3
+org.apache.lucene.search.FieldSortedHitQueue;fillFields(FieldDoc);org.apache.lucene.search.FieldSortedHitQueue;2
+org.apache.lucene.search.FieldSortedHitQueue;getFields();org.apache.lucene.search.FieldSortedHitQueue;1
+org.apache.lucene.search.FieldSortedHitQueue;lookup(IndexReader, int, Object, String);org.apache.lucene.search.FieldSortedHitQueue;1
+org.apache.lucene.search.FieldSortedHitQueue;store(IndexReader, int, Object, Object, String);org.apache.lucene.search.FieldSortedHitQueue;1
+org.apache.lucene.search.FieldSortedHitQueue;comparatorStringLocale(IndexReader, Locale, String);java.text.Collator;1
+org.apache.lucene.search.ConjunctionScorer;add(Scorer);org.apache.lucene.search.ConjunctionScorer;1
+org.apache.lucene.search.ConjunctionScorer;first();java.util.LinkedList;1
+org.apache.lucene.search.ConjunctionScorer;first();org.apache.lucene.search.ConjunctionScorer;1
+org.apache.lucene.search.ConjunctionScorer;last();java.util.LinkedList;1
+org.apache.lucene.search.ConjunctionScorer;last();org.apache.lucene.search.ConjunctionScorer;1
+org.apache.lucene.search.ConjunctionScorer;next();org.apache.lucene.search.ConjunctionScorer;2
+org.apache.lucene.search.ConjunctionScorer;doNext();org.apache.lucene.search.ConjunctionScorer;2
+org.apache.lucene.search.ConjunctionScorer;skipTo(int);org.apache.lucene.search.ConjunctionScorer;2
+org.apache.lucene.search.ConjunctionScorer;score();org.apache.lucene.search.ConjunctionScorer;2
+org.apache.lucene.search.ConjunctionScorer;init();org.apache.lucene.search.ConjunctionScorer;4
+org.apache.lucene.search.ConjunctionScorer;sortScorers();org.apache.lucene.search.ConjunctionScorer;1
+org.apache.lucene.search.TopDocs;TopDocs(int, ScoreDoc);org.apache.lucene.search.TopDocs;2
+org.apache.lucene.search.spans.SpanNotQuery;SpanNotQuery(SpanQuery, SpanQuery);org.apache.lucene.search.spans.SpanNotQuery;2
+org.apache.lucene.search.spans.SpanNotQuery;getInclude();org.apache.lucene.search.spans.SpanNotQuery;1
+org.apache.lucene.search.spans.SpanNotQuery;getExclude();org.apache.lucene.search.spans.SpanNotQuery;1
+org.apache.lucene.search.spans.SpanNotQuery;getField();org.apache.lucene.search.spans.SpanNotQuery;1
+org.apache.lucene.search.spans.SpanNotQuery;getTerms();org.apache.lucene.search.spans.SpanNotQuery;1
+org.apache.lucene.search.spans.SpanNotQuery;toString(String);org.apache.lucene.search.spans.SpanNotQuery;2
+org.apache.lucene.search.spans.SpanNotQuery;getSpans(IndexReader);org.apache.lucene.search.spans.SpanNotQuery;2
+org.apache.lucene.search.spans.SpanTermQuery;SpanTermQuery(Term);org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;getTerm();org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;getField();org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;getTerms();org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;toString(String);org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;getSpans(IndexReader);org.apache.lucene.search.spans.SpanTermQuery;1
+org.apache.lucene.search.spans.SpanTermQuery;getSpans(IndexReader);java.lang.Integer;1
+org.apache.lucene.search.spans.SpanTermQuery;next();java.lang.Integer;1
+org.apache.lucene.search.spans.SpanTermQuery;skipTo(int);java.lang.Integer;1
+org.apache.lucene.search.spans.SpanTermQuery;toString();java.lang.Integer;1
+org.apache.lucene.search.spans.SpanFirstQuery;SpanFirstQuery(int, SpanQuery);org.apache.lucene.search.spans.SpanFirstQuery;2
+org.apache.lucene.search.spans.SpanFirstQuery;getMatch();org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanFirstQuery;getEnd();org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanFirstQuery;getField();org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanFirstQuery;getTerms();org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanFirstQuery;toString(String);org.apache.lucene.search.spans.SpanFirstQuery;2
+org.apache.lucene.search.spans.SpanFirstQuery;getSpans(IndexReader);org.apache.lucene.search.spans.SpanFirstQuery;2
+org.apache.lucene.search.spans.SpanFirstQuery;next();org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanFirstQuery;skipTo(int);org.apache.lucene.search.spans.SpanFirstQuery;1
+org.apache.lucene.search.spans.SpanWeight;SpanWeight(Searcher, SpanQuery);org.apache.lucene.search.spans.SpanWeight;3
+org.apache.lucene.search.spans.SpanWeight;getQuery();org.apache.lucene.search.spans.SpanWeight;1
+org.apache.lucene.search.spans.SpanWeight;getValue();org.apache.lucene.search.spans.SpanWeight;1
+org.apache.lucene.search.spans.SpanWeight;sumOfSquaredWeights();org.apache.lucene.search.spans.SpanWeight;5
+org.apache.lucene.search.spans.SpanWeight;normalize(float);org.apache.lucene.search.spans.SpanWeight;4
+org.apache.lucene.search.spans.SpanWeight;scorer(IndexReader);org.apache.lucene.search.spans.SpanWeight;2
+org.apache.lucene.search.spans.SpanWeight;explain(IndexReader, int);org.apache.lucene.search.spans.SpanWeight;5
+org.apache.lucene.search.spans.SpanScorer;SpanScorer(byte, Similarity, Spans, Weight);org.apache.lucene.search.spans.SpanScorer;4
+org.apache.lucene.search.spans.SpanScorer;next();org.apache.lucene.search.spans.SpanScorer;5
+org.apache.lucene.search.spans.SpanScorer;doc();org.apache.lucene.search.spans.SpanScorer;1
+org.apache.lucene.search.spans.SpanScorer;score();org.apache.lucene.search.spans.SpanScorer;4
+org.apache.lucene.search.spans.SpanScorer;skipTo(int);org.apache.lucene.search.spans.SpanScorer;4
+org.apache.lucene.search.spans.SpanScorer;explain(int);org.apache.lucene.search.spans.SpanScorer;1
+org.apache.lucene.search.spans.NearSpans;NearSpans(IndexReader, SpanNearQuery);org.apache.lucene.search.spans.NearSpans;5
+org.apache.lucene.search.spans.NearSpans;min();org.apache.lucene.search.spans.NearSpans;1
+org.apache.lucene.search.spans.NearSpans;initList(boolean);org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans;addToList(SpansCell);org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans;addToList(SpansCell);org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans;firstToLast();org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans;firstToLast();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans;queueToList();org.apache.lucene.search.spans.NearSpans;3
+org.apache.lucene.search.spans.NearSpans;firstNonOrderedNextToPartialList();org.apache.lucene.search.spans.NearSpans;3
+org.apache.lucene.search.spans.NearSpans;firstNonOrderedNextToPartialList();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans;listToQueue();org.apache.lucene.search.spans.NearSpans;1
+org.apache.lucene.search.spans.NearSpans;partialListToQueue();org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans;partialListToQueue();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans;atMatch();org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans;checkSlop();org.apache.lucene.search.spans.NearSpans;3
+org.apache.lucene.search.spans.NearSpans;matchIsOrdered();org.apache.lucene.search.spans.NearSpans;1
+org.apache.lucene.search.spans.NearSpans.CellQueue;lessThan(Object, Object);org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans.SpansCell;SpansCell(int, Spans);org.apache.lucene.search.spans.NearSpans.SpansCell;2
+org.apache.lucene.search.spans.NearSpans.SpansCell;next();org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans.SpansCell;next();org.apache.lucene.search.spans.NearSpans.SpansCell;2
+org.apache.lucene.search.spans.NearSpans.SpansCell;skipTo(int);org.apache.lucene.search.spans.NearSpans;2
+org.apache.lucene.search.spans.NearSpans.SpansCell;skipTo(int);org.apache.lucene.search.spans.NearSpans.SpansCell;2
+org.apache.lucene.search.spans.NearSpans.SpansCell;doc();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans.SpansCell;start();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans.SpansCell;end();org.apache.lucene.search.spans.NearSpans.SpansCell;1
+org.apache.lucene.search.spans.NearSpans.SpansCell;toString();org.apache.lucene.search.spans.NearSpans.SpansCell;2
+org.apache.lucene.search.spans.SpanNearQuery;SpanNearQuery(boolean, int, SpanQuery);org.apache.lucene.search.spans.SpanNearQuery;4
+org.apache.lucene.search.spans.SpanNearQuery;getClauses();org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanNearQuery;getSlop();org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanNearQuery;isInOrder();org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanNearQuery;getField();org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanNearQuery;getTerms();org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanNearQuery;toString(String);org.apache.lucene.search.spans.SpanNearQuery;3
+org.apache.lucene.search.spans.SpanNearQuery;getSpans(IndexReader);org.apache.lucene.search.spans.SpanNearQuery;1
+org.apache.lucene.search.spans.SpanOrQuery;SpanOrQuery(SpanQuery);org.apache.lucene.search.spans.SpanOrQuery;2
+org.apache.lucene.search.spans.SpanOrQuery;getClauses();org.apache.lucene.search.spans.SpanOrQuery;1
+org.apache.lucene.search.spans.SpanOrQuery;getField();org.apache.lucene.search.spans.SpanOrQuery;1
+org.apache.lucene.search.spans.SpanOrQuery;getTerms();org.apache.lucene.search.spans.SpanOrQuery;1
+org.apache.lucene.search.spans.SpanOrQuery;toString(String);org.apache.lucene.search.spans.SpanOrQuery;1
+org.apache.lucene.search.spans.SpanOrQuery;getSpans(IndexReader);org.apache.lucene.search.spans.SpanOrQuery;1
+org.apache.lucene.search.RemoteSearchable;RemoteSearchable(Searchable);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;search(Filter, HitCollector, Query);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;close();org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;docFreq(Term);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;maxDoc();org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;search(Filter, int, Query);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;search(Filter, int, Query, Sort);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;doc(int);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;rewrite(Query);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;explain(int, Query);org.apache.lucene.search.RemoteSearchable;1
+org.apache.lucene.search.RemoteSearchable;main(String);java.lang.System;1
+org.apache.lucene.search.MultiTermQuery;MultiTermQuery(Term);org.apache.lucene.search.MultiTermQuery;1
+org.apache.lucene.search.MultiTermQuery;getTerm();org.apache.lucene.search.MultiTermQuery;1
+org.apache.lucene.search.MultiTermQuery;rewrite(IndexReader);org.apache.lucene.search.MultiTermQuery;1
+org.apache.lucene.search.MultiTermQuery;toString(String);org.apache.lucene.search.MultiTermQuery;1
+org.apache.lucene.search.QueryFilter;QueryFilter(Query);org.apache.lucene.search.QueryFilter;1
+org.apache.lucene.search.QueryFilter;bits(IndexReader);org.apache.lucene.search.QueryFilter;2
+org.apache.lucene.search.QueryFilter;toString();org.apache.lucene.search.QueryFilter;1
+org.apache.lucene.search.DateFilter;DateFilter(String);org.apache.lucene.search.DateFilter;1
+org.apache.lucene.search.DateFilter;DateFilter(Date, Date, String);org.apache.lucene.search.DateFilter;3
+org.apache.lucene.search.DateFilter;DateFilter(long, long, String);org.apache.lucene.search.DateFilter;3
+org.apache.lucene.search.DateFilter;Before(Date, String);org.apache.lucene.search.DateFilter;1
+org.apache.lucene.search.DateFilter;Before(long, String);org.apache.lucene.search.DateFilter;1
+org.apache.lucene.search.DateFilter;After(Date, String);org.apache.lucene.search.DateFilter;1
+org.apache.lucene.search.DateFilter;After(long, String);org.apache.lucene.search.DateFilter;1
+org.apache.lucene.search.DateFilter;bits(IndexReader);org.apache.lucene.search.DateFilter;3
+org.apache.lucene.search.DateFilter;toString();org.apache.lucene.search.DateFilter;3
+org.apache.lucene.search.IndexSearcher;IndexSearcher(boolean, IndexReader);org.apache.lucene.search.IndexSearcher;2
+org.apache.lucene.search.IndexSearcher;close();org.apache.lucene.search.IndexSearcher;2
+org.apache.lucene.search.IndexSearcher;docFreq(Term);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;doc(int);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;maxDoc();org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;search(Filter, int, Query);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;search(Filter, int, Query, Sort);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;search(Filter, HitCollector, Query);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;rewrite(Query);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.IndexSearcher;explain(int, Query);org.apache.lucene.search.IndexSearcher;1
+org.apache.lucene.search.PhraseScorer;PhraseScorer(byte, Similarity, TermPositions, Weight);org.apache.lucene.search.PhraseScorer;6
+org.apache.lucene.search.PhraseScorer;doc();org.apache.lucene.search.PhraseScorer;1
+org.apache.lucene.search.PhraseScorer;next();org.apache.lucene.search.PhraseScorer;3
+org.apache.lucene.search.PhraseScorer;doNext();org.apache.lucene.search.PhraseScorer;4
+org.apache.lucene.search.PhraseScorer;score();org.apache.lucene.search.PhraseScorer;4
+org.apache.lucene.search.PhraseScorer;skipTo(int);org.apache.lucene.search.PhraseScorer;2
+org.apache.lucene.search.PhraseScorer;init();org.apache.lucene.search.PhraseScorer;2
+org.apache.lucene.search.PhraseScorer;sort();org.apache.lucene.search.PhraseScorer;2
+org.apache.lucene.search.PhraseScorer;pqToList();org.apache.lucene.search.PhraseScorer;3
+org.apache.lucene.search.PhraseScorer;firstToLast();org.apache.lucene.search.PhraseScorer;2
+org.apache.lucene.search.PhraseScorer;explain(int);org.apache.lucene.search.PhraseScorer;1
+org.apache.lucene.search.PhraseScorer;toString();org.apache.lucene.search.PhraseScorer;1
+org.apache.lucene.search.WildcardTermEnum;WildcardTermEnum(IndexReader, Term);org.apache.lucene.search.WildcardTermEnum;7
+org.apache.lucene.search.WildcardTermEnum;termCompare(Term);org.apache.lucene.search.WildcardTermEnum;5
+org.apache.lucene.search.WildcardTermEnum;endEnum();org.apache.lucene.search.WildcardTermEnum;1
+org.apache.lucene.search.WildcardTermEnum;wildcardEquals(int, int, String, String);org.apache.lucene.search.WildcardTermEnum;2
+org.apache.lucene.search.WildcardTermEnum;close();org.apache.lucene.search.WildcardTermEnum;3
+org.apache.lucene.search.ScoreDoc;ScoreDoc(float, int);org.apache.lucene.search.ScoreDoc;2
+org.apache.lucene.search.SortField;SortField(String);org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;SortField(boolean, String);org.apache.lucene.search.SortField;2
+org.apache.lucene.search.SortField;SortField(int, String);org.apache.lucene.search.SortField;2
+org.apache.lucene.search.SortField;SortField(boolean, int, String);org.apache.lucene.search.SortField;3
+org.apache.lucene.search.SortField;SortField(Locale, String);org.apache.lucene.search.SortField;4
+org.apache.lucene.search.SortField;SortField(boolean, Locale, String);org.apache.lucene.search.SortField;5
+org.apache.lucene.search.SortField;SortField(SortComparatorSource, String);org.apache.lucene.search.SortField;4
+org.apache.lucene.search.SortField;SortField(boolean, SortComparatorSource, String);org.apache.lucene.search.SortField;5
+org.apache.lucene.search.SortField;getField();org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;getType();org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;getLocale();org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;getReverse();org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;getFactory();org.apache.lucene.search.SortField;1
+org.apache.lucene.search.SortField;toString();org.apache.lucene.search.SortField;8
+org.apache.lucene.search.QueryTermVector;processTerms(String);org.apache.lucene.search.QueryTermVector;2
+org.apache.lucene.search.QueryTermVector;toString();org.apache.lucene.search.QueryTermVector;2
+org.apache.lucene.search.QueryTermVector;size();org.apache.lucene.search.QueryTermVector;1
+org.apache.lucene.search.QueryTermVector;getTerms();org.apache.lucene.search.QueryTermVector;1
+org.apache.lucene.search.QueryTermVector;getTermFrequencies();org.apache.lucene.search.QueryTermVector;1
+org.apache.lucene.search.QueryTermVector;indexOf(String);org.apache.lucene.search.QueryTermVector;1
+org.apache.lucene.search.ParallelMultiSearcher;ParallelMultiSearcher(Searchable);org.apache.lucene.search.ParallelMultiSearcher;2
+org.apache.lucene.search.ParallelMultiSearcher;docFreq(Term);org.apache.lucene.search.ParallelMultiSearcher;1
+org.apache.lucene.search.ParallelMultiSearcher;search(Filter, int, Query);org.apache.lucene.search.MultiSearcherThread;1
+org.apache.lucene.search.ParallelMultiSearcher;search(Filter, int, Query);org.apache.lucene.search.ParallelMultiSearcher;2
+org.apache.lucene.search.ParallelMultiSearcher;search(Filter, int, Query, Sort);org.apache.lucene.search.MultiSearcherThread;1
+org.apache.lucene.search.ParallelMultiSearcher;search(Filter, int, Query, Sort);org.apache.lucene.search.ParallelMultiSearcher;2
+org.apache.lucene.search.ParallelMultiSearcher;search(Filter, HitCollector, Query);org.apache.lucene.search.ParallelMultiSearcher;2
+org.apache.lucene.search.ParallelMultiSearcher;rewrite(Query);org.apache.lucene.search.ParallelMultiSearcher;1
+org.apache.lucene.search.MultiSearcherThread;MultiSearcherThread(Filter, HitQueue, int, int, int, Query, Searchable, String);org.apache.lucene.search.MultiSearcherThread;7
+org.apache.lucene.search.MultiSearcherThread;MultiSearcherThread(FieldDocSortedHitQueue, Filter, int, int, int, Query, Searchable, Sort, String);org.apache.lucene.search.MultiSearcherThread;8
+org.apache.lucene.search.MultiSearcherThread;run();org.apache.lucene.search.MultiSearcherThread;10
+org.apache.lucene.search.MultiSearcherThread;hits();org.apache.lucene.search.MultiSearcherThread;1
+org.apache.lucene.search.MultiSearcherThread;getIOException();org.apache.lucene.search.MultiSearcherThread;1
+org.apache.lucene.search.Searcher;setSimilarity(Similarity);org.apache.lucene.search.Searcher;1
+org.apache.lucene.search.Searcher;getSimilarity();org.apache.lucene.search.Searcher;1
+org.apache.lucene.search.PrefixQuery;PrefixQuery(Term);org.apache.lucene.search.PrefixQuery;1
+org.apache.lucene.search.PrefixQuery;getPrefix();org.apache.lucene.search.PrefixQuery;1
+org.apache.lucene.search.PrefixQuery;rewrite(IndexReader);org.apache.lucene.search.PrefixQuery;1
+org.apache.lucene.search.PrefixQuery;toString(String);org.apache.lucene.search.PrefixQuery;1
+org.apache.lucene.search.Hits;Hits(Filter, Query, Searcher);org.apache.lucene.search.Hits;4
+org.apache.lucene.search.Hits;Hits(Filter, Query, Searcher, Sort);org.apache.lucene.search.Hits;5
+org.apache.lucene.search.Hits;getMoreDocs(int);org.apache.lucene.search.Hits;6
+org.apache.lucene.search.Hits;length();org.apache.lucene.search.Hits;1
+org.apache.lucene.search.Hits;doc(int);org.apache.lucene.search.HitDoc;2
+org.apache.lucene.search.Hits;doc(int);org.apache.lucene.search.Hits;4
+org.apache.lucene.search.Hits;score(int);org.apache.lucene.search.HitDoc;1
+org.apache.lucene.search.Hits;id(int);org.apache.lucene.search.HitDoc;1
+org.apache.lucene.search.Hits;hitDoc(int);org.apache.lucene.search.Hits;3
+org.apache.lucene.search.Hits;addToFront(HitDoc);org.apache.lucene.search.HitDoc;2
+org.apache.lucene.search.Hits;addToFront(HitDoc);org.apache.lucene.search.Hits;3
+org.apache.lucene.search.Hits;remove(HitDoc);org.apache.lucene.search.HitDoc;3
+org.apache.lucene.search.Hits;remove(HitDoc);org.apache.lucene.search.Hits;3
+org.apache.lucene.search.HitDoc;HitDoc(float, int);org.apache.lucene.search.HitDoc;2
+org.apache.lucene.search.PhrasePrefixQuery;setSlop(int);org.apache.lucene.search.PhrasePrefixQuery;1
+org.apache.lucene.search.PhrasePrefixQuery;getSlop();org.apache.lucene.search.PhrasePrefixQuery;1
+org.apache.lucene.search.PhrasePrefixQuery;add(Term);org.apache.lucene.search.PhrasePrefixQuery;2
+org.apache.lucene.search.PhrasePrefixQuery;createWeight(Searcher);org.apache.lucene.search.PhrasePrefixQuery;1
+org.apache.lucene.search.PhrasePrefixQuery;toString(String);org.apache.lucene.search.PhrasePrefixQuery;3
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;PhrasePrefixWeight(Searcher);org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;1
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;getValue();org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;1
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;sumOfSquaredWeights();org.apache.lucene.search.PhrasePrefixQuery;1
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;sumOfSquaredWeights();org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;3
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;normalize(float);org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;4
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;scorer(IndexReader);org.apache.lucene.search.PhrasePrefixQuery;3
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;scorer(IndexReader);org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;1
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;explain(IndexReader, int);org.apache.lucene.search.PhrasePrefixQuery;1
+org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;explain(IndexReader, int);org.apache.lucene.search.PhrasePrefixQuery.PhrasePrefixWeight;3
+org.apache.lucene.search.CachingWrapperFilter;CachingWrapperFilter(Filter);org.apache.lucene.search.CachingWrapperFilter;1
+org.apache.lucene.search.CachingWrapperFilter;bits(IndexReader);org.apache.lucene.search.CachingWrapperFilter;2
+org.apache.lucene.search.CachingWrapperFilter;toString();org.apache.lucene.search.CachingWrapperFilter;1
+org.apache.lucene.search.MultiSearcher;MultiSearcher(Searchable);org.apache.lucene.search.MultiSearcher;3
+org.apache.lucene.search.MultiSearcher;getStarts();org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;close();org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;docFreq(Term);org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;doc(int);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.MultiSearcher;subSearcher(int);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.MultiSearcher;subDoc(int);org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;maxDoc();org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;search(Filter, int, Query);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.MultiSearcher;search(Filter, int, Query, Sort);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.MultiSearcher;search(Filter, HitCollector, Query);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.MultiSearcher;rewrite(Query);org.apache.lucene.search.MultiSearcher;1
+org.apache.lucene.search.MultiSearcher;explain(int, Query);org.apache.lucene.search.MultiSearcher;2
+org.apache.lucene.search.Query;setBoost(float);org.apache.lucene.search.Query;1
+org.apache.lucene.search.Query;getBoost();org.apache.lucene.search.Query;1
+org.apache.lucene.search.Query;weight(Searcher);org.apache.lucene.search.Query;1
+org.apache.lucene.search.Query;clone();java.lang.Throwable;1
+org.apache.lucene.search.TopFieldDocs;TopFieldDocs(int, ScoreDoc, SortField);org.apache.lucene.search.TopFieldDocs;1
+org.apache.lucene.search.PhrasePositions;PhrasePositions(int, TermPositions);org.apache.lucene.search.PhrasePositions;2
+org.apache.lucene.search.PhrasePositions;next();org.apache.lucene.search.PhrasePositions;3
+org.apache.lucene.search.PhrasePositions;next();java.lang.Integer;1
+org.apache.lucene.search.PhrasePositions;skipTo(int);org.apache.lucene.search.PhrasePositions;3
+org.apache.lucene.search.PhrasePositions;skipTo(int);java.lang.Integer;1
+org.apache.lucene.search.PhrasePositions;firstPosition();org.apache.lucene.search.PhrasePositions;2
+org.apache.lucene.search.PhrasePositions;nextPosition();org.apache.lucene.search.PhrasePositions;4
+org.apache.lucene.search.BooleanClause;BooleanClause(boolean, boolean, Query);org.apache.lucene.search.BooleanClause;3
+org.apache.lucene.search.BooleanClause;equals(Object);org.apache.lucene.search.BooleanClause;3
+org.apache.lucene.search.BooleanClause;hashCode();org.apache.lucene.search.BooleanClause;3
+org.apache.lucene.search.BooleanScorer;add(boolean, boolean, Scorer);org.apache.lucene.search.BooleanScorer;6
+org.apache.lucene.search.BooleanScorer;computeCoordFactors();org.apache.lucene.search.BooleanScorer;2
+org.apache.lucene.search.BooleanScorer;doc();org.apache.lucene.search.BooleanScorer.Bucket;1
+org.apache.lucene.search.BooleanScorer;doc();org.apache.lucene.search.BooleanScorer;1
+org.apache.lucene.search.BooleanScorer;next();org.apache.lucene.search.BooleanScorer.BucketTable;2
+org.apache.lucene.search.BooleanScorer;next();org.apache.lucene.search.BooleanScorer.SubScorer;4
+org.apache.lucene.search.BooleanScorer;next();org.apache.lucene.search.BooleanScorer;6
+org.apache.lucene.search.BooleanScorer;next();org.apache.lucene.search.BooleanScorer.Bucket;2
+org.apache.lucene.search.BooleanScorer;score();org.apache.lucene.search.BooleanScorer;2
+org.apache.lucene.search.BooleanScorer;score();org.apache.lucene.search.BooleanScorer.Bucket;2
+org.apache.lucene.search.BooleanScorer;toString();org.apache.lucene.search.BooleanScorer.SubScorer;2
+org.apache.lucene.search.BooleanScorer;toString();org.apache.lucene.search.BooleanScorer;1
+org.apache.lucene.search.BooleanScorer.SubScorer;SubScorer(boolean, boolean, HitCollector, Scorer, SubScorer);org.apache.lucene.search.BooleanScorer.SubScorer;6
+org.apache.lucene.search.BooleanScorer.BucketTable;BucketTable(BooleanScorer);org.apache.lucene.search.BooleanScorer.BucketTable;1
+org.apache.lucene.search.BooleanScorer.BucketTable;size();org.apache.lucene.search.BooleanScorer.BucketTable;1
+org.apache.lucene.search.BooleanScorer.Collector;Collector(BucketTable, int);org.apache.lucene.search.BooleanScorer.Collector;2
+org.apache.lucene.search.BooleanScorer.Collector;collect(float, int);org.apache.lucene.search.BooleanScorer.BucketTable;3
+org.apache.lucene.search.BooleanScorer.Collector;collect(float, int);org.apache.lucene.search.BooleanScorer.Bucket;5
+org.apache.lucene.search.BooleanScorer.Collector;collect(float, int);org.apache.lucene.search.BooleanScorer.Collector;2
+org.apache.lucene.search.Explanation;Explanation(float, String);org.apache.lucene.search.Explanation;2
+org.apache.lucene.search.Explanation;getValue();org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;setValue(float);org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;getDescription();org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;setDescription(String);org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;getDetails();org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;addDetail(Explanation);org.apache.lucene.search.Explanation;1
+org.apache.lucene.search.Explanation;toString(int);org.apache.lucene.search.Explanation;3
+org.apache.lucene.search.Explanation;toHtml();org.apache.lucene.search.Explanation;3
+org.apache.lucene.search.FieldDocSortedHitQueue;FieldDocSortedHitQueue(int, SortField);org.apache.lucene.search.FieldDocSortedHitQueue;2
+org.apache.lucene.search.FieldDocSortedHitQueue;setFields(SortField);org.apache.lucene.search.FieldDocSortedHitQueue;2
+org.apache.lucene.search.FieldDocSortedHitQueue;getFields();org.apache.lucene.search.FieldDocSortedHitQueue;1
+org.apache.lucene.search.FieldDocSortedHitQueue;hasCollators(SortField);java.text.Collator;1
+org.apache.lucene.search.FieldDocSortedHitQueue;lessThan(Object, Object);org.apache.lucene.search.FieldDocSortedHitQueue;2
+org.apache.lucene.search.Scorer;Scorer(Similarity);org.apache.lucene.search.Scorer;1
+org.apache.lucene.search.Scorer;getSimilarity();org.apache.lucene.search.Scorer;1
+org.apache.lucene.search.FieldCache.StringIndex;StringIndex(int, String);org.apache.lucene.search.FieldCache.StringIndex;2
+org.apache.lucene.index.IndexWriter;getUseCompoundFile();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;setUseCompoundFile(boolean);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;setSimilarity(Similarity);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;getSimilarity();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;IndexWriter(Analyzer, boolean, boolean, Directory);org.apache.lucene.index.IndexWriter;9
+org.apache.lucene.index.IndexWriter;doBody();org.apache.lucene.index.IndexWriter;2
+org.apache.lucene.index.IndexWriter;close();org.apache.lucene.index.IndexWriter;4
+org.apache.lucene.index.IndexWriter;finalize();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;getAnalyzer();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;docCount();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;addDocument(Document);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;addDocument(Analyzer, Document);org.apache.lucene.index.IndexWriter;4
+org.apache.lucene.index.IndexWriter;getSegmentsCounter();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;newSegmentName();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;newSegmentName();java.lang.Character;1
+org.apache.lucene.index.IndexWriter;optimize();org.apache.lucene.index.IndexWriter;4
+org.apache.lucene.index.IndexWriter;addIndexes(Directory);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;addIndexes(IndexReader);org.apache.lucene.index.IndexWriter;3
+org.apache.lucene.index.IndexWriter;doBody();org.apache.lucene.index.IndexWriter;2
+org.apache.lucene.index.IndexWriter;flushRamSegments();org.apache.lucene.index.IndexWriter;3
+org.apache.lucene.index.IndexWriter;maybeMergeSegments();org.apache.lucene.index.IndexWriter;4
+org.apache.lucene.index.IndexWriter;mergeSegments(int);org.apache.lucene.index.IndexWriter;7
+org.apache.lucene.index.IndexWriter;doBody();org.apache.lucene.index.IndexWriter;2
+org.apache.lucene.index.IndexWriter;deleteSegments(Vector);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;deleteFiles(Vector, Vector);java.lang.Throwable;1
+org.apache.lucene.index.IndexWriter;deleteFiles(Vector, Vector);org.apache.lucene.index.IndexWriter;2
+org.apache.lucene.index.IndexWriter;readDeleteableFiles();org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.IndexWriter;writeDeleteableFiles(Vector);org.apache.lucene.index.IndexWriter;1
+org.apache.lucene.index.SegmentInfo;SegmentInfo(Directory, int, String);org.apache.lucene.index.SegmentInfo;3
+org.apache.lucene.index.FieldInfo;FieldInfo(boolean, boolean, int, String);org.apache.lucene.index.FieldInfo;4
+org.apache.lucene.index.FieldInfos;addInternal(boolean, boolean, String);org.apache.lucene.index.FieldInfos;2
+org.apache.lucene.index.FieldInfos;fieldInfo(String);org.apache.lucene.index.FieldInfos;1
+org.apache.lucene.index.FieldInfos;fieldInfo(int);org.apache.lucene.index.FieldInfos;1
+org.apache.lucene.index.FieldInfos;size();org.apache.lucene.index.FieldInfos;1
+org.apache.lucene.index.IndexReader;IndexReader(Directory);org.apache.lucene.index.IndexReader;7
+org.apache.lucene.index.IndexReader;IndexReader(boolean, Directory, SegmentInfos);org.apache.lucene.index.IndexReader;7
+org.apache.lucene.index.IndexReader;directory();org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.IndexReader;getCurrentVersion(String);org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.IndexReader;getCurrentVersion(File);org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.IndexReader;setNorm(byte, int, String);org.apache.lucene.index.IndexReader;2
+org.apache.lucene.index.IndexReader;setNorm(float, int, String);org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.IndexReader;aquireWriteLock();org.apache.lucene.index.IndexReader;4
+org.apache.lucene.index.IndexReader;delete(int);org.apache.lucene.index.IndexReader;2
+org.apache.lucene.index.IndexReader;undeleteAll();org.apache.lucene.index.IndexReader;2
+org.apache.lucene.index.IndexReader;commit();org.apache.lucene.index.IndexReader;5
+org.apache.lucene.index.IndexReader;doBody();org.apache.lucene.index.IndexReader;2
+org.apache.lucene.index.IndexReader;close();org.apache.lucene.index.IndexReader;2
+org.apache.lucene.index.IndexReader;finalize();org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.IndexReader;isLocked(String);org.apache.lucene.index.IndexReader;1
+org.apache.lucene.index.SegmentTermDocs;SegmentTermDocs(SegmentReader);org.apache.lucene.index.SegmentTermDocs;4
+org.apache.lucene.index.SegmentTermDocs;seek(Term);org.apache.lucene.index.SegmentTermDocs;1
+org.apache.lucene.index.SegmentTermDocs;seek(TermEnum);org.apache.lucene.index.SegmentTermDocs;1
+org.apache.lucene.index.SegmentTermDocs;seek(TermInfo);org.apache.lucene.index.SegmentTermDocs;12
+org.apache.lucene.index.SegmentTermDocs;close();org.apache.lucene.index.SegmentTermDocs;2
+org.apache.lucene.index.SegmentTermDocs;doc();org.apache.lucene.index.SegmentTermDocs;1
+org.apache.lucene.index.SegmentTermDocs;freq();org.apache.lucene.index.SegmentTermDocs;1
+org.apache.lucene.index.SegmentTermDocs;next();org.apache.lucene.index.SegmentTermDocs;6
+org.apache.lucene.index.SegmentTermDocs;read(int, int);org.apache.lucene.index.SegmentTermDocs;6
+org.apache.lucene.index.SegmentTermDocs;skipTo(int);org.apache.lucene.index.SegmentTermDocs;13
+org.apache.lucene.index.MultiReader;initialize(IndexReader);org.apache.lucene.index.MultiReader;4
+org.apache.lucene.index.MultiReader;getTermFreqVectors(int);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;getTermFreqVector(int, String);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;numDocs();org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;maxDoc();org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;document(int);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;isDeleted(int);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;hasDeletions();org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;doDelete(int);org.apache.lucene.index.MultiReader;4
+org.apache.lucene.index.MultiReader;doUndeleteAll();org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;readerIndex(int);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;norms(String);org.apache.lucene.index.MultiReader;3
+org.apache.lucene.index.MultiReader;norms(byte, int, String);org.apache.lucene.index.MultiReader;3
+org.apache.lucene.index.MultiReader;doSetNorm(byte, int, String);org.apache.lucene.index.MultiReader;3
+org.apache.lucene.index.MultiReader;terms();org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;terms(Term);org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;docFreq(Term);org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;termDocs();org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;termPositions();org.apache.lucene.index.MultiReader;2
+org.apache.lucene.index.MultiReader;doCommit();org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;doClose();org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;getFieldNames();org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;getFieldNames(boolean);org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiReader;getIndexedFieldNames(boolean);org.apache.lucene.index.MultiReader;1
+org.apache.lucene.index.MultiTermEnum;MultiTermEnum(IndexReader, int, Term);org.apache.lucene.index.MultiTermEnum;1
+org.apache.lucene.index.MultiTermEnum;next();org.apache.lucene.index.MultiTermEnum;3
+org.apache.lucene.index.MultiTermEnum;term();org.apache.lucene.index.MultiTermEnum;1
+org.apache.lucene.index.MultiTermEnum;docFreq();org.apache.lucene.index.MultiTermEnum;1
+org.apache.lucene.index.MultiTermEnum;close();org.apache.lucene.index.MultiTermEnum;1
+org.apache.lucene.index.MultiTermDocs;MultiTermDocs(IndexReader, int);org.apache.lucene.index.MultiTermDocs;3
+org.apache.lucene.index.MultiTermDocs;doc();org.apache.lucene.index.MultiTermDocs;2
+org.apache.lucene.index.MultiTermDocs;freq();org.apache.lucene.index.MultiTermDocs;1
+org.apache.lucene.index.MultiTermDocs;seek(Term);org.apache.lucene.index.MultiTermDocs;4
+org.apache.lucene.index.MultiTermDocs;next();org.apache.lucene.index.MultiTermDocs;5
+org.apache.lucene.index.MultiTermDocs;read(int, int);org.apache.lucene.index.MultiTermDocs;5
+org.apache.lucene.index.MultiTermDocs;termDocs(int);org.apache.lucene.index.MultiTermDocs;3
+org.apache.lucene.index.MultiTermDocs;close();org.apache.lucene.index.MultiTermDocs;1
+org.apache.lucene.index.MultiTermPositions;nextPosition();org.apache.lucene.index.MultiTermDocs;1
+org.apache.lucene.index.SegmentTermEnum;SegmentTermEnum(boolean, FieldInfos, InputStream);org.apache.lucene.index.SegmentTermEnum;8
+org.apache.lucene.index.SegmentTermEnum;SegmentTermEnum(boolean, FieldInfos, InputStream);java.lang.Integer;1
+org.apache.lucene.index.SegmentTermEnum;clone();org.apache.lucene.index.SegmentTermEnum;3
+org.apache.lucene.index.SegmentTermEnum;seek(int, long, Term, TermInfo);org.apache.lucene.index.SegmentTermEnum;5
+org.apache.lucene.index.SegmentTermEnum;next();org.apache.lucene.index.SegmentTermEnum;11
+org.apache.lucene.index.SegmentTermEnum;readTerm();org.apache.lucene.index.SegmentTermEnum;3
+org.apache.lucene.index.SegmentTermEnum;growBuffer(int);org.apache.lucene.index.SegmentTermEnum;2
+org.apache.lucene.index.SegmentTermEnum;term();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;termInfo();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;termInfo(TermInfo);org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;docFreq();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;freqPointer();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;proxPointer();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.SegmentTermEnum;close();org.apache.lucene.index.SegmentTermEnum;1
+org.apache.lucene.index.FieldsWriter;FieldsWriter(Directory, FieldInfos, String);org.apache.lucene.index.FieldsWriter;3
+org.apache.lucene.index.FieldsWriter;close();org.apache.lucene.index.FieldsWriter;2
+org.apache.lucene.index.FieldsWriter;addDocument(Document);org.apache.lucene.index.FieldsWriter;3
+org.apache.lucene.index.TermVectorsReader;TermVectorsReader(Directory, FieldInfos, String);org.apache.lucene.index.TermVectorsReader;5
+org.apache.lucene.index.TermVectorsReader;close();org.apache.lucene.index.TermVectorsReader;3
+org.apache.lucene.index.TermVectorsReader;size();org.apache.lucene.index.TermVectorsReader;1
+org.apache.lucene.index.TermVectorsReader;get(int, String);java.lang.System;1
+org.apache.lucene.index.TermVectorsReader;get(int, String);org.apache.lucene.index.TermVectorsReader;3
+org.apache.lucene.index.TermVectorsReader;get(int);java.lang.System;1
+org.apache.lucene.index.TermVectorsReader;get(int);org.apache.lucene.index.TermVectorsReader;3
+org.apache.lucene.index.TermVectorsReader;readTermVector(long, String);org.apache.lucene.index.TermVectorsReader;1
+org.apache.lucene.index.TermVectorsWriter;TermVectorsWriter(Directory, FieldInfos, String);org.apache.lucene.index.TermVectorsWriter;10
+org.apache.lucene.index.TermVectorsWriter;openDocument();org.apache.lucene.index.TermVectorsWriter;2
+org.apache.lucene.index.TermVectorsWriter;closeDocument();org.apache.lucene.index.TermVectorsWriter;3
+org.apache.lucene.index.TermVectorsWriter;isDocumentOpen();org.apache.lucene.index.TermVectorsWriter;1
+org.apache.lucene.index.TermVectorsWriter;openField(String);org.apache.lucene.index.TermVectorsWriter;3
+org.apache.lucene.index.TermVectorsWriter;closeField();org.apache.lucene.index.TermVectorsWriter;4
+org.apache.lucene.index.TermVectorsWriter;isFieldOpen();org.apache.lucene.index.TermVectorsWriter;1
+org.apache.lucene.index.TermVectorsWriter;addTerm(int, String);org.apache.lucene.index.TermVectorsWriter;2
+org.apache.lucene.index.TermVectorsWriter;addTermInternal(int, String);org.apache.lucene.index.TermVectorsWriter.TVField;1
+org.apache.lucene.index.TermVectorsWriter;addTermInternal(int, String);org.apache.lucene.index.TermVectorsWriter;2
+org.apache.lucene.index.TermVectorsWriter;addTermInternal(int, String);org.apache.lucene.index.TermVectorsWriter.TVTerm;2
+org.apache.lucene.index.TermVectorsWriter;addVectors(TermFreqVector);org.apache.lucene.index.TermVectorsWriter;2
+org.apache.lucene.index.TermVectorsWriter;addTermFreqVector(TermFreqVector);org.apache.lucene.index.TermVectorsWriter;2
+org.apache.lucene.index.TermVectorsWriter;close();org.apache.lucene.index.TermVectorsWriter;3
+org.apache.lucene.index.TermVectorsWriter;writeField();org.apache.lucene.index.TermVectorsWriter.TVField;2
+org.apache.lucene.index.TermVectorsWriter;writeField();org.apache.lucene.index.TermVectorsWriter;3
+org.apache.lucene.index.TermVectorsWriter;writeField();org.apache.lucene.index.TermVectorsWriter.TVTerm;2
+org.apache.lucene.index.TermVectorsWriter;writeDoc();org.apache.lucene.index.TermVectorsWriter.TVField;2
+org.apache.lucene.index.TermVectorsWriter;writeDoc();org.apache.lucene.index.TermVectorsWriter;5
+org.apache.lucene.index.TermVectorsWriter.TVField;TVField(int);org.apache.lucene.index.TermVectorsWriter.TVField;1
+org.apache.lucene.index.DocumentWriter;DocumentWriter(Analyzer, Directory, int, Similarity);org.apache.lucene.index.DocumentWriter;4
+org.apache.lucene.index.DocumentWriter;addDocument(Document, String);org.apache.lucene.index.DocumentWriter;6
+org.apache.lucene.index.DocumentWriter;invertDocument(Document);org.apache.lucene.index.DocumentWriter;6
+org.apache.lucene.index.DocumentWriter;addPosition(int, String, String);org.apache.lucene.index.DocumentWriter;2
+org.apache.lucene.index.DocumentWriter;addPosition(int, String, String);org.apache.lucene.index.Posting;2
+org.apache.lucene.index.DocumentWriter;sortPostingTable();org.apache.lucene.index.DocumentWriter;1
+org.apache.lucene.index.DocumentWriter;quickSort(int, int, Posting);org.apache.lucene.index.Posting;1
+org.apache.lucene.index.DocumentWriter;writePostings(Posting, String);org.apache.lucene.index.DocumentWriter;2
+org.apache.lucene.index.DocumentWriter;writePostings(Posting, String);org.apache.lucene.index.Posting;3
+org.apache.lucene.index.DocumentWriter;writeNorms(Document, String);org.apache.lucene.index.DocumentWriter;5
+org.apache.lucene.index.Posting;Posting(int, Term);org.apache.lucene.index.Posting;3
+org.apache.lucene.index.FieldsReader;FieldsReader(Directory, FieldInfos, String);org.apache.lucene.index.FieldsReader;4
+org.apache.lucene.index.FieldsReader;close();org.apache.lucene.index.FieldsReader;2
+org.apache.lucene.index.FieldsReader;size();org.apache.lucene.index.FieldsReader;1
+org.apache.lucene.index.FieldsReader;doc(int);org.apache.lucene.index.FieldsReader;3
+org.apache.lucene.index.SegmentTermPositions;SegmentTermPositions(SegmentReader);org.apache.lucene.index.SegmentTermPositions;1
+org.apache.lucene.index.SegmentTermPositions;seek(TermInfo);org.apache.lucene.index.SegmentTermPositions;2
+org.apache.lucene.index.SegmentTermPositions;close();org.apache.lucene.index.SegmentTermPositions;1
+org.apache.lucene.index.SegmentTermPositions;nextPosition();org.apache.lucene.index.SegmentTermPositions;3
+org.apache.lucene.index.SegmentTermPositions;skippingDoc();org.apache.lucene.index.SegmentTermPositions;1
+org.apache.lucene.index.SegmentTermPositions;next();org.apache.lucene.index.SegmentTermPositions;3
+org.apache.lucene.index.SegmentTermPositions;skipProx(long);org.apache.lucene.index.SegmentTermPositions;2
+org.apache.lucene.index.SegmentMerger;SegmentMerger(boolean, Directory, String);org.apache.lucene.index.SegmentMerger;3
+org.apache.lucene.index.SegmentMerger;add(IndexReader);org.apache.lucene.index.SegmentMerger;1
+org.apache.lucene.index.SegmentMerger;segmentReader(int);org.apache.lucene.index.SegmentMerger;1
+org.apache.lucene.index.SegmentMerger;merge();org.apache.lucene.index.SegmentMerger;2
+org.apache.lucene.index.SegmentMerger;closeReaders();org.apache.lucene.index.SegmentMerger;1
+org.apache.lucene.index.SegmentMerger;createCompoundFile();org.apache.lucene.index.SegmentMerger;5
+org.apache.lucene.index.SegmentMerger;mergeFields();org.apache.lucene.index.SegmentMerger;4
+org.apache.lucene.index.SegmentMerger;mergeVectors();org.apache.lucene.index.SegmentMerger;4
+org.apache.lucene.index.SegmentMerger;mergeTerms();org.apache.lucene.index.SegmentMerger;9
+org.apache.lucene.index.SegmentMerger;mergeTermInfos();org.apache.lucene.index.SegmentMerger;2
+org.apache.lucene.index.SegmentMerger;mergeTermInfo(int, SegmentMergeInfo);org.apache.lucene.index.SegmentMerger;4
+org.apache.lucene.index.SegmentMerger;appendPostings(int, SegmentMergeInfo);org.apache.lucene.index.SegmentMerger;3
+org.apache.lucene.index.SegmentMerger;resetSkip();org.apache.lucene.index.SegmentMerger;6
+org.apache.lucene.index.SegmentMerger;bufferSkip(int);org.apache.lucene.index.SegmentMerger;6
+org.apache.lucene.index.SegmentMerger;writeSkip();org.apache.lucene.index.SegmentMerger;2
+org.apache.lucene.index.SegmentMerger;mergeNorms();org.apache.lucene.index.SegmentMerger;4
+org.apache.lucene.index.CompoundFileReader;CompoundFileReader(Directory, String);org.apache.lucene.index.CompoundFileReader;4
+org.apache.lucene.index.CompoundFileReader;CompoundFileReader(Directory, String);org.apache.lucene.index.CompoundFileReader.FileEntry;2
+org.apache.lucene.index.CompoundFileReader;getDirectory();org.apache.lucene.index.CompoundFileReader;1
+org.apache.lucene.index.CompoundFileReader;getName();org.apache.lucene.index.CompoundFileReader;1
+org.apache.lucene.index.CompoundFileReader;openFile(String);org.apache.lucene.index.CompoundFileReader;2
+org.apache.lucene.index.CompoundFileReader;openFile(String);org.apache.lucene.index.CompoundFileReader.FileEntry;2
+org.apache.lucene.index.CompoundFileReader;list();org.apache.lucene.index.CompoundFileReader;1
+org.apache.lucene.index.CompoundFileReader;fileExists(String);org.apache.lucene.index.CompoundFileReader;1
+org.apache.lucene.index.CompoundFileReader;fileModified(String);org.apache.lucene.index.CompoundFileReader;2
+org.apache.lucene.index.CompoundFileReader;touchFile(String);org.apache.lucene.index.CompoundFileReader;2
+org.apache.lucene.index.CompoundFileReader;fileLength(String);org.apache.lucene.index.CompoundFileReader;1
+org.apache.lucene.index.CompoundFileReader;fileLength(String);org.apache.lucene.index.CompoundFileReader.FileEntry;1
+org.apache.lucene.index.CompoundFileReader.CSInputStream;CSInputStream(InputStream, long, long);org.apache.lucene.index.CompoundFileReader.CSInputStream;2
+org.apache.lucene.index.CompoundFileReader.CSInputStream;readInternal(byte, int, int);org.apache.lucene.index.CompoundFileReader.CSInputStream;2
+org.apache.lucene.index.CompoundFileWriter;CompoundFileWriter(Directory, String);org.apache.lucene.index.CompoundFileWriter;4
+org.apache.lucene.index.CompoundFileWriter;getDirectory();org.apache.lucene.index.CompoundFileWriter;1
+org.apache.lucene.index.CompoundFileWriter;getName();org.apache.lucene.index.CompoundFileWriter;1
+org.apache.lucene.index.CompoundFileWriter;addFile(String);org.apache.lucene.index.CompoundFileWriter.FileEntry;1
+org.apache.lucene.index.CompoundFileWriter;addFile(String);org.apache.lucene.index.CompoundFileWriter;3
+org.apache.lucene.index.CompoundFileWriter;close();org.apache.lucene.index.CompoundFileWriter.FileEntry;3
+org.apache.lucene.index.CompoundFileWriter;close();org.apache.lucene.index.CompoundFileWriter;4
+org.apache.lucene.index.CompoundFileWriter;close();java.util.AbstractCollection;1
+org.apache.lucene.index.CompoundFileWriter;copyFile(byte, FileEntry, OutputStream);org.apache.lucene.index.CompoundFileWriter.FileEntry;1
+org.apache.lucene.index.CompoundFileWriter;copyFile(byte, FileEntry, OutputStream);org.apache.lucene.index.CompoundFileWriter;1
+org.apache.lucene.index.SegmentMergeInfo;SegmentMergeInfo(IndexReader, int, TermEnum);org.apache.lucene.index.SegmentMergeInfo;6
+org.apache.lucene.index.SegmentMergeInfo;next();org.apache.lucene.index.SegmentMergeInfo;2
+org.apache.lucene.index.SegmentMergeInfo;close();org.apache.lucene.index.SegmentMergeInfo;2
+org.apache.lucene.index.SegmentInfos;read(Directory);org.apache.lucene.index.SegmentInfos;3
+org.apache.lucene.index.SegmentInfos;write(Directory);org.apache.lucene.index.SegmentInfos;3
+org.apache.lucene.index.SegmentInfos;getVersion();org.apache.lucene.index.SegmentInfos;1
+org.apache.lucene.index.SegmentInfos;readCurrentVersion(Directory);org.apache.lucene.index.SegmentInfos;2
+org.apache.lucene.index.TermInfo;TermInfo(int, long, long);org.apache.lucene.index.TermInfo;3
+org.apache.lucene.index.TermInfo;TermInfo(TermInfo);org.apache.lucene.index.TermInfo;4
+org.apache.lucene.index.TermInfo;set(int, int, long, long);org.apache.lucene.index.TermInfo;4
+org.apache.lucene.index.TermInfo;set(TermInfo);org.apache.lucene.index.TermInfo;4
+org.apache.lucene.index.TermInfosWriter;TermInfosWriter(Directory, FieldInfos, String);org.apache.lucene.index.TermInfosWriter;1
+org.apache.lucene.index.TermInfosWriter;initialize(boolean, Directory, FieldInfos, String);org.apache.lucene.index.TermInfosWriter;6
+org.apache.lucene.index.TermInfosWriter;add(Term, TermInfo);org.apache.lucene.index.TermInfosWriter;9
+org.apache.lucene.index.TermInfosWriter;writeTerm(Term);org.apache.lucene.index.TermInfosWriter;3
+org.apache.lucene.index.TermInfosWriter;close();org.apache.lucene.index.TermInfosWriter;4
+org.apache.lucene.index.MultipleTermPositions;MultipleTermPositions(IndexReader, Term);org.apache.lucene.index.MultipleTermPositions;2
+org.apache.lucene.index.MultipleTermPositions;nextPosition();org.apache.lucene.index.MultipleTermPositions;1
+org.apache.lucene.index.MultipleTermPositions;skipTo(int);org.apache.lucene.index.MultipleTermPositions;1
+org.apache.lucene.index.MultipleTermPositions;doc();org.apache.lucene.index.MultipleTermPositions;1
+org.apache.lucene.index.MultipleTermPositions;freq();org.apache.lucene.index.MultipleTermPositions;1
+org.apache.lucene.index.MultipleTermPositions;close();org.apache.lucene.index.MultipleTermPositions;1
+org.apache.lucene.index.MultipleTermPositions.IntQueue;add(int);org.apache.lucene.index.MultipleTermPositions.IntQueue;3
+org.apache.lucene.index.MultipleTermPositions.IntQueue;next();org.apache.lucene.index.MultipleTermPositions.IntQueue;2
+org.apache.lucene.index.MultipleTermPositions.IntQueue;sort();org.apache.lucene.index.MultipleTermPositions.IntQueue;3
+org.apache.lucene.index.MultipleTermPositions.IntQueue;clear();org.apache.lucene.index.MultipleTermPositions.IntQueue;2
+org.apache.lucene.index.MultipleTermPositions.IntQueue;size();org.apache.lucene.index.MultipleTermPositions.IntQueue;2
+org.apache.lucene.index.MultipleTermPositions.IntQueue;growArray();org.apache.lucene.index.MultipleTermPositions.IntQueue;2
+org.apache.lucene.index.Term;Term(boolean, String, String);org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;field();org.apache.lucene.index.Term;1
+org.apache.lucene.index.Term;text();org.apache.lucene.index.Term;1
+org.apache.lucene.index.Term;equals(Object);org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;hashCode();org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;compareTo(Term);org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;set(String, String);org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;toString();org.apache.lucene.index.Term;2
+org.apache.lucene.index.Term;readObject(ObjectInputStream);org.apache.lucene.index.Term;1
+org.apache.lucene.index.FilterIndexReader;FilterIndexReader(IndexReader);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;getTermFreqVectors(int);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;getTermFreqVector(int, String);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;numDocs();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;maxDoc();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;document(int);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;isDeleted(int);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;hasDeletions();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;doUndeleteAll();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;norms(String);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;norms(byte, int, String);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;doSetNorm(byte, int, String);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;terms();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;terms(Term);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;docFreq(Term);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;termDocs();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;termPositions();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;doDelete(int);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;doCommit();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;doClose();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;getFieldNames();org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;getFieldNames(boolean);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader;getIndexedFieldNames(boolean);org.apache.lucene.index.FilterIndexReader;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;FilterTermDocs(TermDocs);org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;seek(Term);org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;seek(TermEnum);org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;doc();org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;freq();org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;next();org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;read(int, int);org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;skipTo(int);org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermDocs;close();org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermPositions;nextPosition();org.apache.lucene.index.FilterIndexReader.FilterTermDocs;1
+org.apache.lucene.index.FilterIndexReader.FilterTermEnum;FilterTermEnum(TermEnum);org.apache.lucene.index.FilterIndexReader.FilterTermEnum;1
+org.apache.lucene.index.FilterIndexReader.FilterTermEnum;next();org.apache.lucene.index.FilterIndexReader.FilterTermEnum;1
+org.apache.lucene.index.FilterIndexReader.FilterTermEnum;term();org.apache.lucene.index.FilterIndexReader.FilterTermEnum;1
+org.apache.lucene.index.FilterIndexReader.FilterTermEnum;docFreq();org.apache.lucene.index.FilterIndexReader.FilterTermEnum;1
+org.apache.lucene.index.FilterIndexReader.FilterTermEnum;close();org.apache.lucene.index.FilterIndexReader.FilterTermEnum;1
+org.apache.lucene.index.SegmentReader;initialize(SegmentInfo);org.apache.lucene.index.SegmentReader;9
+org.apache.lucene.index.SegmentReader;doCommit();org.apache.lucene.index.SegmentReader.Norm;1
+org.apache.lucene.index.SegmentReader;doCommit();org.apache.lucene.index.SegmentReader;6
+org.apache.lucene.index.SegmentReader;doClose();org.apache.lucene.index.SegmentReader;6
+org.apache.lucene.index.SegmentReader;hasDeletions();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;hasSeparateNorms(SegmentInfo);java.lang.Character;1
+org.apache.lucene.index.SegmentReader;doDelete(int);org.apache.lucene.index.SegmentReader;3
+org.apache.lucene.index.SegmentReader;doUndeleteAll();org.apache.lucene.index.SegmentReader;3
+org.apache.lucene.index.SegmentReader;files();org.apache.lucene.index.SegmentReader;2
+org.apache.lucene.index.SegmentReader;terms();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;terms(Term);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;document(int);org.apache.lucene.index.SegmentReader;2
+org.apache.lucene.index.SegmentReader;isDeleted(int);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;docFreq(Term);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;numDocs();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;maxDoc();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;getFieldNames();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;getFieldNames(boolean);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;getIndexedFieldNames(boolean);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;norms(String);org.apache.lucene.index.SegmentReader.Norm;1
+org.apache.lucene.index.SegmentReader;norms(String);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;doSetNorm(byte, int, String);org.apache.lucene.index.SegmentReader.Norm;1
+org.apache.lucene.index.SegmentReader;doSetNorm(byte, int, String);org.apache.lucene.index.SegmentReader;2
+org.apache.lucene.index.SegmentReader;norms(byte, int, String);org.apache.lucene.index.SegmentReader.Norm;2
+org.apache.lucene.index.SegmentReader;norms(byte, int, String);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;openNorms(Directory);org.apache.lucene.index.SegmentReader;3
+org.apache.lucene.index.SegmentReader;closeNorms();org.apache.lucene.index.SegmentReader.Norm;1
+org.apache.lucene.index.SegmentReader;closeNorms();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader;getTermFreqVector(int, String);org.apache.lucene.index.SegmentReader;2
+org.apache.lucene.index.SegmentReader;getTermFreqVectors(int);org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.SegmentReader.Norm;Norm(InputStream, int);org.apache.lucene.index.SegmentReader.Norm;2
+org.apache.lucene.index.SegmentReader.Norm;reWrite();org.apache.lucene.index.SegmentReader.Norm;3
+org.apache.lucene.index.SegmentReader.Norm;reWrite();org.apache.lucene.index.SegmentReader;1
+org.apache.lucene.index.TermInfosReader;TermInfosReader(Directory, FieldInfos, String);org.apache.lucene.index.TermInfosReader;5
+org.apache.lucene.index.TermInfosReader;getSkipInterval();org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;close();org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;size();org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;getEnum();org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;readIndex();org.apache.lucene.index.TermInfosReader;6
+org.apache.lucene.index.TermInfosReader;getIndexOffset(Term);org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;seekEnum(int);org.apache.lucene.index.TermInfosReader;4
+org.apache.lucene.index.TermInfosReader;get(Term);org.apache.lucene.index.TermInfosReader;4
+org.apache.lucene.index.TermInfosReader;scanEnum(Term);org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;get(int);org.apache.lucene.index.TermInfosReader;2
+org.apache.lucene.index.TermInfosReader;scanEnum(int);org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;getPosition(Term);org.apache.lucene.index.TermInfosReader;3
+org.apache.lucene.index.TermInfosReader;terms();org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.TermInfosReader;terms(Term);org.apache.lucene.index.TermInfosReader;1
+org.apache.lucene.index.SegmentTermVector;SegmentTermVector(int, String, String);org.apache.lucene.index.SegmentTermVector;3
+org.apache.lucene.index.SegmentTermVector;getField();org.apache.lucene.index.SegmentTermVector;1
+org.apache.lucene.index.SegmentTermVector;toString();org.apache.lucene.index.SegmentTermVector;3
+org.apache.lucene.index.SegmentTermVector;size();org.apache.lucene.index.SegmentTermVector;1
+org.apache.lucene.index.SegmentTermVector;getTerms();org.apache.lucene.index.SegmentTermVector;1
+org.apache.lucene.index.SegmentTermVector;getTermFrequencies();org.apache.lucene.index.SegmentTermVector;1
+org.apache.lucene.index.SegmentTermVector;indexOf(String);org.apache.lucene.index.SegmentTermVector;1
+org.apache.lucene.store.RAMOutputStream;RAMOutputStream(RAMFile);org.apache.lucene.store.RAMOutputStream;1
+org.apache.lucene.store.RAMOutputStream;writeTo(OutputStream);org.apache.lucene.store.RAMOutputStream;1
+org.apache.lucene.store.RAMOutputStream;reset();org.apache.lucene.store.RAMOutputStream;1
+org.apache.lucene.store.RAMOutputStream;flushBuffer(byte, int);org.apache.lucene.store.RAMOutputStream;2
+org.apache.lucene.store.RAMOutputStream;seek(long);org.apache.lucene.store.RAMOutputStream;1
+org.apache.lucene.store.RAMOutputStream;length();org.apache.lucene.store.RAMOutputStream;1
+org.apache.lucene.store.RAMInputStream;RAMInputStream(RAMFile);org.apache.lucene.store.RAMInputStream;1
+org.apache.lucene.store.RAMInputStream;readInternal(byte, int, int);org.apache.lucene.store.RAMInputStream;2
+org.apache.lucene.store.RAMInputStream;seekInternal(long);org.apache.lucene.store.RAMInputStream;1
+org.apache.lucene.store.FSDirectory;getDirectory(boolean, String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;getDirectory(boolean, File);org.apache.lucene.store.FSDirectory;2
+org.apache.lucene.store.FSDirectory;getDirectory(boolean, File);java.io.File;1
+org.apache.lucene.store.FSDirectory;FSDirectory(boolean, File);org.apache.lucene.store.FSDirectory;3
+org.apache.lucene.store.FSDirectory;FSDirectory(boolean, File);java.io.File;1
+org.apache.lucene.store.FSDirectory;create();org.apache.lucene.store.FSDirectory;3
+org.apache.lucene.store.FSDirectory;list();org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;fileExists(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;fileModified(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;touchFile(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;touchFile(String);java.io.File;1
+org.apache.lucene.store.FSDirectory;fileLength(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;deleteFile(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;renameFile(String, String);java.lang.Throwable;1
+org.apache.lucene.store.FSDirectory;renameFile(String, String);org.apache.lucene.store.FSDirectory;2
+org.apache.lucene.store.FSDirectory;createFile(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;openFile(String);org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;makeLock(String);org.apache.lucene.store.FSDirectory;3
+org.apache.lucene.store.FSDirectory;obtain();org.apache.lucene.store.FSDirectory;2
+org.apache.lucene.store.FSDirectory;release();org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;isLocked();org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;getLockPrefix();java.lang.String;1
+org.apache.lucene.store.FSDirectory;getLockPrefix();org.apache.lucene.store.FSDirectory;3
+org.apache.lucene.store.FSDirectory;getLockPrefix();java.io.File;1
+org.apache.lucene.store.FSDirectory;close();org.apache.lucene.store.FSDirectory;3
+org.apache.lucene.store.FSDirectory;getFile();org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSDirectory;toString();org.apache.lucene.store.FSDirectory;1
+org.apache.lucene.store.FSInputStream;FSInputStream(File);org.apache.lucene.store.FSInputStream;1
+org.apache.lucene.store.FSInputStream;readInternal(byte, int, int);org.apache.lucene.store.FSInputStream;1
+org.apache.lucene.store.FSInputStream;readInternal(byte, int, int);org.apache.lucene.store.FSInputStream.Descriptor;1
+org.apache.lucene.store.FSInputStream;close();org.apache.lucene.store.FSInputStream;2
+org.apache.lucene.store.FSInputStream;clone();org.apache.lucene.store.FSInputStream;1
+org.apache.lucene.store.FSInputStream;isFDValid();java.io.RandomAccessFile;1
+org.apache.lucene.store.FSInputStream;isFDValid();org.apache.lucene.store.FSInputStream;1
+org.apache.lucene.store.FSOutputStream;FSOutputStream(File);org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.FSOutputStream;flushBuffer(byte, int);org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.FSOutputStream;close();org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.FSOutputStream;seek(long);org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.FSOutputStream;length();org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.FSOutputStream;finalize();org.apache.lucene.store.FSOutputStream;1
+org.apache.lucene.store.InputStream;readByte();org.apache.lucene.store.InputStream;3
+org.apache.lucene.store.InputStream;readBytes(byte, int, int);org.apache.lucene.store.InputStream;5
+org.apache.lucene.store.InputStream;readString();org.apache.lucene.store.InputStream;1
+org.apache.lucene.store.InputStream;refill();org.apache.lucene.store.InputStream;6
+org.apache.lucene.store.InputStream;getFilePointer();org.apache.lucene.store.InputStream;2
+org.apache.lucene.store.InputStream;seek(long);org.apache.lucene.store.InputStream;3
+org.apache.lucene.store.InputStream;length();org.apache.lucene.store.InputStream;1
+org.apache.lucene.store.InputStream;clone();org.apache.lucene.store.InputStream;4
+org.apache.lucene.store.OutputStream;writeByte(byte);org.apache.lucene.store.OutputStream;3
+org.apache.lucene.store.OutputStream;flush();org.apache.lucene.store.OutputStream;3
+org.apache.lucene.store.OutputStream;getFilePointer();org.apache.lucene.store.OutputStream;2
+org.apache.lucene.store.OutputStream;seek(long);org.apache.lucene.store.OutputStream;1
+org.apache.lucene.store.RAMDirectory;list();org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;fileExists(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;fileModified(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;touchFile(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;fileLength(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;deleteFile(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;renameFile(String, String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;createFile(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;openFile(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;makeLock(String);org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.RAMDirectory;obtain();org.apache.lucene.store.RAMDirectory;1
+org.apache.lucene.store.Lock;obtain(long);org.apache.lucene.store.Lock;1
+org.apache.lucene.store.Lock.With;With(Lock, long);org.apache.lucene.store.Lock.With;2
+org.apache.lucene.store.Lock.With;run();org.apache.lucene.store.Lock.With;2

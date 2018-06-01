@@ -1,9 +1,0 @@
-Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
-Move Method	com.mongodb.DBPort::convertToCR(com.mongodb.Response):com.mongodb.CommandResult	com.mongodb.Response	0/3	
-Move Method	com.mongodb.Mongo.Holder::_toKey(com.mongodb.MongoURI):java.lang.String	com.mongodb.MongoURI	0/3	
-Move Method	com.mongodb.DBTCPConnector::_checkWriteError(com.mongodb.DB, com.mongodb.DBTCPConnector.MyPort, com.mongodb.DBPort, com.mongodb.WriteConcern):com.mongodb.WriteResult	com.mongodb.DBPort	0/1	
-Move Method	com.mongodb.DBTCPConnector::_checkWriteError(com.mongodb.DB, com.mongodb.DBTCPConnector.MyPort, com.mongodb.DBPort, com.mongodb.WriteConcern):com.mongodb.WriteResult	com.mongodb.WriteConcern	0/1	
-Move Method	org.bson.LazyBSONObject::readBinary(int):java.lang.Object	org.bson.io.BSONByteBuffer	1/3	
-Move Method	com.mongodb.DefaultDBCallback::_create(java.util.List<java.lang.String>):com.mongodb.DBObject	com.mongodb.DBCollection	1/2	
-Move Method	org.bson.BasicBSONEncoder::_putValueString(java.lang.String):void	org.bson.io.OutputBuffer	2/3	
-Move Method	org.bson.LazyBSONObject::getElementBSONSize(int):int	org.bson.io.BSONByteBuffer	2/3	

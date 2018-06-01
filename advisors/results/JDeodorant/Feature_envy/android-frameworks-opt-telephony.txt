@@ -1,8 +1,0 @@
-Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
-Move Method	com.android.internal.telephony.Call::hasConnection(com.android.internal.telephony.Connection):boolean	com.android.internal.telephony.Connection	0/1	
-Move Method	com.android.internal.telephony.cdma.SmsMessage::getIncomingSmsFingerprint():byte[]	com.android.internal.telephony.cdma.sms.SmsEnvelope	1/4	
-Move Method	android.telephony.CellBroadcastMessage::isEmergencyAlertMessage():boolean	android.telephony.SmsCbMessage	1/2	
-Move Method	android.telephony.CellBroadcastMessage::getCmasMessageClass():int	android.telephony.SmsCbMessage	1/2	
-Move Method	com.android.internal.telephony.DataConnection::setLinkProperties(com.android.internal.telephony.DataCallState, android.net.LinkProperties):com.android.internal.telephony.DataCallState.SetupResult	com.android.internal.telephony.DataCallState	1/2	
-Move Method	com.android.internal.telephony.cdma.CdmaConnection::compareTo(com.android.internal.telephony.DriverCall):boolean	com.android.internal.telephony.DriverCall	2/3	
-Move Method	com.android.internal.telephony.gsm.GsmConnection::compareTo(com.android.internal.telephony.DriverCall):boolean	com.android.internal.telephony.DriverCall	2/3	

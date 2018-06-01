@@ -5,10 +5,6 @@ import os
 
 
 
-'''
-	All the code and methods used to extract and construct data
-'''
-
 def extractSmellOccurencesWithPtidej(system, aSmell):
 	#cloneCommand = 'git clone ' + system['url'] + ' ' + system['name']
 	#subprocess.call(cloneCommand, shell=True)
@@ -29,6 +25,38 @@ def extractSmellOccurencesWithPtidej(system, aSmell):
 	removeDirCommand = "rm -rf " + system['name']
 	subprocess.call(removeDirCommand, shell=True)
 
+# This method is used to create the metrics files necessary to compute Decor ant InCode confidence metrics 
+def createMetricsFile(smell, system):
+	if smell == "GC":
+		smellDir = "god_class/Decor"
+		jarFile = "../advisors/metrics_files_generators/Decor/GodClassMetricsFileCreator.jar"
+	elif smell == "FE":
+		smellDir = "feature_envy/InCode"
+		jarFile = "../advisors/metrics_files_generators/InCode/FeatureEnvyMetricsFileCreator.jar"
+	else:
+		print(smell + " is not a valid smell")
+		return
+
+	cloneCommand = 'git clone ' + system['url'] + ' ' + system['name']
+	subprocess.call(cloneCommand, shell=True)
+
+	cwd = os.getcwd()
+	os.chdir(system['name'])
+	subprocess.call('git checkout -f '+ system['snapshot'], shell=True)
+	os.chdir(cwd)
+
+	repositoryPath = cwd + "/" + system['name'] + "/"
+	directories = "@".join(system['directory'])
+	metricsFile = cwd + "/../advisors/metrics_files/"+ smellDir + "/" + system['name'] + '.csv'
+
+	createCommand = "java -jar " + jarFile + " " + repositoryPath + " " + directories + " " + metricsFile
+
+	subprocess.call(createCommand, shell=True)
+
+	removeDirCommand = "rm -rf " + system['name']
+	subprocess.call(removeDirCommand, shell=True)
+
+
 if __name__ == "__main__":
 
 	'''
@@ -45,14 +73,17 @@ if __name__ == "__main__":
 
 	'''
 
-	s = {
+	'''s = {
 	"name"     :'apache-velocity',
 	"url"      :'https://github.com/apache/velocity-engine.git',
 	"snapshot" :'23c979d3b185ace79c06fc7bedfcc1b9c232eb06',
 	"directory":['src/']
 	}
 
-	extractSmellOccurencesWithPtidej(s, "Blob")
+	extractSmellOccurencesWithPtidej(s, "Blob")'''
+
+	for system in systems.systems_git:
+		createMetricsFile("FE", system)
 
 
 

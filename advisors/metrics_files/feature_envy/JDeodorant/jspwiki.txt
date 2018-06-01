@@ -1,0 +1,24 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	com.ecyrd.jspwiki.plugin.Search::renderResults(java.util.Collection, com.ecyrd.jspwiki.WikiContext, int):java.lang.String	com.ecyrd.jspwiki.WikiContext	0/2	
+Move Method	com.ecyrd.jspwiki.rss.RSSGenerator::getEntryTitle(com.ecyrd.jspwiki.WikiPage):java.lang.String	com.ecyrd.jspwiki.WikiPage	0/2	
+Move Method	com.ecyrd.jspwiki.content.PageRenamer::getReferencesToChange(com.ecyrd.jspwiki.WikiPage, com.ecyrd.jspwiki.WikiEngine):java.util.Set<java.lang.String>	com.ecyrd.jspwiki.WikiPage	0/1	
+Move Method	com.ecyrd.jspwiki.plugin.WeblogPlugin::guessNumberOfComments(com.ecyrd.jspwiki.WikiEngine, java.lang.String):int	com.ecyrd.jspwiki.WikiEngine	0/1	
+Move Method	com.ecyrd.jspwiki.filters.SpamFilter::ignoreThisUser(com.ecyrd.jspwiki.WikiContext):boolean	com.ecyrd.jspwiki.WikiContext	1/3	
+Move Method	com.ecyrd.jspwiki.plugin.WeblogEntryPlugin::findFreeEntry(com.ecyrd.jspwiki.PageManager, java.lang.String, java.lang.String):int	com.ecyrd.jspwiki.PageManager	1/3	
+Move Method	com.ecyrd.jspwiki.rpc.atom.AtomAPIServlet::getBlogEntry(java.lang.String):org.intabulas.sandler.elements.Entry	com.ecyrd.jspwiki.WikiEngine	1/3	
+Move Method	com.ecyrd.jspwiki.workflow.DecisionQueue::getActorDecisions(com.ecyrd.jspwiki.WikiSession):java.util.Collection	com.ecyrd.jspwiki.WikiSession	1/3	
+Move Method	com.ecyrd.jspwiki.WikiEngine::pageExists(com.ecyrd.jspwiki.WikiPage):boolean	com.ecyrd.jspwiki.WikiPage	1/2	
+Move Method	com.ecyrd.jspwiki.auth.authorize.GroupManager::parseGroup(com.ecyrd.jspwiki.WikiContext, boolean):com.ecyrd.jspwiki.auth.authorize.Group	com.ecyrd.jspwiki.WikiContext	1/2	
+Move Method	com.ecyrd.jspwiki.dav.methods.PropFindMethod::getProperties(com.ecyrd.jspwiki.dav.DavContext, java.util.List):org.jdom.Element	com.ecyrd.jspwiki.dav.DavContext	1/2	
+Move Method	com.ecyrd.jspwiki.htmltowiki.XHtmlElementToWikiTranslator::isIgnorableWikiMarkupLink(org.jdom.Element):boolean	com.ecyrd.jspwiki.htmltowiki.XHtmlToWikiConfig	1/2	
+Move Method	com.ecyrd.jspwiki.modules.ModuleManager::checkCompatibility(com.ecyrd.jspwiki.modules.WikiModuleInfo):boolean	com.ecyrd.jspwiki.modules.WikiModuleInfo	1/2	
+Move Method	com.ecyrd.jspwiki.plugin.WeblogPlugin::findBlogEntries(com.ecyrd.jspwiki.PageManager, java.lang.String, java.util.Date, java.util.Date):java.util.List	com.ecyrd.jspwiki.PageManager	1/2	
+Move Method	com.ecyrd.jspwiki.providers.BasicAttachmentProvider::findFile(java.io.File, com.ecyrd.jspwiki.attachment.Attachment):java.io.File	com.ecyrd.jspwiki.attachment.Attachment	1/2	
+Move Method	com.ecyrd.jspwiki.workflow.WorkflowManager::getOwnerWorkflows(com.ecyrd.jspwiki.WikiSession):java.util.Collection	com.ecyrd.jspwiki.WikiSession	1/2	
+Move Method	com.ecyrd.jspwiki.htmltowiki.XHtmlElementToWikiTranslator::trimLink(java.lang.String):java.lang.String	com.ecyrd.jspwiki.htmltowiki.XHtmlToWikiConfig	2/4	
+Move Method	com.ecyrd.jspwiki.rss.RSSGenerator::getAttachmentDescription(com.ecyrd.jspwiki.attachment.Attachment):java.lang.String	com.ecyrd.jspwiki.attachment.Attachment	2/4	
+Move Method	com.ecyrd.jspwiki.ReferenceManager::updatePageReferences(com.ecyrd.jspwiki.WikiPage):void	com.ecyrd.jspwiki.WikiEngine	2/3	
+Move Method	com.ecyrd.jspwiki.parser.JSPWikiMarkupParser::makeHeadingAnchor(java.lang.String, java.lang.String, com.ecyrd.jspwiki.parser.Heading):java.lang.String	com.ecyrd.jspwiki.parser.Heading	2/3	
+Move Method	com.ecyrd.jspwiki.plugin.WeblogPlugin::addEntryHTML(com.ecyrd.jspwiki.WikiContext, java.text.DateFormat, boolean, java.lang.StringBuffer, com.ecyrd.jspwiki.WikiPage):void	com.ecyrd.jspwiki.WikiPage	2/3	
+Move Method	com.ecyrd.jspwiki.providers.CachingProvider::refreshMetadata(com.ecyrd.jspwiki.WikiPage):void	com.ecyrd.jspwiki.WikiPage	2/3	
+Move Method	com.ecyrd.jspwiki.rss.RSSGenerator::getPageDescription(com.ecyrd.jspwiki.WikiPage):java.lang.String	com.ecyrd.jspwiki.WikiPage	2/3	
