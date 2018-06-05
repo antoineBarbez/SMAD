@@ -5,26 +5,6 @@ import os
 
 
 
-def extractSmellOccurencesWithPtidej(system, aSmell):
-	#cloneCommand = 'git clone ' + system['url'] + ' ' + system['name']
-	#subprocess.call(cloneCommand, shell=True)
-
-	cwd = os.getcwd()
-	os.chdir(system['name'])
-	#subprocess.call('git checkout -f '+ system['snapshot'], shell=True)
-
-	directories = "@".join(system['directory'])
-
-	ptidejCommand = "java -jar ../../advisors/detection/Decor/PtidejSmellDetection.jar " + aSmell + " " + directories + " " + system['name'] + " " + cwd + "/../advisors/results/Decor/" + aSmell + "/" + system['name'] + '.csv'
-
-	subprocess.call(ptidejCommand, shell=True)
-
-	subprocess.call('git checkout master', shell=True)
-	os.chdir(cwd)
-
-	removeDirCommand = "rm -rf " + system['name']
-	subprocess.call(removeDirCommand, shell=True)
-
 # This method is used to create the metrics files necessary to compute Decor ant InCode confidence metrics 
 def createMetricsFile(smell, system):
 	if smell == "GC":
@@ -45,11 +25,12 @@ def createMetricsFile(smell, system):
 	subprocess.call('git checkout -f '+ system['snapshot'], shell=True)
 	os.chdir(cwd)
 
-	repositoryPath = cwd + "/" + system['name'] + "/"
+	name = system['name']
+	repositoryPath = cwd + "/" + name + "/"
 	directories = "@".join(system['directory'])
-	metricsFile = cwd + "/../advisors/metrics_files/"+ smellDir + "/" + system['name'] + '.csv'
+	metricsFile = cwd + "/../advisors/metrics_files/"+ smellDir + "/" + name + '.csv'
 
-	createCommand = "java -jar " + jarFile + " " + repositoryPath + " " + directories + " " + metricsFile
+	createCommand = "java -jar " + jarFile + " " + name + " " + repositoryPath + " " + directories + " " + metricsFile
 
 	subprocess.call(createCommand, shell=True)
 
@@ -82,8 +63,15 @@ if __name__ == "__main__":
 
 	extractSmellOccurencesWithPtidej(s, "Blob")'''
 
-	for system in systems.systems_git:
-		createMetricsFile("FE", system)
+	s = {
+	"name"     :'jedit',
+	"url"      :'https://svn.code.sf.net/p/jedit/svn/jEdit/trunk/',
+	"snapshot" :'e343491b611efdd7a5313e7ba87d6a2d1d6f8804',
+	"directory":['']
+	}
+
+	
+	createMetricsFile("FE", s)
 
 
 

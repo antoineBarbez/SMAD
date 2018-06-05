@@ -28,7 +28,7 @@ def normalizeSourceEntity(source_entity):
 	return methodName + '(' + ', '.join(normalizedParamList) + ')'
 
 def feature_envy(systemName):
-	JDFEFile = '../../results/JDeodorant/Feature_envy/' + systemName + '.txt'
+	JDFEFile = '../../metrics_files/feature_envy/JDeodorant/' + systemName + '.txt'
 	
 	smells = []
 	with open(JDFEFile, 'r') as file:
@@ -74,8 +74,10 @@ def test(systemName):
 
 
 if __name__ == "__main__":
-	systems = ['apache-tomcat', 'jedit', 'android-platform-support', 'apache-ant']
+	'''systems = ['apache-tomcat', 'jedit', 'android-platform-support', 'apache-ant']
 
 	for system in systems:
 		test(system)
-		print("")
+		print("")'''
+
+	print(len(feature_envy('jedit')))

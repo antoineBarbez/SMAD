@@ -39,34 +39,38 @@ public class FeatureEnvyMetricsFileCreator {
 	private static List<String> metricsFileLines = new ArrayList<String>();
 	
 	public static void main(String[] args) throws IOException {
+		String name;
 		String repositoryPath;
 		String[] dirsToAnalyze;
 		String metricsFilePath;
 		
-		if (args.length < 2) {
+		if (args.length < 3) {
 			System.out.println("Too few arguments");
 			return;
-		}else if (args.length == 2) {
-			// Happens when the directories to analyze is "",e.g, analyze all directories. 
-			repositoryPath = args[0];
+		}else if (args.length == 3) {
+			// Happens when the directories to analyze are "",e.g, analyze all directories. 
+			name = args[0];
+			repositoryPath = args[1];
 			dirsToAnalyze = new String[] {""};
-			metricsFilePath = args[1];
-		}else {
-			repositoryPath = args[0];
-			dirsToAnalyze = args[1].split("@", -1);
 			metricsFilePath = args[2];
+		}else {
+			name = args[0];
+			repositoryPath = args[1];
+			dirsToAnalyze = args[2].split("@", -1);
+			metricsFilePath = args[3];
 		}
 		
-		createMetricsFile(repositoryPath, dirsToAnalyze, metricsFilePath);
+		createMetricsFile(name, repositoryPath, dirsToAnalyze, metricsFilePath);
 		
 	}
 	
 	private static void createMetricsFile(
+		String aName,
 		String repositoryPath, 
 		String[] dirsToAnalyze,
 		String metricsFilePath) {
 		
-		System.out.println("Begin creating metrics file...");
+		System.out.println("Begin creating metrics file for " + aName + "...");
 		
 		List<Parser> parsers = new ArrayList<>();
 		parsers.add(new JavaParser());
