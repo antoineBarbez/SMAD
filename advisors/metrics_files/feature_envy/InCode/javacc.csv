@@ -1,5 +1,5 @@
 Class;Method;DeclaringClass;NbFields
-org.javacc.utils.ConditionParserTokenManager;setDebugStream(PrintStream);org.javacc.utils.ConditionParserTokenManager;1
+org.javacc.utils.ConditionParserTokenManager;setDebugStream(printstream);org.javacc.utils.ConditionParserTokenManager;1
 org.javacc.utils.ConditionParserTokenManager;jjStopStringLiteralDfa_0(int, long);org.javacc.utils.ConditionParserTokenManager;2
 org.javacc.utils.ConditionParserTokenManager;jjStopAtPos(int, int);org.javacc.utils.ConditionParserTokenManager;2
 org.javacc.utils.ConditionParserTokenManager;jjStartNfaWithStates_0(int, int, int);org.javacc.utils.ConditionParserTokenManager;4
@@ -15,13 +15,13 @@ org.javacc.utils.ConditionParserTokenManager;jjMoveNfa_1(int, int);org.javacc.ut
 org.javacc.utils.ConditionParserTokenManager;jjMoveStringLiteralDfa0_2();org.javacc.utils.ConditionParserTokenManager;1
 org.javacc.utils.ConditionParserTokenManager;jjMoveStringLiteralDfa1_2(long);org.javacc.utils.ConditionParserTokenManager;2
 org.javacc.utils.ConditionParserTokenManager;jjCanMove_0(int, int, int, long, long);org.javacc.utils.ConditionParserTokenManager;2
-org.javacc.utils.ConditionParserTokenManager;ConditionParserTokenManager(JavaCharStream);org.javacc.utils.ConditionParserTokenManager;1
-org.javacc.utils.ConditionParserTokenManager;ReInit(JavaCharStream);org.javacc.utils.ConditionParserTokenManager;5
+org.javacc.utils.ConditionParserTokenManager;ConditionParserTokenManager(javacharstream);org.javacc.utils.ConditionParserTokenManager;1
+org.javacc.utils.ConditionParserTokenManager;ReInit(javacharstream);org.javacc.utils.ConditionParserTokenManager;5
 org.javacc.utils.ConditionParserTokenManager;ReInitRounds();org.javacc.utils.ConditionParserTokenManager;2
 org.javacc.utils.ConditionParserTokenManager;SwitchTo(int);org.javacc.utils.ConditionParserTokenManager;1
 org.javacc.utils.ConditionParserTokenManager;jjFillToken();org.javacc.utils.ConditionParserTokenManager;3
 org.javacc.utils.ConditionParserTokenManager;getNextToken();org.javacc.utils.ConditionParserTokenManager;11
-org.javacc.utils.ConditionParserTokenManager;SkipLexicalActions(Token);org.javacc.utils.ConditionParserTokenManager;1
+org.javacc.utils.ConditionParserTokenManager;SkipLexicalActions(token);org.javacc.utils.ConditionParserTokenManager;1
 org.javacc.utils.ConditionParserTokenManager;MoreLexicalActions();org.javacc.utils.ConditionParserTokenManager;6
 org.javacc.utils.ConditionParserTokenManager;jjCheckNAdd(int);org.javacc.utils.ConditionParserTokenManager;4
 org.javacc.utils.ConditionParserTokenManager;jjAddStates(int, int);org.javacc.utils.ConditionParserTokenManager;3
@@ -43,15 +43,15 @@ org.javacc.utils.JavaCharStream;getEndLine();org.javacc.utils.JavaCharStream;2
 org.javacc.utils.JavaCharStream;getBeginColumn();org.javacc.utils.JavaCharStream;2
 org.javacc.utils.JavaCharStream;getBeginLine();org.javacc.utils.JavaCharStream;2
 org.javacc.utils.JavaCharStream;backup(int);org.javacc.utils.JavaCharStream;3
-org.javacc.utils.JavaCharStream;JavaCharStream(int, int, int, Reader);org.javacc.utils.JavaCharStream;9
-org.javacc.utils.JavaCharStream;ReInit(int, int, int, Reader);org.javacc.utils.JavaCharStream;16
+org.javacc.utils.JavaCharStream;JavaCharStream(int, int, int, reader);org.javacc.utils.JavaCharStream;9
+org.javacc.utils.JavaCharStream;ReInit(int, int, int, reader);org.javacc.utils.JavaCharStream;16
 org.javacc.utils.JavaCharStream;GetImage();org.javacc.utils.JavaCharStream;4
 org.javacc.utils.JavaCharStream;GetSuffix(int);org.javacc.utils.JavaCharStream;3
 org.javacc.utils.JavaCharStream;Done();org.javacc.utils.JavaCharStream;4
 org.javacc.utils.JavaCharStream;adjustBeginLineColumn(int, int);org.javacc.utils.JavaCharStream;8
-org.javacc.utils.ConditionParser;test(boolean, String);java.lang.System;1
-org.javacc.utils.ConditionParser;test(boolean, String);java.lang.Boolean;2
-org.javacc.utils.ConditionParser;CompilationUnit(Object, String);org.javacc.utils.ConditionParser;1
+org.javacc.utils.ConditionParser;test(boolean, string);java.lang.System;1
+org.javacc.utils.ConditionParser;test(boolean, string);java.lang.Boolean;2
+org.javacc.utils.ConditionParser;CompilationUnit(object, string);org.javacc.utils.ConditionParser;1
 org.javacc.utils.ConditionParser;ConditionalExpression();org.javacc.utils.ConditionParser;3
 org.javacc.utils.ConditionParser;ConditionalAndExpression();org.javacc.utils.ConditionParser;3
 org.javacc.utils.ConditionParser;UnaryExpressionNotPlusMinus();org.javacc.utils.ConditionParser;3
@@ -59,96 +59,97 @@ org.javacc.utils.ConditionParser;UnaryExpression();org.javacc.utils.ConditionPar
 org.javacc.utils.ConditionParser;BooleanLiteral();org.javacc.utils.ConditionParser;3
 org.javacc.utils.ConditionParser;Name();org.javacc.utils.ConditionParser;2
 org.javacc.utils.ConditionParser;jj_la1_init_0();org.javacc.utils.ConditionParser;1
-org.javacc.utils.ConditionParser;ConditionParser(InputStream, String);org.javacc.utils.ConditionParser;6
-org.javacc.utils.ConditionParser;ReInit(InputStream, String);org.javacc.utils.ConditionParser;6
-org.javacc.utils.ConditionParser;ConditionParser(Reader);org.javacc.utils.ConditionParser;6
-org.javacc.utils.ConditionParser;ReInit(Reader);org.javacc.utils.ConditionParser;6
-org.javacc.utils.ConditionParser;ConditionParser(ConditionParserTokenManager);org.javacc.utils.ConditionParser;5
-org.javacc.utils.ConditionParser;ReInit(ConditionParserTokenManager);org.javacc.utils.ConditionParser;5
+org.javacc.utils.ConditionParser;ConditionParser(inputstream, string);org.javacc.utils.ConditionParser;6
+org.javacc.utils.ConditionParser;ReInit(inputstream, string);org.javacc.utils.ConditionParser;6
+org.javacc.utils.ConditionParser;ConditionParser(reader);org.javacc.utils.ConditionParser;6
+org.javacc.utils.ConditionParser;ReInit(reader);org.javacc.utils.ConditionParser;6
+org.javacc.utils.ConditionParser;ConditionParser(conditionparsertokenmanager);org.javacc.utils.ConditionParser;5
+org.javacc.utils.ConditionParser;ReInit(conditionparsertokenmanager);org.javacc.utils.ConditionParser;5
 org.javacc.utils.ConditionParser;jj_consume_token(int);org.javacc.utils.ConditionParser;5
 org.javacc.utils.ConditionParser;getNextToken();org.javacc.utils.ConditionParser;4
 org.javacc.utils.ConditionParser;getToken(int);org.javacc.utils.ConditionParser;2
 org.javacc.utils.ConditionParser;jj_ntk();org.javacc.utils.ConditionParser;4
 org.javacc.utils.ConditionParser;generateParseException();org.javacc.utils.ConditionParser;7
 org.javacc.utils.TokenMgrError;getMessage();java.lang.Throwable;1
-org.javacc.utils.TokenMgrError;TokenMgrError(int, String);org.javacc.utils.TokenMgrError;1
-org.javacc.utils.ParseException;ParseException(int, String, Token);org.javacc.utils.ParseException;4
+org.javacc.utils.TokenMgrError;TokenMgrError(int, string);org.javacc.utils.TokenMgrError;1
+org.javacc.utils.ParseException;ParseException(int, string, token);org.javacc.utils.ParseException;4
 org.javacc.utils.ParseException;ParseException();org.javacc.utils.ParseException;1
-org.javacc.utils.ParseException;ParseException(String);org.javacc.utils.ParseException;1
+org.javacc.utils.ParseException;ParseException(string);org.javacc.utils.ParseException;1
 org.javacc.utils.ParseException;getMessage();java.lang.Throwable;1
 org.javacc.utils.ParseException;getMessage();org.javacc.utils.ParseException;5
-org.javacc.utils.Token;Token(int, String);org.javacc.utils.Token;2
+org.javacc.utils.Token;Token(int, string);org.javacc.utils.Token;2
 org.javacc.utils.Token;toString();org.javacc.utils.Token;1
-org.javacc.utils.JavaFileGenerator;JavaFileGenerator(Map, String);org.javacc.utils.JavaFileGenerator;2
-org.javacc.utils.JavaFileGenerator;generate(PrintWriter);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;generate(PrintWriter);java.lang.Object;1
-org.javacc.utils.JavaFileGenerator;generate(PrintWriter);java.lang.Class;1
-org.javacc.utils.JavaFileGenerator;peekLine(BufferedReader);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;getLine(BufferedReader);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;evaluate(String);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;substitute(String);java.lang.Character;1
-org.javacc.utils.JavaFileGenerator;substituteWithDefault(String, String);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;process(boolean, BufferedReader, PrintWriter);org.javacc.utils.JavaFileGenerator;1
-org.javacc.utils.JavaFileGenerator;main(String);java.lang.Boolean;2
-org.javacc.parser.Lookahead;dump(int, Set);org.javacc.parser.Lookahead;2
+org.javacc.utils.JavaFileGenerator;JavaFileGenerator(map, string);org.javacc.utils.JavaFileGenerator;2
+org.javacc.utils.JavaFileGenerator;generate(printwriter);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;generate(printwriter);java.lang.Object;1
+org.javacc.utils.JavaFileGenerator;generate(printwriter);java.lang.Class;1
+org.javacc.utils.JavaFileGenerator;peekLine(bufferedreader);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;getLine(bufferedreader);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;evaluate(string);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;substitute(string);java.lang.Character;1
+org.javacc.utils.JavaFileGenerator;substituteWithDefault(string, string);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;process(boolean, bufferedreader, printwriter);org.javacc.utils.JavaFileGenerator;1
+org.javacc.utils.JavaFileGenerator;main(string);java.lang.Boolean;2
+org.javacc.parser.Lookahead;dump(int, set);org.javacc.parser.Lookahead;2
 org.javacc.parser.Lookahead;getActionTokens();org.javacc.parser.Lookahead;1
 org.javacc.parser.Lookahead;setAmount(int);org.javacc.parser.Lookahead;1
 org.javacc.parser.Lookahead;getAmount();org.javacc.parser.Lookahead;1
-org.javacc.parser.Lookahead;setLaExpansion(Expansion);org.javacc.parser.Lookahead;1
+org.javacc.parser.Lookahead;setLaExpansion(expansion);org.javacc.parser.Lookahead;1
 org.javacc.parser.Lookahead;getLaExpansion();org.javacc.parser.Lookahead;1
 org.javacc.parser.Lookahead;setExplicit(boolean);org.javacc.parser.Lookahead;1
 org.javacc.parser.Lookahead;isExplicit();org.javacc.parser.Lookahead;1
-org.javacc.parser.OutputFile;OutputFile(File, String, String);java.security.DigestOutputStream;1
-org.javacc.parser.OutputFile;OutputFile(File, String, String);java.security.MessageDigest;1
-org.javacc.parser.OutputFile;OutputFile(File, String, String);java.lang.System;1
-org.javacc.parser.OutputFile;OutputFile(File, String, String);org.javacc.parser.OutputFile;7
-org.javacc.parser.OutputFile;OutputFile(File, String, String);java.io.File;1
-org.javacc.parser.OutputFile;checkVersion(File, String);org.javacc.parser.OutputFile;1
-org.javacc.parser.OutputFile;checkVersion(File, String);java.io.File;1
-org.javacc.parser.OutputFile;checkOptions(File, String);java.io.File;1
+org.javacc.parser.OutputFile;OutputFile(file, string, string);java.security.DigestOutputStream;1
+org.javacc.parser.OutputFile;OutputFile(file, string, string);java.security.MessageDigest;1
+org.javacc.parser.OutputFile;OutputFile(file, string, string);java.lang.System;1
+org.javacc.parser.OutputFile;OutputFile(file, string, string);org.javacc.parser.OutputFile;7
+org.javacc.parser.OutputFile;OutputFile(file, string, string);java.io.File;1
+org.javacc.parser.OutputFile;checkVersion(file, string);org.javacc.parser.OutputFile;1
+org.javacc.parser.OutputFile;checkVersion(file, string);java.io.File;1
+org.javacc.parser.OutputFile;checkOptions(file, string);java.io.File;1
 org.javacc.parser.OutputFile;getPrintWriter();java.security.MessageDigest;1
 org.javacc.parser.OutputFile;getPrintWriter();org.javacc.parser.OutputFile;6
 org.javacc.parser.OutputFile;getPrintWriter();java.io.File;1
+org.javacc.parser.OutputFile;close();org.javacc.parser.OutputFile;4
 org.javacc.parser.OutputFile;getMD5sum();java.security.DigestOutputStream;1
 org.javacc.parser.OutputFile;getMD5sum();org.javacc.parser.OutputFile;2
 org.javacc.parser.OutputFile;toHexString(byte);org.javacc.parser.OutputFile;1
+org.javacc.parser.OutputFile;close();java.lang.System;1
+org.javacc.parser.OutputFile;close();org.javacc.parser.OutputFile;1
+org.javacc.parser.OutputFile;close();java.io.File;1
 org.javacc.parser.OutputFile;getToolName();org.javacc.parser.OutputFile;1
-org.javacc.parser.OutputFile;setToolName(String);org.javacc.parser.OutputFile;1
+org.javacc.parser.OutputFile;setToolName(string);org.javacc.parser.OutputFile;1
 org.javacc.parser.OutputFile;getPath();org.javacc.parser.OutputFile;1
 org.javacc.parser.OutputFile;getPath();java.io.File;1
-org.javacc.parser.OutputFile.TrapClosePrintWriter;close();java.lang.System;1
-org.javacc.parser.OutputFile.TrapClosePrintWriter;close();org.javacc.parser.OutputFile;1
-org.javacc.parser.OutputFile.TrapClosePrintWriter;close();java.io.File;1
 org.javacc.parser.ROneOrMore;GenerateNfa(boolean);org.javacc.parser.ROneOrMore;1
-org.javacc.parser.ROneOrMore;ROneOrMore(RegularExpression, Token);org.javacc.parser.ROneOrMore;1
+org.javacc.parser.ROneOrMore;ROneOrMore(regularexpression, token);org.javacc.parser.ROneOrMore;1
 org.javacc.parser.NormalProduction;getSimpleName();java.lang.Class;1
 org.javacc.parser.NormalProduction;getSimpleName();java.lang.Object;1
-org.javacc.parser.NormalProduction;dump(int, Set);org.javacc.parser.NormalProduction;4
+org.javacc.parser.NormalProduction;dump(int, set);org.javacc.parser.NormalProduction;4
 org.javacc.parser.NormalProduction;setLine(int);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getLine();org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;setColumn(int);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getColumn();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setParents(List);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setParents(list);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getParents();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setAccessMod(String);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setAccessMod(string);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getAccessMod();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setLhs(String);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setLhs(string);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getLhs();org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getReturnTypeTokens();org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getParameterListTokens();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setThrowsList(List);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setThrowsList(list);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getThrowsList();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setExpansion(Expansion);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setExpansion(expansion);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getExpansion();org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;setEmptyPossible(boolean);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;isEmptyPossible();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setLeftExpansions(NormalProduction);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setLeftExpansions(normalproduction);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getLeftExpansions();org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;setWalkStatus(int);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getWalkStatus();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setFirstToken(Token);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setFirstToken(token);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getFirstToken();org.javacc.parser.NormalProduction;1
-org.javacc.parser.NormalProduction;setLastToken(Token);org.javacc.parser.NormalProduction;1
+org.javacc.parser.NormalProduction;setLastToken(token);org.javacc.parser.NormalProduction;1
 org.javacc.parser.NormalProduction;getLastToken();org.javacc.parser.NormalProduction;1
 org.javacc.parser.JavaCharStream;setTabSize(int);org.javacc.parser.JavaCharStream;1
 org.javacc.parser.JavaCharStream;getTabSize(int);org.javacc.parser.JavaCharStream;1
@@ -167,41 +168,40 @@ org.javacc.parser.JavaCharStream;getEndLine();org.javacc.parser.JavaCharStream;2
 org.javacc.parser.JavaCharStream;getBeginColumn();org.javacc.parser.JavaCharStream;2
 org.javacc.parser.JavaCharStream;getBeginLine();org.javacc.parser.JavaCharStream;2
 org.javacc.parser.JavaCharStream;backup(int);org.javacc.parser.JavaCharStream;3
-org.javacc.parser.JavaCharStream;JavaCharStream(int, int, int, Reader);org.javacc.parser.JavaCharStream;9
-org.javacc.parser.JavaCharStream;ReInit(int, int, int, Reader);org.javacc.parser.JavaCharStream;16
+org.javacc.parser.JavaCharStream;JavaCharStream(int, int, int, reader);org.javacc.parser.JavaCharStream;9
+org.javacc.parser.JavaCharStream;ReInit(int, int, int, reader);org.javacc.parser.JavaCharStream;16
 org.javacc.parser.JavaCharStream;GetImage();org.javacc.parser.JavaCharStream;4
 org.javacc.parser.JavaCharStream;GetSuffix(int);org.javacc.parser.JavaCharStream;3
 org.javacc.parser.JavaCharStream;Done();org.javacc.parser.JavaCharStream;4
 org.javacc.parser.JavaCharStream;adjustBeginLineColumn(int, int);org.javacc.parser.JavaCharStream;8
-org.javacc.parser.LookaheadWalk;genFirstSet(Expansion, List);org.javacc.parser.LookaheadWalk;2
+org.javacc.parser.LookaheadWalk;genFirstSet(expansion, list);org.javacc.parser.LookaheadWalk;2
 org.javacc.parser.LookaheadWalk;reInit();org.javacc.parser.LookaheadWalk;2
-org.javacc.parser.Sequence;Sequence(Lookahead, Token);org.javacc.parser.Sequence;1
-org.javacc.parser.Sequence;dump(int, Set);org.javacc.parser.Sequence;1
-org.javacc.parser.Semanticize;prepareToRemove(List, Object);org.javacc.parser.Semanticize;2
+org.javacc.parser.Sequence;Sequence(lookahead, token);org.javacc.parser.Sequence;1
+org.javacc.parser.Sequence;dump(int, set);org.javacc.parser.Sequence;1
+org.javacc.parser.Semanticize;prepareToRemove(list, object);org.javacc.parser.Semanticize;2
 org.javacc.parser.Semanticize;removePreparedItems();org.javacc.parser.Semanticize;2
-org.javacc.parser.Semanticize;start();org.javacc.parser.Semanticize;2
-org.javacc.parser.Semanticize;start();org.javacc.parser.Semanticize.FixRJustNames;1
-org.javacc.parser.Semanticize;hasIgnoreCase(Hashtable, String);org.javacc.parser.Semanticize;1
-org.javacc.parser.Semanticize;prodWalk(NormalProduction);org.javacc.parser.Semanticize;1
-org.javacc.parser.Semanticize;rexpWalk(RegularExpression);org.javacc.parser.Semanticize;1
+org.javacc.parser.Semanticize;start();org.javacc.parser.Semanticize;3
+org.javacc.parser.Semanticize;hasIgnoreCase(hashtable, string);org.javacc.parser.Semanticize;1
+org.javacc.parser.Semanticize;prodWalk(normalproduction);org.javacc.parser.Semanticize;1
+org.javacc.parser.Semanticize;rexpWalk(regularexpression);org.javacc.parser.Semanticize;1
+org.javacc.parser.Semanticize;action(expansion);org.javacc.parser.Semanticize;1
 org.javacc.parser.Semanticize;reInit();org.javacc.parser.Semanticize;4
-org.javacc.parser.Semanticize.FixRJustNames;action(Expansion);org.javacc.parser.Semanticize.FixRJustNames;1
-org.javacc.parser.ZeroOrOne;ZeroOrOne(Expansion, Token);org.javacc.parser.ZeroOrOne;1
-org.javacc.parser.ZeroOrOne;dump(int, Set);org.javacc.parser.ZeroOrOne;1
+org.javacc.parser.ZeroOrOne;ZeroOrOne(expansion, token);org.javacc.parser.ZeroOrOne;1
+org.javacc.parser.ZeroOrOne;dump(int, set);org.javacc.parser.ZeroOrOne;1
 org.javacc.parser.ParseGenCPP;start();java.io.File;1
 org.javacc.parser.NfaState;ReInit();org.javacc.parser.NfaState;14
 org.javacc.parser.NfaState;NfaState();org.javacc.parser.NfaState;5
 org.javacc.parser.NfaState;CreateClone();org.javacc.parser.NfaState;5
-org.javacc.parser.NfaState;InsertInOrder(List, NfaState);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;AddMove(NfaState);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;InsertInOrder(list, nfastate);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;AddMove(nfastate);org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;AddASCIIMove(char);org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;AddChar(char);org.javacc.parser.NfaState;4
 org.javacc.parser.NfaState;AddRange(char, char);org.javacc.parser.NfaState;3
 org.javacc.parser.NfaState;EpsilonClosure();org.javacc.parser.NfaState;6
 org.javacc.parser.NfaState;UsefulState();org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;HasTransitions();org.javacc.parser.NfaState;3
-org.javacc.parser.NfaState;MergeMoves(NfaState);org.javacc.parser.NfaState;6
-org.javacc.parser.NfaState;CreateEquivState(List);org.javacc.parser.NfaState;4
+org.javacc.parser.NfaState;MergeMoves(nfastate);org.javacc.parser.NfaState;6
+org.javacc.parser.NfaState;CreateEquivState(list);org.javacc.parser.NfaState;4
 org.javacc.parser.NfaState;GetEquivalentRunTimeState();org.javacc.parser.NfaState;8
 org.javacc.parser.NfaState;GenerateCode();org.javacc.parser.NfaState;7
 org.javacc.parser.NfaState;GenerateCode();java.lang.Integer;1
@@ -211,55 +211,55 @@ org.javacc.parser.NfaState;GenerateNextStatesCode();org.javacc.parser.NfaState;2
 org.javacc.parser.NfaState;GetEpsilonMovesString();org.javacc.parser.NfaState;7
 org.javacc.parser.NfaState;CanStartNfaUsingAscii(char);org.javacc.parser.NfaState;3
 org.javacc.parser.NfaState;CanMoveUsingChar(char);org.javacc.parser.NfaState;5
-org.javacc.parser.NfaState;getFirstValidPos(int, int, String);org.javacc.parser.NfaState;2
-org.javacc.parser.NfaState;MoveFrom(char, List);org.javacc.parser.NfaState;3
-org.javacc.parser.NfaState;MoveFrom(char, List);java.lang.Integer;1
-org.javacc.parser.NfaState;MoveFromSet(char, List, List);java.lang.Integer;1
-org.javacc.parser.NfaState;moveFromSetForRegEx(char, int, NfaState, NfaState);org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;moveFromSetForRegEx(char, int, NfaState, NfaState);java.lang.Integer;1
-org.javacc.parser.NfaState;GenerateNonAsciiMoves(CodeGenerator);org.javacc.parser.NfaState;8
+org.javacc.parser.NfaState;getFirstValidPos(int, int, string);org.javacc.parser.NfaState;2
+org.javacc.parser.NfaState;MoveFrom(char, list);org.javacc.parser.NfaState;3
+org.javacc.parser.NfaState;MoveFrom(char, list);java.lang.Integer;1
+org.javacc.parser.NfaState;MoveFromSet(char, list, list);java.lang.Integer;1
+org.javacc.parser.NfaState;moveFromSetForRegEx(char, int, nfastate, nfastate);org.javacc.parser.NfaState;4
+org.javacc.parser.NfaState;moveFromSetForRegEx(char, int, nfastate, nfastate);java.lang.Integer;1
+org.javacc.parser.NfaState;GenerateNonAsciiMoves(codegenerator);org.javacc.parser.NfaState;8
 org.javacc.parser.NfaState;UpdateDuplicateNonAsciiMoves();org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;AllBitsSet(String);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;AddCompositeStateSet(boolean, String);org.javacc.parser.NfaState;10
-org.javacc.parser.NfaState;StateNameForComposite(String);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;GenerateInitMoves(CodeGenerator);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;GetStateSetIndicesForUse(String);org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;DumpStateSets(CodeGenerator);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;AllBitsSet(string);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;AddCompositeStateSet(boolean, string);org.javacc.parser.NfaState;10
+org.javacc.parser.NfaState;StateNameForComposite(string);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;GenerateInitMoves(codegenerator);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;GetStateSetIndicesForUse(string);org.javacc.parser.NfaState;4
+org.javacc.parser.NfaState;DumpStateSets(codegenerator);org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;GetStateSetString(int);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;GetStateSetString(List);org.javacc.parser.NfaState;2
+org.javacc.parser.NfaState;GetStateSetString(list);org.javacc.parser.NfaState;2
 org.javacc.parser.NfaState;FindCommonBlocks();org.javacc.parser.NfaState;10
 org.javacc.parser.NfaState;CheckNextOccursTogether();org.javacc.parser.NfaState;8
 org.javacc.parser.NfaState;FixStateSets();org.javacc.parser.NfaState;7
 org.javacc.parser.NfaState;FixNextStates(int);org.javacc.parser.NfaState;2
-org.javacc.parser.NfaState;Intersect(String, String);org.javacc.parser.NfaState;1
-org.javacc.parser.NfaState;DumpHeadForCase(CodeGenerator, int);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;Intersect(string, string);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;DumpHeadForCase(codegenerator, int);org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;PartitionStatesSetForAscii(int, int);java.util.Vector;1
 org.javacc.parser.NfaState;PartitionStatesSetForAscii(int, int);org.javacc.parser.NfaState;2
-org.javacc.parser.NfaState;PrintNoBreak(boolean, CodeGenerator, int);org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;DumpCompositeStatesAsciiMoves(boolean, CodeGenerator, int, String);org.javacc.parser.NfaState;8
+org.javacc.parser.NfaState;PrintNoBreak(boolean, codegenerator, int);org.javacc.parser.NfaState;4
+org.javacc.parser.NfaState;DumpCompositeStatesAsciiMoves(boolean, codegenerator, int, string);org.javacc.parser.NfaState;8
 org.javacc.parser.NfaState;selfLoop();org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;DumpAsciiMoveForCompositeState(boolean, CodeGenerator, int);org.javacc.parser.NfaState;11
-org.javacc.parser.NfaState;DumpAsciiMoveForCompositeState(boolean, CodeGenerator, int);java.lang.Integer;1
-org.javacc.parser.NfaState;DumpAsciiMove(boolean, CodeGenerator, int);org.javacc.parser.NfaState;12
-org.javacc.parser.NfaState;DumpAsciiMove(boolean, CodeGenerator, int);java.lang.Integer;1
-org.javacc.parser.NfaState;DumpAsciiMoves(CodeGenerator, int);org.javacc.parser.NfaState;10
-org.javacc.parser.NfaState;DumpCompositeStatesNonAsciiMoves(boolean, CodeGenerator, String);org.javacc.parser.NfaState;8
-org.javacc.parser.NfaState;DumpNonAsciiMoveForCompositeState(CodeGenerator);org.javacc.parser.NfaState;13
-org.javacc.parser.NfaState;DumpNonAsciiMoveForCompositeState(CodeGenerator);java.lang.Integer;1
-org.javacc.parser.NfaState;DumpNonAsciiMove(boolean, CodeGenerator);org.javacc.parser.NfaState;14
-org.javacc.parser.NfaState;DumpNonAsciiMove(boolean, CodeGenerator);java.lang.Integer;1
-org.javacc.parser.NfaState;DumpCharAndRangeMoves(CodeGenerator);org.javacc.parser.NfaState;10
-org.javacc.parser.NfaState;DumpNonAsciiMoveMethods(CodeGenerator);org.javacc.parser.NfaState;2
-org.javacc.parser.NfaState;DumpNonAsciiMoveMethod(CodeGenerator);org.javacc.parser.NfaState;4
+org.javacc.parser.NfaState;DumpAsciiMoveForCompositeState(boolean, codegenerator, int);org.javacc.parser.NfaState;11
+org.javacc.parser.NfaState;DumpAsciiMoveForCompositeState(boolean, codegenerator, int);java.lang.Integer;1
+org.javacc.parser.NfaState;DumpAsciiMove(boolean, codegenerator, int);org.javacc.parser.NfaState;12
+org.javacc.parser.NfaState;DumpAsciiMove(boolean, codegenerator, int);java.lang.Integer;1
+org.javacc.parser.NfaState;DumpAsciiMoves(codegenerator, int);org.javacc.parser.NfaState;10
+org.javacc.parser.NfaState;DumpCompositeStatesNonAsciiMoves(boolean, codegenerator, string);org.javacc.parser.NfaState;8
+org.javacc.parser.NfaState;DumpNonAsciiMoveForCompositeState(codegenerator);org.javacc.parser.NfaState;13
+org.javacc.parser.NfaState;DumpNonAsciiMoveForCompositeState(codegenerator);java.lang.Integer;1
+org.javacc.parser.NfaState;DumpNonAsciiMove(boolean, codegenerator);org.javacc.parser.NfaState;14
+org.javacc.parser.NfaState;DumpNonAsciiMove(boolean, codegenerator);java.lang.Integer;1
+org.javacc.parser.NfaState;DumpCharAndRangeMoves(codegenerator);org.javacc.parser.NfaState;10
+org.javacc.parser.NfaState;DumpNonAsciiMoveMethods(codegenerator);org.javacc.parser.NfaState;2
+org.javacc.parser.NfaState;DumpNonAsciiMoveMethod(codegenerator);org.javacc.parser.NfaState;4
 org.javacc.parser.NfaState;ReArrange();org.javacc.parser.NfaState;4
-org.javacc.parser.NfaState;PrintBoilerPlate(CodeGenerator);org.javacc.parser.NfaState;2
-org.javacc.parser.NfaState;PrintBoilerPlateCPP(CodeGenerator);org.javacc.parser.NfaState;2
+org.javacc.parser.NfaState;PrintBoilerPlate(codegenerator);org.javacc.parser.NfaState;2
+org.javacc.parser.NfaState;PrintBoilerPlateCPP(codegenerator);org.javacc.parser.NfaState;2
 org.javacc.parser.NfaState;FindStatesWithNoBreak();org.javacc.parser.NfaState;13
-org.javacc.parser.NfaState;DumpMoveNfa(CodeGenerator);org.javacc.parser.NfaState;13
-org.javacc.parser.NfaState;DumpMoveNfa(CodeGenerator);java.lang.Integer;1
-org.javacc.parser.NfaState;DumpStatesForKind(CodeGenerator);org.javacc.parser.NfaState;1
+org.javacc.parser.NfaState;DumpMoveNfa(codegenerator);org.javacc.parser.NfaState;13
+org.javacc.parser.NfaState;DumpMoveNfa(codegenerator);java.lang.Integer;1
+org.javacc.parser.NfaState;DumpStatesForKind(codegenerator);org.javacc.parser.NfaState;1
 org.javacc.parser.NfaState;reInit();org.javacc.parser.NfaState;28
-org.javacc.parser.RChoice;setChoices(List);org.javacc.parser.RChoice;1
+org.javacc.parser.RChoice;setChoices(list);org.javacc.parser.RChoice;1
 org.javacc.parser.RChoice;getChoices();org.javacc.parser.RChoice;1
 org.javacc.parser.RChoice;GenerateNfa(boolean);org.javacc.parser.RChoice;1
 org.javacc.parser.RChoice;CompressCharLists();org.javacc.parser.RChoice;1
@@ -275,19 +275,19 @@ org.javacc.parser.Expansion;reInit();org.javacc.parser.Expansion;1
 org.javacc.parser.Expansion;getSimpleName();java.lang.Class;1
 org.javacc.parser.Expansion;getSimpleName();java.lang.Object;1
 org.javacc.parser.Expansion;toString();org.javacc.parser.Expansion;3
-org.javacc.parser.Expansion;dump(int, Set);org.javacc.parser.Expansion;1
+org.javacc.parser.Expansion;dump(int, set);org.javacc.parser.Expansion;1
 org.javacc.parser.Expansion;setColumn(int);org.javacc.parser.Expansion;1
 org.javacc.parser.Expansion;getColumn();org.javacc.parser.Expansion;1
 org.javacc.parser.Expansion;setLine(int);org.javacc.parser.Expansion;1
 org.javacc.parser.Expansion;getLine();org.javacc.parser.Expansion;1
-org.javacc.parser.NonTerminal;dump(int, Set);org.javacc.parser.NonTerminal;1
-org.javacc.parser.NonTerminal;setLhsTokens(List);org.javacc.parser.NonTerminal;1
+org.javacc.parser.NonTerminal;dump(int, set);org.javacc.parser.NonTerminal;1
+org.javacc.parser.NonTerminal;setLhsTokens(list);org.javacc.parser.NonTerminal;1
 org.javacc.parser.NonTerminal;getLhsTokens();org.javacc.parser.NonTerminal;1
-org.javacc.parser.NonTerminal;setName(String);org.javacc.parser.NonTerminal;1
+org.javacc.parser.NonTerminal;setName(string);org.javacc.parser.NonTerminal;1
 org.javacc.parser.NonTerminal;getName();org.javacc.parser.NonTerminal;1
-org.javacc.parser.NonTerminal;setArgumentTokens(List);org.javacc.parser.NonTerminal;1
+org.javacc.parser.NonTerminal;setArgumentTokens(list);org.javacc.parser.NonTerminal;1
 org.javacc.parser.NonTerminal;getArgumentTokens();org.javacc.parser.NonTerminal;1
-org.javacc.parser.NonTerminal;setProd(NormalProduction);org.javacc.parser.NonTerminal;1
+org.javacc.parser.NonTerminal;setProd(normalproduction);org.javacc.parser.NonTerminal;1
 org.javacc.parser.NonTerminal;getProd();org.javacc.parser.NonTerminal;1
 org.javacc.parser.test.NfaStateTest;setupState();org.javacc.parser.test.NfaStateTest;1
 org.javacc.parser.test.NfaStateTest;testDumpStateSetsInitialised();org.javacc.parser.test.NfaStateTest;1
@@ -297,35 +297,45 @@ org.javacc.parser.test.NfaStateTest;testDumpMoveNfaInitialised();org.javacc.pars
 org.javacc.parser.test.NfaStateTest;testDumpStatesForStateInitialised();org.javacc.parser.test.NfaStateTest;1
 org.javacc.parser.test.NfaStateTest;testDumpStatesForKindInitialised();org.javacc.parser.test.NfaStateTest;1
 org.javacc.parser.JavaCCParser;notTailOfExpansionUnit();org.javacc.parser.JavaCCParser;1
-org.javacc.parser.JavaCCParser;eatUptoCloseBrace(List);org.javacc.parser.JavaCCParser;2
+org.javacc.parser.JavaCCParser;isPublic(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isProtected(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isPrivate(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isStatic(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isAbstract(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isFinal(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isNative(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isStrictfp(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isSynchronized(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isTransient(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;isVolatile(int);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;eatUptoCloseBrace(list);org.javacc.parser.JavaCCParser;2
 org.javacc.parser.JavaCCParser;javacc_input();org.javacc.parser.JavaCCParser;8
 org.javacc.parser.JavaCCParser;javacc_options();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;option_binding();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;production();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;javacode_production();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;bnf_production();org.javacc.parser.JavaCCParser;5
-org.javacc.parser.JavaCCParser;AccessModifier(NormalProduction);org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;AccessModifier(normalproduction);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;regular_expr_production();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;token_manager_decls();org.javacc.parser.JavaCCParser;5
-org.javacc.parser.JavaCCParser;regexpr_kind(TokenProduction);org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;regexpr_spec(TokenProduction);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser;expansion_choices(Container);org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;expansion(Container);org.javacc.parser.JavaCCParser;5
+org.javacc.parser.JavaCCParser;regexpr_kind(tokenproduction);org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;regexpr_spec(tokenproduction);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;expansion_choices(container);org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;expansion(container);org.javacc.parser.JavaCCParser;5
 org.javacc.parser.JavaCCParser;local_lookahead();org.javacc.parser.JavaCCParser;7
-org.javacc.parser.JavaCCParser;expansion_unit(Container);org.javacc.parser.JavaCCParser;8
-org.javacc.parser.JavaCCParser;regular_expression(Container);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser;complex_regular_expression_choices(Container);org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;complex_regular_expression(Container);org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;complex_regular_expression_unit(Container);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser;character_list(Container);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser;character_descriptor(Container);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;expansion_unit(container);org.javacc.parser.JavaCCParser;8
+org.javacc.parser.JavaCCParser;regular_expression(container);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;complex_regular_expression_choices(container);org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;complex_regular_expression(container);org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;complex_regular_expression_unit(container);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;character_list(container);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;character_descriptor(container);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;JavaIdentifier();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;CompilationUnit();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;ImportDeclaration();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;Modifiers();org.javacc.parser.JavaCCParser.ModifierSet;11
-org.javacc.parser.JavaCCParser;Modifiers();org.javacc.parser.JavaCCParser;3
+org.javacc.parser.JavaCCParser;Modifiers();org.javacc.parser.JavaCCParser;14
 org.javacc.parser.JavaCCParser;TypeDeclaration();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;ClassOrInterfaceDeclaration(int, List);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;ClassOrInterfaceDeclaration(int, list);org.javacc.parser.JavaCCParser;7
 org.javacc.parser.JavaCCParser;ExtendsList(boolean);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ImplementsList(boolean);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;EnumDeclaration(int);org.javacc.parser.JavaCCParser;3
@@ -334,7 +344,7 @@ org.javacc.parser.JavaCCParser;EnumConstant();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;TypeParameters();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;TypeParameter();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;TypeBound();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;ClassOrInterfaceBody(boolean, List);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;ClassOrInterfaceBody(boolean, list);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;ClassOrInterfaceBodyDeclaration(boolean);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;FieldDeclaration(int);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;VariableDeclarator();org.javacc.parser.JavaCCParser;3
@@ -343,7 +353,7 @@ org.javacc.parser.JavaCCParser;VariableInitializer();org.javacc.parser.JavaCCPar
 org.javacc.parser.JavaCCParser;ArrayInitializer();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;MethodDeclaration(int);org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;MethodDeclarator();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;FormalParameters(List);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;FormalParameters(list);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;FormalParameter();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ConstructorDeclaration();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ExplicitConstructorInvocation();org.javacc.parser.JavaCCParser;3
@@ -354,10 +364,10 @@ org.javacc.parser.JavaCCParser;TypeArguments();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;TypeArgument();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;WildcardBounds();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;PrimitiveType();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;ResultType(List);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser;Name(List);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;ResultType(list);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;Name(list);org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;NameList();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;Expression(List);org.javacc.parser.JavaCCParser;1
+org.javacc.parser.JavaCCParser;Expression(list);org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;AssignmentOperator();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ConditionalExpression();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ConditionalOrExpression();org.javacc.parser.JavaCCParser;3
@@ -381,13 +391,13 @@ org.javacc.parser.JavaCCParser;PrimarySuffix();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;Literal();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;IntegerLiteral();org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;BooleanLiteral();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;Arguments(List);org.javacc.parser.JavaCCParser;4
+org.javacc.parser.JavaCCParser;Arguments(list);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;ArgumentList();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;AllocationExpression();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;ArrayDimsAndInits();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;Statement();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;AssertStatement();org.javacc.parser.JavaCCParser;3
-org.javacc.parser.JavaCCParser;Block(List);org.javacc.parser.JavaCCParser;5
+org.javacc.parser.JavaCCParser;Block(list);org.javacc.parser.JavaCCParser;5
 org.javacc.parser.JavaCCParser;BlockStatement();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;LocalVariableDeclaration();org.javacc.parser.JavaCCParser;3
 org.javacc.parser.JavaCCParser;StatementExpression();org.javacc.parser.JavaCCParser;3
@@ -589,54 +599,40 @@ org.javacc.parser.JavaCCParser;jj_la1_init_1();org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;jj_la1_init_2();org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;jj_la1_init_3();org.javacc.parser.JavaCCParser;1
 org.javacc.parser.JavaCCParser;jj_la1_init_4();org.javacc.parser.JavaCCParser;1
-org.javacc.parser.JavaCCParser;JavaCCParser(InputStream, String);org.javacc.parser.JavaCCParser;7
-org.javacc.parser.JavaCCParser;ReInit(InputStream, String);org.javacc.parser.JavaCCParser;7
-org.javacc.parser.JavaCCParser;JavaCCParser(Reader);org.javacc.parser.JavaCCParser;7
-org.javacc.parser.JavaCCParser;ReInit(Reader);org.javacc.parser.JavaCCParser;7
-org.javacc.parser.JavaCCParser;JavaCCParser(JavaCCParserTokenManager);org.javacc.parser.JavaCCParser;6
-org.javacc.parser.JavaCCParser;ReInit(JavaCCParserTokenManager);org.javacc.parser.JavaCCParser;6
-org.javacc.parser.JavaCCParser;jj_consume_token(int);org.javacc.parser.JavaCCParser.JJCalls;3
-org.javacc.parser.JavaCCParser;jj_consume_token(int);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;JavaCCParser(inputstream, string);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;ReInit(inputstream, string);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;JavaCCParser(reader);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;ReInit(reader);org.javacc.parser.JavaCCParser;7
+org.javacc.parser.JavaCCParser;JavaCCParser(javaccparsertokenmanager);org.javacc.parser.JavaCCParser;6
+org.javacc.parser.JavaCCParser;ReInit(javaccparsertokenmanager);org.javacc.parser.JavaCCParser;6
+org.javacc.parser.JavaCCParser;jj_consume_token(int);org.javacc.parser.JavaCCParser;10
 org.javacc.parser.JavaCCParser;jj_scan_token(int);org.javacc.parser.JavaCCParser;7
 org.javacc.parser.JavaCCParser;getNextToken();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;getToken(int);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;jj_ntk();org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;jj_add_error_token(int, int);org.javacc.parser.JavaCCParser;4
 org.javacc.parser.JavaCCParser;generateParseException();org.javacc.parser.JavaCCParser;12
-org.javacc.parser.JavaCCParser;jj_rescan_token();org.javacc.parser.JavaCCParser.JJCalls;4
-org.javacc.parser.JavaCCParser;jj_rescan_token();org.javacc.parser.JavaCCParser;6
-org.javacc.parser.JavaCCParser;jj_save(int, int);org.javacc.parser.JavaCCParser.JJCalls;4
-org.javacc.parser.JavaCCParser;jj_save(int, int);org.javacc.parser.JavaCCParser;4
-org.javacc.parser.JavaCCParser.ModifierSet;isPublic(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isProtected(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isPrivate(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isStatic(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isAbstract(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isFinal(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isNative(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isStrictfp(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isSynchronized(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isTransient(int);org.javacc.parser.JavaCCParser.ModifierSet;1
-org.javacc.parser.JavaCCParser.ModifierSet;isVolatile(int);org.javacc.parser.JavaCCParser.ModifierSet;1
+org.javacc.parser.JavaCCParser;jj_rescan_token();org.javacc.parser.JavaCCParser;10
+org.javacc.parser.JavaCCParser;jj_save(int, int);org.javacc.parser.JavaCCParser;8
 org.javacc.parser.RZeroOrMore;GenerateNfa(boolean);org.javacc.parser.RZeroOrMore;1
-org.javacc.parser.RZeroOrMore;RZeroOrMore(RegularExpression, Token);org.javacc.parser.RZeroOrMore;1
+org.javacc.parser.RZeroOrMore;RZeroOrMore(regularexpression, token);org.javacc.parser.RZeroOrMore;1
 org.javacc.parser.TokenProduction;setLine(int);org.javacc.parser.TokenProduction;1
 org.javacc.parser.TokenProduction;getLine();org.javacc.parser.TokenProduction;1
 org.javacc.parser.TokenProduction;setColumn(int);org.javacc.parser.TokenProduction;1
 org.javacc.parser.TokenProduction;getColumn();org.javacc.parser.TokenProduction;1
-org.javacc.parser.Choice;Choice(Expansion);org.javacc.parser.Choice;1
-org.javacc.parser.Choice;setChoices(List);org.javacc.parser.Choice;1
+org.javacc.parser.Choice;Choice(expansion);org.javacc.parser.Choice;1
+org.javacc.parser.Choice;setChoices(list);org.javacc.parser.Choice;1
 org.javacc.parser.Choice;getChoices();org.javacc.parser.Choice;1
-org.javacc.parser.Choice;dump(int, Set);org.javacc.parser.Choice;1
+org.javacc.parser.Choice;dump(int, set);org.javacc.parser.Choice;1
 org.javacc.parser.Nfa;Nfa();org.javacc.parser.Nfa;2
-org.javacc.parser.Nfa;Nfa(NfaState, NfaState);org.javacc.parser.Nfa;2
+org.javacc.parser.Nfa;Nfa(nfastate, nfastate);org.javacc.parser.Nfa;2
 org.javacc.parser.MatchInfo;reInit();org.javacc.parser.MatchInfo;1
-org.javacc.parser.TryBlock;dump(int, Set);org.javacc.parser.TryBlock;1
+org.javacc.parser.TryBlock;dump(int, set);org.javacc.parser.TryBlock;1
 org.javacc.parser.TokenMgrError;getMessage();java.lang.Throwable;1
-org.javacc.parser.TokenMgrError;TokenMgrError(int, String);org.javacc.parser.TokenMgrError;1
-org.javacc.parser.ParseException;ParseException(int, String, Token);org.javacc.parser.ParseException;4
+org.javacc.parser.TokenMgrError;TokenMgrError(int, string);org.javacc.parser.TokenMgrError;1
+org.javacc.parser.ParseException;ParseException(int, string, token);org.javacc.parser.ParseException;4
 org.javacc.parser.ParseException;ParseException();org.javacc.parser.ParseException;1
-org.javacc.parser.ParseException;ParseException(String);org.javacc.parser.ParseException;1
+org.javacc.parser.ParseException;ParseException(string);org.javacc.parser.ParseException;1
 org.javacc.parser.ParseException;getMessage();java.lang.Throwable;1
 org.javacc.parser.ParseException;getMessage();org.javacc.parser.ParseException;5
 org.javacc.parser.OtherFilesGen;start(boolean);org.javacc.parser.OtherFilesGen;2
@@ -644,18 +640,18 @@ org.javacc.parser.OtherFilesGen;reInit();org.javacc.parser.OtherFilesGen;1
 org.javacc.parser.LexGenCPP;start();java.lang.Integer;1
 org.javacc.parser.LexGenCPP;start();java.io.File;1
 org.javacc.parser.LexGenCPP;DumpGetNextToken();java.lang.Integer;1
-org.javacc.parser.JavaCCGlobals;bannerLine(String, String);java.lang.System;1
-org.javacc.parser.JavaCCGlobals;getIdString(String, String);org.javacc.parser.JavaCCGlobals;1
-org.javacc.parser.JavaCCGlobals;getIdString(List, String);java.lang.System;1
-org.javacc.parser.JavaCCGlobals;isGeneratedBy(String, String);org.javacc.parser.JavaCCGlobals;1
-org.javacc.parser.JavaCCGlobals;createOutputDir(File);java.io.File;1
-org.javacc.parser.JavaCCGlobals;printTokenSetup(Token);org.javacc.parser.JavaCCGlobals;2
-org.javacc.parser.JavaCCGlobals;printTokenOnly(PrintWriter, Token);org.javacc.parser.JavaCCGlobals;2
-org.javacc.parser.JavaCCGlobals;printLeadingComments(PrintWriter, Token);org.javacc.parser.JavaCCGlobals;2
-org.javacc.parser.JavaCCGlobals;printTokenOnly(Token);org.javacc.parser.JavaCCGlobals;2
-org.javacc.parser.JavaCCGlobals;printLeadingComments(Token);org.javacc.parser.JavaCCGlobals;2
+org.javacc.parser.JavaCCGlobals;bannerLine(string, string);java.lang.System;1
+org.javacc.parser.JavaCCGlobals;getIdString(string, string);org.javacc.parser.JavaCCGlobals;1
+org.javacc.parser.JavaCCGlobals;getIdString(list, string);java.lang.System;1
+org.javacc.parser.JavaCCGlobals;isGeneratedBy(string, string);org.javacc.parser.JavaCCGlobals;1
+org.javacc.parser.JavaCCGlobals;createOutputDir(file);java.io.File;1
+org.javacc.parser.JavaCCGlobals;printTokenSetup(token);org.javacc.parser.JavaCCGlobals;2
+org.javacc.parser.JavaCCGlobals;printTokenOnly(printwriter, token);org.javacc.parser.JavaCCGlobals;2
+org.javacc.parser.JavaCCGlobals;printLeadingComments(printwriter, token);org.javacc.parser.JavaCCGlobals;2
+org.javacc.parser.JavaCCGlobals;printTokenOnly(token);org.javacc.parser.JavaCCGlobals;2
+org.javacc.parser.JavaCCGlobals;printLeadingComments(token);org.javacc.parser.JavaCCGlobals;2
 org.javacc.parser.JavaCCGlobals;reInit();org.javacc.parser.JavaCCGlobals;27
-org.javacc.parser.CPPFiles;genFile(String, String, String);java.lang.System;1
+org.javacc.parser.CPPFiles;genFile(string, string, string);java.lang.System;1
 org.javacc.parser.CPPFiles;gen_CharStream();org.javacc.parser.CPPFiles;1
 org.javacc.parser.CPPFiles;gen_ParseException();org.javacc.parser.CPPFiles;1
 org.javacc.parser.CPPFiles;gen_TokenMgrError();org.javacc.parser.CPPFiles;1
@@ -674,87 +670,80 @@ org.javacc.parser.RCharacterList;CanMatchAnyChar();org.javacc.parser.RCharacterL
 org.javacc.parser.KindInfo;KindInfo(int);org.javacc.parser.KindInfo;2
 org.javacc.parser.KindInfo;InsertValidKind(int);org.javacc.parser.KindInfo;2
 org.javacc.parser.KindInfo;InsertFinalKind(int);org.javacc.parser.KindInfo;2
-org.javacc.parser.RStringLiteral;RStringLiteral(String, Token);org.javacc.parser.RStringLiteral;1
+org.javacc.parser.RStringLiteral;RStringLiteral(string, token);org.javacc.parser.RStringLiteral;1
 org.javacc.parser.RStringLiteral;ReInit();org.javacc.parser.RStringLiteral;10
-org.javacc.parser.RStringLiteral;DumpStrLiteralImages(CodeGenerator);org.javacc.parser.RStringLiteral;2
-org.javacc.parser.RStringLiteral;DumpStrLiteralImagesForJava(CodeGenerator);org.javacc.parser.RStringLiteral;2
-org.javacc.parser.RStringLiteral;GenerateDfa(CodeGenerator, int);org.javacc.parser.RStringLiteral;6
+org.javacc.parser.RStringLiteral;DumpStrLiteralImages(codegenerator);org.javacc.parser.RStringLiteral;2
+org.javacc.parser.RStringLiteral;DumpStrLiteralImagesForJava(codegenerator);org.javacc.parser.RStringLiteral;2
+org.javacc.parser.RStringLiteral;GenerateDfa(codegenerator, int);org.javacc.parser.RStringLiteral;6
 org.javacc.parser.RStringLiteral;GenerateNfa(boolean);org.javacc.parser.RStringLiteral;1
 org.javacc.parser.RStringLiteral;GetStateSetForKind(int, int);org.javacc.parser.RStringLiteral;1
 org.javacc.parser.RStringLiteral;GetLabel(int);org.javacc.parser.RStringLiteral;1
 org.javacc.parser.RStringLiteral;FillSubString();org.javacc.parser.RStringLiteral;5
-org.javacc.parser.RStringLiteral;DumpDfaCode(CodeGenerator);org.javacc.parser.RStringLiteral;9
-org.javacc.parser.RStringLiteral;DumpDfaCode(CodeGenerator);org.javacc.parser.KindInfo;4
-org.javacc.parser.RStringLiteral;DumpDfaCode(CodeGenerator);java.lang.Integer;1
-org.javacc.parser.RStringLiteral;GetStrKind(String);org.javacc.parser.RStringLiteral;2
-org.javacc.parser.RStringLiteral;GetStrKind(String);java.lang.Integer;1
-org.javacc.parser.RStringLiteral;GenerateNfaStartStates(CodeGenerator, NfaState);org.javacc.parser.RStringLiteral;6
-org.javacc.parser.RStringLiteral;GenerateNfaStartStates(CodeGenerator, NfaState);java.lang.Integer;1
-org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(CodeGenerator, Hashtable);org.javacc.parser.RStringLiteral;3
-org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(CodeGenerator, Hashtable);java.lang.StringBuffer;1
-org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(CodeGenerator, Hashtable);java.lang.Integer;1
+org.javacc.parser.RStringLiteral;DumpDfaCode(codegenerator);org.javacc.parser.RStringLiteral;9
+org.javacc.parser.RStringLiteral;DumpDfaCode(codegenerator);org.javacc.parser.KindInfo;4
+org.javacc.parser.RStringLiteral;DumpDfaCode(codegenerator);java.lang.Integer;1
+org.javacc.parser.RStringLiteral;GetStrKind(string);org.javacc.parser.RStringLiteral;2
+org.javacc.parser.RStringLiteral;GetStrKind(string);java.lang.Integer;1
+org.javacc.parser.RStringLiteral;GenerateNfaStartStates(codegenerator, nfastate);org.javacc.parser.RStringLiteral;6
+org.javacc.parser.RStringLiteral;GenerateNfaStartStates(codegenerator, nfastate);java.lang.Integer;1
+org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(codegenerator, hashtable);org.javacc.parser.RStringLiteral;3
+org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(codegenerator, hashtable);java.lang.StringBuffer;1
+org.javacc.parser.RStringLiteral;DumpNfaStartStatesCode(codegenerator, hashtable);java.lang.Integer;1
 org.javacc.parser.RStringLiteral;reInit();org.javacc.parser.RStringLiteral;3
-org.javacc.parser.RStringLiteral;dump(int, Set);org.javacc.parser.RStringLiteral;1
+org.javacc.parser.RStringLiteral;dump(int, set);org.javacc.parser.RStringLiteral;1
 org.javacc.parser.RStringLiteral;toString();org.javacc.parser.RStringLiteral;1
-org.javacc.parser.ParseEngine;genFirstSet(Expansion);org.javacc.parser.ParseEngine;2
-org.javacc.parser.ParseEngine;dumpLookaheads(Lookahead, String);java.lang.System;1
-org.javacc.parser.ParseEngine;buildLookaheadChecker(Lookahead, String);org.javacc.parser.ParseEngine;7
-org.javacc.parser.ParseEngine;dumpFormattedString(String);org.javacc.parser.ParseEngine;2
-org.javacc.parser.ParseEngine;generateCPPMethodheader(BNFProduction, Token);java.lang.StringBuffer;1
-org.javacc.parser.ParseEngine;generateCPPMethodheader(BNFProduction, Token);org.javacc.parser.ParseEngine;2
-org.javacc.parser.ParseEngine;buildPhase1Routine(BNFProduction);org.javacc.parser.ParseEngine;3
+org.javacc.parser.ParseEngine;genFirstSet(expansion);org.javacc.parser.ParseEngine;2
+org.javacc.parser.ParseEngine;dumpLookaheads(lookahead, string);java.lang.System;1
+org.javacc.parser.ParseEngine;buildLookaheadChecker(lookahead, string);org.javacc.parser.ParseEngine;7
+org.javacc.parser.ParseEngine;dumpFormattedString(string);org.javacc.parser.ParseEngine;2
+org.javacc.parser.ParseEngine;generateCPPMethodheader(bnfproduction, token);java.lang.StringBuffer;1
+org.javacc.parser.ParseEngine;generateCPPMethodheader(bnfproduction, token);org.javacc.parser.ParseEngine;2
+org.javacc.parser.ParseEngine;buildPhase1Routine(bnfproduction);org.javacc.parser.ParseEngine;3
 org.javacc.parser.ParseEngine;phase1NewLine();org.javacc.parser.ParseEngine;2
-org.javacc.parser.ParseEngine;phase1ExpansionGen(Expansion);org.javacc.parser.ParseEngine;3
-org.javacc.parser.ParseEngine;buildPhase2Routine(Lookahead);org.javacc.parser.ParseEngine;4
+org.javacc.parser.ParseEngine;phase1ExpansionGen(expansion);org.javacc.parser.ParseEngine;3
+org.javacc.parser.ParseEngine;buildPhase2Routine(lookahead);org.javacc.parser.ParseEngine;4
 org.javacc.parser.ParseEngine;genReturn(boolean);org.javacc.parser.ParseEngine;1
-org.javacc.parser.ParseEngine;generate3R(Expansion, Phase3Data);org.javacc.parser.Phase3Data;1
-org.javacc.parser.ParseEngine;generate3R(Expansion, Phase3Data);org.javacc.parser.ParseEngine;3
-org.javacc.parser.ParseEngine;setupPhase3Builds(Phase3Data);org.javacc.parser.Phase3Data;2
-org.javacc.parser.ParseEngine;setupPhase3Builds(Phase3Data);org.javacc.parser.ParseEngine;1
+org.javacc.parser.ParseEngine;generate3R(expansion, phase3data);org.javacc.parser.Phase3Data;1
+org.javacc.parser.ParseEngine;generate3R(expansion, phase3data);org.javacc.parser.ParseEngine;3
+org.javacc.parser.ParseEngine;setupPhase3Builds(phase3data);org.javacc.parser.Phase3Data;2
+org.javacc.parser.ParseEngine;setupPhase3Builds(phase3data);org.javacc.parser.ParseEngine;1
 org.javacc.parser.ParseEngine;getTypeForToken();org.javacc.parser.ParseEngine;1
-org.javacc.parser.ParseEngine;buildPhase3Routine(boolean, Phase3Data);org.javacc.parser.Phase3Data;2
-org.javacc.parser.ParseEngine;buildPhase3Routine(boolean, Phase3Data);org.javacc.parser.ParseEngine;5
-org.javacc.parser.ParseEngine;minimumSize(Expansion);java.lang.Integer;1
-org.javacc.parser.ParseEngine;minimumSize(Expansion, int);java.lang.Integer;1
-org.javacc.parser.ParseEngine;build(CodeGenerator);org.javacc.parser.ParseEngine;6
+org.javacc.parser.ParseEngine;buildPhase3Routine(boolean, phase3data);org.javacc.parser.Phase3Data;2
+org.javacc.parser.ParseEngine;buildPhase3Routine(boolean, phase3data);org.javacc.parser.ParseEngine;5
+org.javacc.parser.ParseEngine;minimumSize(expansion);java.lang.Integer;1
+org.javacc.parser.ParseEngine;minimumSize(expansion, int);java.lang.Integer;1
+org.javacc.parser.ParseEngine;build(codegenerator);org.javacc.parser.ParseEngine;6
 org.javacc.parser.ParseEngine;reInit();org.javacc.parser.ParseEngine;9
-org.javacc.parser.Phase3Data;Phase3Data(Expansion, int);org.javacc.parser.Phase3Data;2
-org.javacc.parser.JavaFiles;gen_JavaCharStream(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_JavaCharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_JavaCharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;gen_SimpleCharStream(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_SimpleCharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_SimpleCharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;gen_CharStream(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_CharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_CharStream(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;genMiscFile(String, String);java.lang.System;1
-org.javacc.parser.JavaFiles;genMiscFile(String, String);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_ParseException(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_ParseException(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_ParseException(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;gen_TokenMgrError(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_TokenMgrError(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_TokenMgrError(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;gen_Token(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_Token(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_Token(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
-org.javacc.parser.JavaFiles;gen_TokenManager(JavaResourceTemplateLocations);java.lang.System;1
-org.javacc.parser.JavaFiles;gen_TokenManager(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles;1
-org.javacc.parser.JavaFiles;gen_TokenManager(JavaResourceTemplateLocations);org.javacc.parser.JavaFiles.JavaResourceTemplateLocations;1
+org.javacc.parser.Phase3Data;Phase3Data(expansion, int);org.javacc.parser.Phase3Data;2
+org.javacc.parser.JavaFiles;gen_JavaCharStream(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_JavaCharStream(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;gen_SimpleCharStream(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_SimpleCharStream(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;gen_CharStream(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_CharStream(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;genMiscFile(string, string);java.lang.System;1
+org.javacc.parser.JavaFiles;genMiscFile(string, string);org.javacc.parser.JavaFiles;1
+org.javacc.parser.JavaFiles;gen_ParseException(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_ParseException(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;gen_TokenMgrError(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_TokenMgrError(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;gen_Token(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_Token(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
+org.javacc.parser.JavaFiles;gen_TokenManager(javaresourcetemplatelocations);java.lang.System;1
+org.javacc.parser.JavaFiles;gen_TokenManager(javaresourcetemplatelocations);org.javacc.parser.JavaFiles;2
 org.javacc.parser.RJustName;GenerateNfa(boolean);org.javacc.parser.RJustName;1
 org.javacc.parser.RSequence;GenerateNfa(boolean);org.javacc.parser.RSequence;1
-org.javacc.parser.RSequence;RSequence(List);org.javacc.parser.RSequence;1
-org.javacc.parser.RSequence;RSequence(List);java.lang.Integer;1
-org.javacc.parser.LookaheadCalc;choiceCalc(Choice);java.lang.System;1
-org.javacc.parser.LookaheadCalc;ebnfCalc(Expansion, Expansion);java.lang.System;1
-org.javacc.parser.OneOrMore;OneOrMore(Expansion, Token);org.javacc.parser.OneOrMore;1
-org.javacc.parser.OneOrMore;dump(int, Set);org.javacc.parser.OneOrMore;1
+org.javacc.parser.RSequence;RSequence(list);org.javacc.parser.RSequence;1
+org.javacc.parser.RSequence;RSequence(list);java.lang.Integer;1
+org.javacc.parser.LookaheadCalc;choiceCalc(choice);java.lang.System;1
+org.javacc.parser.LookaheadCalc;ebnfCalc(expansion, expansion);java.lang.System;1
+org.javacc.parser.OneOrMore;OneOrMore(expansion, token);org.javacc.parser.OneOrMore;1
+org.javacc.parser.OneOrMore;dump(int, set);org.javacc.parser.OneOrMore;1
 org.javacc.parser.Main;help_message();java.lang.System;1
-org.javacc.parser.Main;mainProgram(String);java.lang.System;1
-org.javacc.parser.Main;mainProgram(String);org.javacc.parser.Main;1
-org.javacc.parser.Main;mainProgram(String);java.io.File;1
-org.javacc.parser.Main;unhandledLanguageExit(String);java.lang.System;1
+org.javacc.parser.Main;mainProgram(string);java.lang.System;1
+org.javacc.parser.Main;mainProgram(string);org.javacc.parser.Main;1
+org.javacc.parser.Main;mainProgram(string);java.io.File;1
+org.javacc.parser.Main;unhandledLanguageExit(string);java.lang.System;1
 org.javacc.parser.BNFProduction;getDeclarationTokens();org.javacc.parser.BNFProduction;1
 org.javacc.parser.BNFProduction;setJumpPatched(boolean);org.javacc.parser.BNFProduction;1
 org.javacc.parser.BNFProduction;isJumpPatched();org.javacc.parser.BNFProduction;1
@@ -769,17 +758,17 @@ org.javacc.parser.ExpansionTest;testChoiceConstructor();org.javacc.parser.Expans
 org.javacc.parser.ExpansionTest;testRJustNameConstructor();org.javacc.parser.ExpansionTest;1
 org.javacc.parser.ExpansionTest;testSequenceConstructor();org.javacc.parser.ExpansionTest;1
 org.javacc.parser.LexGen;PrintClassHead();org.javacc.parser.LexGen;2
-org.javacc.parser.LexGen;writeTemplate(Object, String);org.javacc.parser.LexGen;11
+org.javacc.parser.LexGen;writeTemplate(object, string);org.javacc.parser.LexGen;11
 org.javacc.parser.LexGen;DumpDebugMethods();org.javacc.parser.LexGen;1
 org.javacc.parser.LexGen;BuildLexStatesTable();org.javacc.parser.LexGen;26
-org.javacc.parser.LexGen;GetIndex(String);org.javacc.parser.LexGen;1
+org.javacc.parser.LexGen;GetIndex(string);org.javacc.parser.LexGen;1
 org.javacc.parser.LexGen;AddCharToSkip(char, int);org.javacc.parser.LexGen;2
 org.javacc.parser.LexGen;start();org.javacc.parser.LexGen;40
 org.javacc.parser.LexGen;start();java.lang.Integer;1
 org.javacc.parser.LexGen;start();java.io.File;1
 org.javacc.parser.LexGen;CheckEmptyStringMatch();org.javacc.parser.LexGen;9
 org.javacc.parser.LexGen;CheckEmptyStringMatch();java.lang.Integer;1
-org.javacc.parser.LexGen;DumpStaticVarDeclarations(String);org.javacc.parser.LexGen;12
+org.javacc.parser.LexGen;DumpStaticVarDeclarations(string);org.javacc.parser.LexGen;12
 org.javacc.parser.LexGen;DumpFillToken();org.javacc.parser.LexGen;3
 org.javacc.parser.LexGen;DumpGetNextToken();org.javacc.parser.LexGen;13
 org.javacc.parser.LexGen;DumpGetNextToken();java.lang.Integer;1
@@ -787,28 +776,28 @@ org.javacc.parser.LexGen;DumpSkipActions();org.javacc.parser.LexGen;8
 org.javacc.parser.LexGen;DumpMoreActions();org.javacc.parser.LexGen;8
 org.javacc.parser.LexGen;DumpTokenActions();org.javacc.parser.LexGen;8
 org.javacc.parser.LexGen;reInit();org.javacc.parser.LexGen;41
-org.javacc.parser.JavaCCParserInternals;setinsertionpoint(int, Token);org.javacc.parser.JavaCCParserInternals;4
-org.javacc.parser.JavaCCParserInternals;insertionpointerrors(Token);org.javacc.parser.JavaCCParserInternals;4
-org.javacc.parser.JavaCCParserInternals;set_initial_cu_token(Token);org.javacc.parser.JavaCCParserInternals;1
-org.javacc.parser.JavaCCParserInternals;addregexpr(TokenProduction);org.javacc.parser.JavaCCParserInternals;1
+org.javacc.parser.JavaCCParserInternals;setinsertionpoint(int, token);org.javacc.parser.JavaCCParserInternals;4
+org.javacc.parser.JavaCCParserInternals;insertionpointerrors(token);org.javacc.parser.JavaCCParserInternals;4
+org.javacc.parser.JavaCCParserInternals;set_initial_cu_token(token);org.javacc.parser.JavaCCParserInternals;1
+org.javacc.parser.JavaCCParserInternals;addregexpr(tokenproduction);org.javacc.parser.JavaCCParserInternals;1
 org.javacc.parser.JavaCCParserInternals;reInit();org.javacc.parser.JavaCCParserInternals;5
-org.javacc.parser.ZeroOrMore;ZeroOrMore(Expansion, Token);org.javacc.parser.ZeroOrMore;1
-org.javacc.parser.ZeroOrMore;dump(int, Set);org.javacc.parser.ZeroOrMore;1
-org.javacc.parser.Options;intValue(String);org.javacc.parser.Options;1
-org.javacc.parser.Options;booleanValue(String);org.javacc.parser.Options;1
-org.javacc.parser.Options;stringValue(String);org.javacc.parser.Options;1
+org.javacc.parser.ZeroOrMore;ZeroOrMore(expansion, token);org.javacc.parser.ZeroOrMore;1
+org.javacc.parser.ZeroOrMore;dump(int, set);org.javacc.parser.ZeroOrMore;1
+org.javacc.parser.Options;intValue(string);org.javacc.parser.Options;1
+org.javacc.parser.Options;booleanValue(string);org.javacc.parser.Options;1
+org.javacc.parser.Options;stringValue(string);org.javacc.parser.Options;1
 org.javacc.parser.Options;getOptions();org.javacc.parser.Options;1
 org.javacc.parser.Options;init();java.lang.Boolean;2
 org.javacc.parser.Options;init();org.javacc.parser.Options;7
-org.javacc.parser.Options;getOptionsString(String);org.javacc.parser.Options;1
+org.javacc.parser.Options;getOptionsString(string);org.javacc.parser.Options;1
 org.javacc.parser.Options;getTokenMgrErrorClass();org.javacc.parser.Options;2
-org.javacc.parser.Options;upgradeValue(Object, String);java.lang.Object;1
-org.javacc.parser.Options;setInputFileOption(Object, Object, Object, String);java.lang.Object;1
-org.javacc.parser.Options;setInputFileOption(Object, Object, Object, String);org.javacc.parser.Options;3
-org.javacc.parser.Options;setCmdLineOption(String);java.lang.System;1
-org.javacc.parser.Options;setCmdLineOption(String);java.lang.Boolean;2
-org.javacc.parser.Options;setCmdLineOption(String);java.lang.Object;1
-org.javacc.parser.Options;setCmdLineOption(String);org.javacc.parser.Options;2
+org.javacc.parser.Options;upgradeValue(object, string);java.lang.Object;1
+org.javacc.parser.Options;setInputFileOption(object, object, object, string);java.lang.Object;1
+org.javacc.parser.Options;setInputFileOption(object, object, object, string);org.javacc.parser.Options;3
+org.javacc.parser.Options;setCmdLineOption(string);java.lang.System;1
+org.javacc.parser.Options;setCmdLineOption(string);java.lang.Boolean;2
+org.javacc.parser.Options;setCmdLineOption(string);java.lang.Object;1
+org.javacc.parser.Options;setCmdLineOption(string);org.javacc.parser.Options;2
 org.javacc.parser.Options;normalize();java.lang.Boolean;1
 org.javacc.parser.Options;normalize();org.javacc.parser.Options;5
 org.javacc.parser.Options;isGenerateBoilerplateCode();org.javacc.parser.Options;1
@@ -817,19 +806,19 @@ org.javacc.parser.Options;jdkVersionAtLeast(double);org.javacc.parser.Options;1
 org.javacc.parser.Options;getGrammarEncoding();java.util.Properties;1
 org.javacc.parser.Options;getGrammarEncoding();java.lang.System;1
 org.javacc.parser.Options;stringBufOrBuild();org.javacc.parser.Options;4
-org.javacc.parser.Options;isValidOutputLanguage(String);org.javacc.parser.Options;1
+org.javacc.parser.Options;isValidOutputLanguage(string);org.javacc.parser.Options;1
 org.javacc.parser.Options;getOutputLanguage();org.javacc.parser.Options;1
-org.javacc.parser.Options;setOutputLanguage(String);org.javacc.parser.Options;3
-org.javacc.parser.Options;setStringOption(String, String);org.javacc.parser.Options;1
-org.javacc.parser.Options;processCPPNamespaceOption(String);java.lang.Boolean;1
-org.javacc.parser.Options;processCPPNamespaceOption(String);org.javacc.parser.Options;1
+org.javacc.parser.Options;setOutputLanguage(string);org.javacc.parser.Options;3
+org.javacc.parser.Options;setStringOption(string, string);org.javacc.parser.Options;1
+org.javacc.parser.Options;processCPPNamespaceOption(string);java.lang.Boolean;1
+org.javacc.parser.Options;processCPPNamespaceOption(string);org.javacc.parser.Options;1
 org.javacc.parser.Options;getLongType();org.javacc.parser.Options;3
 org.javacc.parser.Options;getBooleanType();org.javacc.parser.Options;3
 org.javacc.parser.Options;isOutputLanguageImplementedInJava();org.javacc.parser.Options;3
 org.javacc.parser.Options;isTokenManagerRequiresParserAccess();org.javacc.parser.Options;1
 org.javacc.parser.JavaCCParserTokenManager;saveBeginLineCol(int, int);org.javacc.parser.JavaCCParserTokenManager;4
 org.javacc.parser.JavaCCParserTokenManager;restoreBeginLineCol();org.javacc.parser.JavaCCParserTokenManager;4
-org.javacc.parser.JavaCCParserTokenManager;setDebugStream(PrintStream);org.javacc.parser.JavaCCParserTokenManager;1
+org.javacc.parser.JavaCCParserTokenManager;setDebugStream(printstream);org.javacc.parser.JavaCCParserTokenManager;1
 org.javacc.parser.JavaCCParserTokenManager;jjStopStringLiteralDfa_0(int, long, long, long);org.javacc.parser.JavaCCParserTokenManager;2
 org.javacc.parser.JavaCCParserTokenManager;jjStopAtPos(int, int);org.javacc.parser.JavaCCParserTokenManager;2
 org.javacc.parser.JavaCCParserTokenManager;jjStartNfaWithStates_0(int, int, int);org.javacc.parser.JavaCCParserTokenManager;4
@@ -857,19 +846,19 @@ org.javacc.parser.JavaCCParserTokenManager;jjMoveStringLiteralDfa1_3(long);org.j
 org.javacc.parser.JavaCCParserTokenManager;jjCanMove_0(int, int, int, long, long);org.javacc.parser.JavaCCParserTokenManager;2
 org.javacc.parser.JavaCCParserTokenManager;jjCanMove_1(int, int, int, long, long);org.javacc.parser.JavaCCParserTokenManager;38
 org.javacc.parser.JavaCCParserTokenManager;jjCanMove_2(int, int, int, long, long);org.javacc.parser.JavaCCParserTokenManager;38
-org.javacc.parser.JavaCCParserTokenManager;JavaCCParserTokenManager(JavaCharStream);org.javacc.parser.JavaCCParserTokenManager;1
-org.javacc.parser.JavaCCParserTokenManager;ReInit(JavaCharStream);org.javacc.parser.JavaCCParserTokenManager;5
+org.javacc.parser.JavaCCParserTokenManager;JavaCCParserTokenManager(javacharstream);org.javacc.parser.JavaCCParserTokenManager;1
+org.javacc.parser.JavaCCParserTokenManager;ReInit(javacharstream);org.javacc.parser.JavaCCParserTokenManager;5
 org.javacc.parser.JavaCCParserTokenManager;ReInitRounds();org.javacc.parser.JavaCCParserTokenManager;2
 org.javacc.parser.JavaCCParserTokenManager;SwitchTo(int);org.javacc.parser.JavaCCParserTokenManager;1
 org.javacc.parser.JavaCCParserTokenManager;jjFillToken();org.javacc.parser.JavaCCParserTokenManager;3
 org.javacc.parser.JavaCCParserTokenManager;getNextToken();org.javacc.parser.JavaCCParserTokenManager;11
-org.javacc.parser.JavaCCParserTokenManager;SkipLexicalActions(Token);org.javacc.parser.JavaCCParserTokenManager;6
+org.javacc.parser.JavaCCParserTokenManager;SkipLexicalActions(token);org.javacc.parser.JavaCCParserTokenManager;6
 org.javacc.parser.JavaCCParserTokenManager;MoreLexicalActions();org.javacc.parser.JavaCCParserTokenManager;6
-org.javacc.parser.JavaCCParserTokenManager;TokenLexicalActions(Token);org.javacc.parser.JavaCCParserTokenManager;5
+org.javacc.parser.JavaCCParserTokenManager;TokenLexicalActions(token);org.javacc.parser.JavaCCParserTokenManager;5
 org.javacc.parser.JavaCCParserTokenManager;jjCheckNAdd(int);org.javacc.parser.JavaCCParserTokenManager;4
 org.javacc.parser.JavaCCParserTokenManager;jjAddStates(int, int);org.javacc.parser.JavaCCParserTokenManager;3
 org.javacc.parser.JavaCCParserTokenManager;jjCheckNAddStates(int, int);org.javacc.parser.JavaCCParserTokenManager;1
-org.javacc.parser.Action;dump(int, Set);org.javacc.parser.Action;1
+org.javacc.parser.Action;dump(int, set);org.javacc.parser.Action;1
 org.javacc.parser.Action;getActionTokens();org.javacc.parser.Action;1
 org.javacc.parser.CharacterRange;CharacterRange(char, char);org.javacc.parser.CharacterRange;2
 org.javacc.parser.CharacterRange;setLine(int);org.javacc.parser.CharacterRange;1
@@ -880,51 +869,51 @@ org.javacc.parser.CharacterRange;setLeft(char);org.javacc.parser.CharacterRange;
 org.javacc.parser.CharacterRange;getLeft();org.javacc.parser.CharacterRange;1
 org.javacc.parser.CharacterRange;setRight(char);org.javacc.parser.CharacterRange;1
 org.javacc.parser.CharacterRange;getRight();org.javacc.parser.CharacterRange;1
-org.javacc.parser.Token;Token(int, String);org.javacc.parser.Token;2
+org.javacc.parser.Token;Token(int, string);org.javacc.parser.Token;2
 org.javacc.parser.Token;toString();org.javacc.parser.Token;1
-org.javacc.parser.CodeGenerator;genStringLiteralInCPP(String);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;genCode(Object);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;saveOutput(String);org.javacc.parser.CodeGenerator;4
-org.javacc.parser.CodeGenerator;saveOutput(String);java.io.File;1
-org.javacc.parser.CodeGenerator;fixupLongLiterals(StringBuffer);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;fixupLongLiterals(StringBuffer);java.lang.Character;1
-org.javacc.parser.CodeGenerator;saveOutput(String, StringBuffer);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;printTokenSetup(Token);org.javacc.parser.CodeGenerator;2
-org.javacc.parser.CodeGenerator;printTokenOnly(Token);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;getStringForTokenOnly(Token);org.javacc.parser.CodeGenerator;2
-org.javacc.parser.CodeGenerator;printToken(Token);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;getStringToPrint(Token);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;printLeadingComments(Token);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;getLeadingComments(Token);org.javacc.parser.CodeGenerator;3
-org.javacc.parser.CodeGenerator;printTrailingComments(Token);org.javacc.parser.CodeGenerator;2
-org.javacc.parser.CodeGenerator;getTrailingComments(Token);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;genStringLiteralInCPP(string);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;genCode(object);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;saveOutput(string);org.javacc.parser.CodeGenerator;4
+org.javacc.parser.CodeGenerator;saveOutput(string);java.io.File;1
+org.javacc.parser.CodeGenerator;fixupLongLiterals(stringbuffer);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;fixupLongLiterals(stringbuffer);java.lang.Character;1
+org.javacc.parser.CodeGenerator;saveOutput(string, stringbuffer);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;printTokenSetup(token);org.javacc.parser.CodeGenerator;2
+org.javacc.parser.CodeGenerator;printTokenOnly(token);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;getStringForTokenOnly(token);org.javacc.parser.CodeGenerator;2
+org.javacc.parser.CodeGenerator;printToken(token);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;getStringToPrint(token);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;printLeadingComments(token);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;getLeadingComments(token);org.javacc.parser.CodeGenerator;3
+org.javacc.parser.CodeGenerator;printTrailingComments(token);org.javacc.parser.CodeGenerator;2
+org.javacc.parser.CodeGenerator;getTrailingComments(token);org.javacc.parser.CodeGenerator;1
 org.javacc.parser.CodeGenerator;getGeneratedCode();org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;genModifier(String);org.javacc.parser.CodeGenerator;1
-org.javacc.parser.CodeGenerator;genClassStart(String, String, String, String);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;genModifier(string);org.javacc.parser.CodeGenerator;1
+org.javacc.parser.CodeGenerator;genClassStart(string, string, string, string);org.javacc.parser.CodeGenerator;1
 org.javacc.parser.CodeGenerator;switchToMainFile();org.javacc.parser.CodeGenerator;2
 org.javacc.parser.CodeGenerator;switchToStaticsFile();org.javacc.parser.CodeGenerator;3
 org.javacc.parser.CodeGenerator;switchToIncludeFile();org.javacc.parser.CodeGenerator;3
-org.javacc.parser.CodeGenerator;generateMethodDefHeader(String, String, String, String);org.javacc.parser.CodeGenerator;4
-org.javacc.parser.JavaCCErrors;printLocationInfo(Object);java.lang.System;1
-org.javacc.parser.JavaCCErrors;parse_error(Object, String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;parse_error(Object, String);org.javacc.parser.JavaCCErrors;1
-org.javacc.parser.JavaCCErrors;parse_error(String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;parse_error(String);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.CodeGenerator;generateMethodDefHeader(string, string, string, string);org.javacc.parser.CodeGenerator;4
+org.javacc.parser.JavaCCErrors;printLocationInfo(object);java.lang.System;1
+org.javacc.parser.JavaCCErrors;parse_error(object, string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;parse_error(object, string);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.JavaCCErrors;parse_error(string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;parse_error(string);org.javacc.parser.JavaCCErrors;1
 org.javacc.parser.JavaCCErrors;get_parse_error_count();org.javacc.parser.JavaCCErrors;1
-org.javacc.parser.JavaCCErrors;semantic_error(Object, String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;semantic_error(Object, String);org.javacc.parser.JavaCCErrors;1
-org.javacc.parser.JavaCCErrors;semantic_error(String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;semantic_error(String);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.JavaCCErrors;semantic_error(object, string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;semantic_error(object, string);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.JavaCCErrors;semantic_error(string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;semantic_error(string);org.javacc.parser.JavaCCErrors;1
 org.javacc.parser.JavaCCErrors;get_semantic_error_count();org.javacc.parser.JavaCCErrors;1
-org.javacc.parser.JavaCCErrors;warning(Object, String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;warning(Object, String);org.javacc.parser.JavaCCErrors;1
-org.javacc.parser.JavaCCErrors;warning(String);java.lang.System;1
-org.javacc.parser.JavaCCErrors;warning(String);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.JavaCCErrors;warning(object, string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;warning(object, string);org.javacc.parser.JavaCCErrors;1
+org.javacc.parser.JavaCCErrors;warning(string);java.lang.System;1
+org.javacc.parser.JavaCCErrors;warning(string);org.javacc.parser.JavaCCErrors;1
 org.javacc.parser.JavaCCErrors;get_warning_count();org.javacc.parser.JavaCCErrors;1
 org.javacc.parser.JavaCCErrors;get_error_count();org.javacc.parser.JavaCCErrors;2
 org.javacc.parser.JavaCCErrors;reInit();org.javacc.parser.JavaCCErrors;3
-org.javacc.parser.JavaCCErrors;fatal(String);java.lang.System;1
-org.javacc.parser.RegularExpression;dump(int, Set);org.javacc.parser.RegularExpression;1
+org.javacc.parser.JavaCCErrors;fatal(string);java.lang.System;1
+org.javacc.parser.RegularExpression;dump(int, set);org.javacc.parser.RegularExpression;1
 org.javacc.parser.OptionsTest;testDefaults();java.lang.System;1
 org.javacc.parser.OptionsTest;testSetNonexistentOption();java.lang.Boolean;1
 org.javacc.parser.RRepetitionRange;GenerateNfa(boolean);org.javacc.parser.RRepetitionRange;4
@@ -932,46 +921,46 @@ org.javacc.parser.JavaCodeProduction;getCodeTokens();org.javacc.parser.JavaCodeP
 org.javacc.parser.ParseGen;start(boolean);java.io.File;1
 org.javacc.parser.OtherFilesGenCPP;start();org.javacc.parser.OtherFilesGenCPP;1
 org.javacc.parser.OtherFilesGenCPP;reInit();org.javacc.parser.OtherFilesGenCPP;1
-org.javacc.jjdoc.TextGenerator;print(String);org.javacc.jjdoc.TextGenerator;1
+org.javacc.jjdoc.TextGenerator;print(string);org.javacc.jjdoc.TextGenerator;1
 org.javacc.jjdoc.TextGenerator;documentStart();org.javacc.jjdoc.TextGenerator;1
 org.javacc.jjdoc.TextGenerator;documentEnd();org.javacc.jjdoc.TextGenerator;1
-org.javacc.jjdoc.TextGenerator;specialTokens(String);org.javacc.jjdoc.TextGenerator;1
-org.javacc.jjdoc.TextGenerator;productionStart(NormalProduction);org.javacc.jjdoc.TextGenerator;1
-org.javacc.jjdoc.TextGenerator;productionEnd(NormalProduction);org.javacc.jjdoc.TextGenerator;1
-org.javacc.jjdoc.TextGenerator;expansionStart(boolean, Expansion);org.javacc.jjdoc.TextGenerator;1
+org.javacc.jjdoc.TextGenerator;specialTokens(string);org.javacc.jjdoc.TextGenerator;1
+org.javacc.jjdoc.TextGenerator;productionStart(normalproduction);org.javacc.jjdoc.TextGenerator;1
+org.javacc.jjdoc.TextGenerator;productionEnd(normalproduction);org.javacc.jjdoc.TextGenerator;1
+org.javacc.jjdoc.TextGenerator;expansionStart(boolean, expansion);org.javacc.jjdoc.TextGenerator;1
 org.javacc.jjdoc.TextGenerator;create_output_stream();org.javacc.jjdoc.TextGenerator;1
 org.javacc.jjdoc.TextGenerator;create_output_stream();java.lang.System;1
-org.javacc.jjdoc.TextGenerator;debug(String);java.lang.System;1
-org.javacc.jjdoc.TextGenerator;info(String);java.lang.System;1
-org.javacc.jjdoc.TextGenerator;warn(String);java.lang.System;1
-org.javacc.jjdoc.TextGenerator;error(String);java.lang.System;1
-org.javacc.jjdoc.JJDocGlobals;setGenerator(Generator);org.javacc.jjdoc.JJDocGlobals;1
+org.javacc.jjdoc.TextGenerator;debug(string);java.lang.System;1
+org.javacc.jjdoc.TextGenerator;info(string);java.lang.System;1
+org.javacc.jjdoc.TextGenerator;warn(string);java.lang.System;1
+org.javacc.jjdoc.TextGenerator;error(string);java.lang.System;1
+org.javacc.jjdoc.JJDocGlobals;setGenerator(generator);org.javacc.jjdoc.JJDocGlobals;1
 org.javacc.jjdoc.JJDocGlobals;getGenerator();org.javacc.jjdoc.JJDocGlobals;1
-org.javacc.jjdoc.JJDocGlobals;debug(String);org.javacc.jjdoc.JJDocGlobals;1
-org.javacc.jjdoc.JJDocGlobals;info(String);org.javacc.jjdoc.JJDocGlobals;1
-org.javacc.jjdoc.JJDocGlobals;error(String);org.javacc.jjdoc.JJDocGlobals;1
+org.javacc.jjdoc.JJDocGlobals;debug(string);org.javacc.jjdoc.JJDocGlobals;1
+org.javacc.jjdoc.JJDocGlobals;info(string);org.javacc.jjdoc.JJDocGlobals;1
+org.javacc.jjdoc.JJDocGlobals;error(string);org.javacc.jjdoc.JJDocGlobals;1
 org.javacc.jjdoc.JJDocOptions;init();java.lang.Boolean;2
-org.javacc.jjdoc.JJDoc;emitTopLevelSpecialTokens(Generator, Token);org.javacc.jjdoc.JJDoc;1
-org.javacc.jjdoc.BNFGenerator;get_id(String);org.javacc.jjdoc.BNFGenerator;2
+org.javacc.jjdoc.JJDoc;emitTopLevelSpecialTokens(generator, token);org.javacc.jjdoc.JJDoc;1
+org.javacc.jjdoc.BNFGenerator;get_id(string);org.javacc.jjdoc.BNFGenerator;2
 org.javacc.jjdoc.BNFGenerator;create_output_stream();java.lang.System;1
 org.javacc.jjdoc.BNFGenerator;create_output_stream();org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.BNFGenerator;text(String);org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.BNFGenerator;print(String);org.javacc.jjdoc.BNFGenerator;1
+org.javacc.jjdoc.BNFGenerator;text(string);org.javacc.jjdoc.BNFGenerator;1
+org.javacc.jjdoc.BNFGenerator;print(string);org.javacc.jjdoc.BNFGenerator;1
 org.javacc.jjdoc.BNFGenerator;documentStart();org.javacc.jjdoc.BNFGenerator;1
 org.javacc.jjdoc.BNFGenerator;documentEnd();org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.BNFGenerator;reStart(RegularExpression);org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.BNFGenerator;reEnd(RegularExpression);org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.BNFGenerator;debug(String);java.lang.System;1
-org.javacc.jjdoc.BNFGenerator;info(String);java.lang.System;1
-org.javacc.jjdoc.BNFGenerator;warn(String);java.lang.System;1
-org.javacc.jjdoc.BNFGenerator;error(String);java.lang.System;1
-org.javacc.jjdoc.BNFGenerator;handleTokenProduction(TokenProduction);org.javacc.jjdoc.BNFGenerator;1
-org.javacc.jjdoc.XTextGenerator;get_id(String);org.javacc.jjdoc.XTextGenerator;2
-org.javacc.jjdoc.HTMLGenerator;get_id(String);org.javacc.jjdoc.HTMLGenerator;2
-org.javacc.jjdoc.HTMLGenerator;productionStart(NormalProduction);org.javacc.jjdoc.HTMLGenerator;1
-org.javacc.jjdoc.HTMLGenerator;nonTerminalStart(NonTerminal);org.javacc.jjdoc.HTMLGenerator;1
-org.javacc.jjdoc.JJDocMain;mainProgram(String);java.lang.System;1
-org.javacc.jjdoc.JJDocMain;mainProgram(String);java.io.File;2
+org.javacc.jjdoc.BNFGenerator;reStart(regularexpression);org.javacc.jjdoc.BNFGenerator;1
+org.javacc.jjdoc.BNFGenerator;reEnd(regularexpression);org.javacc.jjdoc.BNFGenerator;1
+org.javacc.jjdoc.BNFGenerator;debug(string);java.lang.System;1
+org.javacc.jjdoc.BNFGenerator;info(string);java.lang.System;1
+org.javacc.jjdoc.BNFGenerator;warn(string);java.lang.System;1
+org.javacc.jjdoc.BNFGenerator;error(string);java.lang.System;1
+org.javacc.jjdoc.BNFGenerator;handleTokenProduction(tokenproduction);org.javacc.jjdoc.BNFGenerator;1
+org.javacc.jjdoc.XTextGenerator;get_id(string);org.javacc.jjdoc.XTextGenerator;2
+org.javacc.jjdoc.HTMLGenerator;get_id(string);org.javacc.jjdoc.HTMLGenerator;2
+org.javacc.jjdoc.HTMLGenerator;productionStart(normalproduction);org.javacc.jjdoc.HTMLGenerator;1
+org.javacc.jjdoc.HTMLGenerator;nonTerminalStart(nonterminal);org.javacc.jjdoc.HTMLGenerator;1
+org.javacc.jjdoc.JJDocMain;mainProgram(string);java.lang.System;1
+org.javacc.jjdoc.JJDocMain;mainProgram(string);java.io.File;2
 org.javacc.jjtree.JJTreeOptions;init();java.lang.Boolean;2
 org.javacc.jjtree.JJTreeOptions;validate();org.javacc.jjtree.JJTreeOptions;4
 org.javacc.jjtree.JavaCharStream;setTabSize(int);org.javacc.jjtree.JavaCharStream;1
@@ -991,8 +980,8 @@ org.javacc.jjtree.JavaCharStream;getEndLine();org.javacc.jjtree.JavaCharStream;2
 org.javacc.jjtree.JavaCharStream;getBeginColumn();org.javacc.jjtree.JavaCharStream;2
 org.javacc.jjtree.JavaCharStream;getBeginLine();org.javacc.jjtree.JavaCharStream;2
 org.javacc.jjtree.JavaCharStream;backup(int);org.javacc.jjtree.JavaCharStream;3
-org.javacc.jjtree.JavaCharStream;JavaCharStream(int, int, int, Reader);org.javacc.jjtree.JavaCharStream;9
-org.javacc.jjtree.JavaCharStream;ReInit(int, int, int, Reader);org.javacc.jjtree.JavaCharStream;16
+org.javacc.jjtree.JavaCharStream;JavaCharStream(int, int, int, reader);org.javacc.jjtree.JavaCharStream;9
+org.javacc.jjtree.JavaCharStream;ReInit(int, int, int, reader);org.javacc.jjtree.JavaCharStream;16
 org.javacc.jjtree.JavaCharStream;GetImage();org.javacc.jjtree.JavaCharStream;4
 org.javacc.jjtree.JavaCharStream;GetSuffix(int);org.javacc.jjtree.JavaCharStream;3
 org.javacc.jjtree.JavaCharStream;Done();org.javacc.jjtree.JavaCharStream;4
@@ -1001,31 +990,31 @@ org.javacc.jjtree.JJTJJTreeParserState;JJTJJTreeParserState();org.javacc.jjtree.
 org.javacc.jjtree.JJTJJTreeParserState;nodeCreated();org.javacc.jjtree.JJTJJTreeParserState;1
 org.javacc.jjtree.JJTJJTreeParserState;reset();org.javacc.jjtree.JJTJJTreeParserState;4
 org.javacc.jjtree.JJTJJTreeParserState;rootNode();org.javacc.jjtree.JJTJJTreeParserState;1
-org.javacc.jjtree.JJTJJTreeParserState;pushNode(Node);org.javacc.jjtree.JJTJJTreeParserState;2
+org.javacc.jjtree.JJTJJTreeParserState;pushNode(node);org.javacc.jjtree.JJTJJTreeParserState;2
 org.javacc.jjtree.JJTJJTreeParserState;popNode();org.javacc.jjtree.JJTJJTreeParserState;4
 org.javacc.jjtree.JJTJJTreeParserState;peekNode();org.javacc.jjtree.JJTJJTreeParserState;1
 org.javacc.jjtree.JJTJJTreeParserState;nodeArity();org.javacc.jjtree.JJTJJTreeParserState;2
-org.javacc.jjtree.JJTJJTreeParserState;clearNodeScope(Node);org.javacc.jjtree.JJTJJTreeParserState;3
-org.javacc.jjtree.JJTJJTreeParserState;openNodeScope(Node);org.javacc.jjtree.JJTJJTreeParserState;3
-org.javacc.jjtree.JJTJJTreeParserState;closeNodeScope(int, Node);org.javacc.jjtree.JJTJJTreeParserState;3
-org.javacc.jjtree.JJTJJTreeParserState;closeNodeScope(boolean, Node);org.javacc.jjtree.JJTJJTreeParserState;3
-org.javacc.jjtree.JJTreeNode;jjtAddChild(int, Node);org.javacc.jjtree.JJTreeNode;1
+org.javacc.jjtree.JJTJJTreeParserState;clearNodeScope(node);org.javacc.jjtree.JJTJJTreeParserState;3
+org.javacc.jjtree.JJTJJTreeParserState;openNodeScope(node);org.javacc.jjtree.JJTJJTreeParserState;3
+org.javacc.jjtree.JJTJJTreeParserState;closeNodeScope(int, node);org.javacc.jjtree.JJTJJTreeParserState;3
+org.javacc.jjtree.JJTJJTreeParserState;closeNodeScope(boolean, node);org.javacc.jjtree.JJTJJTreeParserState;3
+org.javacc.jjtree.JJTreeNode;jjtAddChild(int, node);org.javacc.jjtree.JJTreeNode;1
 org.javacc.jjtree.JJTreeNode;getOrdinal();org.javacc.jjtree.JJTreeNode;1
 org.javacc.jjtree.JJTreeNode;setOrdinal(int);org.javacc.jjtree.JJTreeNode;1
 org.javacc.jjtree.JJTreeNode;getFirstToken();org.javacc.jjtree.JJTreeNode;1
-org.javacc.jjtree.JJTreeNode;setFirstToken(Token);org.javacc.jjtree.JJTreeNode;1
+org.javacc.jjtree.JJTreeNode;setFirstToken(token);org.javacc.jjtree.JJTreeNode;1
 org.javacc.jjtree.JJTreeNode;getLastToken();org.javacc.jjtree.JJTreeNode;1
-org.javacc.jjtree.JJTreeNode;setLastToken(Token);org.javacc.jjtree.JJTreeNode;1
-org.javacc.jjtree.JJTreeNode;print(IO, Token);org.javacc.jjtree.JJTreeNode;1
+org.javacc.jjtree.JJTreeNode;setLastToken(token);org.javacc.jjtree.JJTreeNode;1
+org.javacc.jjtree.JJTreeNode;print(io, token);org.javacc.jjtree.JJTreeNode;1
 org.javacc.jjtree.TokenMgrException;getMessage();java.lang.Throwable;1
-org.javacc.jjtree.TokenMgrException;TokenMgrException(int, String);org.javacc.jjtree.TokenMgrException;1
+org.javacc.jjtree.TokenMgrException;TokenMgrException(int, string);org.javacc.jjtree.TokenMgrException;1
 org.javacc.jjtree.JJTreeGlobals;initialize();org.javacc.jjtree.JJTreeGlobals;8
-org.javacc.jjtree.JJTreeGlobals;isOptionJJTreeOnly(String);org.javacc.jjtree.JJTreeGlobals;1
-org.javacc.jjtree.ASTOptionBinding;initialize(String, String);org.javacc.jjtree.ASTOptionBinding;2
+org.javacc.jjtree.JJTreeGlobals;isOptionJJTreeOnly(string);org.javacc.jjtree.JJTreeGlobals;1
+org.javacc.jjtree.ASTOptionBinding;initialize(string, string);org.javacc.jjtree.ASTOptionBinding;2
 org.javacc.jjtree.ASTOptionBinding;isSuppressed();org.javacc.jjtree.ASTOptionBinding;1
 org.javacc.jjtree.ASTOptionBinding;suppressOption(boolean);org.javacc.jjtree.ASTOptionBinding;1
-org.javacc.jjtree.ASTOptionBinding;translateImage(Token);org.javacc.jjtree.ASTOptionBinding;1
-org.javacc.jjtree.ASTNodeDescriptor;indefinite(String);org.javacc.jjtree.ASTNodeDescriptor;3
+org.javacc.jjtree.ASTOptionBinding;translateImage(token);org.javacc.jjtree.ASTOptionBinding;1
+org.javacc.jjtree.ASTNodeDescriptor;indefinite(string);org.javacc.jjtree.ASTNodeDescriptor;3
 org.javacc.jjtree.ASTNodeDescriptor;getNodeIds();org.javacc.jjtree.ASTNodeDescriptor;1
 org.javacc.jjtree.ASTNodeDescriptor;getNodeNames();org.javacc.jjtree.ASTNodeDescriptor;1
 org.javacc.jjtree.ASTNodeDescriptor;setNodeIdValue();org.javacc.jjtree.ASTNodeDescriptor;5
@@ -1036,15 +1025,15 @@ org.javacc.jjtree.ASTNodeDescriptor;getDescriptor();org.javacc.jjtree.ASTNodeDes
 org.javacc.jjtree.ASTNodeDescriptor;getNodeType();org.javacc.jjtree.ASTNodeDescriptor;1
 org.javacc.jjtree.ASTNodeDescriptor;getNodeName();org.javacc.jjtree.ASTNodeDescriptor;1
 org.javacc.jjtree.ASTNodeDescriptor;expression_text();org.javacc.jjtree.ASTNodeDescriptor;1
-org.javacc.jjtree.ASTNodeDescriptor;closeNode(String);org.javacc.jjtree.ASTNodeDescriptor;2
-org.javacc.jjtree.CPPCodeGenerator;visit(ASTGrammar, Object);java.io.File;1
-org.javacc.jjtree.CPPCodeGenerator;visit(ASTBNFAction, Object);org.javacc.jjtree.CPPCodeGenerator;1
-org.javacc.jjtree.CPPCodeGenerator;visit(ASTBNFNodeScope, Object);org.javacc.jjtree.CPPCodeGenerator;1
-org.javacc.jjtree.CPPCodeGenerator;visit(ASTExpansionNodeScope, Object);org.javacc.jjtree.CPPCodeGenerator;1
-org.javacc.jjtree.CPPCodeGenerator;getIndentation(JJTreeNode);org.javacc.jjtree.CPPCodeGenerator;1
-org.javacc.jjtree.JJTree;p(String);org.javacc.jjtree.JJTree;1
-org.javacc.jjtree.JJTree;main(String);java.lang.Boolean;1
-org.javacc.jjtree.JJTree;main(String);org.javacc.jjtree.JJTree;1
+org.javacc.jjtree.ASTNodeDescriptor;closeNode(string);org.javacc.jjtree.ASTNodeDescriptor;2
+org.javacc.jjtree.CPPCodeGenerator;visit(astgrammar, object);java.io.File;1
+org.javacc.jjtree.CPPCodeGenerator;visit(astbnfaction, object);org.javacc.jjtree.CPPCodeGenerator;1
+org.javacc.jjtree.CPPCodeGenerator;visit(astbnfnodescope, object);org.javacc.jjtree.CPPCodeGenerator;1
+org.javacc.jjtree.CPPCodeGenerator;visit(astexpansionnodescope, object);org.javacc.jjtree.CPPCodeGenerator;1
+org.javacc.jjtree.CPPCodeGenerator;getIndentation(jjtreenode);org.javacc.jjtree.CPPCodeGenerator;1
+org.javacc.jjtree.JJTree;p(string);org.javacc.jjtree.JJTree;1
+org.javacc.jjtree.JJTree;main(string);java.lang.Boolean;1
+org.javacc.jjtree.JJTree;main(string);org.javacc.jjtree.JJTree;1
 org.javacc.jjtree.IO;IO();java.lang.System;2
 org.javacc.jjtree.IO;IO();org.javacc.jjtree.IO;3
 org.javacc.jjtree.IO;getInputFileName();org.javacc.jjtree.IO;1
@@ -1053,29 +1042,29 @@ org.javacc.jjtree.IO;getOutputFileName();org.javacc.jjtree.IO;1
 org.javacc.jjtree.IO;getOut();org.javacc.jjtree.IO;1
 org.javacc.jjtree.IO;getMsg();org.javacc.jjtree.IO;1
 org.javacc.jjtree.IO;getErr();org.javacc.jjtree.IO;1
-org.javacc.jjtree.IO;print(String);org.javacc.jjtree.IO;1
-org.javacc.jjtree.IO;println(String);org.javacc.jjtree.IO;1
+org.javacc.jjtree.IO;print(string);org.javacc.jjtree.IO;1
+org.javacc.jjtree.IO;println(string);org.javacc.jjtree.IO;1
 org.javacc.jjtree.IO;println();org.javacc.jjtree.IO;1
 org.javacc.jjtree.IO;closeAll();org.javacc.jjtree.IO;3
-org.javacc.jjtree.IO;create_output_file_name(String);java.io.File;1
-org.javacc.jjtree.IO;setInput(String);org.javacc.jjtree.IO;2
-org.javacc.jjtree.IO;setInput(String);java.io.File;2
+org.javacc.jjtree.IO;create_output_file_name(string);java.io.File;1
+org.javacc.jjtree.IO;setInput(string);org.javacc.jjtree.IO;2
+org.javacc.jjtree.IO;setInput(string);java.io.File;2
 org.javacc.jjtree.IO;setOutput();org.javacc.jjtree.IO;3
 org.javacc.jjtree.TokenMgrError;getMessage();java.lang.Throwable;1
-org.javacc.jjtree.TokenMgrError;TokenMgrError(int, String);org.javacc.jjtree.TokenMgrError;1
-org.javacc.jjtree.NodeScope;NodeScope(ASTNodeDescriptor, ASTProduction);org.javacc.jjtree.NodeScope;6
+org.javacc.jjtree.TokenMgrError;TokenMgrError(int, string);org.javacc.jjtree.TokenMgrError;1
+org.javacc.jjtree.NodeScope;NodeScope(astnodedescriptor, astproduction);org.javacc.jjtree.NodeScope;6
 org.javacc.jjtree.NodeScope;isVoid();org.javacc.jjtree.NodeScope;1
 org.javacc.jjtree.NodeScope;getNodeDescriptor();org.javacc.jjtree.NodeScope;1
 org.javacc.jjtree.NodeScope;getNodeDescriptorText();org.javacc.jjtree.NodeScope;1
 org.javacc.jjtree.NodeScope;getNodeVariable();org.javacc.jjtree.NodeScope;1
-org.javacc.jjtree.NodeScope;constructVariable(String);org.javacc.jjtree.NodeScope;1
-org.javacc.jjtree.ParseException;ParseException(int, String, Token);org.javacc.jjtree.ParseException;4
+org.javacc.jjtree.NodeScope;constructVariable(string);org.javacc.jjtree.NodeScope;1
+org.javacc.jjtree.ParseException;ParseException(int, string, token);org.javacc.jjtree.ParseException;4
 org.javacc.jjtree.ParseException;ParseException();org.javacc.jjtree.ParseException;1
-org.javacc.jjtree.ParseException;ParseException(String);org.javacc.jjtree.ParseException;1
+org.javacc.jjtree.ParseException;ParseException(string);org.javacc.jjtree.ParseException;1
 org.javacc.jjtree.ParseException;getMessage();java.lang.Throwable;1
 org.javacc.jjtree.ParseException;getMessage();org.javacc.jjtree.ParseException;5
-org.javacc.jjtree.JJTreeParser;jjtreeOpenNodeScope(Node);org.javacc.jjtree.JJTreeParser;1
-org.javacc.jjtree.JJTreeParser;jjtreeCloseNodeScope(Node);org.javacc.jjtree.JJTreeParser;1
+org.javacc.jjtree.JJTreeParser;jjtreeOpenNodeScope(node);org.javacc.jjtree.JJTreeParser;1
+org.javacc.jjtree.JJTreeParser;jjtreeCloseNodeScope(node);org.javacc.jjtree.JJTreeParser;1
 org.javacc.jjtree.JJTreeParser;notTailOfExpansionUnit();org.javacc.jjtree.JJTreeParser;1
 org.javacc.jjtree.JJTreeParser;eatUptoCloseBrace();org.javacc.jjtree.JJTreeParser;2
 org.javacc.jjtree.JJTreeParser;javacc_input();org.javacc.jjtree.JJTreeParser;7
@@ -1089,10 +1078,10 @@ org.javacc.jjtree.JJTreeParser;regular_expr_production();org.javacc.jjtree.JJTre
 org.javacc.jjtree.JJTreeParser;token_manager_decls();org.javacc.jjtree.JJTreeParser;6
 org.javacc.jjtree.JJTreeParser;regexpr_kind();org.javacc.jjtree.JJTreeParser;3
 org.javacc.jjtree.JJTreeParser;regexpr_spec();org.javacc.jjtree.JJTreeParser;4
-org.javacc.jjtree.JJTreeParser;expansion_choices(ASTProduction);org.javacc.jjtree.JJTreeParser;4
-org.javacc.jjtree.JJTreeParser;expansion(ASTProduction);org.javacc.jjtree.JJTreeParser;4
-org.javacc.jjtree.JJTreeParser;local_lookahead(ASTProduction);org.javacc.jjtree.JJTreeParser;5
-org.javacc.jjtree.JJTreeParser;expansion_unit(ASTProduction);org.javacc.jjtree.JJTreeParser;5
+org.javacc.jjtree.JJTreeParser;expansion_choices(astproduction);org.javacc.jjtree.JJTreeParser;4
+org.javacc.jjtree.JJTreeParser;expansion(astproduction);org.javacc.jjtree.JJTreeParser;4
+org.javacc.jjtree.JJTreeParser;local_lookahead(astproduction);org.javacc.jjtree.JJTreeParser;5
+org.javacc.jjtree.JJTreeParser;expansion_unit(astproduction);org.javacc.jjtree.JJTreeParser;5
 org.javacc.jjtree.JJTreeParser;regular_expression();org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;complex_regular_expression_choices();org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;complex_regular_expression();org.javacc.jjtree.JJTreeParser;4
@@ -1371,26 +1360,23 @@ org.javacc.jjtree.JJTreeParser;jj_la1_init_1();org.javacc.jjtree.JJTreeParser;1
 org.javacc.jjtree.JJTreeParser;jj_la1_init_2();org.javacc.jjtree.JJTreeParser;1
 org.javacc.jjtree.JJTreeParser;jj_la1_init_3();org.javacc.jjtree.JJTreeParser;1
 org.javacc.jjtree.JJTreeParser;jj_la1_init_4();org.javacc.jjtree.JJTreeParser;1
-org.javacc.jjtree.JJTreeParser;JJTreeParser(InputStream, String);org.javacc.jjtree.JJTreeParser;7
-org.javacc.jjtree.JJTreeParser;ReInit(InputStream, String);org.javacc.jjtree.JJTreeParser;8
-org.javacc.jjtree.JJTreeParser;JJTreeParser(Reader);org.javacc.jjtree.JJTreeParser;7
-org.javacc.jjtree.JJTreeParser;ReInit(Reader);org.javacc.jjtree.JJTreeParser;8
-org.javacc.jjtree.JJTreeParser;JJTreeParser(JJTreeParserTokenManager);org.javacc.jjtree.JJTreeParser;6
-org.javacc.jjtree.JJTreeParser;ReInit(JJTreeParserTokenManager);org.javacc.jjtree.JJTreeParser;7
-org.javacc.jjtree.JJTreeParser;jj_consume_token(int);org.javacc.jjtree.JJTreeParser;7
-org.javacc.jjtree.JJTreeParser;jj_consume_token(int);org.javacc.jjtree.JJTreeParser.JJCalls;3
+org.javacc.jjtree.JJTreeParser;JJTreeParser(inputstream, string);org.javacc.jjtree.JJTreeParser;7
+org.javacc.jjtree.JJTreeParser;ReInit(inputstream, string);org.javacc.jjtree.JJTreeParser;8
+org.javacc.jjtree.JJTreeParser;JJTreeParser(reader);org.javacc.jjtree.JJTreeParser;7
+org.javacc.jjtree.JJTreeParser;ReInit(reader);org.javacc.jjtree.JJTreeParser;8
+org.javacc.jjtree.JJTreeParser;JJTreeParser(jjtreeparsertokenmanager);org.javacc.jjtree.JJTreeParser;6
+org.javacc.jjtree.JJTreeParser;ReInit(jjtreeparsertokenmanager);org.javacc.jjtree.JJTreeParser;7
+org.javacc.jjtree.JJTreeParser;jj_consume_token(int);org.javacc.jjtree.JJTreeParser;10
 org.javacc.jjtree.JJTreeParser;jj_scan_token(int);org.javacc.jjtree.JJTreeParser;7
 org.javacc.jjtree.JJTreeParser;getNextToken();org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;getToken(int);org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;jj_ntk();org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;jj_add_error_token(int, int);org.javacc.jjtree.JJTreeParser;4
 org.javacc.jjtree.JJTreeParser;generateParseException();org.javacc.jjtree.JJTreeParser;12
-org.javacc.jjtree.JJTreeParser;jj_rescan_token();org.javacc.jjtree.JJTreeParser;6
-org.javacc.jjtree.JJTreeParser;jj_rescan_token();org.javacc.jjtree.JJTreeParser.JJCalls;4
-org.javacc.jjtree.JJTreeParser;jj_save(int, int);org.javacc.jjtree.JJTreeParser;4
-org.javacc.jjtree.JJTreeParser;jj_save(int, int);org.javacc.jjtree.JJTreeParser.JJCalls;4
-org.javacc.jjtree.ASTProduction;getNodeScopeNumber(NodeScope);org.javacc.jjtree.ASTProduction;2
-org.javacc.jjtree.JJTreeParserTokenManager;setDebugStream(PrintStream);org.javacc.jjtree.JJTreeParserTokenManager;1
+org.javacc.jjtree.JJTreeParser;jj_rescan_token();org.javacc.jjtree.JJTreeParser;10
+org.javacc.jjtree.JJTreeParser;jj_save(int, int);org.javacc.jjtree.JJTreeParser;8
+org.javacc.jjtree.ASTProduction;getNodeScopeNumber(nodescope);org.javacc.jjtree.ASTProduction;2
+org.javacc.jjtree.JJTreeParserTokenManager;setDebugStream(printstream);org.javacc.jjtree.JJTreeParserTokenManager;1
 org.javacc.jjtree.JJTreeParserTokenManager;jjStopStringLiteralDfa_0(int, long, long, long);org.javacc.jjtree.JJTreeParserTokenManager;2
 org.javacc.jjtree.JJTreeParserTokenManager;jjStopAtPos(int, int);org.javacc.jjtree.JJTreeParserTokenManager;2
 org.javacc.jjtree.JJTreeParserTokenManager;jjStartNfaWithStates_0(int, int, int);org.javacc.jjtree.JJTreeParserTokenManager;4
@@ -1418,47 +1404,47 @@ org.javacc.jjtree.JJTreeParserTokenManager;jjMoveStringLiteralDfa1_2(long);org.j
 org.javacc.jjtree.JJTreeParserTokenManager;jjCanMove_0(int, int, int, long, long);org.javacc.jjtree.JJTreeParserTokenManager;2
 org.javacc.jjtree.JJTreeParserTokenManager;jjCanMove_1(int, int, int, long, long);org.javacc.jjtree.JJTreeParserTokenManager;38
 org.javacc.jjtree.JJTreeParserTokenManager;jjCanMove_2(int, int, int, long, long);org.javacc.jjtree.JJTreeParserTokenManager;38
-org.javacc.jjtree.JJTreeParserTokenManager;JJTreeParserTokenManager(JavaCharStream);org.javacc.jjtree.JJTreeParserTokenManager;1
-org.javacc.jjtree.JJTreeParserTokenManager;ReInit(JavaCharStream);org.javacc.jjtree.JJTreeParserTokenManager;5
+org.javacc.jjtree.JJTreeParserTokenManager;JJTreeParserTokenManager(javacharstream);org.javacc.jjtree.JJTreeParserTokenManager;1
+org.javacc.jjtree.JJTreeParserTokenManager;ReInit(javacharstream);org.javacc.jjtree.JJTreeParserTokenManager;5
 org.javacc.jjtree.JJTreeParserTokenManager;ReInitRounds();org.javacc.jjtree.JJTreeParserTokenManager;2
 org.javacc.jjtree.JJTreeParserTokenManager;SwitchTo(int);org.javacc.jjtree.JJTreeParserTokenManager;1
 org.javacc.jjtree.JJTreeParserTokenManager;jjFillToken();org.javacc.jjtree.JJTreeParserTokenManager;3
 org.javacc.jjtree.JJTreeParserTokenManager;getNextToken();org.javacc.jjtree.JJTreeParserTokenManager;11
-org.javacc.jjtree.JJTreeParserTokenManager;SkipLexicalActions(Token);org.javacc.jjtree.JJTreeParserTokenManager;1
+org.javacc.jjtree.JJTreeParserTokenManager;SkipLexicalActions(token);org.javacc.jjtree.JJTreeParserTokenManager;1
 org.javacc.jjtree.JJTreeParserTokenManager;MoreLexicalActions();org.javacc.jjtree.JJTreeParserTokenManager;6
-org.javacc.jjtree.JJTreeParserTokenManager;TokenLexicalActions(Token);org.javacc.jjtree.JJTreeParserTokenManager;5
+org.javacc.jjtree.JJTreeParserTokenManager;TokenLexicalActions(token);org.javacc.jjtree.JJTreeParserTokenManager;5
 org.javacc.jjtree.JJTreeParserTokenManager;jjCheckNAdd(int);org.javacc.jjtree.JJTreeParserTokenManager;4
 org.javacc.jjtree.JJTreeParserTokenManager;jjAddStates(int, int);org.javacc.jjtree.JJTreeParserTokenManager;3
 org.javacc.jjtree.JJTreeParserTokenManager;jjCheckNAddStates(int, int);org.javacc.jjtree.JJTreeParserTokenManager;1
-org.javacc.jjtree.NodeFiles;ensure(IO, String);org.javacc.jjtree.NodeFiles;2
-org.javacc.jjtree.NodeFiles;ensure(IO, String);java.io.File;1
+org.javacc.jjtree.NodeFiles;ensure(io, string);org.javacc.jjtree.NodeFiles;2
+org.javacc.jjtree.NodeFiles;ensure(io, string);java.io.File;1
 org.javacc.jjtree.NodeFiles;generateVisitor_java();org.javacc.jjtree.NodeFiles;1
 org.javacc.jjtree.NodeFiles;generateDefaultVisitor_java();org.javacc.jjtree.NodeFiles;1
 org.javacc.jjtree.CPPJJTreeState;generateTreeState();java.io.File;1
 org.javacc.jjtree.CPPJJTreeState;generateTreeState();org.javacc.jjtree.CPPJJTreeState;1
 org.javacc.jjtree.JJTreeOptionsTest;testNodeFactory();java.lang.Boolean;2
-org.javacc.jjtree.Token;Token(int, String);org.javacc.jjtree.Token;2
+org.javacc.jjtree.Token;Token(int, string);org.javacc.jjtree.Token;2
 org.javacc.jjtree.Token;toString();org.javacc.jjtree.Token;1
 org.javacc.jjtree.SimpleNode;SimpleNode(int);org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;SimpleNode(int, JJTreeParser);org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;jjtSetParent(Node);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.SimpleNode;SimpleNode(int, jjtreeparser);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.SimpleNode;jjtSetParent(node);org.javacc.jjtree.SimpleNode;1
 org.javacc.jjtree.SimpleNode;jjtGetParent();org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;jjtAddChild(int, Node);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.SimpleNode;jjtAddChild(int, node);org.javacc.jjtree.SimpleNode;1
 org.javacc.jjtree.SimpleNode;jjtGetChild(int);org.javacc.jjtree.SimpleNode;1
 org.javacc.jjtree.SimpleNode;jjtGetNumChildren();org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;jjtSetValue(Object);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.SimpleNode;jjtSetValue(object);org.javacc.jjtree.SimpleNode;1
 org.javacc.jjtree.SimpleNode;jjtGetValue();org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;childrenAccept(JJTreeParserVisitor, Object);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.SimpleNode;childrenAccept(jjtreeparservisitor, object);org.javacc.jjtree.SimpleNode;1
 org.javacc.jjtree.SimpleNode;toString();org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.SimpleNode;dump(String);java.lang.System;1
-org.javacc.jjtree.SimpleNode;dump(String);org.javacc.jjtree.SimpleNode;1
-org.javacc.jjtree.JavaCodeGenerator;visit(ASTGrammar, Object);java.io.File;1
-org.javacc.jjtree.JavaCodeGenerator;visit(ASTBNFAction, Object);org.javacc.jjtree.JavaCodeGenerator;1
-org.javacc.jjtree.JavaCodeGenerator;visit(ASTBNFNodeScope, Object);org.javacc.jjtree.JavaCodeGenerator;1
-org.javacc.jjtree.JavaCodeGenerator;visit(ASTExpansionNodeScope, Object);org.javacc.jjtree.JavaCodeGenerator;1
-org.javacc.jjtree.JavaCodeGenerator;getIndentation(JJTreeNode);org.javacc.jjtree.JavaCodeGenerator;1
-org.javacc.jjtree.ASTGrammar;generate(IO);java.lang.System;1
-org.javacc.jjtree.CPPNodeFiles;addType(String);org.javacc.jjtree.CPPNodeFiles;1
+org.javacc.jjtree.SimpleNode;dump(string);java.lang.System;1
+org.javacc.jjtree.SimpleNode;dump(string);org.javacc.jjtree.SimpleNode;1
+org.javacc.jjtree.JavaCodeGenerator;visit(astgrammar, object);java.io.File;1
+org.javacc.jjtree.JavaCodeGenerator;visit(astbnfaction, object);org.javacc.jjtree.JavaCodeGenerator;1
+org.javacc.jjtree.JavaCodeGenerator;visit(astbnfnodescope, object);org.javacc.jjtree.JavaCodeGenerator;1
+org.javacc.jjtree.JavaCodeGenerator;visit(astexpansionnodescope, object);org.javacc.jjtree.JavaCodeGenerator;1
+org.javacc.jjtree.JavaCodeGenerator;getIndentation(jjtreenode);org.javacc.jjtree.JavaCodeGenerator;1
+org.javacc.jjtree.ASTGrammar;generate(io);java.lang.System;1
+org.javacc.jjtree.CPPNodeFiles;addType(string);org.javacc.jjtree.CPPNodeFiles;1
 org.javacc.jjtree.CPPNodeFiles;nodeIncludeFile();java.io.File;1
 org.javacc.jjtree.CPPNodeFiles;jjtreeIncludeFile();java.io.File;1
 org.javacc.jjtree.CPPNodeFiles;jjtreeImplFile();java.io.File;1
@@ -1470,5 +1456,5 @@ org.javacc.jjtree.CPPNodeFiles;generateTreeImpl();org.javacc.jjtree.CPPNodeFiles
 org.javacc.jjtree.CPPNodeFiles;generateTreeConstants();org.javacc.jjtree.CPPNodeFiles;1
 org.javacc.jjtree.CPPNodeFiles;generateTreeConstants();java.io.File;1
 org.javacc.jjtree.CPPNodeFiles;generateVisitors();java.io.File;1
-org.javacc.jjtree.CPPNodeFiles;generateVisitorInterface(PrintWriter);org.javacc.jjtree.CPPNodeFiles;3
-org.javacc.jjtree.CPPNodeFiles;generateDefaultVisitor(PrintWriter);org.javacc.jjtree.CPPNodeFiles;3
+org.javacc.jjtree.CPPNodeFiles;generateVisitorInterface(printwriter);org.javacc.jjtree.CPPNodeFiles;3
+org.javacc.jjtree.CPPNodeFiles;generateDefaultVisitor(printwriter);org.javacc.jjtree.CPPNodeFiles;3

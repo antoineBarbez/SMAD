@@ -4,10 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -22,6 +20,7 @@ import org.apache.commons.lang.StringUtils;
 import org.repositoryminer.metrics.parser.Language;
 import org.repositoryminer.metrics.parser.Parser;
 import org.repositoryminer.metrics.parser.java.JavaParser;
+import org.repositoryminer.metrics.ast.AbstractClass;
 import org.repositoryminer.metrics.ast.AbstractFieldAccess;
 import org.repositoryminer.metrics.ast.AbstractMethod;
 import org.repositoryminer.metrics.ast.AbstractMethodInvocation;
@@ -42,7 +41,7 @@ public class FeatureEnvyMetricsFileCreator {
 		String name;
 		String repositoryPath;
 		String[] dirsToAnalyze;
-		String metricsFilePath;
+		String metricsFilePath;			
 		
 		if (args.length < 3) {
 			System.out.println("Too few arguments");
@@ -61,8 +60,8 @@ public class FeatureEnvyMetricsFileCreator {
 		}
 		
 		createMetricsFile(name, repositoryPath, dirsToAnalyze, metricsFilePath);
-		
 	}
+	
 	
 	private static void createMetricsFile(
 		String aName,
@@ -70,7 +69,7 @@ public class FeatureEnvyMetricsFileCreator {
 		String[] dirsToAnalyze,
 		String metricsFilePath) {
 		
-		System.out.println("Begin creating metrics file for " + aName + "...");
+		System.out.println("Begin creating metrics-file for " + aName + "...");
 		
 		List<Parser> parsers = new ArrayList<>();
 		parsers.add(new JavaParser());
@@ -134,14 +133,23 @@ public class FeatureEnvyMetricsFileCreator {
 		//Parse the file into an AST object
 		AST ast = parser.generate(fileName, FileUtils.readFileToString(file, "UTF-8"),
 				sourceFolders.get(parser.getId()));
-
-		for (AbstractType type : getTypes(ast)) {
-			String className = type.getName();
+		
+		List<AbstractClass> classes = getClasses(ast);
+		List<String> classNames = new ArrayList<String>();
+		for (AbstractClass klass : classes) {
+			classNames.add(klass.getName());
+		}
+		
+		for (AbstractClass klass : classes) {
+			//System.out.println(klass.getClass().toString());
+			String className = klass.getName();
+			//System.out.println(klass.getName());
 			
-			for (AbstractMethod method : type.getMethods()) {
+			for (AbstractMethod method : klass.getMethods()) {
 				String methodName = normalizeMethodName(method.getName());
+				//System.out.println(method.getName());
 				
-				Map<String, Integer> atfMap = getAccessToFieldMap(method);
+				Map<String, Integer> atfMap = getAccessToFieldMap(method, classNames);
 				for (Map.Entry<String, Integer> entry : atfMap.entrySet()) {
 					StringBuffer buffer = new StringBuffer();
 					
@@ -159,76 +167,64 @@ public class FeatureEnvyMetricsFileCreator {
 		}
 	}
 	
-	// To take care of Inner Classes
-	private static List<AbstractType> getTypes(AST ast) {
-		//We must first sort the types by size to avoid wrong renaming
+	private static List<AbstractClass> getClasses(AST ast) {
 		List<AbstractType> types = ast.getTypes();
-		int[] sizes = new int[types.size()];
-		for (int i=0;i<types.size();i++) {
-			sizes[i] = types.get(i).getEndPosition() - types.get(i).getStartPosition();
-		}
-		int[] argsortSizes = argsort(sizes, false);
 		
-		for (int j=0;j<types.size();j++) {
-			AbstractType type = types.get(argsortSizes[j]);
-			
+		List<AbstractType> innerClasses = new ArrayList<AbstractType>();
+		for (AbstractType type : types) {
 			int startPosition = type.getStartPosition();
 			int endPosition = type.getEndPosition();
-			Set<String> innerMethods = new HashSet<String>();
 			for (AbstractType klass : types) {
 				if ((klass.getStartPosition() > startPosition) && (klass.getEndPosition() < endPosition)) {
-					//Change the name of the class
-					String[] splittedName = klass.getName().split("\\.");
-					String name = splittedName[splittedName.length -1];
-					klass.setName(type.getName() + "." + name);
-					
-					//remove it's methods from the wrapping class
-					for (AbstractMethod method : klass.getMethods()) {
-						innerMethods.add(method.getName());
-					}
+					innerClasses.add(klass);
 				}
 			}
-			
-			
-			Iterator<AbstractMethod> methodsIterator = type.getMethods().iterator();
-			List<AbstractMethod> methodsList = new ArrayList<AbstractMethod>();
-			while (methodsIterator.hasNext()) {
-				AbstractMethod method = methodsIterator.next();
-				if (!innerMethods.contains(method.getName())) {
-					methodsList.add(method);
-				}
-			}
-			type.setMethods(methodsList);
 		}
 		
-		return types;
+		List<AbstractClass> classes = new ArrayList<AbstractClass>();
+		for (AbstractType type : types) {
+			if ((type instanceof AbstractClass) && !(innerClasses.contains(type))) {
+				classes.add((AbstractClass)type);
+			}
+		}
+		
+		return classes;
 	}
+	
 	
 	// Returns a Map whose keys are classes whose fields/attributes are accessed within the method body,
 	// and values are the number of accessed fields per class.
-	private static Map<String, Integer> getAccessToFieldMap(AbstractMethod method) {
+	private static Map<String, Integer> getAccessToFieldMap(AbstractMethod method, List<String> classNames) {
 		Set<String> accessedFields = new HashSet<String>();
 		for (AbstractStatement stmt : method.getStatements()) {
 			String field = null;
-			String declarringClass = null;
+			String declaringClass = null;
 
 			if (stmt.getNodeType() == NodeType.FIELD_ACCESS) {
 				AbstractFieldAccess fieldAccess = (AbstractFieldAccess) stmt;
 				field = fieldAccess.getExpression();
-				declarringClass = fieldAccess.getDeclaringClass();
+				declaringClass = fieldAccess.getDeclaringClass();
 			} else if (stmt.getNodeType() == NodeType.METHOD_INVOCATION) {
 				AbstractMethodInvocation methodInvocation = (AbstractMethodInvocation) stmt;
 				if (!methodInvocation.isAccessor()) {
 					continue;
 				}
 				field = methodInvocation.getAccessedField();
-				declarringClass = methodInvocation.getDeclaringClass();
+				declaringClass = methodInvocation.getDeclaringClass();
 				
 			} else { 
 				continue;
 			}
 			
-			accessedFields.add(declarringClass + '+' + field);
+			// To consider inner class attributes as attributes of the englobing class
+			if (declaringClass != null) {
+				for (String name : classNames) {
+					if (declaringClass.startsWith(name)) {
+						declaringClass = name;
+					}
+				}
+				accessedFields.add(declaringClass + '+' + field);
+			}
 		}
 		
 		Map<String, Integer> atfMap = new HashMap<String, Integer>();
@@ -236,7 +232,7 @@ public class FeatureEnvyMetricsFileCreator {
 			String [] accessedFieldList = accessedField.split("\\+");
 			String declaringClass = accessedFieldList[0];
 			
-			if (!declaringClass.equals("") && !declaringClass.equals("null")) {	
+			if (!declaringClass.equals("")) {	
 				int count = atfMap.containsKey(declaringClass) ? atfMap.get(declaringClass) : 0;
 				atfMap.put(declaringClass, count + 1);
 			}
@@ -263,7 +259,7 @@ public class FeatureEnvyMetricsFileCreator {
 				Matcher m2 = paramPattern.matcher(normalizedParam);
 				
 				m2.matches();
-				normalizedParamList.add(m2.group(1));
+				normalizedParamList.add(m2.group(1).toLowerCase());
 			}
 			Collections.sort(normalizedParamList, String.CASE_INSENSITIVE_ORDER);
 			
@@ -279,26 +275,4 @@ public class FeatureEnvyMetricsFileCreator {
 			return methodName;
 		}
 	}
-	
-
-    private static int[] argsort(final int[] a, final boolean ascending) {
-        Integer[] indexes = new Integer[a.length];
-        for (int i = 0; i < indexes.length; i++) {
-            indexes[i] = i;
-        }
-        Arrays.sort(indexes, new Comparator<Integer>() {
-            public int compare(final Integer i1, final Integer i2) {
-                return (ascending ? 1 : -1) * Integer.compare(a[i1], a[i2]);
-            }
-        });
-        return asArray(indexes);
-    }
-    
-    private static int[] asArray(Integer[] a) {
-        int[] b = new int[a.length];
-        for (int i = 0; i < b.length; i++) {
-            b[i] = a[i].intValue();
-        }
-        return b;
-    }
 }

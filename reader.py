@@ -1,5 +1,5 @@
 from __future__            import division
-from sklearn.preprocessing import StandardScaler
+#from sklearn.preprocessing import StandardScaler
 from paths                 import ROOT_DIR
 
 import dataConstruction.systems as systems
@@ -11,6 +11,8 @@ import sys
 import fnmatch
 import pickle
 import progressbar
+
+import dataConstruction.repository_miner as rm 
 
 ''' This file contains all the methods that we will use to extract the data from 
     the differents csv files (historical information, anti-pattern occurences...)'''
@@ -330,8 +332,7 @@ def saveTensors():
             pickle.dump(tensor, file, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-
-
-
+if __name__ == "__main__":
+    rm.RepositoryMiner()
     
 
