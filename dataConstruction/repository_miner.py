@@ -16,6 +16,7 @@ class RepositoryMiner(object):
 		self.systemName      = system['name']
 		self.snapshot        = system['snapshot']
 		self.mainDirectories = system['directory']
+		self.sources         = system['sources']
 
 		# Directories
 		self.TEMP = os.path.dirname(os.path.abspath(__file__)) + '/TEMP/'
@@ -48,16 +49,16 @@ class RepositoryMiner(object):
 	def mine(self, system):
 		self.setup(system)
 
-		he = history_extractor.HistoryExtractor()
+		#he = history_extractor.HistoryExtractor()
 
-		he.createHistoryFile(self.HISTORY_CLASS, "C")
-		self.__correctExceptions(self.HISTORY_CLASS, he.exceptionDirs, he.package_dirs_dictionary)
-		he.createHistoryFile(self.HISTORY_METHOD, "M")
+		#he.createHistoryFile(self.HISTORY_CLASS, "C")
+		#self.__correctExceptions(self.HISTORY_CLASS, he.exceptionDirs, he.package_dirs_dictionary)
+		#he.createHistoryFile(self.HISTORY_METHOD, "M")
 
-		self.__createClassFiles(he.package_dirs_dictionary)
-		self.__createMethodFile(he.package_dirs_dictionary)
+		#self.__createClassFiles(he.package_dirs_dictionary)
+		#self.__createMethodFile(he.package_dirs_dictionary)
 
-		self.__createMetricsFile("GC")
+		#self.__createMetricsFile("GC")
 		self.__createMetricsFile("FE")
 
 		self.close()
@@ -84,21 +85,22 @@ class RepositoryMiner(object):
 		F2 = open(self.ENTITY_CLASS_ALL, 'w')
 
 		F2.write("Path;Entity\n")
-		for directory in self.mainDirectories:
+		for directory in ['./' + d for d in self.mainDirectories]:
 			for path,dirs,files in os.walk(directory):
-				if path in package_dirs_dictionary:
-					package = package_dirs_dictionary[path]
+				direc = path[2:len(path) + 1]
+				if direc in package_dirs_dictionary:
+					package = package_dirs_dictionary[direc]
 				else:
-					package = path
+					package = direc
 
 				for f in fnmatch.filter(files,'*.java'):
-					name = entityUtils.getClassName(os.path.join(path,f))
+					name = entityUtils.getClassName(os.path.join(direc,f))
 					mainClass = package + '.' + name
 					F1.write(mainClass + '\n')
 
-					classes = entityUtils.getClassesInFile(os.path.join(path,f))
+					classes = entityUtils.getClassesInFile(os.path.join(direc,f))
 					for klass in classes:
-						F2.write(os.path.join(path,f) + ';' + package + '.' + klass + '\n')
+						F2.write(os.path.join(direc,f) + ';' + package + '.' + klass + '\n')
 
 		F1.close()
 		F2.close()
@@ -106,15 +108,16 @@ class RepositoryMiner(object):
 	def __createMethodFile(self, package_dirs_dictionary):
 		F = open(self.ENTITY_METHOD, 'w') 
 		
-		for directory in self.mainDirectories:
+		for directory in ['./' + d for d in self.mainDirectories]:
 			for path,dirs,files in os.walk(directory):
-				if path in package_dirs_dictionary:
-					package = package_dirs_dictionary[path]
+				direc = path[2:len(path) + 1]
+				if direc in package_dirs_dictionary:
+					package = package_dirs_dictionary[direc]
 				else:
-					package = path
+					package = direc
 
 				for f in fnmatch.filter(files,'*.java'):
-					methods = entityUtils.getMethodsInFile(os.path.join(path,f))
+					methods = entityUtils.getMethodsInFile(os.path.join(direc,f))
 
 					for methodName in methods:
 						normalizedMethodName = entityUtils.normalizeMethodName(methodName)
@@ -127,16 +130,17 @@ class RepositoryMiner(object):
 	def __createMetricsFile(self, smell):
 		if smell == "GC":
 			smellDir = "god_class/Decor"
-			jarFile = self.TEMP + "../../advisors/metrics_files_generators/Decor/GodClassMetricsFileCreator.jar"
+			jarFile = self.TEMP + "../../advisors/metrics_files_generators/Decor/jar/GodClassMetricsFileCreator.jar"
+			directories = "@".join(self.mainDirectories)
 		elif smell == "FE":
 			smellDir = "feature_envy/InCode"
-			jarFile = self.TEMP + "../../advisors/metrics_files_generators/InCode/FeatureEnvyMetricsFileCreator.jar"
+			jarFile = self.TEMP + "../../advisors/metrics_files_generators/InCode/jar/FeatureEnvyMetricsFileCreator.jar"
+			directories = "@".join(self.sources)
 		else:
 			print(smell + " is not a valid smell")
 			return
 
 		repositoryPath = self.TEMP + self.systemName + "/"
-		directories = "@".join(self.mainDirectories)
 		metricsFile = self.TEMP + "../../advisors/metrics_files/"+ smellDir + "/" + self.systemName + '.csv'
 
 		createCommand = "java -jar " + jarFile + " " + self.systemName + " " + repositoryPath + " " + directories + " " + metricsFile
@@ -144,11 +148,13 @@ class RepositoryMiner(object):
 
 
 if __name__ == "__main__":
-	rm = RepositoryMiner()
-	#for system in systems.systems_git:
-	#	rm.mine(system)
 
-	for system in systems.systems_svn:
-		if system['name'] != 'jedit':
-			rm.mine(system)
+	'''system = {
+	"name"     :'jedit',
+	"url"      :'https://svn.code.sf.net/p/jedit/svn/jEdit/trunk/',
+	"snapshot" :'e343491b611efdd7a5313e7ba87d6a2d1d6f8804',
+	"directory":['']
+	}
+
+	rm.mine(system)'''
 

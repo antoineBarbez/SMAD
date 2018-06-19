@@ -26,8 +26,8 @@ def readHistory(csvFile, granularity):
             if granularity == 'M':
                 change = {}
                 change['Snapshot'] = row['Snapshot']
-                change['Class'] = row['Class']
-                change['Method'] = row['Code']
+                #change['Class'] = row['Class']
+                change['Method'] = row['Entity']
                 change['ChangeType'] = row['ChangeType']
                 changes.append(change)
 

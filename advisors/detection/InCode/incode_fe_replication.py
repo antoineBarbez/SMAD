@@ -7,9 +7,12 @@ import sys
 sys.path.insert(0, '../')
 import evaluate
 
+#sys.path.insert(0, '../../../')
+#import dataConstruction.entityUtils
+
 ''' This file is just used to obtain JDeodorant detection results on the test set'''
 
-def normalizeSourceEntity(source_entity):
+'''def normalizeSourceEntity(source_entity):
 	m1 = re.match('(.+)\((.*)\)', source_entity)
 
 	methodName = m1.group(1)
@@ -25,10 +28,24 @@ def normalizeSourceEntity(source_entity):
 
 	normalizedParamList.sort()
 
-	return methodName + '(' + ', '.join(normalizedParamList) + ')'
+	return methodName + '(' + ', '.join(normalizedParamList) + ')'''
+
+def getClasses(systemName):
+	classFile = '../../../data/entities/classes_all/' + systemName + '.csv'
+
+	classes = []
+	with open(classFile, 'rb') as csvfile:
+		reader = csv.DictReader(csvfile, delimiter=';')
+		for row in reader:
+			classes.append(row['Entity'])
+
+	return classes
+
 
 def feature_envy(systemName):
 	incodeMetricsFile = '../../metrics_files/feature_envy/InCode/' + systemName + '.csv'
+
+	classes = getClasses(systemName)
 	
 	smells = []
 	currentMethodName = ''
@@ -41,42 +58,45 @@ def feature_envy(systemName):
 		reader = csv.DictReader(csvfile, delimiter=';')
 		for row in reader:
 			methodName = row['Class'] + '.' + row['Method']
+			className = row['Class']
 
 			if (i == 0):
 				currentMethodName = methodName
+				currentClassName = className
 
 			if (currentMethodName != methodName):
-				enviedClass = getEnviedClasses(currentMethodName, classAttributeDictionnary)
+				enviedClass = getEnviedClasses(currentClassName, classAttributeDictionnary)
 				for klass in enviedClass:
-					smells.append(currentMethodName + ';' + klass)
+					if (klass in classes):
+						smells.append(currentMethodName + ';' + klass)
 
 
 				classAttributeDictionnary = {}
 				classAttributeDictionnary[row['DeclaringClass']] = int(row['NbFields'])
 				currentMethodName = methodName
+				currentClassName = className
 			else:
 				classAttributeDictionnary[row['DeclaringClass']] = int(row['NbFields'])
 
 			if (i == nbLines):
 				currentMethodName = methodName
+				currentClassName = className
 				classAttributeDictionnary[row['DeclaringClass']] = int(row['NbFields'])
 				
-				enviedClass = getEnviedClasses(currentMethodName, classAttributeDictionnary)
+				enviedClass = getEnviedClasses(currentClassName, classAttributeDictionnary)
 				for klass in enviedClass:
-					smells.append(currentMethodName + ';' + klass)
+					if (klass in classes):
+						smells.append(currentMethodName + ';' + klass)
 
 			i = i + 1
 
+
 	return list(set(smells))
 
-def getEnviedClasses(methodName, classAttributeDictionnary):
+def getEnviedClasses(className, classAttributeDictionnary):
 	enviedClass = []
 
 	FDP = len(classAttributeDictionnary)
-
-	className = methodName.split('.')
-	className.pop()
-	className = '.'.join(className)
 
 	# ATSD: Access To Self Data
 	if className in classAttributeDictionnary:
@@ -89,10 +109,10 @@ def getEnviedClasses(methodName, classAttributeDictionnary):
 	for klass in classAttributeDictionnary:
 		ATFD = int(classAttributeDictionnary[klass])
 
-		if ((ATFD > 4) & (ATFD/ATSD > 3.0) & (klass != className)):
+		if ((ATFD > 3) & (ATFD/ATSD > 3.0) & (klass != className)):
 			enviedClass.append(klass)
 
-	if FDP >= 4:
+	if FDP >= 3:
 		enviedClass = []
 
 	return enviedClass
@@ -108,7 +128,7 @@ def test(systemName):
 
 		for row in reader:
 			print(row[0])
-			true.append(normalizeSourceEntity(row[0]) + ';' + row[1])
+			true.append(row[0] + ';' + row[1])
 
 	# Get classes detected as God Classes
 	detected = feature_envy(systemName)
@@ -132,6 +152,14 @@ if __name__ == "__main__":
 		test(system)
 		print("")'''
 
-	smel = feature_envy('apache-ant')
+	systems = ['pmd', 'jedit', 'argouml', 'jhotdraw', 'apache-log4j1', 'apache-log4j2', 'mongodb', 'apache-derby', 'junit', 'jgraphx', 'android-frameworks-opt-telephony', 'lucene', 'xerces-2_7_0', 'jspwiki', 'jgroups', 'javacc', 'jena', 'apache-velocity', 'apache-tomcat', 'android-platform-support', 'apache-ant']
+	for system in systems:
+		smel = feature_envy(system)
+		print(system + ": " + str(len(smel)))
 
-	print(smel)
+	
+
+
+
+
+	

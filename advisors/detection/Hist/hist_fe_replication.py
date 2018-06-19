@@ -38,7 +38,7 @@ def normalizeSourceEntity(source_entity):
 
 def feature_envy(systemName, alpha):
 	historyFile = '../../../data/history/method_changes/' + systemName + '.csv'
-	systemMethodsFile = '../../../data/instances/methods/' + systemName + '.csv'
+	systemMethodsFile = '../../../data/entities/methods/' + systemName + '.csv'
 
 	methods = []
 	with open(systemMethodsFile, 'rb') as csvfile:
@@ -77,7 +77,7 @@ def feature_envy(systemName, alpha):
 
 
 	bar = progressbar.ProgressBar(maxval=len(history), \
-		widgets=['Performing cross validation: ' ,progressbar.Percentage()])
+		widgets=['Hist feature envy replication: ' ,progressbar.Percentage()])
 	bar.start()
 
 	
@@ -161,11 +161,9 @@ def test(systemName, alpha):
 
 
 if __name__ == "__main__":
-	systems = ['jedit']
-
-	for system in systems:
-		test(system, 0)
-		print("")
+	smel = feature_envy('argouml', 8)
+	print(len(smel))
+	print(smel)
 
 	'''for system in systems.hist:
 		f_m = test(system['name'], 2.3)
