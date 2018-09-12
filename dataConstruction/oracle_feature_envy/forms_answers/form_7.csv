@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) internalMapExtensionWrapper(Wrapper, CharChunk, MappingData);Weakly approve
+2) execute(String, InputStream, String, int);Strongly disapprove
+3) execute(String, InputStream, String, int);Strongly disapprove
+4) convert(MessageBytes, boolean);Strongly approve
+5) convert(CharChunk, boolean);Strongly approve
+6) convert(ByteChunk, boolean);Strongly approve
+7) append(byte, int, int, boolean);Weakly disapprove
+8) execute();Weakly disapprove
+9) append(ByteBuffer, int, boolean);Weakly disapprove
+10) getSSLSupport(SSLSession);Strongly disapprove
+11) getSSLSupport(SSLSession);Strongly disapprove
+12) getRequiredExtensions(Manifest);Weakly approve
+13) getAvailableExtensions(Manifest);Weakly approve
+14) startInternal();Strongly disapprove
+15) startInternal();Strongly disapprove
+16) createConnector(String, int, String);Weakly disapprove
+17) createConnector(String, int, String);Strongly disapprove
+18) service(HttpServletRequest, HttpServletResponse, boolean);Strongly disapprove
+19) initialise(Token, int, String);Strongly disapprove
+20) setAttribute(Attribute);Strongly disapprove
+21) getAttribute(String);Strongly disapprove
+22) remove(Session);Strongly disapprove
+23) processParameters(MessageBytes, String);Weakly disapprove
+24) flush(boolean, Selector, long, MutableInteger);Strongly disapprove
+25) parseExpression(String);Weakly disapprove
+26) reauthenticate(String, Realm, Request);Weakly disapprove
+27) reauthenticate(String, Realm, Request);Strongly disapprove
+28) sendNoRpcChannelReply(RpcMessage, Member);Strongly disapprove
+29) setPermissions();Weakly approve
+30) validate(CacheEntry);Weakly approve
+31) revalidate(CacheEntry);Weakly approve
+32) lookupCache(String);Weakly approve
+33) setBufferSize(int);Weakly disapprove
+34) drainChannel(SelectionKey, ObjectReader);Strongly disapprove
+35) drainChannel(SelectionKey, ObjectReader);Strongly disapprove
+36) getJspLoader();Strongly disapprove
+37) addServlet(String, String, Servlet);Strongly disapprove
+38) addFilter(String, String, Filter);Strongly disapprove
+39) flushBuffer();Strongly disapprove
+40) clearJdbcDriverRegistrations();Strongly disapprove
+41) getVersion(TreeNode);Weakly approve
+42) createProcessor();Weakly approve
+43) process(SocketWrapper, SocketStatus);Weakly disapprove
+44) write(MessageBytes);Weakly disapprove
+45) serializeDeltaRequest(DeltaSession, DeltaRequest);Weakly disapprove
+46) serializeDeltaRequest(DeltaSession, DeltaRequest);Strongly disapprove
+47) resetStatistics();Strongly disapprove
+48) deserializeDeltaRequest(DeltaSession, byte);Weakly disapprove
+49) messageReceived(ClusterMessage);Strongly disapprove
+50) createPrincipal(GenericPrincipal);Weakly approve
+51) writePrincipal(GenericPrincipal, ObjectOutput);Weakly approve
+52) exception(Request, Response, Throwable);Strongly disapprove

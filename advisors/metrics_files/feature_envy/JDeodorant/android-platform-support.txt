@@ -1,2 +1,0 @@
-Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
-Move Method	android.support.v4.app.BackStackRecord::doAddOp(int, android.support.v4.app.Fragment, java.lang.String, int):void	android.support.v4.app.Fragment	2/4	

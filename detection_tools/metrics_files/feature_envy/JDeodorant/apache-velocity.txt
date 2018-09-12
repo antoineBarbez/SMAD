@@ -1,0 +1,3 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	org.apache.velocity.runtime.resource.ResourceManagerImpl::refreshResource(org.apache.velocity.runtime.resource.Resource, java.lang.String):void	org.apache.velocity.runtime.resource.Resource	1/9	
+Move Method	org.apache.velocity.app.VelocityEngine::mergeTemplate(java.lang.String, java.lang.String, org.apache.velocity.context.Context, java.io.Writer):boolean	org.apache.velocity.runtime.RuntimeInstance	1/2	

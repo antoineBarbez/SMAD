@@ -1,0 +1,53 @@
+MATHOD_NAME;ANSWER
+1) actionPerformed(ActionEvent);Weakly disapprove
+2) parseFile(Project, Object, DiagramInterface, Import);Weakly disapprove
+3) parseFile(Project, Object, DiagramInterface, Import);Strongly disapprove
+4) addClass(Object, boolean);Strongly disapprove
+5) addInterface(Object, boolean);Strongly disapprove
+6) findDiagramMemberByUniqueName(Project, String);Weakly disapprove
+7) placeElements();Strongly disapprove
+8) placeElements();Strongly disapprove
+9) actionPerformed(ActionEvent);Weakly disapprove
+10) actionPerformed(ActionEvent);Weakly disapprove
+11) buildModelList();Strongly disapprove
+12) buildModelList();Strongly disapprove
+13) removeInteraction(Object, Object);Strongly disapprove
+14) handle(Throwable);Strongly disapprove
+15) handle(Throwable);Strongly disapprove
+16) getChildren(Object);Strongly disapprove
+17) setFromActionNode(int, int);Weakly approve
+18) getStereotypeSelector();Strongly disapprove
+19) actionPerformed(ActionEvent);Strongly disapprove
+20) actionPerformed(ActionEvent);Strongly disapprove
+21) predicate2(Object, Designer);Strongly disapprove
+22) swap(int, int);Strongly disapprove
+23) actionPerformed(ActionEvent);Weakly disapprove
+24) shouldBeEnabled();Weakly disapprove
+25) swap(int, int);Strongly disapprove
+26) swap(int, int);Strongly disapprove
+27) init();Weakly approve
+28) putToolTip(String);Strongly disapprove
+29) actionPerformed(ActionEvent);Weakly disapprove
+30) computeOffenders(UMLDeploymentDiagram);Strongly disapprove
+31) setTarget(Object);Strongly disapprove
+32) write(BufferedReader, BufferedWriter, Stack);Weakly approve
+33) goToSelectedMarker();Weakly disapprove
+34) install();Strongly disapprove
+35) handleEditPaneUpdate(EditPaneUpdate);Weakly disapprove
+36) handleMessage(EBMessage);Strongly disapprove
+37) handleMessage(EBMessage);I don't know / I don't want to answer
+38) handleBufferUpdate(BufferUpdate);Weakly disapprove
+39) processKeyEvent(KeyEvent, boolean);Strongly disapprove
+40) processKeyEvent(KeyEvent);Strongly disapprove
+41) goToBuffer(Buffer);Strongly disapprove
+42) goToBuffer(Buffer);Strongly disapprove
+43) setText(String);Weakly approve
+44) addExplicitFold(int, int, int, int);Weakly approve
+45) endElement(String);Strongly disapprove
+46) endElement(String);Strongly disapprove
+47) connect();Strongly disapprove
+48) actionPerformed(ActionEvent);Strongly disapprove
+49) goToParent();Weakly approve
+50) getAppropriateCursor();Weakly disapprove
+51) globToRE(String);Strongly disapprove
+52) globToRE(String);Strongly disapprove

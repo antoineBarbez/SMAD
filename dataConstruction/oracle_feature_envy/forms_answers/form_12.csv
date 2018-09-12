@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) translateKeyEvent(KeyEvent);Weakly disapprove
+2) constructPath(String, String);Strongly disapprove
+3) listDirectory();Strongly disapprove
+4) generateParseException();Weakly disapprove
+5) createParseException(String);Weakly disapprove
+6) match(CharIndexed, REMatch);Weakly disapprove
+7) readMarkers(Buffer, InputStream);Strongly disapprove
+8) handleMessage(EBMessage);Weakly approve
+9) actionPerformed(ActionEvent);Strongly disapprove
+10) actionPerformed(ActionEvent);Strongly disapprove
+11) getBuild();Strongly disapprove
+12) runStartupScripts(File);Strongly disapprove
+13) _init();Strongly disapprove
+14) canMerge(Chunk, Chunk, Segment);Weakly disapprove
+15) insideSelection(int, int);Weakly approve
+16) getSelectionStartAndEnd(int, int, Selection);Weakly approve
+17) init();Strongly disapprove
+18) getMinMax(char, int, IntPair, RESyntax);Strongly disapprove
+19) loadIcon(String);Strongly disapprove
+20) showVFSFileDialog(View, String, int, boolean);Strongly disapprove
+21) showVFSFileDialog(View, String, int, boolean);Strongly disapprove
+22) saveCaretInfo();Weakly disapprove
+23) addMarker();Weakly disapprove
+24) loadBufferSwitcher();Strongly disapprove
+25) handleBufferUpdate(BufferUpdate);Strongly disapprove
+26) handleBufferUpdate(BufferUpdate);Strongly disapprove
+27) setBuffer(Buffer);Strongly disapprove
+28) handleMessage(EBMessage);Weakly approve
+29) replaceInSelection(View, JEditTextArea, Buffer, SearchMatcher, boolean, Selection);Weakly approve
+30) _replace(View, Buffer, SearchMatcher, int, int, boolean);Weakly disapprove
+31) savePerspective(boolean);Strongly disapprove
+32) savePerspective(boolean);Strongly disapprove
+33) attribute(String, String, boolean);Strongly disapprove
+34) writeMarkers(Buffer, OutputStream);Strongly disapprove
+35) checkFileForSave(View, VFS, String);Weakly approve
+36) checkFileForLoad(View, VFS, String);Weakly approve
+37) createPluginMenu(VFSBrowser);Strongly disapprove
+38) getDeclaredMethods(BSHBlock, CallStack, Interpreter, String);Weakly approve
+39) getElementAt(int);Weakly approve
+40) spacesToTabs(String, int);Strongly disapprove
+41) getTokenAtOffset(Token, int);Weakly approve
+42) init(boolean, int);Strongly disapprove
+43) dispose();Strongly disapprove
+44) createOptionTreeModel();Strongly disapprove
+45) createOptionTreeModel();Strongly disapprove
+46) constructWithInterfaceBody(Class, Object, BSHBlock, CallStack, Interpreter);Weakly disapprove
+47) constructObject(Class, Object, CallStack);Strongly disapprove
+48) arrayNewInstance(Class, BSHArrayDimensions, CallStack);Weakly disapprove
+49) substitute(REMatch, char);Strongly disapprove
+50) print(View, Buffer, boolean);Strongly disapprove
+51) print(View, Buffer, boolean);Strongly disapprove
+52) addPlugin(Plugin);Strongly disapprove

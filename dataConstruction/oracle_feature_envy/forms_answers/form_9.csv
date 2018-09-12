@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) updateOperations();Weakly disapprove
+2) updateOperations();Weakly disapprove
+3) initWizard(Wizard);Strongly disapprove
+4) predicate2(Object, Designer);Strongly disapprove
+5) getTipString(MouseEvent);Strongly disapprove
+6) setLayer(Layer);Strongly disapprove
+7) getAction(String, Object);Strongly disapprove
+8) actionPerformed(ActionEvent);Strongly disapprove
+9) invoke(Object, String, String);Weakly disapprove
+10) setEnclosingFig(Fig);Weakly disapprove
+11) actionPerformed(ActionEvent);Weakly disapprove
+12) actionPerformed(ActionEvent);Strongly disapprove
+13) actionPerformed(ActionEvent);Weakly disapprove
+14) getChildren(Object);Strongly disapprove
+15) getChildren(Object);Strongly disapprove
+16) generateOperation(Object, boolean);Weakly disapprove
+17) generateAttribute(Object, boolean);Weakly disapprove
+18) actionPerformed(ActionEvent);Weakly disapprove
+19) updateStereotypeText();Strongly disapprove
+20) actionPerformed(ActionEvent);Weakly disapprove
+21) shouldBeEnabled();Strongly disapprove
+22) actionPerformed(ActionEvent);Weakly disapprove
+23) actionPerformed(ActionEvent);Weakly disapprove
+24) createClassDiagram(Object, String, Project);Weakly disapprove
+25) textEditStarted(FigText);Strongly disapprove
+26) textEditStarted(FigText);Strongly disapprove
+27) isConsidering(Decision);Weakly approve
+28) initWizard(Wizard);Strongly approve
+29) predicate2(Object, Designer);Weakly disapprove
+30) predicate2(Object, Designer);Strongly disapprove
+31) setOwner(Object);Strongly disapprove
+32) getPriority();Weakly disapprove
+33) buildPerspectives();Strongly disapprove
+34) run();Strongly disapprove
+35) expand(String, Object);Strongly disapprove
+36) actionPerformed(ActionEvent);Strongly disapprove
+37) isChangedProperty(PropertyChangeEvent);Strongly disapprove
+38) init();Strongly approve
+39) putToolTip(String);Strongly disapprove
+40) actionPerformed(ActionEvent);Weakly disapprove
+41) getPopUpActions(MouseEvent);Strongly disapprove
+42) setLayer(Layer);Strongly disapprove
+43) initialize();Strongly disapprove
+44) getNewDiagramName();Strongly disapprove
+45) getNewFile();Strongly disapprove
+46) getNewFile();Strongly disapprove
+47) actionPerformed(ActionEvent);Weakly disapprove
+48) initWizard(Wizard);Strongly approve
+49) getAttribute(String, String, Object);Weakly approve
+50) compare(Object, Object);Weakly disapprove
+51) initWizard(Wizard);Strongly disapprove
+52) swap(int, int);Strongly disapprove

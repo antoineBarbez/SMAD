@@ -1,0 +1,14 @@
+Refactoring Type	Source Entity	Target Class	Source/Target accessed members	Rate it!
+Move Method	org.jhotdraw.samples.odg.io.ODGInputFormat::nextEnhancedCoordinate(org.jhotdraw.io.StreamPosTokenizer, java.lang.String):java.lang.Object	org.jhotdraw.io.StreamPosTokenizer	0/5	
+Move Method	org.jhotdraw.draw.BezierFigure::getOutermostPoint():java.awt.geom.Point2D.Double	org.jhotdraw.geom.BezierPath	1/2	
+Move Method	org.jhotdraw.gui.plaf.palette.PaletteFontChooserUI::setNewSelectionPath(org.jhotdraw.gui.fontchooser.FontCollectionNode, org.jhotdraw.gui.fontchooser.FontFamilyNode, org.jhotdraw.gui.fontchooser.FontFaceNode):void	org.jhotdraw.gui.JFontChooser	1/2	
+Move Method	org.jhotdraw.samples.odg.figures.ODGRectFigure::setArc(org.jhotdraw.geom.Dimension2DDouble):void	org.jhotdraw.geom.Dimension2DDouble	1/2	
+Move Method	org.jhotdraw.draw.tool.BezierTool::addPointToFigure(java.awt.geom.Point2D.Double):void	org.jhotdraw.draw.BezierFigure	2/7	
+Move Method	org.jhotdraw.samples.svg.io.ImageMapOutputFormat::writeRectElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGRectFigure):void	org.jhotdraw.samples.svg.figures.SVGRectFigure	2/7	
+Move Method	org.jhotdraw.gui.plaf.palette.PaletteToolBarUI::paintDragWindow(java.awt.Graphics):void	org.jhotdraw.gui.plaf.palette.PaletteToolBarUI.DragWindow	2/4	
+Move Method	org.jhotdraw.samples.svg.io.SVGOutputFormat::writeTextElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGTextFigure):void	org.jhotdraw.samples.svg.figures.SVGTextFigure	2/4	
+Move Method	org.jhotdraw.draw.BezierFigure::readPoints(org.jhotdraw.xml.DOMInput):void	org.jhotdraw.geom.BezierPath	2/3	
+Move Method	org.jhotdraw.samples.svg.io.SVGOutputFormat::writePathElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGPathFigure):void	org.jhotdraw.samples.svg.figures.SVGPathFigure	2/3	
+Move Method	org.jhotdraw.samples.svg.io.SVGOutputFormat::writePolygonElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGPathFigure):void	org.jhotdraw.samples.svg.figures.SVGPathFigure	2/3	
+Move Method	org.jhotdraw.samples.svg.io.SVGOutputFormat::writePolylineElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGPathFigure):void	org.jhotdraw.samples.svg.figures.SVGPathFigure	2/3	
+Move Method	org.jhotdraw.samples.svg.io.SVGOutputFormat::writeTextAreaElement(net.n3.nanoxml.IXMLElement, org.jhotdraw.samples.svg.figures.SVGTextAreaFigure):void	org.jhotdraw.samples.svg.figures.SVGTextAreaFigure	2/3	

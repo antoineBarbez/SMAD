@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) getCompiledPattern(int);Strongly disapprove
+2) getGroups(String, int);Strongly disapprove
+3) getGroups(String, int);Strongly disapprove
+4) appendFiles(Vector, DirectoryScanner);Weakly approve
+5) execute();Strongly disapprove
+6) execute();Strongly disapprove
+7) setupKaffehCommand(Javah);Weakly approve
+8) addAlmostAll(Hashtable);Strongly disapprove
+9) isValidOs();Strongly disapprove
+10) isValidOs();Weakly disapprove
+11) checkTaskClass(Class);Strongly disapprove
+12) setSystemProperties();Strongly disapprove
+13) setSystemProperties();Strongly disapprove
+14) execute();Strongly disapprove
+15) addGenICGeneratedFiles(File, Hashtable);Strongly disapprove
+16) updateCRC(int, int);Strongly disapprove
+17) updateCRC(int, int);Strongly disapprove
+18) readPatterns(File, Vector, Project);Strongly disapprove
+19) readPatterns(File, Vector, Project);Strongly disapprove
+20) substitute(String, String, int);Strongly disapprove
+21) getNextEntry();Strongly disapprove
+22) findFile(File, String, boolean);Weakly disapprove
+23) addTaskDefinition(String, Class);Strongly approve
+24) validDefinition(AntTypeDefinition);Weakly disapprove
+25) createComponent(UnknownElement, String, String);Weakly disapprove
+26) zipFile(File, ZipOutputStream, String, int);Strongly disapprove
+27) zipFile(File, ZipOutputStream, String, int);Strongly disapprove
+28) characters(char, int, int, AntXMLContext);Strongly disapprove
+29) onStartChild(String, String, String, Attributes, AntXMLContext);Strongly disapprove
+30) parse(Project, Object, RootHandler);Strongly disapprove
+31) addExtension(List, Extension, boolean, boolean);Weakly approve
+32) logAndAddFilesToCompile(Commandline);Strongly disapprove
+33) getCompileClasspath();Strongly disapprove
+34) dependsOn(String);Strongly disapprove
+35) execute();Strongly disapprove
+36) execute();Strongly disapprove
+37) execute();Strongly disapprove
+38) execute();Strongly disapprove
+39) setupJavahCommand(Javah);Weakly disapprove
+40) addInputHandler(Project);Weakly disapprove
+41) getTaskName();Strongly disapprove
+42) extract();Strongly disapprove
+43) addCommandArgument(Commandline, String);Weakly disapprove
+44) executeToString(Execute);Weakly approve
+45) asTarFileSet(ArchiveFileSet);Weakly approve
+46) asTarFileSet(ArchiveFileSet);Weakly approve
+47) writeTagEntry(Document, PrintWriter, CvsTagEntry);Weakly approve
+48) setExecutable(String);Strongly disapprove
+49) setWarfile(File);Strongly disapprove
+50) setWarfile(File);Strongly disapprove
+51) zipFile(File, ZipOutputStream, String, int);Strongly disapprove
+52) zipFile(File, ZipOutputStream, String, int);Strongly disapprove

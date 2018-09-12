@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) getCmasCertainty();Strongly disapprove
+2) getCmasMessageClass();Strongly disapprove
+3) getCmasMessageClass();Strongly disapprove
+4) getCmasUrgency();Strongly disapprove
+5) mergeShortCodeCategories(int, int);Strongly disapprove
+6) handleCmdResponse(CatResponseMessage);Strongly disapprove
+7) setAdditionalInfo(int);Strongly disapprove
+8) createApnList(Cursor);Strongly disapprove
+9) dispose();Strongly disapprove
+10) applyNewState(ApnContext, boolean, boolean);Strongly approve
+11) instantiate(FragmentActivity);Strongly disapprove
+12) updateText(int, PagerAdapter);Strongly disapprove
+13) updateAdapter(PagerAdapter, PagerAdapter);Strongly disapprove
+14) onDetachedFromWindow();Weakly disapprove
+15) startActivities(Bundle);Strongly disapprove
+16) getPageWidth(int);Strongly disapprove
+17) getPageWidth(int);Strongly disapprove
+18) saveFragmentInstanceState(Fragment);Weakly disapprove
+19) dispatchOptionsItemSelected(MenuItem);Weakly disapprove
+20) startPendingDeferredFragments();Strongly disapprove
+21) makeInactive(Fragment);Strongly disapprove
+22) dispatchStop();Strongly disapprove
+23) saveFragmentViewState(Fragment);Strongly disapprove
+24) dispatchPrepareOptionsMenu(Menu);Weakly disapprove
+25) reverseTransit(int);Weakly disapprove
+26) dispatchOptionsMenuClosed(Menu);Weakly disapprove
+27) doAddOp(int, Fragment, String, int);Strongly approve
+28) dump(String, FileDescriptor, PrintWriter, String);Strongly disapprove
+29) setInitialSavedState(SavedState);Strongly disapprove
+30) onViewCreated(View, Bundle);Strongly disapprove
+31) onViewCreated(View, Bundle);Strongly disapprove
+32) setAptCommandlineSwitches(Apt, Commandline);Strongly disapprove
+33) innerCreateAndSet(Class, Project);Strongly disapprove
+34) setupJasperCommand();Weakly disapprove
+35) execOnVMS(Commandline, int);Weakly disapprove
+36) getSystemId(File);Weakly approve
+37) displaySpecification(Specification);Strongly disapprove
+38) execute();Strongly disapprove
+39) setJar(File);Weakly approve
+40) resolveClassName(String);Strongly disapprove
+41) resolveClassName(String);Strongly disapprove
+42) execute();Strongly disapprove
+43) execute();Strongly disapprove
+44) scan();Strongly disapprove
+45) accountForIncludedFile(String);Strongly disapprove
+46) newInstance(AggregateTransformer);Strongly disapprove
+47) newInstance(AggregateTransformer);Strongly disapprove
+48) getOutputStream();Strongly disapprove
+49) getOutputStream();Strongly disapprove
+50) setExecutable(String);Strongly disapprove
+51) substitute(String, String, int);Strongly disapprove
+52) getCompiledPattern(int);Strongly disapprove

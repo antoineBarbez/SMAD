@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) execute();Strongly disapprove
+2) execute();Strongly disapprove
+3) bindToComponent(ProjectComponent);Weakly disapprove
+4) scanOneFileset(DirectoryScanner, Hashtable, long);Weakly disapprove
+5) scanOneFileset(DirectoryScanner, Hashtable, long);Strongly disapprove
+6) scanOneFileset(DirectoryScanner, Hashtable, long);Strongly disapprove
+7) getOutput(FormatterElement, JUnitTest);Weakly disapprove
+8) getOutput(FormatterElement, JUnitTest);Strongly disapprove
+9) setRefid(Reference);Strongly disapprove
+10) throwNotSupported(Project, Object, String);Strongly disapprove
+11) getJarBaseName(String);Weakly approve
+12) getVendorDDPrefix(String, String);Weakly approve
+13) copyProperty(Property, Property);Strongly approve
+14) mapFileName(String);Strongly approve
+15) setLoglevel(VerbosityLevelChoices);Strongly disapprove
+16) eval();Strongly disapprove
+17) getCompilerOptions(int);Strongly disapprove
+18) getGroups(String, int);Strongly disapprove
+19) getGroups(String, int);Strongly disapprove
+20) execute();Strongly disapprove
+21) configure(FTPClient, FTP);Weakly approve
+22) execute();Strongly disapprove
+23) getCompilerOptions(int);Strongly disapprove
+24) getGroups(String, int);Strongly disapprove
+25) getGroups(String, int);Strongly disapprove
+26) addFiles(Commandline, ProjectComponent, File, File);Strongly disapprove
+27) setup(Commandline, Native2Ascii);Weakly disapprove
+28) classesToGenerate();Strongly disapprove
+29) classesToGenerate();Strongly disapprove
+30) doReportAntProperties(PrintStream);Weakly disapprove
+31) doReportProxy(PrintStream);Weakly approve
+32) execute();Strongly disapprove
+33) execute();Strongly disapprove
+34) hasPatterns(PatternSet);Strongly disapprove
+35) logAndAddFilesToCompile(JspC, Vector, CommandlineJava);Strongly disapprove
+36) execute();Strongly disapprove
+37) execute();Strongly disapprove
+38) lifecycleEvent(LifecycleEvent);Strongly disapprove
+39) process(SSIMediator, String, String, String, PrintWriter);Strongly approve
+40) findBytes(ByteChunk, byte);Weakly approve
+41) hasJspRoot(JspReader);Strongly approve
+42) write(ByteBuffer, NioChannel, Selector, long, boolean, MutableInteger);Strongly disapprove
+43) getVariableValue(String, String);Strongly disapprove
+44) formatDate(Date, TimeZone);Weakly approve
+45) writeNewInstance(String, String);Strongly disapprove
+46) genPreamblePackage(String);Strongly disapprove
+47) generateSetDynamicAttribute();Strongly disapprove
+48) genPreambleStaticInitializers();Strongly disapprove
+49) generateSetJspContext(TagInfo);Strongly disapprove
+50) generatePostamble();Strongly disapprove
+51) genPreambleImports();Strongly disapprove
+52) writeDestroyInstance(String);Strongly disapprove

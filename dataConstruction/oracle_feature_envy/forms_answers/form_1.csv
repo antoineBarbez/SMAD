@@ -1,0 +1,53 @@
+METHOD_NAME;ANSWER
+1) hasConnection(Connection);Weakly disapprove
+2) sendNewSubmitPdu(String, String, String, SmsHeader, int, PendingIntent, PendingIntent, boolean);Weakly approve
+3) handleServiceCategoryProgramData(SmsMessage);Strongly disapprove
+4) handleServiceCategoryProgramData(SmsMessage);Strongly disapprove
+5) createSmsCbMessage(SmsCbHeader, SmsCbLocation, byte);Weakly disapprove
+6) dispatchNormalMessage(SmsMessageBase);Weakly approve
+7) dispatchNormalMessage(SmsMessageBase);Weakly disapprove
+8) checkDestination(SmsTracker);Weakly approve
+9) dispatch(Intent, String, BroadcastReceiver);Strongly disapprove
+10) dispatch(Intent, String, BroadcastReceiver);Strongly disapprove
+11) getDefaultCdmaSubscriptionSource();Strongly disapprove
+12) getDefaultCdmaSubscriptionSource();Strongly disapprove
+13) dispose();Strongly disapprove
+14) getCmasMessageClass();Weakly approve
+15) createFromCursor(Cursor);Weakly disapprove
+16) createFromCursor(Cursor);Strongly disapprove
+17) isEmergencyAlertMessage();Weakly approve
+18) retrieveCommandDetails(ComprehensionTlv);Weakly approve
+19) updatePhoneObject(int);Strongly disapprove
+20) compareTo(DriverCall);Strongly disapprove
+21) pollStateDone();Strongly disapprove
+22) sendEmergencyCallbackModeChange();Strongly disapprove
+23) handlePollCalls(AsyncResult);Strongly disapprove
+24) getDataCallState(Parcel, int);Strongly approve
+25) setGsmBroadcastConfig(SmsBroadcastConfigInfo, Message);Weakly approve
+26) translateStatus(int);Weakly disapprove
+27) responseCallForward(Parcel);Weakly approve
+28) responseCdmaCallWaiting(Parcel);Strongly approve
+29) responseSuppServiceNotification(Parcel);Strongly approve
+30) responseIccCardStatus(Parcel);Weakly approve
+31) responseIccCardStatus(Parcel);Weakly disapprove
+32) getDataActivityState();Strongly disapprove
+33) getSubmitPdu(String, String, int, byte, boolean);Weakly disapprove
+34) getSubmitPdu(String, String, int, byte, boolean);Weakly disapprove
+35) getIncomingSmsFingerprint();Weakly approve
+36) decodeUserDataPayload(UserData, boolean);Strongly disapprove
+37) getBitsForNumFields(int, int);Strongly disapprove
+38) serviceCategoryToCmasMessageClass(int);Weakly disapprove
+39) serviceCategoryToCmasMessageClass(int);Weakly disapprove
+40) decodeIs91(BearerData);Strongly disapprove
+41) encode16bitEms(UserData, byte);Strongly disapprove
+42) decodeUserData(BearerData, BitwiseInputStream);Strongly disapprove
+43) encodeEmsUserDataPayload(UserData);Strongly disapprove
+44) decode7bitAscii(byte, int, int);Strongly disapprove
+45) setLinkProperties(DataCallState, LinkProperties);Strongly approve
+46) checkMtFindNewRinging(DriverCall, int);Strongly disapprove
+47) setPropertiesByCarrier();Strongly disapprove
+48) setPropertiesByCarrier();Strongly disapprove
+49) getCurrentUiccAppType();Strongly disapprove
+50) make(BerTlv);Strongly disapprove
+51) compareTo(DriverCall);Weakly disapprove
+52) getCmasSeverity();Strongly disapprove
