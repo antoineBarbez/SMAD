@@ -1,0 +1,19 @@
+org.gjt.sp.jedit.textarea.JEditTextArea.setText(string);org.gjt.sp.jedit.buffer.JEditBuffer
+org.gjt.sp.jedit.textarea.JEditTextArea.addExplicitFold(int, int, int, int);org.gjt.sp.jedit.buffer.JEditBuffer
+org.gjt.sp.jedit.browser.VFSFileNameField.goToParent();org.gjt.sp.jedit.browser.VFSBrowser
+org.gjt.sp.jedit.search.HyperSearchResults.handleMessage(ebmessage);org.gjt.sp.jedit.msg.BufferUpdate
+org.gjt.sp.jedit.textarea.SelectionManager.insideSelection(int, int);org.gjt.sp.jedit.textarea.JEditTextArea
+org.gjt.sp.jedit.textarea.SelectionManager.getSelectionStartAndEnd(int, int, selection);org.gjt.sp.jedit.textarea.JEditTextArea
+org.gjt.sp.jedit.help.HelpViewer.handleMessage(ebmessage);org.gjt.sp.jedit.msg.PluginUpdate
+org.gjt.sp.jedit.search.SearchAndReplace.replaceInSelection(boolean, buffer, jedittextarea, searchmatcher, selection, view);org.gjt.sp.jedit.textarea.Selection
+org.gjt.sp.jedit.Buffer.checkFileForSave(string, vfs, view);org.gjt.sp.jedit.io.VFS
+org.gjt.sp.jedit.Buffer.checkFileForLoad(string, vfs, view);org.gjt.sp.jedit.io.VFS
+bsh.ClassGeneratorImpl.getDeclaredMethods(bshblock, callstack, interpreter, string);bsh.BSHMethodDeclaration
+org.gjt.sp.jedit.options.PluginManagerOptionPane.getElementAt(int);org.gjt.sp.jedit.pluginmgr.MirrorList
+org.gjt.sp.jedit.TextUtilities.getTokenAtOffset(int, token);org.gjt.sp.jedit.syntax.Token
+org.gjt.sp.jedit.EditServer.handleClient(boolean, boolean, boolean, string, string);org.gjt.sp.jedit.jEdit
+org.gjt.sp.jedit.Registers.paste(boolean, char, jedittextarea);org.gjt.sp.jedit.textarea.JEditTextArea
+installer.TarEntry.writeEntryHeader(byte);installer.TarHeader
+installer.TarEntry.nameTarHeader(string, tarheader);installer.TarHeader
+installer.TarEntry.getFileTarHeader(file, tarheader);installer.TarHeader
+installer.TarEntry.parseTarHeader(byte, tarheader);installer.TarHeader

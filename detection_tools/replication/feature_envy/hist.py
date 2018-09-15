@@ -1,5 +1,5 @@
 from __future__ import division
-from context    import reader, entityUtils
+from context    import dataUtils, entityUtils
 
 import numpy as np
 
@@ -8,13 +8,13 @@ import progressbar
 
 
 def getSmells(systemName, alpha):
-	methods = reader.getMethods(systemName)
+	methods = dataUtils.getMethods(systemName)
 	methodsReverseDictionnary = {methods[i]: i for i in range(len(methods))}
 	
-	classes = reader.getAllClasses(systemName)
+	classes = dataUtils.getAllClasses(systemName)
 	classesReverseDictionnary = {classes[i]: i for i in range(len(classes))}
 
-	history_dict = reader.getHistory(systemName, "M")
+	history_dict = dataUtils.getHistory(systemName, "M")
 
 	history = []
 	commit = []

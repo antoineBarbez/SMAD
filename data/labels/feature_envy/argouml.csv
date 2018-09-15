@@ -1,0 +1,13 @@
+org.argouml.cognitive.Designer.isConsidering(decision);org.argouml.cognitive.Decision
+org.argouml.uml.cognitive.critics.CrReservedName.initWizard(wizard);org.argouml.uml.cognitive.critics.WizMEName
+org.argouml.uml.notation.uml.InitNotationUml.init();org.argouml.notation.NotationProviderFactory2
+org.argouml.uml.cognitive.critics.CrDisambigClassName.initWizard(wizard);org.argouml.uml.cognitive.critics.WizMEName
+org.argouml.uml.reveng.java.Modeller.getAttribute(object, string, string);org.argouml.uml.reveng.java.ParseState
+org.argouml.uml.ui.ActionSaveAllGraphics.getFileChooser(project);org.argouml.kernel.Project
+org.argouml.persistence.XmiFilePersister.doLoad(file);org.argouml.persistence.XMIParser
+org.argouml.uml.cognitive.critics.CrNameConflict.initWizard(wizard);org.argouml.uml.cognitive.critics.WizMEName
+org.argouml.model.uml.NSUMLEventListener.fire(propertychangeevent);org.argouml.model.uml.NSUMLModelEventPump
+org.argouml.model.uml.EventListenerList.getListenerCount(eventkey, object);org.argouml.model.uml.EventKey
+org.argouml.uml.diagram.sequence.ui.FigClassifierRole.setFromActionNode(int, int);org.argouml.uml.diagram.sequence.MessageNode
+org.argouml.uml.notation.java.InitNotationJava.init();org.argouml.notation.NotationProviderFactory2
+org.argouml.language.java.generator.ClassifierEndCodePiece.write(bufferedreader, bufferedwriter, stack);org.argouml.language.java.generator.ParseState

@@ -1,4 +1,4 @@
-from context import ROOT_DIR, reader, entityUtils, hist, incode, jdeodorant
+from context import ROOT_DIR, entityUtils, hist, incode, jdeodorant
 
 import numpy as np
 
@@ -15,42 +15,42 @@ systems = [
 		{
 		'name'         : 'android-frameworks-opt-telephony',
 		'hist_params'  : 1.3,
-		'incode_params': [3.0, 4.0, 2.0]
+		'incode_params': (3.0, 4.0, 2.0)
 		},
 		{
 		'name'         : 'android-platform-support',
 		'hist_params'  : 1.0,
-		'incode_params': [2.0, 2.5, 4.0]
+		'incode_params': (2.0, 2.5, 4.0)
 		},
 		{
 		'name'         : 'apache-ant',
 		'hist_params'  : 2.5,
-		'incode_params': [3.0, 3.0, 3.0]
+		'incode_params': (3.0, 3.0, 3.0)
 		},
 		{
 		'name'         : 'apache-tomcat',
 		'hist_params'  : 2.0,
-		'incode_params': [3.0, 3.0, 3.0]
+		'incode_params': (3.0, 3.0, 3.0)
 		},
 		{
 		'name'         : 'lucene',
 		'hist_params'  : 1.3,
-		'incode_params': [2.0, 2.0, 3.0]
+		'incode_params': (2.0, 2.0, 3.0)
 		},
 		{
 		'name'         : 'argouml',
 		'hist_params'  : 2.5,
-		'incode_params': [2.0, 3.0, 3.0]
+		'incode_params': (2.0, 3.0, 3.0)
 		},
 		{
 		'name'         : 'jedit',
 		'hist_params'  : 2.0,
-		'incode_params': [3.0, 3.0, 3.0]
+		'incode_params': (3.0, 3.0, 3.0)
 		},
 		{
 		'name'         : 'xerces-2_7_0',
 		'hist_params'  : 2.0,
-		'incode_params': [4.0, 3.0, 3.0]
+		'incode_params': (4.0, 3.0, 3.0)
 		}
 	]
 
@@ -62,7 +62,7 @@ def getSmells(system):
 	smells = []
 	smells += jdeodorant.getSmells(system['name'])
 	smells += hist.getSmells(system['name'], system['hist_params'])
-	smells += incode.getSmells(system['name'], system['incode_params'][0], system['incode_params'][1], system['incode_params'][2])
+	smells += incode.getSmells(system['name'], *system['incode_params'])
 
 	#Shuffle and remove duplicates
 	random.shuffle(smells)
@@ -96,15 +96,15 @@ def getMethodToNameMap(systemName):
 
 	methodToNameMap = {}
 	with open(metFile, 'rb') as csvfile:
-		rdr = csv.DictReader(csvfile, delimiter=';')
-		for row in rdr:
+		reader = csv.DictReader(csvfile, delimiter=';')
+		for row in reader:
 			methodToNameMap[row['NORM_NAME']] = row['NAME']
 
 	return methodToNameMap
 
 
 if __name__ == "__main__":
-	
+	'''
 	# Must create a directory TEMP/ containing all the systems repositories
 	# at the considered snapshots before using this script
 
@@ -122,8 +122,8 @@ if __name__ == "__main__":
 		classPathFile = ROOT_DIR + '/data/entities/classes_all/' + system['name'] + '.csv'
 		classToPathMap = {}
 		with open(classPathFile, 'rb') as csvfile:
-			rdr = csv.DictReader(csvfile, delimiter=';')
-			for row in rdr:
+			reader = csv.DictReader(csvfile, delimiter=';')
+			for row in reader:
 				classToPathMap[row['Entity']] = row['Path']
 
 		startURL = "https://github.com/antoineBarbez/feature_envy/blob/master/" + system['name'] + "/"
@@ -166,4 +166,16 @@ if __name__ == "__main__":
 					f.write(',')
 					f.write('"' + startURL + enviedClassFileName + '"')
 					f.write('\n')
+'''
+
+	nb = 0
+	for system in systems:
+		smells = []
+		smells += jdeodorant.getSmells(system['name'])
+		smells += hist.getSmells(system['name'], system['hist_params'])
+		smells += incode.getSmells(system['name'], *system['incode_params'])
+
+		nb += len(set(smells))
+
+		print(system['name'] + ': ' + str(nb))
 

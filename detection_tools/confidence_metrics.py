@@ -1,4 +1,4 @@
-from context import ROOT_DIR, reader
+from context import ROOT_DIR, dataUtils
 
 import csv
 import os
@@ -20,14 +20,14 @@ def computeDecorGCCM(nmdNad, nmdNadBound, lcom5, lcom5Bound, cc, nbDataClass):
 def getDecorGCCM(systemName):
     DecorBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/Decor/' + systemName + '.csv')
 
-    classes = reader.getClasses(systemName)
+    classes = dataUtils.getClasses(systemName)
 
     dictionnary = {classes[i]: 0 for i in range(len(classes))}
 
     with open(DecorBlobFile, 'rb') as csvfile:
-        rdr = csv.DictReader(csvfile, delimiter=';')
+        reader = csv.DictReader(csvfile, delimiter=';')
 
-        for row in rdr:
+        for row in reader:
             if row['ClassName'] in classes:
                 dictionnary[row['ClassName']] = computeDecorGCCM( row['NMD+NAD'],
                                                                 row['nmdNadBound'], 
@@ -42,7 +42,7 @@ def getDecorGCCM(systemName):
 def getJDeodorantGCCM(systemName):
     JDBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/JDeodorant/' + systemName + '.txt')
 
-    classes = reader.getClasses(systemName)
+    classes = dataUtils.getClasses(systemName)
 
     dictionnary = {classes[i]: 0 for i in range(len(classes))}
 
@@ -57,7 +57,7 @@ def getJDeodorantGCCM(systemName):
 
 
 def getHistGCCM(systemName):
-    classes = reader.getClasses(systemName)
+    classes = dataUtils.getClasses(systemName)
     classToIndexMap = {klass: i for i, klass in enumerate(classes)}
     
     # Create an history list containing the names of the classes that changed in each commit.
@@ -65,7 +65,7 @@ def getHistGCCM(systemName):
     # and class1, class2, class3 changed in the second commit, etc ...
     # The history list will be [[class1, Class3], [class1, class2, class3], ...]
 
-    history_dict = reader.getHistory(systemName, "C")
+    history_dict = dataUtils.getHistory(systemName, "C")
 
     history = []
     commit = []

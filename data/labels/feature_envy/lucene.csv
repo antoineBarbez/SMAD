@@ -1,0 +1,4 @@
+org.apache.lucene.index.IndexWriter.deleteFiles(directory, vector);org.apache.lucene.store.Directory
+org.apache.lucene.index.IndexWriter.writeDeleteableFiles(vector);org.apache.lucene.store.Directory
+org.apache.lucene.index.IndexWriter.readDeleteableFiles();org.apache.lucene.store.Directory
+org.apache.lucene.search.PhrasePrefixQuery.createWeight(searcher);org.apache.lucene.search.BooleanQuery

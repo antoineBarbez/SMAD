@@ -1,12 +1,12 @@
 from __future__ import division
-from context    import ROOT_DIR, reader, entityUtils
+from context    import ROOT_DIR, dataUtils, entityUtils
 
 
 
 def getSmells(systemName):
 	JDFEFile = ROOT_DIR + '/detection_tools/metrics_files/feature_envy/JDeodorant/' + systemName + '.txt'
 
-	methods = reader.getMethods(systemName)
+	methods = dataUtils.getMethods(systemName)
 	smells = []
 	with open(JDFEFile, 'r') as file:
 		i = 0

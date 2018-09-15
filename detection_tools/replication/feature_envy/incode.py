@@ -1,5 +1,5 @@
 from __future__ import division
-from context    import ROOT_DIR, reader, entityUtils
+from context    import ROOT_DIR, dataUtils, entityUtils
 
 import csv
 
@@ -7,8 +7,8 @@ import csv
 def getSmells(systemName, atfd, laa, fdp):
 	incodeMetricsFile = ROOT_DIR + '/detection_tools/metrics_files/feature_envy/InCode/' + systemName + '.csv'
 
-	classes = reader.getAllClasses(systemName)
-	methods = reader.getMethods(systemName)
+	classes = dataUtils.getAllClasses(systemName)
+	methods = dataUtils.getMethods(systemName)
 	
 	smells = []
 	currentMethodName = ''
@@ -18,8 +18,8 @@ def getSmells(systemName, atfd, laa, fdp):
 		nbLines = len(csvfile.readlines()) - 2
 		csvfile.seek(0)
 
-		rdr = csv.DictReader(csvfile, delimiter=';')
-		for row in rdr:
+		reader = csv.DictReader(csvfile, delimiter=';')
+		for row in reader:
 			className = row['Class']
 			methodName = className + '.' + row['Method']
 

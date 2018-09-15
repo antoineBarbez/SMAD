@@ -1,0 +1,30 @@
+org.apache.xerces.impl.xs.traversers.XSDComplexTypeTraverser.getErrorContent();org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.impl.dtd.XMLDTDProcessor.normalizeDefaultAttrValue(xmlstring);org.apache.xerces.xni.XMLString
+org.apache.xerces.impl.dtd.DTDGrammar.appendContentSpec(boolean, int, stringbuffer, xmlcontentspec);org.apache.xerces.impl.dtd.XMLContentSpec
+org.apache.xerces.xpointer.XPointerErrorHandler.printError(string, xmlparseexception);org.apache.xerces.xni.parser.XMLParseException
+org.apache.xerces.impl.xs.SchemaGrammar.createAnnotationElementDecl(string);org.apache.xerces.impl.xs.XSElementDecl
+org.apache.xerces.impl.xs.SchemaGrammar.createChoiceElementParticle(xselementdecl);org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.impl.xs.SchemaGrammar.createAnyLaxWildcardParticle();org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.jaxp.validation.ValidatorHandlerImpl.fillXMLAttributes2(attributes2);org.apache.xerces.util.XMLAttributesImpl
+org.apache.xerces.dom.DocumentImpl.dispatchAggregateEvents(attrimpl, nodeimpl, short, string);org.apache.xerces.dom.AttrImpl
+org.apache.xerces.dom.DeferredElementNSImpl.synchronizeData();org.apache.xerces.dom.DeferredDocumentImpl
+org.apache.xerces.impl.XMLEntityScanner.getCharacterOffset();org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.impl.XMLEntityScanner.skipSpaces();org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.impl.XMLEntityScanner.scanData(string, xmlstringbuffer);org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.impl.XMLEntityScanner.skipDeclSpaces();org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.impl.XMLEntityScanner.setEncoding(string);org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.impl.xs.models.CMBuilder.createAllCM(xsparticledecl);org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.impl.xs.traversers.XSDAbstractParticleTraverser.hasAllContent(xsparticledecl);org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xml.serialize.BaseMarkupSerializer.modifyDOMError(node, short, string, string);org.apache.xerces.dom.DOMErrorImpl
+org.apache.xml.serialize.BaseMarkupSerializer.enterElementState(boolean, string, string, string);org.apache.xml.serialize.ElementState
+org.apache.xerces.dom.DOMNormalizer.reportDOMError(domerrorhandler, domerrorimpl, domlocatorimpl, short, string, string);org.apache.xerces.dom.DOMErrorImpl
+org.apache.xerces.dom.DOMNormalizer.updateQName(node, qname);org.apache.xerces.xni.QName
+org.apache.xerces.impl.XMLVersionDetector.fixupCurrentEntity(char, int, xmlentitymanager);org.apache.xerces.impl.XMLEntityManager
+org.apache.xerces.xinclude.XIncludeHandler.checkWhitespace(xmlstring);org.apache.xerces.xni.XMLString
+org.apache.xerces.impl.xs.XSConstraints.gatherChildren(int, vector, xsparticledecl);org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.impl.xs.XSConstraints.getNonUnaryGroup(xsparticledecl);org.apache.xerces.impl.xs.XSParticleDecl
+org.apache.xerces.impl.XMLScanner.normalizeWhitespace(int, xmlstring);org.apache.xerces.xni.XMLString
+org.apache.xerces.impl.XMLScanner.normalizeWhitespace(xmlstring);org.apache.xerces.xni.XMLString
+org.apache.xerces.impl.XMLScanner.isUnchangedByNormalization(xmlstring);org.apache.xerces.xni.XMLString
+org.apache.xerces.impl.xs.traversers.XSDHandler.findQName(string, xsdocumentinfo);org.apache.xerces.impl.xs.traversers.XSDocumentInfo
+org.apache.xerces.impl.xs.traversers.XSDHandler.removeParticle(xsmodelgroupimpl, xsparticledecl);org.apache.xerces.impl.xs.XSModelGroupImpl
