@@ -57,29 +57,11 @@ def getJDeodorantGCCM(systemName):
 
 
 def getHistGCCM(systemName):
+    # Get and prepare all data needed (classes, history)
     classes = dataUtils.getClasses(systemName)
     classToIndexMap = {klass: i for i, klass in enumerate(classes)}
     
-    # Create an history list containing the names of the classes that changed in each commit.
-    # For example, if class1 and class3 changed in the first commit, 
-    # and class1, class2, class3 changed in the second commit, etc ...
-    # The history list will be [[class1, Class3], [class1, class2, class3], ...]
-
-    history_dict = dataUtils.getHistory(systemName, "C")
-
-    history = []
-    commit = []
-    snapshot = history_dict[0]['Snapshot']
-    for i, change in enumerate(history_dict):
-        if snapshot != change['Snapshot']:
-            history.append(list(set(commit)))
-            commit = []
-            snapshot = change['Snapshot']
-
-        commit.append(change['Entity'])
-        
-        if i == len(history_dict)-1:
-            history.append(list(set(commit)))
+    history = dataUtils.getHistory(systemName, "C")
 
     # Compute number of occurences for each class
     nbCommit = len(history)
@@ -93,3 +75,13 @@ def getHistGCCM(systemName):
 
     return {klass: occurences[i] for i, klass in enumerate(classes)}
 
+
+
+
+###  FEATURE ENVY CONFIDENCE METRICS (FECM)  ###
+
+def computeHistFECM(occ, coOcc):
+    return 5.
+
+def getHistFECM(systemName):
+    return 5.

@@ -15,7 +15,7 @@ class TestDecorGCCM(unittest.TestCase):
 			'xerces-2_7_0'
 		]
 
-		self.classes = map(reader.getClasses, self.systems)
+		self.classes = map(dataUtils.getClasses, self.systems)
 
 	def tearDown(self):
 		del self.systems

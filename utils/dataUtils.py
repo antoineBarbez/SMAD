@@ -26,12 +26,34 @@ def getHistory(systemName, granularity):
         print(str(granularity) + " is not a valid granularity, choose C or M")
         return
 
+
+    # Create an history list containing the names of the entities 
+    # (i.e, classes or methods) that changed in each commit.
+
+    # For example, if entity1 and entity3 changed in the first commit, 
+    # and entity1, entity2, entity3 changed in the second commit, etc ...
+    # The history list will be [[entity1, entity3], [entity1, entity2, entity3], ...]
+
     historyFile = ROOT_DIR + '/data/history/' + dirName + '/' + systemName + '.csv'
     with open(historyFile, 'rb') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
-        changes = [{key: row[key] for key in row} for row in reader]
+        rawHistory = [{key: row[key] for key in row} for row in reader]
 
-    return changes
+        history  = []
+        commit   = []
+        snapshot = rawHistory[0]['Snapshot']
+        for i, change in enumerate(rawHistory):
+            if snapshot != change['Snapshot']:
+                history.append(list(set(commit)))
+                commit = []
+                snapshot = change['Snapshot']
+
+            commit.append(change['Entity'])
+            
+            if i == len(rawHistory)-1:
+                history.append(list(set(commit)))
+
+    return history
 
 
 # Get the name of the classes in a system, except nested classes.  

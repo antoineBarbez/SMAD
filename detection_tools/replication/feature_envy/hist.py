@@ -8,76 +8,78 @@ import progressbar
 
 
 def getSmells(systemName, alpha):
+	# Get and prepare all data needed (methods, classes, history)
 	methods = dataUtils.getMethods(systemName)
-	methodsReverseDictionnary = {methods[i]: i for i in range(len(methods))}
+	methodToIndexMap = {m: i for i, m in enumerate(methods)}
 	
 	classes = dataUtils.getAllClasses(systemName)
-	classesReverseDictionnary = {classes[i]: i for i in range(len(classes))}
+	classToIndexMap = {c: i for i, c in enumerate(classes)}
 
-	history_dict = dataUtils.getHistory(systemName, "M")
+	history = dataUtils.getHistory(systemName, "M")
 
-	history = []
-	commit = []
-	snapshot = history_dict[0]['Snapshot']
-	for i, change in enumerate(history_dict):
-		if snapshot != change['Snapshot']:
-			history.append(list(set(commit)))
-			commit = []
-			snapshot = change['Snapshot']
-
-		commit.append(change['Entity'])
-		
-		if i == len(history_dict)-1:
-			history.append(list(set(commit)))
-
-
-
+	# Initialize progressbar
 	bar = progressbar.ProgressBar(maxval=len(history), \
 		widgets=['Hist feature envy replication: ' ,progressbar.Percentage()])
 	bar.start()
 
-	nbOcc = np.zeros(len(methods))
-	occurences = np.zeros((len(methods), len(classes)))
+
+	# Number of commits in which the methods are involved
+	occ = np.zeros(len(methods))
+
+	# Matrix representing co-occurences between methods and classes, i.e, the number of time each 
+	# methods of the system has been changed in commits involving methods of each class of the system.
+	# For example, occurence[i, j] = 5 means that the ith method of the system have been involved
+	# 5 times in commits involving methods of the jth class of the system.
+	coOcc = np.zeros((len(methods), len(classes)))
 	for count, commit in enumerate(history):
 		bar.update(count)
 		for idx, method in enumerate(commit):
 			if method in methods:
+				# Get method Index 
+				i = methodToIndexMap[method]
+
+				# Increase nb of occurences the method
+				occ[i] = occ[i] + 1
+
+				# Get the other methods that changed together with the method in this commit
 				coMethods = list(commit)
 				del coMethods[idx]
-				i = methodsReverseDictionnary[method]
-				nbOcc[i] = nbOcc[i] + 1
+
+				# Get the classes where these "other methods" are implemented
 				klasses = []
 				for m in coMethods:
-					embeddingClass =entityUtils.getEmbeddingClass(m)
+					embeddingClass = entityUtils.getEmbeddingClass(m)
 					if embeddingClass in classes:
 						klasses.append(embeddingClass)
 				klasses = list(set(klasses))
+
+				# For each of these classes increase the corresponding value in the occurences matrix
 				for klass in klasses:
-					j = classesReverseDictionnary[klass]
-					occurences[i,j] = occurences[i,j] + 1.
+					j = classToIndexMap[klass]
+					coOcc[i,j] = coOcc[i,j] + 1.
 
 	bar.finish()
 
 	ignore = []
 	for i, m in enumerate(methods):
-		if nbOcc[i] == 0:
+		if occ[i] == 0:
 			ignore.append(m)
 
-		j = classesReverseDictionnary[entityUtils.getEmbeddingClass(m)]
-		if occurences[i,j] == 0:
-			occurences[i,j] = 0.5
+		j = classToIndexMap[entityUtils.getEmbeddingClass(m)]
+		if coOcc[i,j] == 0:
+			coOcc[i,j] = 0.5
 		
-		occurences[i,:] = occurences[i,:]/occurences[i,j]
+		coOcc[i,:] = coOcc[i,:]/coOcc[i,j]
 
-	met, cla = np.where(occurences>alpha)
+	met, cla = np.where(coOcc>alpha)
 
 	smellsMap = {}
-	for i in range(len(met)):
-		if methods[met[i]] not in ignore: 
-			if methods[met[i]] in smellsMap:
-				smellsMap[methods[met[i]]] += [classes[cla[i]]]
+	for i, m in enumerate(met):
+		if methods[m] not in ignore: 
+			if methods[m] in smellsMap:
+				smellsMap[methods[m]] += [classes[cla[i]]]
 			else:
-				smellsMap[methods[met[i]]] = [classes[cla[i]]]
+				smellsMap[methods[m]] = [classes[cla[i]]]
 
 	smells = []
 	for m in smellsMap:
