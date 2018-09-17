@@ -95,6 +95,7 @@ def getMethods(systemName):
     return methods
 
 
+
 #####     MERGED DETECTION INSTANCES GETTERS     #####
 def getMDBlobInstances(systemName):
     classFile = os.path.join(ROOT_DIR, 'data/entities/classes/' + systemName + '.csv')
@@ -145,70 +146,6 @@ def getMDBlobInstances(systemName):
     return np.concatenate((rescaledInstances, size), axis=1)
 
 
-def computeClassHistoryTensor(systemName):
-    historyFile = os.path.join(ROOT_DIR, 'data/history/class_changes/' + systemName + '.csv')
-    classFile = os.path.join(ROOT_DIR, 'data/entities/classes/' + systemName + '.csv')
-
-    classes = []
-    with open(classFile, 'rb') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-
-        for row in reader:
-            classes.append(row[0])
-
-    reverseDictionnary = {classes[i]: i for i in range(len(classes))}
-
-    history_dict = readHistory(historyFile, "C")
-
-    history_list = []
-    commit = []
-    snapshot = history_dict[0]['Snapshot']
-    for i, change in enumerate(history_dict):
-        if snapshot != change['Snapshot']:
-            history_list.append(list(set(commit)))
-            commit = []
-            snapshot = change['Snapshot']
-
-        if change['Class'] in classes:
-            commit.append(change['Class'])
-
-        if i == len(history_dict)-1:
-            history_list.append(list(set(commit)))
-
-    history_tensor = []
-    for commit in history_list:
-        c = np.zeros(len(classes))
-        for className in commit:
-            i = reverseDictionnary[className]
-            c[i] = 1
-        history_tensor.append(c)
-    history_tensor = np.array(history_tensor)
-
-    return history_tensor
-
-
-def computeBlobInstances(systemName):
-    history_tensor = computeClassHistoryTensor(systemName)
-    nbClass = history_tensor.shape[1]
-
-    instances = []
-    for i in range(nbClass):
-        klass = history_tensor[:,i]
-        mean = np.mean(np.delete(history_tensor, i, 1), 1)
-
-        instances.append(np.stack((klass, mean), axis=-1))
-
-    return instances
-
-
-
-def getBlobInstances(systemName):
-    instanceFile = os.path.join(ROOT_DIR, 'data/instances_tensors/classes/' + systemName + '.pickle')
-    with open(instanceFile, 'r') as file:
-        instances = pickle.load(file)
-
-    return instances
-
 
 # directory can be either 'generated' or 'hand_validated' depending on which system you want to get labels.
 def getBlobLabels(systemName, directory):
@@ -237,38 +174,5 @@ def getBlobLabels(systemName, directory):
                 labels.append([0,1])
 
     return np.array(labels)
-    
-
-# Used to save instances tensors that will be used to feed the CNN. To save time.
-def saveTensors():
-    stms = ['android-frameworks-opt-telephony',
-            'android-platform-support',
-            'apache-ant',
-            'apache-derby',
-            'apache-log4j1',
-            'apache-log4j2',
-            'apache-tomcat',
-            'apache-velocity',
-            'argouml',
-            'javacc',
-            'jedit',
-            'jena',
-            'jgraphx',
-            'jgroups',
-            'jhotdraw',
-            'jspwiki',
-            'junit',
-            'lucene',
-            'mongodb',
-            'pmd',
-            'xerces-2_7_0']
-
-    for systemName in stms:
-        print(systemName)
-        tensorFile = os.path.join(ROOT_DIR, 'data/instances_tensors/classes/' + systemName + '.pickle')
-        tensor = computeBlobInstances(systemName)
-
-        with open(tensorFile, 'wb') as file:
-            pickle.dump(tensor, file, protocol=pickle.HIGHEST_PROTOCOL)
     
 
