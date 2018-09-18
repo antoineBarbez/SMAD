@@ -19,7 +19,7 @@ def getSmells(systemName, alpha):
 
 	# Initialize progressbar
 	bar = progressbar.ProgressBar(maxval=len(history), \
-		widgets=['Hist feature envy replication: ' ,progressbar.Percentage()])
+		widgets=['Analyzing ' + systemName + ' History : ' ,progressbar.Percentage()])
 	bar.start()
 
 
@@ -38,7 +38,7 @@ def getSmells(systemName, alpha):
 				# Get method Index 
 				i = methodToIndexMap[method]
 
-				# Increase nb of occurences the method
+				# Increase nb occurences of the method
 				occ[i] = occ[i] + 1
 
 				# Get the other methods that changed together with the method in this commit
@@ -71,16 +71,14 @@ def getSmells(systemName, alpha):
 		
 		coOcc[i,:] = coOcc[i,:]/coOcc[i,j]
 
-	met, cla = np.where(coOcc>alpha)
-
 	smellsMap = {}
-	for i, m in enumerate(met):
-		if methods[m] not in ignore: 
-			if methods[m] in smellsMap:
-				smellsMap[methods[m]] += [classes[cla[i]]]
+	for i, j in zip(*np.where(coOcc>alpha)):
+		if methods[i] not in ignore: 
+			if methods[i] in smellsMap:
+				smellsMap[methods[i]] += [classes[j]]
 			else:
-				smellsMap[methods[m]] = [classes[cla[i]]]
-
+				smellsMap[methods[i]] = [classes[j]]
+	
 	smells = []
 	for m in smellsMap:
 		if len(smellsMap[m]) <= 2:
