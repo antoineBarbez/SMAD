@@ -4,6 +4,11 @@ import csv
 import fnmatch
 import os
 
+# This script is used to automatically create the labels from the answers collected by our survey.
+# It implements a vote descision between the different answers for a same instance.
+# For each system, it creates a file "data/labels/feature_envy/system-name.csv" containing all the 
+# instances of feature envy detected by our survey.
+
 systems = [
 		{
 		'name' : 'android-frameworks-opt-telephony',
@@ -82,7 +87,7 @@ for system in systems:
 	smells = [candidates[i] for i in range(startIndex, endIndex) if getScore(answers[i]) >= 0.5]
 	startIndex = endIndex
 
-	labelFile = os.path.join(ROOT_DIR, 'data/labels/feature_envy/' + system['name'] + '.csv')
+	labelFile = os.path.join(ROOT_DIR, 'data/labels/feature_envy/' + system['name'] + '.txt')
 
 	with open(labelFile, 'w') as file:
 		for smell in smells:

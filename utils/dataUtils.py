@@ -87,13 +87,22 @@ def getMethods(systemName):
 
     methods = []
     with open(systemMethodsFile, 'rb') as csvfile:
-        rdr = csv.reader(csvfile, delimiter=';')
+        reader = csv.reader(csvfile, delimiter=';')
 
-        for row in rdr:
+        for row in reader:
             methods.append(row[0])
 
     return methods
 
+# Get the hand-validated occurences reported in the considered system for antipattern in [god_class, feature_envy].
+def getLabels(systemName, antipattern):
+    if antipattern not in ['god_class', 'feature_envy']:
+        print(str(antipattern) + ' not valid antipattern name. Choose "god_class" or "feature_envy instead"')
+        return
+
+    labelFile = os.path.join(ROOT_DIR, 'data/labels/' + antipattern + '/' + systemName + '.txt')
+    with open(labelFile, 'r') as file:
+        return file.read().splitlines()
 
 
 #####     MERGED DETECTION INSTANCES GETTERS     #####

@@ -152,7 +152,7 @@ def getHistFECM(systemName):
 
     FECM = {}
     for i, j in zip(*np.where(coOcc > 0)):
-        if classes[j] != entityUtils.getEmbeddingClass(methods[i])
+        if classes[j] != entityUtils.getEmbeddingClass(methods[i]):
             instanceName = methods[i] + ';' + classes[j]
             FECM[instanceName] = coOcc[i,j]
 

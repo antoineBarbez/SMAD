@@ -6,6 +6,8 @@ sys.path.insert(0, ROOT_DIR)
 
 import utils.dataUtils as dataUtils
 
+import experiments.evaluate as evaluate
+
 import detection_tools.confidence_metrics as cm
 
 import detection_tools.replication.feature_envy.hist       as hist_fe
