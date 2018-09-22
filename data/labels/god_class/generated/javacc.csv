@@ -1,6 +1,0 @@
-org.javacc.parser.NfaState
-org.javacc.parser.JavaCCParser
-org.javacc.parser.RStringLiteral
-org.javacc.parser.LexGen
-org.javacc.parser.Options
-org.javacc.jjtree.JJTreeParser

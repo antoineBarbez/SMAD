@@ -1,6 +1,0 @@
-com.ecyrd.jspwiki.Release
-com.ecyrd.jspwiki.WikiEngine
-com.ecyrd.jspwiki.auth.SecurityVerifier
-com.ecyrd.jspwiki.auth.authorize.GroupManager
-com.ecyrd.jspwiki.rss.RSSGenerator
-com.ecyrd.jspwiki.parser.JSPWikiMarkupParser

@@ -1,5 +1,0 @@
-org.apache.velocity.servlet.VelocityServlet
-org.apache.velocity.runtime.RuntimeConstants
-org.apache.velocity.runtime.Runtime
-org.apache.velocity.runtime.parser.ParserTokenManager
-org.apache.velocity.runtime.parser.node.ASTReference

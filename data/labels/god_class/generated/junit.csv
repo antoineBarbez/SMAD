@@ -1,6 +1,0 @@
-org.junit.Assert
-org.junit.internal.runners.JUnit4ClassRunner
-org.junit.internal.runners.ErrorReportingRunner
-org.junit.runners.Suite
-org.junit.runners.BlockJUnit4ClassRunner
-org.junit.runners.ParentRunner
