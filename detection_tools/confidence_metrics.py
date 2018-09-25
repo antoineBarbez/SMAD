@@ -1,4 +1,6 @@
-from context import ROOT_DIR, dataUtils
+from .context import ROOT_DIR, dataUtils
+
+import numpy as np
 
 import csv
 import os
@@ -18,7 +20,7 @@ def computeDecorGCCM(nmdNad, nmdNadBound, lcom5, lcom5Bound, cc, nbDataClass):
 # Returns a dictionary for which keys are the classes of the system, 
 # and values are DECOR's confidence metrics for God Class detection.
 def getDecorGCCM(systemName):
-    DecorBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/Decor/' + systemName + '.csv')
+    DecorBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/decor/' + systemName + '.csv')
 
     classes = dataUtils.getClasses(systemName)
 
@@ -40,7 +42,7 @@ def getDecorGCCM(systemName):
 
 
 def getJDeodorantGCCM(systemName):
-    JDBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/JDeodorant/' + systemName + '.txt')
+    JDBlobFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/god_class/jdeodorant/' + systemName + '.txt')
 
     classes = dataUtils.getClasses(systemName)
 
@@ -65,7 +67,7 @@ def getHistGCCM(systemName):
 
     # Compute number of occurences for each class
     nbCommit = len(history)
-    occurences = [0 for _ in classes]
+    occurences = np.zeros(len(classes))
     for commit in history:
         for className in commit:
             if className in classes:
@@ -160,7 +162,7 @@ def getHistFECM(systemName):
     return FECM
 
 def getInCodeFECM(systemName):
-    incodeMetricsFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/feature_envy/InCode/' + systemName + '.csv')
+    incodeMetricsFile = os.path.join(ROOT_DIR, 'detection_tools/metrics_files/feature_envy/incode/' + systemName + '.csv')
 
     methods = dataUtils.getMethods(systemName)
     classes = dataUtils.getAllClasses(systemName)
@@ -244,7 +246,7 @@ def getClassToMetricMap(className, classAttributeMap):
 
 
 def getJDeodorantFECM(systemName):
-    JDFEFile = ROOT_DIR + '/detection_tools/metrics_files/feature_envy/JDeodorant/' + systemName + '.txt'
+    JDFEFile = ROOT_DIR + '/detection_tools/metrics_files/feature_envy/jdeodorant/' + systemName + '.txt'
 
     methods = dataUtils.getMethods(systemName)
     FECM = []

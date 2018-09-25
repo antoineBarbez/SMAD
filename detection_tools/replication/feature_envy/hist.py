@@ -7,7 +7,7 @@ import progressbar
 
 
 
-def getSmells(systemName, alpha):
+def getSmells(systemName, alpha=2.0):
 	# Get and prepare all data needed (methods, classes, history)
 	methods = dataUtils.getMethods(systemName)
 	methodToIndexMap = {m: i for i, m in enumerate(methods)}

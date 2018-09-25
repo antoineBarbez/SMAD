@@ -1,4 +1,6 @@
-from context import experimentUtils
+from context import experimentUtils, dataUtils
+
+import numpy as np
 
 import math
 import unittest
@@ -10,11 +12,23 @@ class TestDecorGCCM(unittest.TestCase):
 		self.set_3 = ['c']
 		self.set_4 = []
 
+		self.systems = [
+			'android-frameworks-opt-telephony',
+			'android-platform-support',
+			'apache-ant',
+			'apache-tomcat',
+			'lucene',
+			'argouml',
+			'jedit',
+			'xerces-2_7_0'
+		] 
+
 	def tearDown(self):
 		del self.set_1
 		del self.set_2
 		del self.set_3
 		del self.set_4
+		del self.systems
 
 
 	def test_precision(self):
@@ -63,6 +77,16 @@ class TestDecorGCCM(unittest.TestCase):
 		self.assertEqual(set(experimentUtils.vote([self.set_1, self.set_2, self.set_3], 1)), set(['a', 'b', 'c', 'd', 'e', 'f', 'g']))
 		self.assertEqual(set(experimentUtils.vote([self.set_1, self.set_2, self.set_3], 2)), set(['b', 'c', 'e']))
 		self.assertEqual(set(experimentUtils.vote([self.set_1, self.set_2, self.set_3], 3)), set([]))
+
+	def test_get_label_vectors_god_class(self):
+		for system in self.systems:
+			labelVectors  = experimentUtils.getLabelVectors(system, 'god_class')
+
+			classes = dataUtils.getClasses(system)
+			antipatterns = dataUtils.getAntipatterns(system, 'god_class')
+
+			self.assertEqual(len(classes), len(labelVectors))
+			self.assertEqual(len(antipatterns), len(np.where(labelVectors[:,0]==1)[0]))
 
 if __name__ == '__main__':
 	unittest.main()

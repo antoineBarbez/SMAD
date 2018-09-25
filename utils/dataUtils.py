@@ -1,19 +1,9 @@
-from __future__ import division
-from context    import ROOT_DIR
-#from   sklearn.preprocessing    import StandardScaler
-#from   paths                    import ROOT_DIR
-
-#import dataConstruction.systems as systems
-import numpy                    as np
+from context import ROOT_DIR
 
 import csv
 import os
-import sys
-import fnmatch
-import pickle
-import progressbar
 
-''' This module is used to access data such as history, confidence metrics and instances'''
+
 
 # Get a map containing the history of the system.
 # granularity can be C or M for class or method history respectively.
@@ -95,16 +85,14 @@ def getMethods(systemName):
     return methods
 
 # Get the hand-validated occurences reported in the considered system for antipattern in [god_class, feature_envy].
-def getLabels(systemName, antipattern):
-    if antipattern not in ['god_class', 'feature_envy']:
-        print(str(antipattern) + ' not valid antipattern name. Choose "god_class" or "feature_envy instead"')
-        return
+def getAntipatterns(systemName, antipattern):
+    assert antipattern in ['god_class', 'feature_envy'], antipattern + ' not valid antipattern name. Choose "god_class" or "feature_envy instead"'
 
-    labelFile = os.path.join(ROOT_DIR, 'data/labels/' + antipattern + '/' + systemName + '.txt')
+    labelFile = os.path.join(ROOT_DIR, 'data/antipatterns/' + antipattern + '/' + systemName + '.txt')
     with open(labelFile, 'r') as file:
         return file.read().splitlines()
 
-
+'''
 #####     MERGED DETECTION INSTANCES GETTERS     #####
 def getMDBlobInstances(systemName):
     classFile = os.path.join(ROOT_DIR, 'data/entities/classes/' + systemName + '.csv')
@@ -152,36 +140,4 @@ def getMDBlobInstances(systemName):
     size = np.ones(len(instances)).reshape(-1, 1)*rescaledSize.reshape(-1)[0]
 
 
-    return np.concatenate((rescaledInstances, size), axis=1)
-
-
-
-# directory can be either 'generated' or 'hand_validated' depending on which system you want to get labels.
-def getBlobLabels(systemName, directory):
-    classFile = os.path.join(ROOT_DIR, 'data/instances/classes/' + systemName + '.csv')
-    blobFile = os.path.join(ROOT_DIR, 'data/labels/Blob/' + directory + '/' + systemName + '.csv')
-
-    # Get Blobs of the system
-    blobs = []
-    with open(blobFile, 'rb') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-
-        for row in reader:
-            blobs.append(row[0])
-
-    # Make it in matrix form
-    labels = []
-    with open(classFile, 'rb') as csvfile:
-        reader = csv.reader(csvfile, delimiter=';')
-
-        for row in reader:
-            className = row[0]
-
-            if className in blobs:
-                labels.append([1,0])
-            else:
-                labels.append([0,1])
-
-    return np.array(labels)
-    
-
+    return np.concatenate((rescaledInstances, size), axis=1)'''

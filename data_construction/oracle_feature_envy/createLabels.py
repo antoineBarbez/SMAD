@@ -6,8 +6,9 @@ import os
 
 # This script is used to automatically create the labels from the answers collected by our survey.
 # It implements a vote descision between the different answers for a same instance.
-# For each system, it creates a file "data/labels/feature_envy/system-name.csv" containing all the 
+# For each system, it creates a file "data/labels/feature_envy/system-name.txt" containing all the 
 # instances of feature envy detected by our survey.
+
 
 systems = [
 		{

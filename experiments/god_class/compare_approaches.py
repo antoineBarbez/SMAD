@@ -1,7 +1,7 @@
-from context import dataUtils, experimentUtils, hist, incode, jdeodorant
+from context import dataUtils, experimentUtils, hist, decor, jdeodorant
 
 
-# This script is used to compare the performances of various feature envy detection approaches
+# This script is used to compare the performances of various god class detection approaches
 # on the systems considered in this study.
 
 systems = [
@@ -18,7 +18,7 @@ systems = [
 
 for system in systems:
 	# Get occurrences manually detected on the considered system
-	true = dataUtils.getAntipatterns(system, 'feature_envy')
+	true = dataUtils.getAntipatterns(system, 'god_class')
 
 
 	###   TOOLS   ###
@@ -31,11 +31,11 @@ for system in systems:
 	f_measure_hist = experimentUtils.f_measure(detected_hist, true)
 	
 	# Compute performances for InCode
-	detected_incode = incode.getSmells(system)
+	detected_decor = decor.getSmells(system)
 
-	precision_incode = experimentUtils.precision(detected_incode, true)
-	recall_incode = experimentUtils.recall(detected_incode, true)
-	f_measure_incode = experimentUtils.f_measure(detected_incode, true)
+	precision_decor = experimentUtils.precision(detected_decor, true)
+	recall_decor = experimentUtils.recall(detected_decor, true)
+	f_measure_decor = experimentUtils.f_measure(detected_decor, true)
 
 	# Compute performances for JDeodorant
 	detected_jdeodorant = jdeodorant.getSmells(system)
@@ -47,7 +47,7 @@ for system in systems:
 
 	###   VOTE   ###
 
-	tools_outputs = [detected_hist, detected_incode, detected_jdeodorant]
+	tools_outputs = [detected_hist, detected_decor, detected_jdeodorant]
 
 	# Compute vote for k = 1
 	detected_vote_1 = experimentUtils.vote(tools_outputs, 1)
@@ -73,11 +73,12 @@ for system in systems:
 	
 
 	# Output results
+	print(system)
 	print('           |precision  |recall  |f_measure')
 	print('-------------------------------------------------')
 	print('HIST       |' + "{0:.3f}".format(precision_hist) + '      |' + "{0:.3f}".format(recall_hist) + '   |' + "{0:.3f}".format(f_measure_hist))
 	print('-------------------------------------------------')
-	print('InCode     |' + "{0:.3f}".format(precision_incode) + '      |' + "{0:.3f}".format(recall_incode) + '   |' + "{0:.3f}".format(f_measure_incode))
+	print('DECOR      |' + "{0:.3f}".format(precision_decor) + '      |' + "{0:.3f}".format(recall_decor) + '   |' + "{0:.3f}".format(f_measure_decor))
 	print('-------------------------------------------------')
 	print('JDeodorant |' + "{0:.3f}".format(precision_jdeodorant) + '      |' + "{0:.3f}".format(recall_jdeodorant) + '   |' + "{0:.3f}".format(f_measure_jdeodorant))
 	print('-------------------------------------------------')
@@ -89,5 +90,3 @@ for system in systems:
 	print('Vote 3     |' + "{0:.3f}".format(precision_vote_3) + '      |' + "{0:.3f}".format(recall_vote_3) + '   |' + "{0:.3f}".format(f_measure_vote_3))
 	print('-------------------------------------------------')
 	print('\n\n')
-
-
