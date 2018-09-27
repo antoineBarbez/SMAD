@@ -1,10 +1,8 @@
 import tensorflow as tf
 
-import sys
-
-sys.path.insert(0, '../')
-import fullyConnectedLayer
 import customLoss
+import fullyConnectedLayer
+
 
 
 class MergedDetection(object):

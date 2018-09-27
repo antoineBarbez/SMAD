@@ -6,6 +6,7 @@ sys.path.insert(0, ROOT_DIR)
 
 import utils.dataUtils as dataUtils
 import utils.experimentUtils as experimentUtils
+import utils.nnUtils as nnUtils
 
 import detection_tools.confidence_metrics as cm
 

@@ -1,4 +1,4 @@
-import mergedDetection as md
+'''import mergedDetection as md
 import numpy           as np
 import tensorflow      as tf
 
@@ -93,4 +93,4 @@ if __name__ == "__main__":
 		F = open(labelFile, 'w')
 		for index in blobIndex[0]:
 			F.write(classes[index] + '\n')
-		F.close()
+		F.close()'''

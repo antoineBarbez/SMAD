@@ -1,22 +1,14 @@
+from context import ROOT_DIR, nnUtils, md
+
 import tensorflow        as tf
 import numpy             as np
 import matplotlib.pyplot as plt
-import mergedDetection   as md
 
-import math
 import os
-import sys
 
-sys.path.insert(0, '../')
-from evaluateModel import *
-from transformData import *
-
-sys.path.insert(0, '../../')
-import reader
 
 def get_save_path(net_number):
-	save_dir = "./trained_models/train/"
-	return save_dir + 'network' + str(net_number)
+	return os.path.join(ROOT_DIR, 'neural_networks/trained_models/god_class/network' + str(net_number))	
 
 
 #Performs training on the current model
@@ -29,18 +21,20 @@ def optimize():
 	for step in range(num_steps):
 		# Learning rate decay
 		if (step%100 == 0) & (step>1):
-			learning_rate = learning_rate*0.7
+			learning_rate = learning_rate*learning_rate_decay
 
 		learning_rates.append(learning_rate*100)
 
 		#Imballanced batch trainning
 		l_train = []
+		shuffled_x_train, shuffled_y_train = nnUtils.shuffle(x_train,  y_train)
 		for i in range(len(x_train)):
-			batch_x, batch_y = shuffle(x_train[i] ,  y_train[i])
+			#batch_x, batch_y = nnUtils.shuffle(x_train[i] ,  y_train[i])
+			batch_x, batch_y = shuffled_x_train[i],  shuffled_y_train[i]
 			feed_dict_train = {
 						model.input_x: batch_x,
 						model.input_y: batch_y,
-						model.dropout_keep_prob:1.0,
+						model.dropout_keep_prob:dropout_keep_prob,
 						model.learning_rate:learning_rate,
 						model.beta:beta}
 
@@ -93,31 +87,34 @@ if __name__ == "__main__":
 
 	#constants
 	starter_learning_rate = 0.19
-	beta = 0.045
+	learning_rate_decay   = 0.7
+	dropout_keep_prob     = 1.0
+	beta                  = 0.045
+	num_steps             = 400
+	num_networks          = 1
+
 	layers = [78, 28]
-	num_steps = 400
-	num_networks = 5
 
 	# Create datasets
 	x_train = []
 	y_train = []
 	for systemName in training_systems:
-		x = reader.getMDBlobInstances(systemName)
-		y = reader.getBlobLabels(systemName, "hand_validated")
+		x = nnUtils.getGodClassInstances(systemName)
+		y = nnUtils.getLabels(systemName, 'god_class')
 		x_train.append(x)
 		y_train.append(y)
 
 	x_test = []
 	y_test = []
 	for systemName in test_systems:
-		x = reader.getMDBlobInstances(systemName)
-		y = reader.getBlobLabels(systemName, "hand_validated")
+		x = nnUtils.getGodClassInstances(systemName)
+		y = nnUtils.getLabels(systemName, 'god_class')
 		x_test.append(x)
 		y_test.append(y)
 
 
 	# Create model
-	input_size = 4
+	input_size = 3
 	output_size = 2
 
 
@@ -157,10 +154,10 @@ if __name__ == "__main__":
 	acc = []
 	for i in range(len(x_test)):
 		output = ensemble_predictions(x_test[i])
-		p = precision(output, y_test[i]).eval(session=session)
-		r = recall(output, y_test[i]).eval(session=session)
-		f = f_mesure(output, y_test[i]).eval(session=session)
-		a = accuracy(output, y_test[i]).eval(session=session)
+		p = nnUtils.precision(output, y_test[i]).eval(session=session)
+		r = nnUtils.recall(output, y_test[i]).eval(session=session)
+		f = nnUtils.f_measure(output, y_test[i]).eval(session=session)
+		a = nnUtils.accuracy(output, y_test[i]).eval(session=session)
 
 		print(test_systems[i])
 		print('P :' + str(p))
@@ -186,4 +183,3 @@ if __name__ == "__main__":
 
 	plt.plot(range(num_steps), np.mean(np.array(l_tr), axis=0), range(num_steps), np.mean(np.array(l_te), axis=0), range(num_steps), l_r)
 	plt.show()
-
