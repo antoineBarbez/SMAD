@@ -6,12 +6,15 @@ import fullyConnectedLayer
 
 
 class MergedDetection(object):
-	def __init__(self, shape, input_size=4):
+	def __init__(self, shape, input_size, constants_size):
 		output_size = 2
 
 		# Placeholders for instances and labels
 		self.input_x = tf.placeholder(tf.float32,[None, input_size], name="input_x")
 		self.input_y = tf.placeholder(tf.float32,[None, output_size], name="input_y")
+
+		# Placeholders for batch constants
+		self.constants = tf.placeholder(tf.float32, [constants_size], name="batch_constants")
 		
 		# Placeholders for learning parameters
 		self.dropout_keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")
@@ -22,12 +25,19 @@ class MergedDetection(object):
 		# L2 loss
 		L2_norm = tf.constant(0.0)
 
+		# Add batch constants to the input
+		with tf.name_scope("input"):
+			#batch_constants = tf.constant(self.system_size)
+			batch_constants = tf.expand_dims(self.constants, 0)
+			batch_constants = tf.tile(batch_constants, [tf.shape(self.input_x)[0], 1])
+			x = tf.concat([self.input_x, batch_constants], axis=1)
+
 		# Construct the model
 		with tf.name_scope("dropout"):
-			h_drop = tf.nn.dropout(self.input_x, self.dropout_keep_prob)
+			h_drop = tf.nn.dropout(x, self.dropout_keep_prob)
 
 		h_in = h_drop
-		n_in = input_size
+		n_in = input_size + constants_size
 		for size in shape:
 			with tf.name_scope("hidden-%s" % size):
 				layer = fullyConnectedLayer.Layer(h_in, n_in, size)
@@ -50,8 +60,9 @@ class MergedDetection(object):
 
 		# Loss function
 		with tf.name_scope("loss"):
-			self.loss = customLoss.loss(self.logits, self.input_y) + self.beta * L2_norm
+			self.loss = customLoss.loss(self.logits, self.input_y)
+			self.loss_reg = self.loss + self.beta * L2_norm
 
 
 		# Learning mechanism
-		self.learning_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(self.loss)
+		self.learning_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(self.loss_reg)

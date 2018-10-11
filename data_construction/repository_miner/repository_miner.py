@@ -19,20 +19,20 @@ class RepositoryMiner(object):
 		self.sources         = system['sources']
 
 		# Directories
-		self.TEMP = os.path.dirname(os.path.abspath(__file__)) + '/TEMP/'
+		self.TEMP = os.path.join(ROOT_DIR, 'data_construction/repository_miner/TEMP/')
 
 		# Files
-		self.HISTORY_CLASS    = ROOT_DIR + '/data/history/class_changes/' + self.systemName + '.csv'
-		self.HISTORY_METHOD   = ROOT_DIR + '/data/history/method_changes/' + self.systemName + '.csv'
-		self.ENTITY_CLASS     = ROOT_DIR + '/data/entities/classes/' + self.systemName + '.csv'
-		self.ENTITY_CLASS_ALL = ROOT_DIR + '/data/entities/classes_all/' + self.systemName + '.csv'
-		self.ENTITY_METHOD    = ROOT_DIR + '/data/entities/methods/' + self.systemName + '.csv'
+		self.HISTORY_CLASS    = os.path.join(ROOT_DIR, 'data/history/class_changes/' + self.systemName + '.csv')
+		self.HISTORY_METHOD   = os.path.join(ROOT_DIR, 'data/history/method_changes/' + self.systemName + '.csv')
+		self.ENTITY_CLASS     = os.path.join(ROOT_DIR, 'data/entities/classes/' + self.systemName + '.csv')
+		self.ENTITY_CLASS_ALL = os.path.join(ROOT_DIR, 'data/entities/classes_all/' + self.systemName + '.csv')
+		self.ENTITY_METHOD    = os.path.join(ROOT_DIR, 'data/entities/methods/' + self.systemName + '.csv')
 
 		if not os.path.exists(self.TEMP):
 			os.makedirs(self.TEMP)
 
-		cloneCommand = 'git clone ' + self.repositoryURL + ' ' + self.TEMP + self.systemName
-		subprocess.call(cloneCommand, shell=True)
+		#cloneCommand = 'git clone ' + self.repositoryURL + ' ' + self.TEMP + self.systemName
+		#subprocess.call(cloneCommand, shell=True)
 
 		self.cwd = os.getcwd()
 		os.chdir(self.TEMP + self.systemName)
@@ -58,8 +58,9 @@ class RepositoryMiner(object):
 		#self.__createClassFiles(he.package_dirs_dictionary)
 		#self.__createMethodFile(self.ENTITY_METHOD, he.package_dirs_dictionary)
 
-		#self.__createMetricsFile("GC")
-		self.__createMetricsFile("FE")
+		#self.__createMetricsFile("DECOR")
+		#self.__createMetricsFile("INCODE")
+		self.__createMetricsFile("JDEODORANT")
 
 
 		self.close()
@@ -128,23 +129,28 @@ class RepositoryMiner(object):
 
 
 	# This method is used to create the metrics files necessary to compute Decor ant InCode confidence metrics 
-	def __createMetricsFile(self, smell):
-		if smell == "GC":
-			smellDir = "god_class/Decor"
-			jarFile = self.TEMP + "/../../../detection_tools/metrics_files_generators/Decor/jar/GodClassMetricsFileCreator.jar"
+	def __createMetricsFile(self, tool):
+		assert tool in ["DECOR", "INCODE", "JDEODORANT"], tool + " is not a valid tool"
+
+		if tool == "DECOR":
+			metricFile = os.path.join(ROOT_DIR, 'data/metric_files/decor/' + self.systemName + '.csv')
+			jarFile = os.path.join(ROOT_DIR, 'assets/jar/DecorMetricsFileCreator.jar')
 			directories = "@".join(self.mainDirectories)
-		elif smell == "FE":
-			smellDir = "feature_envy/InCode"
-			jarFile = self.TEMP + "/../../../detection_tools/metrics_files_generators/InCode/jar/FeatureEnvyMetricsFileCreator.jar"
+		
+		if tool == "INCODE":
+			metricFile = os.path.join(ROOT_DIR, 'data/metric_files/incode/' + self.systemName + '.csv')
+			jarFile = os.path.join(ROOT_DIR, 'assets/jar/InCodeMetricsFileCreator.jar')
 			directories = "@".join(self.sources)
-		else:
-			print(smell + " is not a valid smell")
-			return
+		
+		if tool == "JDEODORANT":
+			metricFile = os.path.join(ROOT_DIR, 'data/metric_files/jdeodorant/feature_envy_metrics/' + self.systemName + '.csv')
+			jarFile = os.path.join(ROOT_DIR, 'assets/jar/JDMetricsFileCreator.jar')
+			directories = "@".join(self.sources)
+
 
 		repositoryPath = self.TEMP + self.systemName + "/"
-		metricsFile = self.TEMP + "../../detection_tools/metrics_files/"+ smellDir + "/" + self.systemName + '.csv'
 
-		createCommand = "java -jar " + jarFile + " " + self.systemName + " " + repositoryPath + " " + directories + " " + metricsFile
+		createCommand = "java -jar " + jarFile + " " + self.systemName + " " + repositoryPath + " " + directories + " " + metricFile
 		subprocess.call(createCommand, shell=True)
 
 
@@ -224,6 +230,6 @@ if __name__ == "__main__":
 
 	rm = RepositoryMiner()
 
-	for system in systems.systems_svn:
+	for system in systms:
 		rm.mine(system)
 

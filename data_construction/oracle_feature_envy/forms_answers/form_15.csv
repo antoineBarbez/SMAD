@@ -1,52 +1,52 @@
-METHOD_NAME;ANSWER
-1) getBaseURI();Strongly disapprove
-2) normalize();Strongly disapprove
-3) canSetParameter(String, Object);Weakly disapprove
-4) getParameterNames();Weakly disapprove
-5) resolveEntity(XMLResourceIdentifier);Strongly disapprove
-6) resolveEntity(XMLResourceIdentifier);Strongly disapprove
-7) resolveResource(String, String, String, String, String);Weakly disapprove
-8) getBaseURI();Strongly disapprove
-9) modifyDOMError(String, short, String, Node);Strongly approve
-10) printHex(int);Weakly disapprove
-11) printDoctypeURL(String);Weakly disapprove
-12) enterElementState(String, String, String, boolean);Weakly approve
-13) normalizeAttributeValue(String, Attr);Strongly disapprove
-14) reportDOMError(DOMErrorHandler, DOMErrorImpl, DOMLocatorImpl, String, short, String);Strongly approve
-15) createGrammarPool(DocumentTypeImpl);Strongly disapprove
-16) updateQName(Node, QName);Weakly approve
-17) checkProperty(String);Weakly disapprove
-18) checkFeature(String);Weakly disapprove
-19) getBaseURI();Strongly disapprove
-20) getBaseURI();Strongly disapprove
-21) isValidQName(String, String, boolean);Strongly disapprove
-22) createDOMLocator(XMLParseException);Strongly disapprove
-23) createDOMLocator(XMLParseException);Strongly disapprove
-24) createDOMLocator(XMLParseException);Weakly disapprove
-25) decode(String);Strongly disapprove
-26) createBuiltInTypes(SymbolHash);Strongly disapprove
-27) createBuiltInTypes(SymbolHash);Strongly disapprove
-28) fixupCurrentEntity(XMLEntityManager, char, int);Strongly approve
-29) getSerializer(OutputFormat);Strongly disapprove
-30) checkFeature(String);Weakly disapprove
-31) characters(XMLString);Weakly disapprove
-32) checkWhitespace(XMLString);Strongly approve
-33) scopeOfLanguage(int);Weakly disapprove
-34) copyFeatures1(Enumeration, String, XMLComponentManager, ParserConfigurationSettings);Weakly disapprove
-35) scopeOfBaseURI(int);Weakly disapprove
-36) gatherChildren(int, XSParticleDecl, Vector);Weakly approve
-37) getNonUnaryGroup(XSParticleDecl);Weakly approve
-38) normalizeWhitespace(XMLString, int);Weakly approve
-39) normalizeWhitespace(XMLString);Weakly approve
-40) isUnchangedByNormalization(XMLString);Weakly approve
-41) setProperty(String, Object);Strongly disapprove
-42) setProperty(String, Object);Strongly disapprove
-43) findQName(String, XSDocumentInfo);Weakly approve
-44) removeParticle(XSModelGroupImpl, XSParticleDecl);Weakly approve
-45) cloneNode(int, boolean);Strongly disapprove
-46) printError(String, XMLParseException);Weakly disapprove
-47) fillQName(QName, Node);Weakly disapprove
-48) reportError(String, Object);Weakly disapprove
-49) hasFeature(String, String);Strongly disapprove
-50) isComparable(ValidatedInfo, ValidatedInfo);Weakly disapprove
-51) normalizeWhitespace(String, boolean);Strongly disapprove
+METHOD_NAME;Mohammed;Antoine;Tomasz;Cristiano
+1) getBaseURI();Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+2) normalize();Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+3) canSetParameter(String, Object);Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Weakly approve
+4) getParameterNames();Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Weakly approve
+5) resolveEntity(XMLResourceIdentifier);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+6) resolveEntity(XMLResourceIdentifier);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+7) resolveResource(String, String, String, String, String);Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Strongly approve
+8) getBaseURI();Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+9) modifyDOMError(String, short, String, Node);Strongly approve;Strongly approve;I don't know / I don't want to answer;Strongly disapprove
+10) printHex(int);Strongly disapprove;Weakly disapprove;I don't know / I don't want to answer;Strongly disapprove
+11) printDoctypeURL(String);Strongly disapprove;Weakly disapprove;I don't know / I don't want to answer;Strongly disapprove
+12) enterElementState(String, String, String, boolean);Strongly approve;Weakly approve;I don't know / I don't want to answer;Strongly approve
+13) normalizeAttributeValue(String, Attr);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+14) reportDOMError(DOMErrorHandler, DOMErrorImpl, DOMLocatorImpl, String, short, String);Strongly approve;Strongly approve;I don't know / I don't want to answer;Weakly disapprove
+15) createGrammarPool(DocumentTypeImpl);Weakly approve;Strongly disapprove;I don't know / I don't want to answer;Strongly approve
+16) updateQName(Node, QName);Strongly approve;Weakly approve;I don't know / I don't want to answer;Weakly approve
+17) checkProperty(String);Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Strongly disapprove
+18) checkFeature(String);Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Strongly disapprove
+19) getBaseURI();Weakly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+20) getBaseURI();Weakly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+21) isValidQName(String, String, boolean);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+22) createDOMLocator(XMLParseException);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+23) createDOMLocator(XMLParseException);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+24) createDOMLocator(XMLParseException);Strongly approve;Weakly disapprove;I don't know / I don't want to answer;Strongly approve
+25) decode(String);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+26) createBuiltInTypes(SymbolHash);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+27) createBuiltInTypes(SymbolHash);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+28) fixupCurrentEntity(XMLEntityManager, char, int);I don't know / I don't want to answer;Strongly approve;Weakly disapprove;Weakly approve
+29) getSerializer(OutputFormat);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+30) checkFeature(String);I don't know / I don't want to answer;Weakly disapprove;Strongly disapprove;Strongly disapprove
+31) characters(XMLString);I don't know / I don't want to answer;Weakly disapprove;Weakly disapprove;Weakly disapprove
+32) checkWhitespace(XMLString);I don't know / I don't want to answer;Strongly approve;Weakly disapprove;Weakly disapprove
+33) scopeOfLanguage(int);I don't know / I don't want to answer;Weakly disapprove;Weakly disapprove;Strongly disapprove
+34) copyFeatures1(Enumeration, String, XMLComponentManager, ParserConfigurationSettings);I don't know / I don't want to answer;Weakly disapprove;Strongly disapprove;Strongly disapprove
+35) scopeOfBaseURI(int);I don't know / I don't want to answer;Weakly disapprove;Weakly disapprove;Weakly disapprove
+36) gatherChildren(int, XSParticleDecl, Vector);I don't know / I don't want to answer;Weakly approve;Weakly disapprove;Weakly approve
+37) getNonUnaryGroup(XSParticleDecl);I don't know / I don't want to answer;Weakly approve;Strongly disapprove;Weakly approve
+38) normalizeWhitespace(XMLString, int);I don't know / I don't want to answer;Weakly approve;Weakly disapprove;Weakly disapprove
+39) normalizeWhitespace(XMLString);I don't know / I don't want to answer;Weakly approve;Weakly disapprove;Weakly disapprove
+40) isUnchangedByNormalization(XMLString);I don't know / I don't want to answer;Weakly approve;Weakly disapprove;Weakly disapprove
+41) setProperty(String, Object);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+42) setProperty(String, Object);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+43) findQName(String, XSDocumentInfo);I don't know / I don't want to answer;Weakly approve;Strongly disapprove;Weakly disapprove
+44) removeParticle(XSModelGroupImpl, XSParticleDecl);I don't know / I don't want to answer;Weakly approve;Strongly approve;Weakly disapprove
+45) cloneNode(int, boolean);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Strongly disapprove
+46) printError(String, XMLParseException);I don't know / I don't want to answer;Weakly disapprove;Weakly disapprove;Strongly approve
+47) fillQName(QName, Node);I don't know / I don't want to answer;Weakly disapprove;Weakly approve;Weakly approve
+48) reportError(String, Object);I don't know / I don't want to answer;Weakly disapprove;Weakly approve;Weakly disapprove
+49) hasFeature(String, String);I don't know / I don't want to answer;Strongly disapprove;Strongly disapprove;Weakly disapprove
+50) isComparable(ValidatedInfo, ValidatedInfo);I don't know / I don't want to answer;Weakly disapprove;Weakly approve;Weakly disapprove
+51) normalizeWhitespace(String, boolean);I don't know / I don't want to answer;Strongly disapprove;Weakly disapprove;Weakly disapprove

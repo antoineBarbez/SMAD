@@ -20,20 +20,22 @@ def optimize():
 	losses_test    = []
 	for step in range(num_steps):
 		# Learning rate decay
-		if (step%100 == 0) & (step>1):
+		if (step%decay_steps == 0) & (step>1):
 			learning_rate = learning_rate*learning_rate_decay
 
-		learning_rates.append(learning_rate*100)
+		learning_rates.append(learning_rate)
 
 		#Imballanced batch trainning
 		l_train = []
-		shuffled_x_train, shuffled_y_train = nnUtils.shuffle(x_train,  y_train)
+		#shuffled_x_train, shuffled_y_train = nnUtils.shuffle(x_train,  y_train)
 		for i in range(len(x_train)):
 			#batch_x, batch_y = nnUtils.shuffle(x_train[i] ,  y_train[i])
-			batch_x, batch_y = shuffled_x_train[i],  shuffled_y_train[i]
+			#batch_x, batch_y = shuffled_x_train[i],  shuffled_y_train[i]
+			constants, batch_x, batch_y = c_train[i], x_train[i], y_train[i]
 			feed_dict_train = {
 						model.input_x: batch_x,
 						model.input_y: batch_y,
+						model.constants: constants,
 						model.dropout_keep_prob:dropout_keep_prob,
 						model.learning_rate:learning_rate,
 						model.beta:beta}
@@ -45,9 +47,12 @@ def optimize():
 
 		l_test = []
 		for i in range(len(x_test)):
+			constants, batch_x = c_test[i], x_test[i]
+			#print(system_size)
 			feed_dict_valid = {
-						model.input_x: x_test[i],
+						model.input_x: batch_x,
 						model.input_y: y_test[i],
+						model.constants: constants,
 						model.dropout_keep_prob:1.0,
 						model.beta:beta}
 
@@ -63,14 +68,14 @@ def optimize():
 
 
 # Returns the Bayesian averaging between all network's prediction
-def ensemble_predictions(x):
+def ensemble_predictions(c, x):
 	predictions = []
 	for i in range(num_networks):
 		# Reload the variables into the TensorFlow graph.
 		saver.restore(sess=session, save_path=get_save_path(i))
 
 		#Perform forward calculation
-		feed_dict_test = {model.input_x: x, model.dropout_keep_prob:1.0}
+		feed_dict_test = {model.input_x: x, model.constants: c, model.dropout_keep_prob:1.0}
 		pred = session.run(model.inference, feed_dict=feed_dict_test)
 		predictions.append(pred)
   	
@@ -84,41 +89,49 @@ if __name__ == "__main__":
 
 	training_systems = ['xerces-2_7_0', 'lucene', 'apache-ant', 'argouml', 'android-frameworks-opt-telephony']
 	test_systems = ['apache-tomcat', 'jedit', 'android-platform-support']
-
+	
 	#constants
-	starter_learning_rate = 0.19
+	starter_learning_rate = 0.0826
 	learning_rate_decay   = 0.7
-	dropout_keep_prob     = 1.0
-	beta                  = 0.045
+	decay_steps           = 100
+	dropout_keep_prob     = 0.5
+	beta                  = 0.0313
 	num_steps             = 400
-	num_networks          = 1
+	num_networks          = 5
 
-	layers = [78, 28]
+	layers = [34, 30]
 
 	# Create datasets
 	x_train = []
+	c_train = []
 	y_train = []
 	for systemName in training_systems:
-		x = nnUtils.getGodClassInstances(systemName)
+		x = nnUtils.getInstances(systemName, 'god_class')
 		y = nnUtils.getLabels(systemName, 'god_class')
+		c = nnUtils.getSystemConstants(systemName)
 		x_train.append(x)
 		y_train.append(y)
-
+		c_train.append(c)
+		
 	x_test = []
+	c_test = []
 	y_test = []
 	for systemName in test_systems:
-		x = nnUtils.getGodClassInstances(systemName)
+		x = nnUtils.getInstances(systemName, 'god_class')
 		y = nnUtils.getLabels(systemName, 'god_class')
+		c = nnUtils.getSystemConstants(systemName)
 		x_test.append(x)
 		y_test.append(y)
+		c_test.append(c)
 
 
 	# Create model
-	input_size = 3
-	output_size = 2
+	input_size     = 6
+	constants_size = 2
+	output_size    = 2
 
 
-	model = md.MergedDetection(layers, input_size)
+	model = md.MergedDetection(layers, input_size, constants_size)
 
 	# To save and restore a trained model
 	saver = tf.train.Saver()
@@ -153,7 +166,7 @@ if __name__ == "__main__":
 	f_m = []
 	acc = []
 	for i in range(len(x_test)):
-		output = ensemble_predictions(x_test[i])
+		output = ensemble_predictions(c_test[i], x_test[i])
 		p = nnUtils.precision(output, y_test[i]).eval(session=session)
 		r = nnUtils.recall(output, y_test[i]).eval(session=session)
 		f = nnUtils.f_measure(output, y_test[i]).eval(session=session)

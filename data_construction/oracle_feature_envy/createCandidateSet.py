@@ -119,7 +119,7 @@ if __name__ == "__main__":
 		subprocess.call('mkdir ' + dirName, shell=True)
 
 
-		classPathFile = ROOT_DIR + '/data/entities/classes_all/' + system['name'] + '.csv'
+		classPathFile = os.path.join(ROOT_DIR, 'data/entities/classes_all/' + system['name'] + '.csv')
 		classToPathMap = {}
 		with open(classPathFile, 'rb') as csvfile:
 			reader = csv.DictReader(csvfile, delimiter=';')

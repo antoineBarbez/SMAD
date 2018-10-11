@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) prepareResponse();Strongly disapprove
-2) prepareResponse();Strongly disapprove
-3) readMessage(AjpMessage);Weakly disapprove
-4) parseHeaderLine(FileItemHeadersImpl, String);Weakly disapprove
-5) getRemoteAddr();Strongly disapprove
-6) matchRequest(Request);Weakly approve
-7) saveRequest(Request, Session);Weakly disapprove
-8) restoreRequest(Request, Session);Strongly disapprove
-9) hasUserDataPermission(Request, Response, SecurityConstraint);Strongly disapprove
-10) convertURI(MessageBytes, Request);Weakly disapprove
-11) parseSessionSslId(Request);Weakly approve
-12) convertMB(MessageBytes);Weakly approve
-13) mergeMultipartDef(MultipartDef, MultipartDef, boolean);Strongly approve
-14) mergeServlet(ServletDef, ServletDef, boolean);Strongly approve
-15) parseName();Strongly disapprove
-16) validateFilterMap(FilterMap);Weakly disapprove
-17) buildInjectionMap(NamingResources);Weakly approve
-18) pushChar();Strongly disapprove
-19) nextChar();Strongly disapprove
-20) periodicEvent();Strongly disapprove
-21) setDispatcher(String);Strongly disapprove
-22) javacError(JavacErrorDetail);Strongly disapprove
-23) handle(Callback);Strongly disapprove
-24) handle(Callback);Strongly disapprove
-25) prepareResponse();Strongly disapprove
-26) prepareResponse();Strongly disapprove
-27) createProcessor();Weakly approve
-28) doSmap(Node, int, int, int);Strongly disapprove
-29) dispatch(Mark, String, Object, Exception);Strongly disapprove
-30) doIsEncodeable(Request, Session, String);Strongly disapprove
-31) configureInjectionRules(Digester, String);Weakly disapprove
-32) getView();Strongly disapprove
-33) getCoordinator();Strongly disapprove
-34) createData(CoordinationMessage, MemberImpl);Strongly approve
-35) write(ByteBuffer, NioChannel, long, MutableInteger);Weakly approve
-36) read(ByteBuffer, NioChannel, long);Weakly approve
-37) cancel(SelectionKey, KeyAttachment, int);Strongly disapprove
-38) login();Strongly disapprove
-39) login();Strongly disapprove
-40) messageReceived(ClusterMessage);Weakly approve
-41) getSession(String, String);Strongly disapprove
-42) addEscapes(String);Strongly disapprove
-43) publishEntryInfo(Object, Object);Strongly disapprove
-44) publishEntryInfo(Object, Object);Strongly disapprove
-45) process(Reader, long, PrintWriter);Weakly disapprove
-46) process(Reader, long, PrintWriter);Strongly disapprove
-47) checkIfMatch(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove
-48) checkIfUnmodifiedSince(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove
-49) parseRange(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove
-50) checkIfNoneMatch(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove
-51) checkIfModifiedSince(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove
-52) begin(String, String, Attributes);Strongly disapprove
+METHOD_NAME;Antoine;Tomasz;Cristiano
+1) prepareResponse();Strongly disapprove;Strongly disapprove;Strongly disapprove
+2) prepareResponse();Strongly disapprove;Weakly approve;Strongly disapprove
+3) readMessage(AjpMessage);Weakly disapprove;Weakly disapprove;Strongly approve
+4) parseHeaderLine(FileItemHeadersImpl, String);Weakly disapprove;Strongly approve;Strongly disapprove
+5) getRemoteAddr();Strongly disapprove;Weakly disapprove;Weakly approve
+6) matchRequest(Request);Weakly approve;Strongly approve;Strongly approve
+7) saveRequest(Request, Session);Weakly disapprove;Weakly approve;Weakly approve
+8) restoreRequest(Request, Session);Strongly disapprove;Weakly approve;Strongly approve
+9) hasUserDataPermission(Request, Response, SecurityConstraint);Strongly disapprove;Weakly disapprove;Strongly disapprove
+10) convertURI(MessageBytes, Request);Weakly disapprove;Weakly disapprove;Strongly disapprove
+11) parseSessionSslId(Request);Weakly approve;Strongly approve;Strongly approve
+12) convertMB(MessageBytes);Weakly approve;Strongly approve;Weakly approve
+13) mergeMultipartDef(MultipartDef, MultipartDef, boolean);Strongly approve;Strongly approve;Weakly disapprove
+14) mergeServlet(ServletDef, ServletDef, boolean);Strongly approve;Strongly approve;Weakly disapprove
+15) parseName();Strongly disapprove;Weakly approve;Weakly disapprove
+16) validateFilterMap(FilterMap);Weakly disapprove;Weakly approve;Strongly approve
+17) buildInjectionMap(NamingResources);Weakly approve;Strongly approve;Weakly approve
+18) pushChar();Strongly disapprove;Weakly approve;Weakly disapprove
+19) nextChar();Strongly disapprove;Weakly approve;Strongly disapprove
+20) periodicEvent();Strongly disapprove;Strongly approve;Strongly approve
+21) setDispatcher(String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+22) javacError(JavacErrorDetail);Strongly disapprove;Weakly approve;Strongly approve
+23) handle(Callback);Strongly disapprove;Strongly disapprove;Weakly approve
+24) handle(Callback);Strongly disapprove;Strongly disapprove;Strongly disapprove
+25) prepareResponse();Strongly disapprove;Strongly disapprove;Strongly disapprove
+26) prepareResponse();Strongly disapprove;Weakly approve;Strongly disapprove
+27) createProcessor();Weakly approve;Strongly disapprove;Strongly disapprove
+28) doSmap(Node, int, int, int);Strongly disapprove;Strongly approve;Weakly disapprove
+29) dispatch(Mark, String, Object, Exception);Strongly disapprove;Weakly disapprove;Weakly approve
+30) doIsEncodeable(Request, Session, String);Strongly disapprove;Weakly approve;Weakly disapprove
+31) configureInjectionRules(Digester, String);Weakly disapprove;Strongly disapprove;Strongly approve
+32) getView();Strongly disapprove;Weakly disapprove;Strongly disapprove
+33) getCoordinator();Strongly disapprove;Weakly disapprove;Strongly disapprove
+34) createData(CoordinationMessage, MemberImpl);Strongly approve;Weakly approve;Strongly approve
+35) write(ByteBuffer, NioChannel, long, MutableInteger);Weakly approve;Weakly approve;Strongly disapprove
+36) read(ByteBuffer, NioChannel, long);Weakly approve;Weakly approve;Strongly disapprove
+37) cancel(SelectionKey, KeyAttachment, int);Strongly disapprove;Strongly disapprove;Strongly disapprove
+38) login();Strongly disapprove;Strongly disapprove;Strongly disapprove
+39) login();Strongly disapprove;Weakly disapprove;Strongly disapprove
+40) messageReceived(ClusterMessage);Weakly approve;Weakly disapprove;Strongly approve
+41) getSession(String, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+42) addEscapes(String);Strongly disapprove;Strongly approve;Strongly disapprove
+43) publishEntryInfo(Object, Object);Strongly disapprove;Strongly disapprove;Strongly disapprove
+44) publishEntryInfo(Object, Object);Strongly disapprove;Strongly disapprove;Strongly disapprove
+45) process(Reader, long, PrintWriter);Weakly disapprove;Strongly disapprove;Strongly disapprove
+46) process(Reader, long, PrintWriter);Strongly disapprove;Strongly disapprove;Strongly disapprove
+47) checkIfMatch(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove;Weakly disapprove;Strongly disapprove
+48) checkIfUnmodifiedSince(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove;Weakly approve;Strongly disapprove
+49) parseRange(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove;Weakly approve;Weakly disapprove
+50) checkIfNoneMatch(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove;Weakly disapprove;Strongly disapprove
+51) checkIfModifiedSince(HttpServletRequest, HttpServletResponse, ResourceAttributes);Strongly disapprove;Weakly disapprove;Strongly disapprove
+52) begin(String, String, Attributes);Strongly disapprove;Strongly disapprove;I don't know / I don't want to answer

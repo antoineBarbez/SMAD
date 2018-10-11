@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) getOffenders();Weakly disapprove
-2) buildPopup(JPopupMenu, int);Strongly disapprove
-3) getFileChooser(Project);Weakly approve
-4) saveGraphicsToFile(File, CmdSaveGraphics, boolean);Weakly disapprove
-5) actionPerformed(ActionEvent);Weakly disapprove
-6) doSave(Project, File);Strongly disapprove
-7) doSave(Project, File);Strongly disapprove
-8) doLoad(File);Weakly approve
-9) getTypes();Weakly disapprove
-10) doLoad(File);Weakly disapprove
-11) actionPerformed(ActionEvent);Weakly disapprove
-12) actionPerformed(ActionEvent);Strongly disapprove
-13) actionPerformed(ActionEvent);Weakly disapprove
-14) postItem(ToDoItem, Object, Designer);Weakly disapprove
-15) initWizard(Wizard);Weakly approve
-16) save(ProjectMember, Writer, Integer);Strongly disapprove
-17) save(ProjectMember, Writer, Integer);Strongly disapprove
-18) predicate2(Object, Designer);Strongly disapprove
-19) getSaveCommandBySuffix(String);Weakly disapprove
-20) setBoundsImpl(int, int, int, int);Strongly disapprove
-21) setBoundsImpl(int, int, int, int);Strongly disapprove
-22) predicate2(Object, Designer);Strongly disapprove
-23) predicate2(Object, Designer);Strongly disapprove
-24) actionPerformed(ActionEvent);Weakly disapprove
-25) actionPerformed(ActionEvent);Strongly disapprove
-26) actionPerformed(ActionEvent);Strongly disapprove
-27) getAction(String, Object);Weakly disapprove
-28) register(Map, NSUMLEventListener);Weakly disapprove
-29) toString();Strongly disapprove
-30) nameButton(AbstractButton, String);Strongly disapprove
-31) fire(PropertyChangeEvent);Weakly approve
-32) handleStartElement(XMLElement);Weakly disapprove
-33) handleEndElement(XMLElement);Weakly disapprove
-34) addMessage(FigMessage);Weakly disapprove
-35) actionPerformed(ActionEvent);Weakly disapprove
-36) actionPerformed(ActionEvent);Weakly disapprove
-37) getPopUpActions(MouseEvent);Strongly disapprove
-38) getPopUpActions(MouseEvent);Strongly disapprove
-39) getSuffix(FileFilter);Strongly disapprove
-40) remove(EventKey, MElementListener);Weakly disapprove
-41) getListenerCount(Object, EventKey);Weakly approve
-42) clone();Strongly disapprove
-43) dragHandle(int, int, int, int, Handle);Strongly disapprove
-44) actionPerformed(ActionEvent);Weakly disapprove
-45) getModuleVersion();Strongly disapprove
-46) getModuleVersion();Strongly disapprove
-47) save(ProjectMember, Writer, Integer);Strongly disapprove
-48) save(ProjectMember, Writer, Integer);Strongly disapprove
-49) load(Project, InputStream);Strongly disapprove
-50) load(Project, InputStream);Weakly disapprove
-51) actionPerformed(ActionEvent);Weakly disapprove
-52) doCopyPackage(MPackage, MPackage);Strongly disapprove
+METHOD_NAME;Antoine;Cristiano;Venkat
+1) getOffenders();Weakly disapprove;Strongly disapprove;Weakly approve
+2) buildPopup(JPopupMenu, int);Strongly disapprove;Strongly disapprove;Strongly disapprove
+3) getFileChooser(Project);Weakly approve;Weakly approve;Strongly approve
+4) saveGraphicsToFile(File, CmdSaveGraphics, boolean);Weakly disapprove;Strongly disapprove;Strongly disapprove
+5) actionPerformed(ActionEvent);Weakly disapprove;Weakly approve;Weakly approve
+6) doSave(Project, File);Strongly disapprove;Strongly disapprove;Strongly disapprove
+7) doSave(Project, File);Strongly disapprove;Strongly disapprove;Strongly disapprove
+8) doLoad(File);Weakly approve;Weakly disapprove;Weakly approve
+9) getTypes();Weakly disapprove;Weakly approve;Strongly disapprove
+10) doLoad(File);Weakly disapprove;Strongly disapprove;Strongly disapprove
+11) actionPerformed(ActionEvent);Weakly disapprove;Weakly approve;Weakly disapprove
+12) actionPerformed(ActionEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+13) actionPerformed(ActionEvent);Weakly disapprove;Weakly approve;Strongly approve
+14) postItem(ToDoItem, Object, Designer);Weakly disapprove;Weakly approve;Weakly disapprove
+15) initWizard(Wizard);Weakly approve;Strongly approve;Strongly approve
+16) save(ProjectMember, Writer, Integer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+17) save(ProjectMember, Writer, Integer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+18) predicate2(Object, Designer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+19) getSaveCommandBySuffix(String);Weakly disapprove;Strongly approve;Weakly disapprove
+20) setBoundsImpl(int, int, int, int);Strongly disapprove;Strongly disapprove;Strongly disapprove
+21) setBoundsImpl(int, int, int, int);Strongly disapprove;Strongly approve;Strongly disapprove
+22) predicate2(Object, Designer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+23) predicate2(Object, Designer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+24) actionPerformed(ActionEvent);Weakly disapprove;Strongly approve;Weakly approve
+25) actionPerformed(ActionEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+26) actionPerformed(ActionEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+27) getAction(String, Object);Weakly disapprove;Weakly disapprove;Strongly disapprove
+28) register(Map, NSUMLEventListener);Weakly disapprove;Weakly approve;Strongly disapprove
+29) toString();Strongly disapprove;Strongly disapprove;Strongly disapprove
+30) nameButton(AbstractButton, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+31) fire(PropertyChangeEvent);Weakly approve;Strongly disapprove;Weakly approve
+32) handleStartElement(XMLElement);Weakly disapprove;Strongly approve;Weakly disapprove
+33) handleEndElement(XMLElement);Weakly disapprove;Strongly approve;Weakly disapprove
+34) addMessage(FigMessage);Weakly disapprove;Weakly approve;Strongly disapprove
+35) actionPerformed(ActionEvent);Weakly disapprove;Strongly approve;Weakly approve
+36) actionPerformed(ActionEvent);Weakly disapprove;Weakly approve;Weakly approve
+37) getPopUpActions(MouseEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+38) getPopUpActions(MouseEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+39) getSuffix(FileFilter);Strongly disapprove;Strongly disapprove;Strongly disapprove
+40) remove(EventKey, MElementListener);Weakly disapprove;I don't know / I don't want to answer;Weakly approve
+41) getListenerCount(Object, EventKey);Weakly approve;I don't know / I don't want to answer;Strongly approve
+42) clone();Strongly disapprove;Strongly disapprove;Strongly disapprove
+43) dragHandle(int, int, int, int, Handle);Strongly disapprove;Strongly disapprove;Strongly disapprove
+44) actionPerformed(ActionEvent);Weakly disapprove;Weakly approve;Weakly approve
+45) getModuleVersion();Strongly disapprove;Weakly approve;Weakly approve
+46) getModuleVersion();Strongly disapprove;Weakly approve;Weakly approve
+47) save(ProjectMember, Writer, Integer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+48) save(ProjectMember, Writer, Integer);Strongly disapprove;Strongly disapprove;Strongly disapprove
+49) load(Project, InputStream);Strongly disapprove;Strongly disapprove;Strongly disapprove
+50) load(Project, InputStream);Weakly disapprove;Strongly disapprove;Strongly disapprove
+51) actionPerformed(ActionEvent);Weakly disapprove;Strongly approve;Strongly approve
+52) doCopyPackage(MPackage, MPackage);Strongly disapprove;Strongly disapprove;Strongly disapprove

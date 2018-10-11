@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) getBaseURI();Strongly disapprove
-2) skipChar(int);Strongly disapprove
-3) scanLiteral(int, XMLString);Strongly disapprove
-4) skipSpaces();Strongly disapprove
-5) scanChar();Strongly disapprove
-6) scanData(String, XMLStringBuffer);Strongly disapprove
-7) scanContent(XMLString);Strongly disapprove
-8) skipString(String);Strongly disapprove
-9) synchronizeData();Weakly disapprove
-10) checkFeature(String);Strongly disapprove
-11) createBuiltInTypes();Weakly disapprove
-12) printError(String, XMLParseException);Weakly approve
-13) decode(String);Strongly disapprove
-14) getTokenForShorthand(int);Weakly disapprove
-15) getAttributeTypeName(XMLAttributeDecl);Strongly disapprove
-16) getAttributeTypeName(XMLAttributeDecl);Weakly disapprove
-17) doctypeDecl(String, String, String, Augmentations);Strongly disapprove
-18) checkProperty(String);Weakly disapprove
-19) checkFeature(String);Weakly disapprove
-20) configurePipeline();Weakly disapprove
-21) createOptionString(int);Weakly disapprove
-22) getOptionValue(int);Weakly disapprove
-23) createAnnotationElementDecl(String);Weakly approve
-24) createChoiceElementParticle(XSElementDecl);Weakly approve
-25) createAnyLaxWildcardParticle();Weakly approve
-26) fillXMLAttributes2(Attributes2);Weakly approve
-27) checkFeature(String);Weakly disapprove
-28) dispatchAggregateEvents(NodeImpl, AttrImpl, String, short);Weakly approve
-29) dispatchAggregateEvents(NodeImpl, EnclosingAttr);Strongly disapprove
-30) compile(Token, Op, boolean);Weakly disapprove
-31) compile(Token, Op, boolean);Weakly disapprove
-32) startElement(QName, XMLAttributes);Strongly disapprove
-33) synchronizeData();Weakly approve
-34) synchronizeData();Strongly disapprove
-35) checkFeature(String);Weakly disapprove
-36) checkProperty(String);Weakly disapprove
-37) errorType(String, String, short);Weakly disapprove
-38) addGrammars(ASModelImpl, XSGrammarBucket);Weakly disapprove
-39) getSchemaInformation();Strongly disapprove
-40) getCharacterOffset();Weakly approve
-41) skipSpaces();Weakly approve
-42) scanData(String, XMLStringBuffer);Weakly approve
-43) skipDeclSpaces();Weakly approve
-44) setEncoding(String);Weakly approve
-45) createAllCM(XSParticleDecl);Weakly approve
-46) hasAllContent(XSParticleDecl);Weakly approve
-47) canSetParameter(String, Object);Weakly disapprove
-48) getParameterNames();Weakly disapprove
-49) hasNonSchemaAttributes(QName, XMLAttributes);Strongly disapprove
-50) whichMediaType(String);Weakly disapprove
-51) scanAttribute(XMLAttributesImpl);Weakly disapprove
-52) scanAttribute(XMLAttributesImpl);Weakly disapprove
+METHOD_NAME;Antoine;Tomasz;Manel
+1) getBaseURI();Strongly disapprove;Strongly disapprove;Strongly disapprove
+2) skipChar(int);Strongly disapprove;Strongly disapprove;Weakly approve
+3) scanLiteral(int, XMLString);Strongly disapprove;Strongly disapprove;Weakly approve
+4) skipSpaces();Strongly disapprove;Strongly disapprove;Weakly approve
+5) scanChar();Strongly disapprove;Strongly disapprove;Weakly approve
+6) scanData(String, XMLStringBuffer);Strongly disapprove;Strongly disapprove;Weakly approve
+7) scanContent(XMLString);Strongly disapprove;Strongly disapprove;Weakly approve
+8) skipString(String);Strongly disapprove;Strongly disapprove;Weakly approve
+9) synchronizeData();Weakly disapprove;Strongly disapprove;Weakly approve
+10) checkFeature(String);Strongly disapprove;Strongly disapprove;Weakly approve
+11) createBuiltInTypes();Weakly disapprove;Strongly disapprove;Weakly approve
+12) printError(String, XMLParseException);Weakly approve;Weakly disapprove;Weakly approve
+13) decode(String);Strongly disapprove;Strongly approve;Strongly disapprove
+14) getTokenForShorthand(int);Weakly disapprove;Weakly approve;Weakly approve
+15) getAttributeTypeName(XMLAttributeDecl);Strongly disapprove;Strongly disapprove;Weakly approve
+16) getAttributeTypeName(XMLAttributeDecl);Weakly disapprove;Strongly approve;Weakly approve
+17) doctypeDecl(String, String, String, Augmentations);Strongly disapprove;Strongly disapprove;Strongly disapprove
+18) checkProperty(String);Weakly disapprove;Strongly disapprove;Weakly approve
+19) checkFeature(String);Weakly disapprove;Strongly disapprove;Weakly approve
+20) configurePipeline();Weakly disapprove;Strongly disapprove;Strongly disapprove
+21) createOptionString(int);Weakly disapprove;Strongly approve;Strongly approve
+22) getOptionValue(int);Weakly disapprove;Strongly approve;Strongly approve
+23) createAnnotationElementDecl(String);Weakly approve;Weakly approve;Weakly approve
+24) createChoiceElementParticle(XSElementDecl);Weakly approve;Weakly approve;Strongly approve
+25) createAnyLaxWildcardParticle();Weakly approve;Weakly approve;Strongly approve
+26) fillXMLAttributes2(Attributes2);Weakly approve;Weakly approve;Strongly approve
+27) checkFeature(String);Weakly disapprove;Strongly disapprove;Weakly approve
+28) dispatchAggregateEvents(NodeImpl, AttrImpl, String, short);Weakly approve;Strongly disapprove;Weakly disapprove
+29) dispatchAggregateEvents(NodeImpl, EnclosingAttr);Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+30) compile(Token, Op, boolean);Weakly disapprove;Weakly approve;Weakly approve
+31) compile(Token, Op, boolean);Weakly disapprove;Weakly disapprove;Weakly approve
+32) startElement(QName, XMLAttributes);Strongly disapprove;Strongly disapprove;Strongly disapprove
+33) synchronizeData();Weakly approve;Strongly disapprove;Weakly approve
+34) synchronizeData();Strongly disapprove;Strongly disapprove;Strongly disapprove
+35) checkFeature(String);Weakly disapprove;Strongly disapprove;Weakly approve
+36) checkProperty(String);Weakly disapprove;Strongly disapprove;Weakly approve
+37) errorType(String, String, short);Weakly disapprove;Strongly approve;Weakly disapprove
+38) addGrammars(ASModelImpl, XSGrammarBucket);Weakly disapprove;Weakly approve;Strongly disapprove
+39) getSchemaInformation();Strongly disapprove;Strongly disapprove;Weakly disapprove
+40) getCharacterOffset();Weakly approve;Strongly approve;Weakly approve
+41) skipSpaces();Weakly approve;Weakly disapprove;Strongly approve
+42) scanData(String, XMLStringBuffer);Weakly approve;Weakly disapprove;Strongly approve
+43) skipDeclSpaces();Weakly approve;Weakly disapprove;Strongly approve
+44) setEncoding(String);Weakly approve;Strongly approve;Strongly approve
+45) createAllCM(XSParticleDecl);Weakly approve;Weakly disapprove;Weakly approve
+46) hasAllContent(XSParticleDecl);Weakly approve;Strongly approve;Strongly approve
+47) canSetParameter(String, Object);Weakly disapprove;Weakly disapprove;Weakly approve
+48) getParameterNames();Weakly disapprove;Strongly disapprove;Weakly approve
+49) hasNonSchemaAttributes(QName, XMLAttributes);Strongly disapprove;Strongly approve;Weakly disapprove
+50) whichMediaType(String);Weakly disapprove;Weakly approve;Weakly approve
+51) scanAttribute(XMLAttributesImpl);Weakly disapprove;Weakly approve;Weakly disapprove
+52) scanAttribute(XMLAttributesImpl);Weakly disapprove;Weakly disapprove;Strongly disapprove

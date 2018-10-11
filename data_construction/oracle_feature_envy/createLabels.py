@@ -1,5 +1,7 @@
 from context import ROOT_DIR, entityUtils
 
+import numpy as np
+
 import csv
 import fnmatch
 import os
@@ -8,7 +10,6 @@ import os
 # It implements a vote descision between the different answers for a same instance.
 # For each system, it creates a file "data/labels/feature_envy/system-name.txt" containing all the 
 # instances of feature envy detected by our survey.
-
 
 systems = [
 		{
@@ -45,15 +46,19 @@ systems = [
 		}
 	]
 
-def getScore(answer):
-	if answer == 'Strongly approve':
-		return 1.0
-	elif answer == 'Weakly approve':
-		return 0.66
-	elif answer == 'Weakly disapprove':
-		return 0.33
-	else:
-		return 0.0
+def getScore(answers):
+	floatValues = []
+	for answer in answers:
+		if answer == 'Strongly approve':
+			floatValues.append(1.0)
+		elif answer == 'Weakly approve':
+			floatValues.append(0.66)
+		elif answer == 'Weakly disapprove':
+			floatValues.append(0.33)
+		elif answer == 'Strongly disapprove':
+			floatValues.append(0.0)
+
+	return np.mean(np.array(floatValues))
 
 def getAnswers():
 	answerDir = os.path.join(ROOT_DIR, 'data_construction/oracle_feature_envy/forms_answers')
@@ -63,7 +68,7 @@ def getAnswers():
 		for file in fnmatch.filter(sorted(files), '*.csv'):
 			with open(os.path.join(path, file), 'r') as csvFile:
 				reader = csv.DictReader(csvFile, delimiter=';')
-				answers += [row['ANSWER'] for row in reader]
+				answers += [[row[key] for key in row if row[key] != 'METHOD_NAME'] for row in reader]
 
 	return answers
 
@@ -80,19 +85,19 @@ def getCandidates():
 	return candidates
 
 
-startIndex = 0
-answers    = getAnswers()
-candidates = getCandidates()
-for system in systems:
-	endIndex = system['end_index']
-	smells = [candidates[i] for i in range(startIndex, endIndex) if getScore(answers[i]) >= 0.5]
-	startIndex = endIndex
+if __name__ == "__main__":
+	startIndex = 0
+	answers    = getAnswers()
+	candidates = getCandidates()
+	for system in systems:
+		endIndex = system['end_index']
+		smells = [candidates[i] for i in range(startIndex, endIndex) if getScore(answers[i]) >= 0.5]
+		startIndex = endIndex
 
-	labelFile = os.path.join(ROOT_DIR, 'data/labels/feature_envy/' + system['name'] + '.txt')
+		labelFile = os.path.join(ROOT_DIR, 'data/antipatterns/feature_envy/' + system['name'] + '.txt')
 
-	with open(labelFile, 'w') as file:
-		for smell in smells:
-			file.write(smell + '\n')
-
+		with open(labelFile, 'w') as file:
+			for smell in smells:
+				file.write(smell + '\n')
 
 

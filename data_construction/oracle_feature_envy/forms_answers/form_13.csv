@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) addPlugin(Plugin);Strongly disapprove
-2) canSatisfy();Strongly disapprove
-3) install(Roster, String, boolean);Strongly disapprove
-4) install(Roster, String, boolean);Strongly disapprove
-5) startPlugin();Strongly disapprove
-6) print(View, Buffer, boolean);Weakly disapprove
-7) print(View, Buffer, boolean);Strongly disapprove
-8) actionPerformed(ActionEvent);Strongly disapprove
-9) searchInSelection(Buffer);Strongly disapprove
-10) doHyperSearch(Buffer, int, int, DefaultMutableTreeNode);Strongly disapprove
-11) addSeparator();Strongly disapprove
-12) addSeparator();Strongly disapprove
-13) addRule(ParserRule);Strongly disapprove
-14) handleClient(boolean, boolean, boolean, String, String);Weakly approve
-15) handleClient(boolean, String, String);Weakly disapprove
-16) handleClient(boolean, String, String);Strongly disapprove
-17) getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int);Weakly disapprove
-18) getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int);Weakly disapprove
-19) ok();Strongly disapprove
-20) paintScreenLineRange(JEditTextArea, Graphics2D, int, int, int, int);Weakly disapprove
-21) paste(JEditTextArea, char, boolean);Strongly disapprove
-22) paste(JEditTextArea, char, boolean);Weakly approve
-23) writeEntryHeader(byte);Weakly approve
-24) nameTarHeader(TarHeader, String);Weakly approve
-25) getFileTarHeader(TarHeader, File);Weakly approve
-26) parseTarHeader(TarHeader, byte);Weakly approve
-27) traverseNamedElement(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSObject);Weakly disapprove
-28) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove
-29) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove
-30) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove
-31) getErrorContent();Weakly approve
-32) startNamespaceScope(QName, XMLAttributes, Augmentations);Strongly disapprove
-33) startNamespaceScope(QName, XMLAttributes, Augmentations);Strongly disapprove
-34) checkFeature(String);Strongly disapprove
-35) normalizeDefaultAttrValue(XMLString);Weakly approve
-36) appendContentSpec(XMLContentSpec, StringBuffer, boolean, int);Weakly approve
-37) contentSpecTree(int, XMLContentSpec, ChildrenList);Weakly disapprove
-38) buildSyntaxTree(int, XMLContentSpec);Weakly disapprove
-39) parse(String, int);Strongly disapprove
-40) canSetParameter(String, Object);Weakly disapprove
-41) getParameterNames();Weakly disapprove
-42) isDerivedFrom(String, String, int);Strongly disapprove
-43) setPrefix(String);Strongly disapprove
-44) setPrefix(String);Strongly disapprove
-45) traverseSyntheticAnnotation(Element, String, Object, boolean, XSDocumentInfo);Weakly disapprove
-46) traverseAttrsAndAttrGrps(Element, XSAttributeGroupDecl, XSDocumentInfo, SchemaGrammar, XSComplexTypeDecl);Strongly disapprove
-47) scanTextDecl();Strongly disapprove
-48) scanTextDecl();Strongly disapprove
-49) getBaseURI();Strongly disapprove
-50) traverseNamedAttr(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSComplexTypeDecl);Weakly disapprove
-51) traverseNamedAttr(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSComplexTypeDecl);Weakly disapprove
-52) setPrefix(String);Strongly disapprove
+METHOD_NAME;Antoine;Tomasz;Cristiano
+1) addPlugin(Plugin);Strongly disapprove;Strongly disapprove;Strongly disapprove
+2) canSatisfy();Strongly disapprove;Strongly disapprove;Strongly disapprove
+3) install(Roster, String, boolean);Strongly disapprove;Strongly disapprove;Strongly disapprove
+4) install(Roster, String, boolean);Strongly disapprove;Strongly disapprove;Strongly disapprove
+5) startPlugin();Strongly disapprove;Weakly disapprove;Strongly disapprove
+6) print(View, Buffer, boolean);Weakly disapprove;Strongly disapprove;Strongly disapprove
+7) print(View, Buffer, boolean);Strongly disapprove;Weakly approve;Strongly disapprove
+8) actionPerformed(ActionEvent);Strongly disapprove;Strongly disapprove;Strongly disapprove
+9) searchInSelection(Buffer);Strongly disapprove;Weakly approve;Strongly disapprove
+10) doHyperSearch(Buffer, int, int, DefaultMutableTreeNode);Strongly disapprove;Weakly disapprove;Strongly disapprove
+11) addSeparator();Strongly disapprove;Strongly disapprove;Strongly disapprove
+12) addSeparator();Strongly disapprove;Strongly disapprove;Strongly disapprove
+13) addRule(ParserRule);Strongly disapprove;Strongly disapprove;Strongly disapprove
+14) handleClient(boolean, boolean, boolean, String, String);Weakly approve;Strongly approve;Weakly disapprove
+15) handleClient(boolean, String, String);Weakly disapprove;Strongly approve;Weakly disapprove
+16) handleClient(boolean, String, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+17) getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int);Weakly disapprove;Weakly disapprove;Strongly disapprove
+18) getTableCellRendererComponent(JTable, Object, boolean, boolean, int, int);Weakly disapprove;Weakly disapprove;Weakly disapprove
+19) ok();Strongly disapprove;Strongly disapprove;Strongly disapprove
+20) paintScreenLineRange(JEditTextArea, Graphics2D, int, int, int, int);Weakly disapprove;Strongly disapprove;Strongly disapprove
+21) paste(JEditTextArea, char, boolean);Strongly disapprove;Strongly disapprove;Weakly disapprove
+22) paste(JEditTextArea, char, boolean);Weakly approve;Weakly approve;Strongly disapprove
+23) writeEntryHeader(byte);Weakly approve;Weakly approve;Strongly approve
+24) nameTarHeader(TarHeader, String);Weakly approve;Strongly approve;Strongly approve
+25) getFileTarHeader(TarHeader, File);Weakly approve;Weakly approve;Weakly approve
+26) parseTarHeader(TarHeader, byte);Weakly approve;Strongly approve;Strongly approve
+27) traverseNamedElement(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSObject);Weakly disapprove;Strongly disapprove;Strongly disapprove
+28) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove;Strongly disapprove;Strongly disapprove
+29) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove;Strongly disapprove;Strongly disapprove
+30) mergeAttributes(XSAttributeGroupDecl, XSAttributeGroupDecl, String, boolean, Element);Strongly disapprove;Strongly approve;Weakly disapprove
+31) getErrorContent();Weakly approve;Strongly approve;Strongly approve
+32) startNamespaceScope(QName, XMLAttributes, Augmentations);Strongly disapprove;Strongly disapprove;Strongly disapprove
+33) startNamespaceScope(QName, XMLAttributes, Augmentations);Strongly disapprove;Strongly disapprove;Strongly disapprove
+34) checkFeature(String);Strongly disapprove;Strongly disapprove;Weakly disapprove
+35) normalizeDefaultAttrValue(XMLString);Weakly approve;Strongly approve;Weakly disapprove
+36) appendContentSpec(XMLContentSpec, StringBuffer, boolean, int);Weakly approve;Weakly approve;Weakly approve
+37) contentSpecTree(int, XMLContentSpec, ChildrenList);Weakly disapprove;Weakly disapprove;Weakly approve
+38) buildSyntaxTree(int, XMLContentSpec);Weakly disapprove;Weakly disapprove;Weakly approve
+39) parse(String, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+40) canSetParameter(String, Object);Weakly disapprove;Strongly disapprove;Strongly disapprove
+41) getParameterNames();Weakly disapprove;Strongly disapprove;Strongly disapprove
+42) isDerivedFrom(String, String, int);Strongly disapprove;Strongly disapprove;Strongly disapprove
+43) setPrefix(String);Strongly disapprove;Weakly disapprove;Strongly disapprove
+44) setPrefix(String);Strongly disapprove;Weakly disapprove;Strongly disapprove
+45) traverseSyntheticAnnotation(Element, String, Object, boolean, XSDocumentInfo);Weakly disapprove;Strongly disapprove;Weakly disapprove
+46) traverseAttrsAndAttrGrps(Element, XSAttributeGroupDecl, XSDocumentInfo, SchemaGrammar, XSComplexTypeDecl);Strongly disapprove;Strongly disapprove;Strongly disapprove
+47) scanTextDecl();Strongly disapprove;Weakly approve;Strongly disapprove
+48) scanTextDecl();Strongly disapprove;Strongly disapprove;Strongly disapprove
+49) getBaseURI();Strongly disapprove;Strongly disapprove;Strongly disapprove
+50) traverseNamedAttr(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSComplexTypeDecl);Weakly disapprove;Strongly disapprove;Strongly disapprove
+51) traverseNamedAttr(Element, Object, XSDocumentInfo, SchemaGrammar, boolean, XSComplexTypeDecl);Weakly disapprove;Weakly disapprove;Strongly disapprove
+52) setPrefix(String);Strongly disapprove;Weakly disapprove;Strongly disapprove

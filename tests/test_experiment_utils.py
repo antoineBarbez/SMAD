@@ -5,7 +5,7 @@ import numpy as np
 import math
 import unittest
 
-class TestDecorGCCM(unittest.TestCase):
+class TestExperimentUtils(unittest.TestCase):
 	def setUp(self):
 		self.set_1 = ['a','b','c','d', 'e']
 		self.set_2 = ['b','e', 'f', 'g']

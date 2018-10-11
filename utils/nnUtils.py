@@ -8,9 +8,6 @@ import dataUtils
 import random
 import sys
 
-sys.path.insert(0, ROOT_DIR)
-import detection_tools.confidence_metrics as cm
-
 ### EVALUATION ####
 def true_positive(output, labels):
 	tp = tf.cast(tf.equal(tf.argmax(output,1) + tf.argmax(labels,1), 0), tf.float32)
@@ -59,14 +56,15 @@ def shuffle(instances, labels):
 # Get labels in vector form for a given system
 # antipattern in ['god_class', 'feature_envy']
 def getLabels(systemName, antipattern):
-	true = dataUtils.getAntipatterns(systemName, antipattern)
+	assert antipattern in ['god_class', 'feature_envy']
 
 	if antipattern == 'god_class':
 		entities = dataUtils.getClasses(systemName)
 	else:
-		entities = []
+		entities = dataUtils.getCandidateFeatureEnvy(systemName)
 
 	labels = []
+	true = dataUtils.getAntipatterns(systemName, antipattern)
 	for entity in entities:
 		if entity in true:
 			labels.append([1, 0])
@@ -76,19 +74,69 @@ def getLabels(systemName, antipattern):
 	return np.array(labels)
 
 
-# Number of class per system
-systems_sizes = {
-	'android-frameworks-opt-telephony': 190,
-	'android-platform-support': 104,
-	'apache-ant': 755,
-	'apache-tomcat': 1005,
-	'lucene': 160,
-	'argouml': 1246,
-	'jedit': 437,
-	'xerces-2_7_0': 658
-}
+def getInstances(systemName, antipattern):
+	assert antipattern in ['god_class', 'feature_envy']
 
-def getGodClassInstances(systemName):
+	metrics = []
+	if antipattern == 'god_class':
+		entities = dataUtils.getClasses(systemName)
+		metrics.append(dataUtils.getGCDecorMetrics(systemName))
+		metrics.append(dataUtils.getGCHistMetrics(systemName))
+		metrics.append(dataUtils.getGCJDeodorantMetrics(systemName))
+	else:
+		entities = dataUtils.getCandidateFeatureEnvy(systemName)
+		metrics.append(dataUtils.getFEHistMetrics(systemName))
+		metrics.append(dataUtils.getFEInCodeMetrics(systemName))
+		metrics.append(dataUtils.getFEJDeodorantMetrics(systemName))
+
+
+	instances = []
+	for entity in entities:
+		instance = []
+		for metricMap in metrics:
+			instance += metricMap[entity]
+		instances.append(instance)
+	instances = np.array(instances).astype(float)
+
+	# Batch normalization
+	scaler = StandardScaler()
+	scaler.fit(instances)
+	rescaledInstances = scaler.transform(instances)
+
+	return rescaledInstances
+
+
+def getSystemConstants(systemName):
+	systemToIndexMap = {
+		'android-frameworks-opt-telephony': 0,
+		'android-platform-support': 1,
+		'apache-ant': 2,
+		'apache-tomcat': 3,
+		'lucene': 4,
+		'argouml': 5,
+		'jedit': 6,
+		'xerces-2_7_0': 7
+	}
+
+	# Sizes of the systems (i.e, number of classes)
+	sizes = [190, 104, 755, 1005, 160, 1246, 437, 658]
+
+	# History length of the systems (i.e, number of commits)
+	nb_commit = [98, 195, 6397, 3289, 429, 5559, 1181, 3453]
+
+	constants = np.array([[sizes[i], nb_commit[i]] for i in range(8)]).astype(float)
+	#constants = np.array([[sizes[i]] for i in range(8)]).astype(float)
+
+	# Normalization
+	scaler = StandardScaler()
+	scaler.fit(constants)
+	rescaledConstants = scaler.transform(constants)
+	#print(rescaledConstants)
+
+	return rescaledConstants[systemToIndexMap[systemName]]
+
+
+'''def getGodClassInstances2(systemName):
 	classes = dataUtils.getClasses(systemName)
 
 	classToHistGCCM       = cm.getHistGCCM(systemName)
@@ -112,3 +160,28 @@ def getGodClassInstances(systemName):
 	rescaledInstances = scaler.transform(instances)
 
 	return rescaledInstances
+
+def getGodClassInstances(systemName):
+	classes = dataUtils.getClasses(systemName)
+
+	classToHistMetrics       = dataUtils.getGCHistMetrics(systemName)
+	classToDecorMetrics      = dataUtils.getGCDecorMetrics(systemName)
+	classToJDeodorantMetrics = dataUtils.getGCJDeodorantMetrics(systemName)
+
+	instances = []
+	for klass in classes:
+		instance = []
+		instance += classToDecorMetrics[klass]
+		instance += classToHistMetrics[klass]
+		instance += classToJDeodorantMetrics[klass]
+
+		instances.append(instance)
+
+	instances = np.array(instances).astype(float)
+
+	# Batch normalization
+	scaler = StandardScaler()
+	scaler.fit(instances)
+	rescaledInstances = scaler.transform(instances)
+
+	return rescaledInstances'''

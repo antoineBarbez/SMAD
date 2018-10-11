@@ -116,7 +116,7 @@ class HistoryExtractor(object):
 			self.__updateWorkingFile("../actualFile.java", filePath, SHA)
 			self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
 
-			diffjCommand = "java -jar " + ROOT_DIR + "/assets/diffj-1.6.3.jar --brief ../previousFile.java ../actualFile.java"
+			diffjCommand = "java -jar " + ROOT_DIR + "/assets/jar/diffj-1.6.3.jar --brief ../previousFile.java ../actualFile.java"
 			ps = subprocess.Popen(diffjCommand.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 			output, error = ps.communicate()
 

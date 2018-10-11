@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) report(Request, Response, Throwable);Weakly disapprove
-2) end(String, String);Strongly disapprove
-3) end(String, String);Strongly disapprove
-4) generateTLDLocation(String, JspCompilationContext);Weakly disapprove
-5) setSoLinger(int);Weakly disapprove
-6) registerLocalSchema(SchemaResolver);Weakly disapprove
-7) newDigester(boolean, boolean, RuleSet);Weakly approve
-8) createJDBCRealm(String, String, String, String, String);Weakly approve
-9) createDataSourceRealm(String, String, String, String, String, String, String);Weakly approve
-10) createStandardHost(String, String, String, boolean, boolean, boolean, boolean);Weakly approve
-11) createConnector(String, String, int, boolean, boolean);Weakly approve
-12) custom(Request, Response, ErrorPage);Weakly disapprove
-13) status(Request, Response);Strongly disapprove
-14) status(Request, Response);Weakly disapprove
-15) unescapeDoubleQuotes(ByteChunk);Strongly approve
-16) getTokenEndPosition(byte, int, int, int, boolean);Weakly approve
-17) addEjb(ContextEjb);Weakly disapprove
-18) isExpression(Node, String, boolean);Strongly disapprove
-19) matchFiltersURL(FilterMap, String);Weakly approve
-20) matchDispatcher(FilterMap, DispatcherType);Weakly disapprove
-21) matchFiltersServlet(FilterMap, String);Weakly approve
-22) isOutDated(boolean);Weakly approve
-23) prepareResponse();Strongly disapprove
-24) prepareResponse();Strongly disapprove
-25) prepareResponse();Strongly disapprove
-26) prepareResponse();Strongly disapprove
-27) action(ActionCode, Object);Strongly disapprove
-28) setValue(EvaluationContext, Object);Strongly approve
-29) getType(EvaluationContext);Strongly approve
-30) isReadOnly(EvaluationContext);Strongly approve
-31) getValue(EvaluationContext);Strongly approve
-32) objectMadePrimay(Object, Object);Strongly disapprove
-33) objectMadePrimay(Object, Object);Strongly disapprove
-34) setAttribute(Attribute);Strongly disapprove
-35) getAttribute(String);Strongly disapprove
-36) processArg(Node);Weakly disapprove
-37) execute();Strongly disapprove
-38) publishEntryInfo(Object, Object);Strongly disapprove
-39) publishEntryInfo(Object, Object);Strongly disapprove
-40) createNodeInternal(String);Strongly disapprove
-41) objectMadePrimay(Object, Object);Strongly disapprove
-42) objectMadePrimay(Object, Object);Strongly disapprove
-43) parseLocalesHeader(String);Weakly disapprove
-44) isSSLAttribute(String);Weakly approve
-45) createStartDigester();Strongly disapprove
-46) begin(String, String, Attributes);Weakly disapprove
-47) toString();Strongly disapprove
-48) toString();Strongly disapprove
-49) map(MessageBytes, MessageBytes, MappingData);Weakly approve
-50) internalMapWildcardWrapper(Wrapper, int, CharChunk, MappingData);Weakly disapprove
-51) internalMapExactWrapper(Wrapper, CharChunk, MappingData);Weakly disapprove
-52) internalMapExactWrapper(Wrapper, CharChunk, MappingData);Strongly disapprove
+METHOD_NAME;Antoine;Rubén;Tomasz
+1) report(Request, Response, Throwable);Weakly disapprove;Weakly approve;Strongly disapprove
+2) end(String, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+3) end(String, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+4) generateTLDLocation(String, JspCompilationContext);Weakly disapprove;Weakly disapprove;Weakly disapprove
+5) setSoLinger(int);Weakly disapprove;Weakly approve;Weakly approve
+6) registerLocalSchema(SchemaResolver);Weakly disapprove;Strongly disapprove;Strongly disapprove
+7) newDigester(boolean, boolean, RuleSet);Weakly approve;Weakly approve;Strongly disapprove
+8) createJDBCRealm(String, String, String, String, String);Weakly approve;Strongly approve;Strongly disapprove
+9) createDataSourceRealm(String, String, String, String, String, String, String);Weakly approve;Strongly approve;Strongly disapprove
+10) createStandardHost(String, String, String, boolean, boolean, boolean, boolean);Weakly approve;Strongly approve;Strongly disapprove
+11) createConnector(String, String, int, boolean, boolean);Weakly approve;Strongly approve;Strongly disapprove
+12) custom(Request, Response, ErrorPage);Weakly disapprove;Weakly disapprove;Strongly disapprove
+13) status(Request, Response);Strongly disapprove;Weakly disapprove;Weakly disapprove
+14) status(Request, Response);Weakly disapprove;Weakly approve;Weakly disapprove
+15) unescapeDoubleQuotes(ByteChunk);Strongly approve;Strongly approve;Weakly approve
+16) getTokenEndPosition(byte, int, int, int, boolean);Weakly approve;Weakly disapprove;Strongly approve
+17) addEjb(ContextEjb);Weakly disapprove;Strongly approve;Weakly approve
+18) isExpression(Node, String, boolean);Strongly disapprove;I don't know / I don't want to answer;Strongly approve
+19) matchFiltersURL(FilterMap, String);Weakly approve;Strongly approve;Strongly approve
+20) matchDispatcher(FilterMap, DispatcherType);Weakly disapprove;Strongly approve;Strongly approve
+21) matchFiltersServlet(FilterMap, String);Weakly approve;Strongly approve;Strongly approve
+22) isOutDated(boolean);Weakly approve;Weakly disapprove;Weakly approve
+23) prepareResponse();Strongly disapprove;I don't know / I don't want to answer;Weakly disapprove
+24) prepareResponse();Strongly disapprove;I don't know / I don't want to answer;Weakly disapprove
+25) prepareResponse();Strongly disapprove;Weakly approve;Strongly approve
+26) prepareResponse();Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+27) action(ActionCode, Object);Strongly disapprove;I don't know / I don't want to answer;Weakly approve
+28) setValue(EvaluationContext, Object);Strongly approve;Weakly approve;Strongly approve
+29) getType(EvaluationContext);Strongly approve;Weakly approve;Strongly approve
+30) isReadOnly(EvaluationContext);Strongly approve;Weakly approve;Strongly approve
+31) getValue(EvaluationContext);Strongly approve;Weakly approve;Strongly approve
+32) objectMadePrimay(Object, Object);Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+33) objectMadePrimay(Object, Object);Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+34) setAttribute(Attribute);Strongly disapprove;I don't know / I don't want to answer;I don't know / I don't want to answer
+35) getAttribute(String);Strongly disapprove;I don't know / I don't want to answer;I don't know / I don't want to answer
+36) processArg(Node);Weakly disapprove;Strongly approve;Strongly approve
+37) execute();Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+38) publishEntryInfo(Object, Object);Strongly disapprove;Weakly disapprove;Strongly disapprove
+39) publishEntryInfo(Object, Object);Strongly disapprove;Weakly disapprove;Strongly disapprove
+40) createNodeInternal(String);Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+41) objectMadePrimay(Object, Object);Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+42) objectMadePrimay(Object, Object);Strongly disapprove;Strongly approve;Strongly disapprove
+43) parseLocalesHeader(String);Weakly disapprove;Strongly approve;Strongly approve
+44) isSSLAttribute(String);Weakly approve;Weakly approve;Strongly approve
+45) createStartDigester();Strongly disapprove;Weakly disapprove;Strongly disapprove
+46) begin(String, String, Attributes);Weakly disapprove;Weakly approve;Strongly approve
+47) toString();Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+48) toString();Strongly disapprove;I don't know / I don't want to answer;Strongly disapprove
+49) map(MessageBytes, MessageBytes, MappingData);Weakly approve;Weakly disapprove;Weakly disapprove
+50) internalMapWildcardWrapper(Wrapper, int, CharChunk, MappingData);Weakly disapprove;Strongly approve;Weakly disapprove
+51) internalMapExactWrapper(Wrapper, CharChunk, MappingData);Weakly disapprove;Weakly disapprove;Weakly approve
+52) internalMapExactWrapper(Wrapper, CharChunk, MappingData);Strongly disapprove;Weakly disapprove;Strongly disapprove

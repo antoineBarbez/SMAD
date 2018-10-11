@@ -1,53 +1,53 @@
-METHOD_NAME;ANSWER
-1) exception(Request, Response, Throwable);Strongly disapprove
-2) getMBeanServer();Strongly disapprove
-3) readTermVector(String, long);Weakly disapprove
-4) checkValidFormat(InputStream);Weakly disapprove
-5) read(InputStream);Weakly disapprove
-6) write(OutputStream);Strongly disapprove
-7) write(OutputStream);Weakly disapprove
-8) touchFile(String);Strongly disapprove
-9) touchFile(String);Weakly disapprove
-10) explain(IndexReader, int);Strongly disapprove
-11) explain(IndexReader, int);Strongly disapprove
-12) toString();Strongly disapprove
-13) touchFile(String);Strongly disapprove
-14) touchFile(String);Strongly disapprove
-15) getIndexedFieldNames(boolean);Weakly disapprove
-16) hasSeparateNorms(SegmentInfo);Strongly disapprove
-17) doClose();Strongly disapprove
-18) getPrefix();Strongly disapprove
-19) getCachedComparator(IndexReader, String, int, Locale, SortComparatorSource);Weakly disapprove
-20) setSimilarity(Similarity);Strongly disapprove
-21) setSimilarity(Similarity);Strongly disapprove
-22) timeToString(long);Strongly disapprove
-23) getStringIndex(IndexReader, String);Strongly disapprove
-24) getStringIndex(IndexReader, String);Strongly disapprove
-25) explain(IndexReader, int);Strongly disapprove
-26) explain(IndexReader, int);Strongly disapprove
-27) createWeight(Searcher);Strongly disapprove
-28) createWeight(Searcher);Strongly disapprove
-29) deleteFiles(Vector, Directory);Weakly approve
-30) optimize();Weakly disapprove
-31) setSimilarity(Similarity);Strongly disapprove
-32) setSimilarity(Similarity);Strongly disapprove
-33) writeDeleteableFiles(Vector);Weakly approve
-34) readDeleteableFiles();Weakly approve
-35) lessThan(Object, Object);Weakly disapprove
-36) obtain(long);Strongly disapprove
-37) toString(String);Strongly disapprove
-38) undeleteAll();Strongly disapprove
-39) explain(IndexReader, int);Strongly disapprove
-40) explain(IndexReader, int);Strongly disapprove
-41) createWeight(Searcher);Strongly disapprove
-42) createWeight(Searcher);Weakly approve
-43) copyFile(FileEntry, OutputStream, byte);Weakly disapprove
-44) Keyword(String, Date);Weakly disapprove
-45) swap(int, int);Strongly disapprove
-46) swap(int, int);Strongly disapprove
-47) getUmlActions();Strongly disapprove
-48) getUmlActions();Strongly disapprove
-49) needsToBeRemoved();Strongly disapprove
-50) doAction(int);Strongly disapprove
-51) actionPerformed(ActionEvent);Weakly disapprove
-52) updateStereotypeText();Strongly disapprove
+METHOD_NAME;Antoine;William;Manel
+1) exception(Request, Response, Throwable);Strongly disapprove;Weakly approve;Strongly disapprove
+2) getMBeanServer();Strongly disapprove;Strongly disapprove;Strongly disapprove
+3) readTermVector(String, long);Weakly disapprove;Strongly disapprove;Strongly disapprove
+4) checkValidFormat(InputStream);Weakly disapprove;Strongly disapprove;Strongly disapprove
+5) read(InputStream);Weakly disapprove;Strongly disapprove;Strongly disapprove
+6) write(OutputStream);Strongly disapprove;Strongly disapprove;Strongly disapprove
+7) write(OutputStream);Weakly disapprove;Weakly disapprove;Strongly approve
+8) touchFile(String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+9) touchFile(String);Weakly disapprove;Strongly disapprove;Strongly disapprove
+10) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+11) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+12) toString();Strongly disapprove;Strongly disapprove;Strongly disapprove
+13) touchFile(String);Strongly disapprove;Strongly disapprove;Weakly disapprove
+14) touchFile(String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+15) getIndexedFieldNames(boolean);Weakly disapprove;Weakly disapprove;Weakly approve
+16) hasSeparateNorms(SegmentInfo);Strongly disapprove;Strongly disapprove;Strongly disapprove
+17) doClose();Strongly disapprove;Strongly disapprove;Strongly disapprove
+18) getPrefix();Strongly disapprove;Strongly disapprove;Strongly disapprove
+19) getCachedComparator(IndexReader, String, int, Locale, SortComparatorSource);Weakly disapprove;Strongly approve;Strongly approve
+20) setSimilarity(Similarity);Strongly disapprove;Strongly disapprove;Strongly disapprove
+21) setSimilarity(Similarity);Strongly disapprove;Strongly disapprove;Strongly approve
+22) timeToString(long);Strongly disapprove;Strongly disapprove;Strongly disapprove
+23) getStringIndex(IndexReader, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+24) getStringIndex(IndexReader, String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+25) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+26) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+27) createWeight(Searcher);Strongly disapprove;Strongly disapprove;Strongly disapprove
+28) createWeight(Searcher);Strongly disapprove;Strongly disapprove;Strongly disapprove
+29) deleteFiles(Vector, Directory);Weakly approve;Strongly disapprove;Strongly disapprove
+30) optimize();Weakly disapprove;Weakly disapprove;Strongly disapprove
+31) setSimilarity(Similarity);Strongly disapprove;Strongly disapprove;Strongly disapprove
+32) setSimilarity(Similarity);Strongly disapprove;Strongly disapprove;Strongly disapprove
+33) writeDeleteableFiles(Vector);Weakly approve;Strongly disapprove;Strongly disapprove
+34) readDeleteableFiles();Weakly approve;Strongly disapprove;Strongly disapprove
+35) lessThan(Object, Object);Weakly disapprove;Strongly approve;Strongly approve
+36) obtain(long);Strongly disapprove;Strongly disapprove;Strongly disapprove
+37) toString(String);Strongly disapprove;Strongly disapprove;Strongly disapprove
+38) undeleteAll();Strongly disapprove;Strongly disapprove;Strongly disapprove
+39) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+40) explain(IndexReader, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+41) createWeight(Searcher);Strongly disapprove;Strongly disapprove;Strongly disapprove
+42) createWeight(Searcher);Weakly approve;Strongly disapprove;Strongly approve
+43) copyFile(FileEntry, OutputStream, byte);Weakly disapprove;Strongly disapprove;Strongly disapprove
+44) Keyword(String, Date);Weakly disapprove;Strongly approve;Strongly disapprove
+45) swap(int, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+46) swap(int, int);Strongly disapprove;Weakly disapprove;Strongly disapprove
+47) getUmlActions();Strongly disapprove;Strongly disapprove;Strongly disapprove
+48) getUmlActions();Strongly disapprove;Strongly disapprove;Strongly disapprove
+49) needsToBeRemoved();Strongly disapprove;Strongly disapprove;Strongly disapprove
+50) doAction(int);Strongly disapprove;Strongly disapprove;Strongly disapprove
+51) actionPerformed(ActionEvent);Weakly disapprove;Weakly disapprove;Strongly disapprove
+52) updateStereotypeText();Strongly disapprove;Strongly disapprove;Weakly disapprove
