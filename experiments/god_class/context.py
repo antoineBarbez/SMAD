@@ -12,4 +12,4 @@ import detection_tools.god_class.hist       as hist
 import detection_tools.god_class.decor      as decor
 import detection_tools.god_class.jdeodorant as jdeodorant
 
-import neural_networks.model as md
+import neural_networks.smad.model as md

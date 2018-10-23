@@ -2,16 +2,15 @@ from context import dataUtils, experimentUtils, hist, incode, jdeodorant
 
 import numpy as np
 
-import mergedDetection
+import smad
 
-# This script is used to compare the performances of various feature envy detection approaches
-# on the systems considered in this study.
+# This script is used to compare the performances of:
+# - The detection tools aggregated through SMAD
+# - The voting technique with k in {1, 2, 3}
+# - SMAD
+# for Feature Envy detection on the three subject systems.
 
-systems = [
-	'android-platform-support',
-	'apache-tomcat',
-	'jedit'
-]
+systems = ['android-platform-support', 'apache-tomcat', 'jedit']
 
 p_hist = []
 r_hist = []
@@ -37,9 +36,9 @@ p_v3 = []
 r_v3 = []
 f_v3 = []
 
-p_model = []
-r_model = []
-f_model = []
+p_smad = []
+r_smad = []
+f_smad = []
 
 
 for system in systems:
@@ -120,17 +119,17 @@ for system in systems:
 	f_v3.append(f_measure_vote_3)
 
 	# Our model
-	detected_model = mergedDetection.getSmells(system)
+	detected_smad = smad.getSmells(system)
 
-	precision_model = experimentUtils.precision(detected_model, true)
-	recall_model = experimentUtils.recall(detected_model, true)
-	f_measure_model = experimentUtils.f_measure(detected_model, true)
+	precision_smad = experimentUtils.precision(detected_smad, true)
+	recall_smad = experimentUtils.recall(detected_smad, true)
+	f_measure_smad = experimentUtils.f_measure(detected_smad, true)
 
-	p_model.append(precision_model)
-	r_model.append(recall_model)
-	f_model.append(f_measure_model)
+	p_smad.append(precision_smad)
+	r_smad.append(recall_smad)
+	f_smad.append(f_measure_smad)
 
-	# Output results
+	# Print performances for the considered system
 	print('           |precision  |recall  |f_measure')
 	print('-------------------------------------------------')
 	print('HIST       |' + "{0:.3f}".format(precision_hist) + '      |' + "{0:.3f}".format(recall_hist) + '   |' + "{0:.3f}".format(f_measure_hist))
@@ -146,12 +145,12 @@ for system in systems:
 	print('-------------------------------------------------')
 	print('Vote 3     |' + "{0:.3f}".format(precision_vote_3) + '      |' + "{0:.3f}".format(recall_vote_3) + '   |' + "{0:.3f}".format(f_measure_vote_3))
 	print('-------------------------------------------------')
-	print('Our model  |' + "{0:.3f}".format(precision_model) + '      |' + "{0:.3f}".format(recall_model) + '   |' + "{0:.3f}".format(f_measure_model))
+	print('SMAD       |' + "{0:.3f}".format(precision_smad) + '      |' + "{0:.3f}".format(recall_smad) + '   |' + "{0:.3f}".format(f_measure_smad))
 	print('-------------------------------------------------')
 	print('\n\n')
 
 
-# Output mean results
+# Print average performances over the three systems
 print('MEAN')
 print('           |precision  |recall  |f_measure')
 print('-------------------------------------------------')
@@ -168,6 +167,6 @@ print('Vote 2     |' + "{0:.3f}".format(np.mean(p_v2)) + '      |' + "{0:.3f}".f
 print('-------------------------------------------------')
 print('Vote 3     |' + "{0:.3f}".format(np.mean(p_v3)) + '      |' + "{0:.3f}".format(np.mean(r_v3)) + '   |' + "{0:.3f}".format(np.mean(f_v3)))
 print('-------------------------------------------------')
-print('Our model  |' + "{0:.3f}".format(np.mean(p_model)) + '      |' + "{0:.3f}".format(np.mean(r_model)) + '   |' + "{0:.3f}".format(np.mean(f_model)))
+print('SMAD       |' + "{0:.3f}".format(np.mean(p_smad)) + '      |' + "{0:.3f}".format(np.mean(r_smad)) + '   |' + "{0:.3f}".format(np.mean(f_smad)))
 print('-------------------------------------------------')
 print('\n\n')

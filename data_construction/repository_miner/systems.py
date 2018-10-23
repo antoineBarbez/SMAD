@@ -127,7 +127,7 @@ systems_git = [
 	"sources"  :['src/main/java/']
 	},
 	{
-	"name"     :'jena',
+	"name"     :'apache-jena',
 	"url"      :'https://github.com/apache/jena.git',
 	"snapshot" :'dc0bfe6f0d32de82f711bc241e8f96e2be0a539d',
 	"directory":['jena-core/src/main/java/'],

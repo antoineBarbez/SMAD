@@ -78,15 +78,6 @@ class TestExperimentUtils(unittest.TestCase):
 		self.assertEqual(set(experimentUtils.vote([self.set_1, self.set_2, self.set_3], 2)), set(['b', 'c', 'e']))
 		self.assertEqual(set(experimentUtils.vote([self.set_1, self.set_2, self.set_3], 3)), set([]))
 
-	def test_get_label_vectors_god_class(self):
-		for system in self.systems:
-			labelVectors  = experimentUtils.getLabelVectors(system, 'god_class')
-
-			classes = dataUtils.getClasses(system)
-			antipatterns = dataUtils.getAntipatterns(system, 'god_class')
-
-			self.assertEqual(len(classes), len(labelVectors))
-			self.assertEqual(len(antipatterns), len(np.where(labelVectors[:,0]==1)[0]))
 
 if __name__ == '__main__':
 	unittest.main()

@@ -125,63 +125,16 @@ def getSystemConstants(systemName):
 	nb_commit = [98, 195, 6397, 3289, 429, 5559, 1181, 3453]
 
 	constants = np.array([[sizes[i], nb_commit[i]] for i in range(8)]).astype(float)
-	#constants = np.array([[sizes[i]] for i in range(8)]).astype(float)
 
 	# Normalization
 	scaler = StandardScaler()
 	scaler.fit(constants)
-	rescaledConstants = scaler.transform(constants)
-	#print(rescaledConstants)
 
-	return rescaledConstants[systemToIndexMap[systemName]]
-
-
-'''def getGodClassInstances2(systemName):
-	classes = dataUtils.getClasses(systemName)
-
-	classToHistGCCM       = cm.getHistGCCM(systemName)
-	classToDecorGCCM      = cm.getDecorGCCM(systemName)
-	classToJDeodorantGCCM = cm.getJDeodorantGCCM(systemName)
-
-	instances = []
-	for klass in classes:
-		instance = []
-		instance.append(classToHistGCCM[klass])
-		instance.append(classToDecorGCCM[klass])
-		instance.append(classToJDeodorantGCCM[klass])
-
-		instances.append(instance)
-
-	instances = np.array(instances).astype(float)
-
-	# Batch normalization
-	scaler = StandardScaler()
-	scaler.fit(instances)
-	rescaledInstances = scaler.transform(instances)
-
-	return rescaledInstances
-
-def getGodClassInstances(systemName):
-	classes = dataUtils.getClasses(systemName)
-
-	classToHistMetrics       = dataUtils.getGCHistMetrics(systemName)
-	classToDecorMetrics      = dataUtils.getGCDecorMetrics(systemName)
-	classToJDeodorantMetrics = dataUtils.getGCJDeodorantMetrics(systemName)
-
-	instances = []
-	for klass in classes:
-		instance = []
-		instance += classToDecorMetrics[klass]
-		instance += classToHistMetrics[klass]
-		instance += classToJDeodorantMetrics[klass]
-
-		instances.append(instance)
-
-	instances = np.array(instances).astype(float)
-
-	# Batch normalization
-	scaler = StandardScaler()
-	scaler.fit(instances)
-	rescaledInstances = scaler.transform(instances)
-
-	return rescaledInstances'''
+	if systemName in systemToIndexMap:
+		rescaledConstants = scaler.transform(constants)
+		return rescaledConstants[systemToIndexMap[systemName]]
+	else:
+		size = len(dataUtils.getAllClasses(systemName))
+		history_length = len(dataUtils.getHistory(systemName, 'C'))
+		rescaledConstants = scaler.transform([[size, history_length]])
+		return rescaledConstants[0] 

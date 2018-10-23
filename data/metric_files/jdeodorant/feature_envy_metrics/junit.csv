@@ -1,0 +1,464 @@
+Method;TargetClass;NbAccessedEntities;Distance_TC
+junit.textui.TestRunner.doRun(boolean, junit.framework.Test);junit.framework.TestResult;1;0.9615384615384616
+junit.textui.TestRunner.doRun(boolean, junit.framework.Test);junit.textui.TestRunner;2;0.8571428571428572
+junit.textui.TestRunner.doRun(boolean, junit.framework.Test);junit.textui.ResultPrinter;1;0.9545454545454546
+junit.textui.TestRunner.pause(boolean);junit.textui.TestRunner;0;1.0
+junit.textui.TestRunner.pause(boolean);junit.textui.ResultPrinter;1;0.9473684210526316
+junit.textui.TestRunner.start(java.lang.String[]);junit.runner.Version;0;1.0
+junit.textui.TestRunner.start(java.lang.String[]);junit.runner.BaseTestRunner;2;0.9
+junit.textui.TestRunner.start(java.lang.String[]);junit.textui.TestRunner;2;1.0
+junit.textui.TestRunner.runSingleMethod(boolean, java.lang.String, java.lang.String);junit.framework.TestSuite;0;1.0
+junit.textui.TestRunner.runSingleMethod(boolean, java.lang.String, java.lang.String);junit.runner.BaseTestRunner;1;0.9285714285714286
+junit.textui.TestRunner.runSingleMethod(boolean, java.lang.String, java.lang.String);junit.textui.TestRunner;1;1.0
+junit.textui.ResultPrinter.printErrors(junit.framework.TestResult);junit.framework.TestResult;2;0.9090909090909091
+junit.textui.ResultPrinter.printErrors(junit.framework.TestResult);junit.textui.ResultPrinter;1;1.0
+junit.textui.ResultPrinter.printFailures(junit.framework.TestResult);junit.framework.TestResult;2;0.9090909090909091
+junit.textui.ResultPrinter.printFailures(junit.framework.TestResult);junit.textui.ResultPrinter;1;1.0
+junit.textui.ResultPrinter.printDefectHeader(int, junit.framework.TestFailure);junit.framework.TestFailure;0;1.0
+junit.textui.ResultPrinter.printDefectHeader(int, junit.framework.TestFailure);junit.textui.ResultPrinter;1;0.9444444444444444
+junit.textui.ResultPrinter.printDefectTrace(junit.framework.TestFailure);junit.runner.BaseTestRunner;0;1.0
+junit.textui.ResultPrinter.printDefectTrace(junit.framework.TestFailure);junit.framework.TestFailure;1;0.8571428571428572
+junit.textui.ResultPrinter.printDefectTrace(junit.framework.TestFailure);junit.textui.ResultPrinter;1;0.9473684210526316
+junit.textui.ResultPrinter.printFooter(junit.framework.TestResult);junit.framework.TestResult;4;0.84
+junit.textui.ResultPrinter.printFooter(junit.framework.TestResult);junit.textui.ResultPrinter;1;0.9583333333333334
+junit.framework.ComparisonCompactor.compact(java.lang.String);junit.framework.Assert;1;1.0
+junit.framework.ComparisonCompactor.compact(java.lang.String);junit.framework.ComparisonCompactor;6;0.5384615384615384
+junit.framework.JUnit4TestCaseFacade.toString();org.junit.runner.Description;1;0.9473684210526316
+junit.framework.JUnit4TestCaseFacade.toString();junit.framework.JUnit4TestCaseFacade;0;1.0
+junit.framework.JUnit4TestAdapter.countTestCases();org.junit.runner.Runner;1;0.0
+junit.framework.JUnit4TestAdapter.countTestCases();junit.framework.JUnit4TestAdapter;0;1.0
+junit.framework.JUnit4TestAdapter.run(junit.framework.TestResult);junit.framework.JUnit4TestAdapterCache;1;1.0
+junit.framework.JUnit4TestAdapter.run(junit.framework.TestResult);org.junit.runner.Runner;1;1.0
+junit.framework.JUnit4TestAdapter.run(junit.framework.TestResult);junit.framework.JUnit4TestAdapter;1;1.0
+junit.framework.JUnit4TestAdapter.getTests();junit.framework.JUnit4TestAdapterCache;1;0.875
+junit.framework.JUnit4TestAdapter.getTests();junit.framework.JUnit4TestAdapter;2;0.9090909090909091
+junit.framework.JUnit4TestAdapter.getDescription();org.junit.runner.Runner;1;1.0
+junit.framework.JUnit4TestAdapter.getDescription();junit.framework.JUnit4TestAdapter;1;0.9090909090909091
+junit.framework.JUnit4TestAdapter.removeIgnored(org.junit.runner.Description);junit.framework.JUnit4TestAdapter;2;0.8571428571428572
+junit.framework.JUnit4TestAdapter.removeIgnored(org.junit.runner.Description);org.junit.runner.Description;4;0.8095238095238095
+junit.framework.JUnit4TestAdapter.isIgnored(org.junit.runner.Description);org.junit.runner.Description;1;0.9473684210526316
+junit.framework.JUnit4TestAdapter.filter(org.junit.runner.manipulation.Filter);org.junit.runner.manipulation.Filter;1;0.6666666666666667
+junit.framework.JUnit4TestAdapter.filter(org.junit.runner.manipulation.Filter);junit.framework.JUnit4TestAdapter;0;1.0
+junit.framework.JUnit4TestAdapter.sort(org.junit.runner.manipulation.Sorter);junit.framework.JUnit4TestAdapter;0;1.0
+junit.framework.JUnit4TestAdapter.sort(org.junit.runner.manipulation.Sorter);org.junit.runner.manipulation.Sorter;1;0.6666666666666667
+junit.framework.ComparisonFailure.getMessage();junit.framework.ComparisonCompactor;1;0.9333333333333333
+junit.framework.ComparisonFailure.getMessage();junit.framework.ComparisonFailure;2;0.6
+junit.framework.TestResult.run(junit.framework.TestCase);junit.framework.TestResult;4;0.8695652173913043
+junit.framework.TestResult.run(junit.framework.TestCase);junit.framework.TestCase;1;0.9285714285714286
+junit.framework.TestResult.protect();junit.framework.TestCase;1;0.9
+junit.framework.TestCase.run(junit.framework.TestResult);junit.framework.TestResult;1;0.9523809523809523
+junit.framework.TestCase.runTest();junit.framework.Assert;1;1.0
+junit.framework.TestCase.runTest();junit.framework.TestCase;1;0.9444444444444444
+junit.framework.JUnit4TestAdapterCache.asTest(org.junit.runner.Description);junit.framework.JUnit4TestAdapterCache;1;0.9090909090909091
+junit.framework.JUnit4TestAdapterCache.asTest(org.junit.runner.Description);org.junit.runner.Description;1;0.9565217391304348
+junit.framework.JUnit4TestAdapterCache.createTest(org.junit.runner.Description);junit.framework.TestSuite;1;0.9523809523809523
+junit.framework.JUnit4TestAdapterCache.createTest(org.junit.runner.Description);junit.framework.JUnit4TestAdapterCache;1;0.9090909090909091
+junit.framework.JUnit4TestAdapterCache.createTest(org.junit.runner.Description);org.junit.runner.Description;3;0.8571428571428572
+junit.framework.JUnit4TestAdapterCache.getNotifier(junit.framework.JUnit4TestAdapter, junit.framework.TestResult);junit.framework.JUnit4TestAdapterCache;4;0.6666666666666667
+junit.framework.JUnit4TestAdapterCache.getNotifier(junit.framework.JUnit4TestAdapter, junit.framework.TestResult);junit.framework.TestResult;3;0.9285714285714286
+junit.framework.JUnit4TestAdapterCache.getNotifier(junit.framework.JUnit4TestAdapter, junit.framework.TestResult);org.junit.runner.notification.RunNotifier;1;0.9565217391304348
+junit.framework.JUnit4TestAdapterCache.getNotifier(junit.framework.JUnit4TestAdapter, junit.framework.TestResult);org.junit.runner.notification.Failure;1;0.9230769230769231
+junit.framework.JUnit4TestAdapterCache.testFailure(org.junit.runner.notification.Failure);junit.framework.JUnit4TestAdapterCache;1;0.8888888888888888
+junit.framework.JUnit4TestAdapterCache.testFailure(org.junit.runner.notification.Failure);junit.framework.TestResult;1;1.0
+junit.framework.JUnit4TestAdapterCache.testFailure(org.junit.runner.notification.Failure);org.junit.runner.notification.Failure;1;0.8571428571428572
+junit.framework.JUnit4TestAdapterCache.testFinished(org.junit.runner.Description);junit.framework.JUnit4TestAdapterCache;1;0.875
+junit.framework.JUnit4TestAdapterCache.testFinished(org.junit.runner.Description);junit.framework.TestResult;1;0.9545454545454546
+junit.framework.JUnit4TestAdapterCache.testStarted(org.junit.runner.Description);junit.framework.JUnit4TestAdapterCache;1;0.875
+junit.framework.JUnit4TestAdapterCache.testStarted(org.junit.runner.Description);junit.framework.TestResult;1;0.9545454545454546
+junit.framework.JUnit4TestAdapterCache.asTestList(org.junit.runner.Description);junit.framework.JUnit4TestAdapterCache;1;0.9090909090909091
+junit.framework.JUnit4TestAdapterCache.asTestList(org.junit.runner.Description);org.junit.runner.Description;2;0.9090909090909091
+junit.framework.TestSuite.runTest();junit.framework.Assert;0;1.0
+junit.framework.TestSuite.run(junit.framework.TestResult);junit.framework.TestSuite;2;0.8888888888888888
+junit.framework.TestSuite.run(junit.framework.TestResult);junit.framework.TestResult;1;0.9565217391304348
+junit.extensions.ActiveTestSuite.run(junit.framework.TestResult);junit.framework.TestSuite;1;0.9473684210526316
+junit.extensions.ActiveTestSuite.run(junit.framework.TestResult);junit.extensions.ActiveTestSuite;2;0.7142857142857143
+junit.extensions.ActiveTestSuite.waitUntilFinished();junit.framework.TestSuite;1;0.9473684210526316
+junit.extensions.ActiveTestSuite.waitUntilFinished();junit.extensions.ActiveTestSuite;1;0.875
+junit.extensions.RepeatedTest.countTestCases();junit.extensions.RepeatedTest;1;0.8
+junit.extensions.RepeatedTest.countTestCases();junit.extensions.TestDecorator;1;0.8
+junit.extensions.RepeatedTest.run(junit.framework.TestResult);junit.extensions.RepeatedTest;1;0.8333333333333334
+junit.extensions.RepeatedTest.run(junit.framework.TestResult);junit.framework.TestResult;1;0.9565217391304348
+junit.extensions.RepeatedTest.run(junit.framework.TestResult);junit.extensions.TestDecorator;1;0.8333333333333334
+junit.extensions.RepeatedTest.toString();junit.extensions.TestDecorator;1;0.75
+junit.extensions.TestSetup.run(junit.framework.TestResult);junit.extensions.TestSetup;3;0.5
+junit.extensions.TestSetup.run(junit.framework.TestResult);junit.framework.TestResult;1;1.0
+junit.extensions.TestSetup.run(junit.framework.TestResult);junit.extensions.TestDecorator;1;0.875
+junit.extensions.TestSetup.protect();junit.extensions.TestSetup;2;0.6
+junit.extensions.TestSetup.protect();junit.extensions.TestDecorator;1;0.8333333333333334
+org.junit.experimental.ParallelComputer.getSuite(java.lang.Class<?>[], org.junit.runners.model.RunnerBuilder);org.junit.runner.Computer;1;1.0
+org.junit.experimental.ParallelComputer.getSuite(java.lang.Class<?>[], org.junit.runners.model.RunnerBuilder);org.junit.experimental.ParallelComputer;1;0.9
+org.junit.experimental.ParallelComputer.getRunner(java.lang.Class<?>, org.junit.runners.model.RunnerBuilder);org.junit.runner.Computer;1;1.0
+org.junit.experimental.ParallelComputer.getRunner(java.lang.Class<?>, org.junit.runners.model.RunnerBuilder);org.junit.experimental.ParallelComputer;1;0.9
+org.junit.experimental.theories.Theories.validateDataPointFields(java.util.List<java.lang.Throwable>);org.junit.runners.model.TestClass;1;0.95
+org.junit.experimental.theories.Theories.validateConstructor(java.util.List<java.lang.Throwable>);org.junit.runners.BlockJUnit4ClassRunner;1;0.9714285714285714
+org.junit.experimental.theories.Theories.validateTestMethods(java.util.List<java.lang.Throwable>);org.junit.runners.model.FrameworkMethod;3;0.7857142857142857
+org.junit.experimental.theories.Theories.validateTestMethods(java.util.List<java.lang.Throwable>);org.junit.experimental.theories.Theories;1;0.9545454545454546
+org.junit.experimental.theories.Theories.computeTestMethods();org.junit.runners.BlockJUnit4ClassRunner;1;0.9743589743589743
+org.junit.experimental.theories.Theories.computeTestMethods();org.junit.runners.model.TestClass;1;0.9411764705882353
+org.junit.experimental.theories.Theories.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.runners.BlockJUnit4ClassRunner;1;0.9761904761904762
+org.junit.experimental.theories.Theories.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.runners.model.Statement;1;1.0
+org.junit.experimental.theories.Theories.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.experimental.theories.Theories;4;0.875
+org.junit.experimental.theories.Theories.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.experimental.theories.internal.Assignments;1;0.9523809523809523
+org.junit.experimental.theories.Theories.evaluate();org.junit.runners.model.FrameworkMethod;1;0.9333333333333333
+org.junit.experimental.theories.Theories.evaluate();org.junit.experimental.theories.Theories;1;0.9523809523809523
+org.junit.experimental.theories.Theories.evaluate();org.junit.experimental.theories.internal.Assignments;1;0.9375
+org.junit.experimental.theories.Theories.runWithAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.Theories;2;0.9
+org.junit.experimental.theories.Theories.runWithAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.internal.Assignments;1;0.9375
+org.junit.experimental.theories.Theories.runWithIncompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.Theories;1;0.9523809523809523
+org.junit.experimental.theories.Theories.runWithIncompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.internal.Assignments;2;0.8666666666666667
+org.junit.experimental.theories.Theories.runWithCompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.runners.BlockJUnit4ClassRunner;1;0.9807692307692307
+org.junit.experimental.theories.Theories.runWithCompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.runners.model.Statement;1;1.0
+org.junit.experimental.theories.Theories.runWithCompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.runners.model.TestClass;2;0.9310344827586207
+org.junit.experimental.theories.Theories.runWithCompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.Theories;9;0.9117647058823529
+org.junit.experimental.theories.Theories.runWithCompleteAssignment(org.junit.experimental.theories.internal.Assignments);org.junit.experimental.theories.internal.Assignments;2;0.9333333333333333
+org.junit.experimental.theories.Theories.createTest();org.junit.runners.model.TestClass;1;0.9411764705882353
+org.junit.experimental.theories.Theories.createTest();org.junit.experimental.theories.Theories;1;0.9565217391304348
+org.junit.experimental.theories.Theories.createTest();org.junit.experimental.theories.internal.Assignments;1;0.9444444444444444
+org.junit.experimental.theories.Theories.methodCompletesWithParameters(java.lang.Object, org.junit.experimental.theories.internal.Assignments, org.junit.runners.model.FrameworkMethod);org.junit.runners.model.FrameworkMethod;1;0.9375
+org.junit.experimental.theories.Theories.methodCompletesWithParameters(java.lang.Object, org.junit.experimental.theories.internal.Assignments, org.junit.runners.model.FrameworkMethod);org.junit.experimental.theories.Theories;2;0.9545454545454546
+org.junit.experimental.theories.Theories.methodCompletesWithParameters(java.lang.Object, org.junit.experimental.theories.internal.Assignments, org.junit.runners.model.FrameworkMethod);org.junit.experimental.theories.internal.Assignments;1;0.9411764705882353
+org.junit.experimental.theories.Theories.reportParameterizedError(java.lang.Object[], java.lang.Throwable);org.junit.runners.model.FrameworkMethod;1;0.9230769230769231
+org.junit.experimental.theories.Theories.reportParameterizedError(java.lang.Object[], java.lang.Throwable);org.junit.experimental.theories.Theories;0;1.0
+org.junit.experimental.theories.Theories.nullsOk();org.junit.runners.model.FrameworkMethod;1;0.9333333333333333
+org.junit.experimental.theories.Theories.nullsOk();org.junit.experimental.theories.Theories;0;1.0
+org.junit.experimental.theories.suppliers.TestedOnSupplier.getValueSources(org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.PotentialAssignment;1;1.0
+org.junit.experimental.theories.suppliers.TestedOnSupplier.getValueSources(org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.ParameterSignature;1;0.9230769230769231
+org.junit.experimental.theories.internal.AllMembersSupplier.getValue();org.junit.runners.model.FrameworkMethod;1;0.9230769230769231
+org.junit.experimental.theories.internal.AllMembersSupplier.getValue();org.junit.experimental.theories.internal.AllMembersSupplier;0;1.0
+org.junit.experimental.theories.internal.AllMembersSupplier.getDescription();org.junit.runners.model.FrameworkMethod;1;0.9230769230769231
+org.junit.experimental.theories.internal.AllMembersSupplier.getDescription();org.junit.experimental.theories.internal.AllMembersSupplier;0;1.0
+org.junit.experimental.theories.internal.AllMembersSupplier.addMultiPointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>);org.junit.runners.model.FrameworkMethod;2;0.8666666666666667
+org.junit.experimental.theories.internal.AllMembersSupplier.addMultiPointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>);org.junit.runners.model.TestClass;1;0.9375
+org.junit.experimental.theories.internal.AllMembersSupplier.addMultiPointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>);org.junit.experimental.theories.internal.AllMembersSupplier;1;1.0
+org.junit.experimental.theories.internal.AllMembersSupplier.addSinglePointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.runners.model.FrameworkMethod;1;0.9375
+org.junit.experimental.theories.internal.AllMembersSupplier.addSinglePointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.runners.model.TestClass;1;0.9375
+org.junit.experimental.theories.internal.AllMembersSupplier.addSinglePointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.internal.AllMembersSupplier;0;1.0
+org.junit.experimental.theories.internal.AllMembersSupplier.addSinglePointMethods(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.ParameterSignature;1;0.9166666666666666
+org.junit.experimental.theories.internal.AllMembersSupplier.addFields(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.runners.model.TestClass;1;0.96
+org.junit.experimental.theories.internal.AllMembersSupplier.addFields(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.PotentialAssignment;1;1.0
+org.junit.experimental.theories.internal.AllMembersSupplier.addFields(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.internal.AllMembersSupplier;2;0.95
+org.junit.experimental.theories.internal.AllMembersSupplier.addFields(java.util.List<org.junit.experimental.theories.PotentialAssignment>, org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.ParameterSignature;2;0.9
+org.junit.experimental.theories.internal.AllMembersSupplier.addArrayValues(java.lang.Object, java.lang.String, java.util.List<org.junit.experimental.theories.PotentialAssignment>);org.junit.experimental.theories.PotentialAssignment;1;1.0
+org.junit.experimental.theories.internal.Assignments.getActualValues(boolean, int, int);org.junit.experimental.theories.internal.Assignments;1;0.9375
+org.junit.experimental.theories.internal.Assignments.getActualValues(boolean, int, int);org.junit.experimental.theories.PotentialAssignment;1;0.8
+org.junit.experimental.theories.internal.Assignments.potentialsForNextUnassigned();org.junit.experimental.theories.internal.Assignments;2;0.8666666666666667
+org.junit.experimental.theories.internal.Assignments.potentialsForNextUnassigned();org.junit.experimental.theories.ParameterSupplier;1;1.0
+org.junit.experimental.theories.internal.Assignments.getAnnotatedSupplier(org.junit.experimental.theories.ParameterSignature);org.junit.experimental.theories.ParameterSignature;1;0.9090909090909091
+org.junit.experimental.theories.internal.Assignments.getConstructorParameterCount();org.junit.runners.model.TestClass;1;0.9285714285714286
+org.junit.experimental.theories.internal.Assignments.getConstructorParameterCount();org.junit.experimental.theories.internal.Assignments;0;1.0
+org.junit.experimental.theories.internal.Assignments.getConstructorParameterCount();org.junit.experimental.theories.ParameterSignature;0;1.0
+org.junit.experimental.theories.internal.Assignments.getArgumentStrings(boolean);org.junit.experimental.theories.internal.Assignments;1;0.9411764705882353
+org.junit.experimental.theories.internal.Assignments.getArgumentStrings(boolean);org.junit.experimental.theories.PotentialAssignment;1;0.8333333333333334
+org.junit.experimental.max.MaxCore.run(java.lang.Class<?>);org.junit.runner.Request;0;1.0
+org.junit.experimental.max.MaxCore.run(java.lang.Class<?>);org.junit.experimental.max.MaxCore;1;0.9090909090909091
+org.junit.experimental.max.MaxCore.run(org.junit.runner.JUnitCore, org.junit.runner.Request);org.junit.experimental.max.MaxHistory;1;0.9565217391304348
+org.junit.experimental.max.MaxCore.run(org.junit.runner.JUnitCore, org.junit.runner.Request);org.junit.runner.JUnitCore;2;0.8333333333333334
+org.junit.experimental.max.MaxCore.run(org.junit.runner.JUnitCore, org.junit.runner.Request);org.junit.runner.Request;1;0.875
+org.junit.experimental.max.MaxCore.run(org.junit.runner.JUnitCore, org.junit.runner.Request);org.junit.experimental.max.MaxCore;1;0.9333333333333333
+org.junit.experimental.max.MaxCore.sortRequest(org.junit.runner.Request);org.junit.experimental.max.MaxHistory;1;0.9545454545454546
+org.junit.experimental.max.MaxCore.sortRequest(org.junit.runner.Request);org.junit.experimental.max.MaxCore;2;0.8461538461538461
+org.junit.experimental.max.MaxCore.buildRunner(org.junit.runner.Description);org.junit.runner.Request;1;0.9
+org.junit.experimental.max.MaxCore.buildRunner(org.junit.runner.Description);org.junit.runners.Suite;0;1.0
+org.junit.experimental.max.MaxCore.buildRunner(org.junit.runner.Description);org.junit.runner.Description;3;0.8695652173913043
+org.junit.experimental.max.MaxCore.buildRunner(org.junit.runner.Description);org.junit.experimental.max.MaxCore;1;0.9411764705882353
+org.junit.experimental.max.MaxCore.getMalformedTestClass(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxCore.getMalformedTestClass(org.junit.runner.Description);org.junit.experimental.max.MaxCore;0;1.0
+org.junit.experimental.max.MaxCore.findLeaves(org.junit.runner.Request);org.junit.runner.Request;1;0.8333333333333334
+org.junit.experimental.max.MaxCore.findLeaves(org.junit.runner.Request);org.junit.runner.Runner;1;1.0
+org.junit.experimental.max.MaxCore.findLeaves(org.junit.runner.Request);org.junit.experimental.max.MaxCore;1;1.0
+org.junit.experimental.max.MaxCore.findLeaves(java.util.List<org.junit.runner.Description>, org.junit.runner.Description, org.junit.runner.Description);org.junit.runner.Description;3;0.9166666666666666
+org.junit.experimental.max.MaxCore.findLeaves(java.util.List<org.junit.runner.Description>, org.junit.runner.Description, org.junit.runner.Description);org.junit.experimental.max.MaxCore;1;1.0
+org.junit.experimental.max.MaxHistory.getFailureTimestamp(org.junit.runner.Description);org.junit.experimental.max.MaxHistory;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.getFailureTimestamp(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.putTestFailureTimestamp(long, org.junit.runner.Description);org.junit.experimental.max.MaxHistory;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.putTestFailureTimestamp(long, org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.isNewTest(org.junit.runner.Description);org.junit.experimental.max.MaxHistory;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.isNewTest(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.getTestDuration(org.junit.runner.Description);org.junit.experimental.max.MaxHistory;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.getTestDuration(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.putTestDuration(long, org.junit.runner.Description);org.junit.experimental.max.MaxHistory;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.putTestDuration(long, org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.max.MaxHistory.testFailure(org.junit.runner.notification.Failure);org.junit.experimental.max.MaxHistory;2;0.95
+org.junit.experimental.max.MaxHistory.testFailure(org.junit.runner.notification.Failure);org.junit.runner.notification.Failure;0;1.0
+org.junit.experimental.results.PrintableResult.toString();org.junit.experimental.results.PrintableResult;0;1.0
+org.junit.experimental.results.PrintableResult.toString();org.junit.internal.TextListener;1;0.9090909090909091
+org.junit.experimental.results.PrintableResult.failureCount();org.junit.runner.Result;1;0.9411764705882353
+org.junit.experimental.results.PrintableResult.failureCount();org.junit.experimental.results.PrintableResult;0;1.0
+org.junit.experimental.results.FailureList.result();org.junit.runner.Result;1;0.9444444444444444
+org.junit.experimental.results.FailureList.result();org.junit.experimental.results.FailureList;1;0.75
+org.junit.experimental.results.FailureList.result();org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.experimental.results.ResultMatchers.matchesSafely(org.junit.experimental.results.PrintableResult);org.junit.experimental.results.PrintableResult;1;0.5
+org.junit.experimental.categories.Categories.shouldRun(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.categories.Categories.shouldRun(org.junit.runner.Description);org.junit.experimental.categories.Categories;2;0.8461538461538461
+org.junit.experimental.categories.Categories.parentDescription(org.junit.runner.Description);org.junit.runner.Description;1;0.9473684210526316
+org.junit.experimental.categories.Categories.directCategories(org.junit.runner.Description);org.junit.runner.Description;1;0.95
+org.junit.experimental.categories.Categories.assertNoCategorizedDescendentsOfUncategorizeableParents(org.junit.runner.Description);org.junit.runner.Description;1;0.9523809523809523
+org.junit.experimental.categories.Categories.assertNoCategorizedDescendentsOfUncategorizeableParents(org.junit.runner.Description);org.junit.experimental.categories.Categories;2;0.8461538461538461
+org.junit.experimental.categories.Categories.assertNoDescendantsHaveCategoryAnnotations(org.junit.runner.Description);org.junit.runner.Description;2;0.9
+org.junit.experimental.categories.Categories.assertNoDescendantsHaveCategoryAnnotations(org.junit.runner.Description);org.junit.experimental.categories.Categories;1;0.9285714285714286
+org.junit.ComparisonFailure.compact(java.lang.String);org.junit.Assert;1;1.0
+org.junit.ComparisonFailure.compact(java.lang.String);org.junit.ComparisonFailure;6;0.5714285714285714
+org.junit.runner.manipulation.Filter.shouldRun(org.junit.runner.Description);org.junit.runner.manipulation.Filter;1;0.8333333333333334
+org.junit.runner.manipulation.Filter.shouldRun(org.junit.runner.Description);org.junit.runner.Description;3;0.85
+org.junit.runner.manipulation.Filter.describe();org.junit.runner.Description;1;0.95
+org.junit.runner.notification.Failure.getTestHeader();org.junit.runner.Description;1;0.9473684210526316
+org.junit.runner.notification.Failure.getTestHeader();org.junit.runner.notification.Failure;0;1.0
+org.junit.runner.notification.RunNotifier.run();org.junit.runner.Description;0;1.0
+org.junit.runner.notification.RunNotifier.run();org.junit.runner.notification.RunNotifier;3;0.8421052631578947
+org.junit.runner.notification.RunNotifier.fireTestRunStarted(org.junit.runner.Description);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestRunStarted(org.junit.runner.Description);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.notification.RunNotifier.notifyListener(org.junit.runner.notification.RunListener);org.junit.runner.notification.RunListener;1;0.8571428571428572
+org.junit.runner.notification.RunNotifier.fireTestRunFinished(org.junit.runner.Result);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestRunFinished(org.junit.runner.Result);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.notification.RunNotifier.fireTestStarted(org.junit.runner.Description);org.junit.runner.notification.RunListener;1;0.9
+org.junit.runner.notification.RunNotifier.fireTestStarted(org.junit.runner.Description);org.junit.runner.notification.RunNotifier;3;0.8125
+org.junit.runner.notification.RunNotifier.fireTestFailure(org.junit.runner.notification.Failure);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestFailure(org.junit.runner.notification.Failure);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.notification.RunNotifier.fireTestAssumptionFailed(org.junit.runner.notification.Failure);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestAssumptionFailed(org.junit.runner.notification.Failure);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.notification.RunNotifier.fireTestIgnored(org.junit.runner.Description);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestIgnored(org.junit.runner.Description);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.notification.RunNotifier.fireTestFinished(org.junit.runner.Description);org.junit.runner.notification.RunListener;1;0.8888888888888888
+org.junit.runner.notification.RunNotifier.fireTestFinished(org.junit.runner.Description);org.junit.runner.notification.RunNotifier;2;0.875
+org.junit.runner.Runner.testCount();org.junit.runner.Runner;1;1.0
+org.junit.runner.Runner.testCount();org.junit.runner.Description;1;0.95
+org.junit.runner.Computer.getRunner(java.lang.Class<?>, org.junit.runners.model.RunnerBuilder);org.junit.runners.model.RunnerBuilder;1;1.0
+org.junit.runner.JUnitCore.runMain(java.lang.String[], org.junit.internal.JUnitSystem);junit.runner.Version;0;1.0
+org.junit.runner.JUnitCore.runMain(java.lang.String[], org.junit.internal.JUnitSystem);org.junit.runner.JUnitCore;2;0.8823529411764706
+org.junit.runner.JUnitCore.runMain(java.lang.String[], org.junit.internal.JUnitSystem);org.junit.runner.Result;1;0.96
+org.junit.runner.JUnitCore.runMain(java.lang.String[], org.junit.internal.JUnitSystem);org.junit.runner.Description;1;1.0
+org.junit.runner.JUnitCore.getVersion();junit.runner.Version;0;1.0
+org.junit.runner.JUnitCore.run(java.lang.Class<?>[]);org.junit.runner.JUnitCore;1;0.9
+org.junit.runner.JUnitCore.run(java.lang.Class<?>[]);org.junit.runner.Request;1;1.0
+org.junit.runner.JUnitCore.run(java.lang.Class<?>[], org.junit.runner.Computer);org.junit.runner.JUnitCore;1;0.9
+org.junit.runner.JUnitCore.run(java.lang.Class<?>[], org.junit.runner.Computer);org.junit.runner.Request;1;1.0
+org.junit.runner.JUnitCore.run(org.junit.runner.Request);org.junit.runner.JUnitCore;1;0.9
+org.junit.runner.JUnitCore.run(org.junit.runner.Request);org.junit.runner.Request;1;0.8
+org.junit.runner.JUnitCore.run(org.junit.runner.Runner);org.junit.runner.Result;1;0.9545454545454546
+org.junit.runner.JUnitCore.run(org.junit.runner.Runner);org.junit.runner.JUnitCore;1;0.9333333333333333
+org.junit.runner.JUnitCore.run(org.junit.runner.Runner);org.junit.runner.Runner;2;1.0
+org.junit.runner.JUnitCore.run(org.junit.runner.Runner);org.junit.runner.notification.RunNotifier;3;0.8421052631578947
+org.junit.runner.JUnitCore.addListener(org.junit.runner.notification.RunListener);org.junit.runner.JUnitCore;0;1.0
+org.junit.runner.JUnitCore.addListener(org.junit.runner.notification.RunListener);org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.runner.JUnitCore.removeListener(org.junit.runner.notification.RunListener);org.junit.runner.JUnitCore;0;1.0
+org.junit.runner.JUnitCore.removeListener(org.junit.runner.notification.RunListener);org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.runner.Request.filterWith(org.junit.runner.Description);org.junit.runner.Request;1;0.75
+org.junit.runner.Request.filterWith(org.junit.runner.Description);org.junit.runner.manipulation.Filter;0;1.0
+org.junit.internal.builders.IgnoredClassRunner.run(org.junit.runner.notification.RunNotifier);org.junit.internal.builders.IgnoredClassRunner;1;0.75
+org.junit.internal.builders.IgnoredClassRunner.run(org.junit.runner.notification.RunNotifier);org.junit.runner.notification.RunNotifier;1;0.9375
+org.junit.internal.builders.IgnoredClassRunner.getDescription();org.junit.internal.builders.IgnoredClassRunner;1;0.6666666666666667
+org.junit.internal.builders.IgnoredClassRunner.getDescription();org.junit.runner.Description;0;1.0
+org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(java.lang.Class<?>);org.junit.runners.model.RunnerBuilder;1;0.9230769230769231
+org.junit.internal.builders.AllDefaultPossibilitiesBuilder.runnerForClass(java.lang.Class<?>);org.junit.internal.builders.AllDefaultPossibilitiesBuilder;5;0.4444444444444444
+org.junit.internal.InexactComparisonCriteria.assertElementsEqual(java.lang.Object, java.lang.Object);org.junit.internal.InexactComparisonCriteria;1;0.6666666666666667
+org.junit.internal.InexactComparisonCriteria.assertElementsEqual(java.lang.Object, java.lang.Object);org.junit.Assert;1;1.0
+org.junit.internal.requests.ClassRequest.getRunner();org.junit.runners.model.RunnerBuilder;1;0.8888888888888888
+org.junit.internal.requests.ClassRequest.getRunner();org.junit.internal.requests.ClassRequest;2;0.5
+org.junit.internal.requests.SortingRequest.getRunner();org.junit.internal.requests.SortingRequest;1;0.75
+org.junit.internal.requests.SortingRequest.getRunner();org.junit.runner.Request;1;0.8333333333333334
+org.junit.internal.requests.SortingRequest.getRunner();org.junit.runner.manipulation.Sorter;1;0.8
+org.junit.internal.requests.FilterRequest.getRunner();org.junit.runner.Request;1;0.875
+org.junit.internal.requests.FilterRequest.getRunner();org.junit.runner.manipulation.Filter;2;0.6666666666666667
+org.junit.internal.requests.FilterRequest.getRunner();org.junit.internal.requests.FilterRequest;0;1.0
+org.junit.internal.ComparisonCriteria.arrayEquals(java.lang.Object, java.lang.Object, java.lang.String);org.junit.internal.ArrayComparisonFailure;1;0.9090909090909091
+org.junit.internal.ComparisonCriteria.arrayEquals(java.lang.Object, java.lang.Object, java.lang.String);org.junit.internal.ComparisonCriteria;4;0.7142857142857143
+org.junit.internal.ComparisonCriteria.assertArraysAreSameLength(java.lang.Object, java.lang.Object, java.lang.String);org.junit.Assert;0;1.0
+org.junit.internal.TextListener.testRunFinished(org.junit.runner.Result);org.junit.runner.Result;1;0.9473684210526316
+org.junit.internal.TextListener.testRunFinished(org.junit.runner.Result);org.junit.internal.TextListener;3;0.7272727272727273
+org.junit.internal.TextListener.printFailures(org.junit.runner.Result);org.junit.runner.Result;1;0.95
+org.junit.internal.TextListener.printFailures(org.junit.runner.Result);org.junit.internal.TextListener;2;0.9285714285714286
+org.junit.internal.TextListener.printFailure(java.lang.String, org.junit.runner.notification.Failure);org.junit.runner.notification.Failure;2;0.75
+org.junit.internal.TextListener.printFailure(java.lang.String, org.junit.runner.notification.Failure);org.junit.internal.TextListener;1;0.9285714285714286
+org.junit.internal.TextListener.printFooter(org.junit.runner.Result);org.junit.runner.Result;3;0.85
+org.junit.internal.TextListener.printFooter(org.junit.runner.Result);org.junit.internal.TextListener;1;0.9375
+org.junit.internal.runners.TestMethod.getBefores();org.junit.internal.runners.TestMethod;0;1.0
+org.junit.internal.runners.TestMethod.getBefores();org.junit.internal.runners.TestClass;1;0.9090909090909091
+org.junit.internal.runners.TestMethod.getAfters();org.junit.internal.runners.TestMethod;0;1.0
+org.junit.internal.runners.TestMethod.getAfters();org.junit.internal.runners.TestClass;1;0.9090909090909091
+org.junit.internal.runners.MethodRoadie.runTestMethod();org.junit.internal.runners.TestMethod;4;0.7333333333333334
+org.junit.internal.runners.MethodRoadie.runTestMethod();org.junit.internal.runners.MethodRoadie;2;0.8888888888888888
+org.junit.internal.runners.MethodRoadie.runBefores();org.junit.internal.runners.TestMethod;1;0.9230769230769231
+org.junit.internal.runners.MethodRoadie.runBefores();org.junit.internal.runners.MethodRoadie;2;0.8461538461538461
+org.junit.internal.runners.MethodRoadie.runAfters();org.junit.internal.runners.TestMethod;1;0.9230769230769231
+org.junit.internal.runners.MethodRoadie.runAfters();org.junit.internal.runners.MethodRoadie;2;0.8461538461538461
+org.junit.internal.runners.MethodRoadie.addFailure(java.lang.Throwable);org.junit.internal.runners.MethodRoadie;0;1.0
+org.junit.internal.runners.MethodRoadie.addFailure(java.lang.Throwable);org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.runners.JUnit38ClassRunner.endTest(junit.framework.Test);org.junit.internal.runners.JUnit38ClassRunner;1;0.9230769230769231
+org.junit.internal.runners.JUnit38ClassRunner.endTest(junit.framework.Test);org.junit.runner.notification.RunNotifier;1;0.9375
+org.junit.internal.runners.JUnit38ClassRunner.startTest(junit.framework.Test);org.junit.internal.runners.JUnit38ClassRunner;1;0.9230769230769231
+org.junit.internal.runners.JUnit38ClassRunner.startTest(junit.framework.Test);org.junit.runner.notification.RunNotifier;1;0.9375
+org.junit.internal.runners.JUnit38ClassRunner.addError(java.lang.Throwable, junit.framework.Test);org.junit.internal.runners.JUnit38ClassRunner;1;0.9230769230769231
+org.junit.internal.runners.JUnit38ClassRunner.addError(java.lang.Throwable, junit.framework.Test);org.junit.runner.notification.RunNotifier;1;0.9375
+org.junit.internal.runners.JUnit38ClassRunner.asDescription(junit.framework.Test);org.junit.internal.runners.JUnit38ClassRunner;2;0.8461538461538461
+org.junit.internal.runners.JUnit38ClassRunner.asDescription(junit.framework.Test);org.junit.runner.Description;0;1.0
+org.junit.internal.runners.JUnit38ClassRunner.getName(junit.framework.Test);junit.framework.TestCase;1;0.9090909090909091
+org.junit.internal.runners.JUnit38ClassRunner.run(org.junit.runner.notification.RunNotifier);junit.framework.TestResult;1;0.9565217391304348
+org.junit.internal.runners.JUnit38ClassRunner.run(org.junit.runner.notification.RunNotifier);org.junit.internal.runners.JUnit38ClassRunner;1;0.9285714285714286
+org.junit.internal.runners.JUnit38ClassRunner.filter(org.junit.runner.manipulation.Filter);junit.framework.TestSuite;4;0.7894736842105263
+org.junit.internal.runners.JUnit38ClassRunner.filter(org.junit.runner.manipulation.Filter);org.junit.runner.manipulation.Filter;2;0.875
+org.junit.internal.runners.JUnit38ClassRunner.filter(org.junit.runner.manipulation.Filter);org.junit.internal.runners.JUnit38ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.getTestMethods();org.junit.internal.runners.JUnit4ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.getTestMethods();org.junit.internal.runners.TestClass;1;0.9090909090909091
+org.junit.internal.runners.JUnit4ClassRunner.validate();org.junit.internal.runners.JUnit4ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.validate();org.junit.internal.runners.MethodValidator;2;0.7142857142857143
+org.junit.internal.runners.JUnit4ClassRunner.run(org.junit.runner.notification.RunNotifier);org.junit.internal.runners.ClassRoadie;1;0.8888888888888888
+org.junit.internal.runners.JUnit4ClassRunner.run(org.junit.runner.notification.RunNotifier);org.junit.internal.runners.JUnit4ClassRunner;3;0.85
+org.junit.internal.runners.JUnit4ClassRunner.getDescription();org.junit.internal.runners.JUnit4ClassRunner;4;0.8095238095238095
+org.junit.internal.runners.JUnit4ClassRunner.getDescription();org.junit.runner.Description;2;0.9583333333333334
+org.junit.internal.runners.JUnit4ClassRunner.classAnnotations();org.junit.internal.runners.JUnit4ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.classAnnotations();org.junit.internal.runners.TestClass;1;0.9166666666666666
+org.junit.internal.runners.JUnit4ClassRunner.getName();org.junit.internal.runners.JUnit4ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.getName();org.junit.internal.runners.TestClass;1;0.9090909090909091
+org.junit.internal.runners.JUnit4ClassRunner.createTest();org.junit.internal.runners.JUnit4ClassRunner;0;1.0
+org.junit.internal.runners.JUnit4ClassRunner.createTest();org.junit.internal.runners.TestClass;1;0.9166666666666666
+org.junit.internal.runners.JUnit4ClassRunner.invokeTestMethod(java.lang.reflect.Method, org.junit.runner.notification.RunNotifier);org.junit.internal.runners.JUnit4ClassRunner;4;0.8636363636363636
+org.junit.internal.runners.JUnit4ClassRunner.invokeTestMethod(java.lang.reflect.Method, org.junit.runner.notification.RunNotifier);org.junit.internal.runners.MethodRoadie;1;0.9333333333333333
+org.junit.internal.runners.JUnit4ClassRunner.testAborted(java.lang.Throwable, org.junit.runner.Description, org.junit.runner.notification.RunNotifier);org.junit.runner.notification.RunNotifier;3;0.8
+org.junit.internal.runners.JUnit4ClassRunner.methodDescription(java.lang.reflect.Method);org.junit.internal.runners.JUnit4ClassRunner;2;0.9047619047619048
+org.junit.internal.runners.JUnit4ClassRunner.methodDescription(java.lang.reflect.Method);org.junit.runner.Description;1;1.0
+org.junit.internal.runners.JUnit4ClassRunner.methodDescription(java.lang.reflect.Method);org.junit.internal.runners.TestClass;1;0.9285714285714286
+org.junit.internal.runners.JUnit4ClassRunner.filter(org.junit.runner.manipulation.Filter);org.junit.internal.runners.JUnit4ClassRunner;2;0.92
+org.junit.internal.runners.JUnit4ClassRunner.filter(org.junit.runner.manipulation.Filter);org.junit.runner.manipulation.Filter;1;0.9
+org.junit.internal.runners.JUnit4ClassRunner.sort(org.junit.runner.manipulation.Sorter);org.junit.internal.runners.JUnit4ClassRunner;3;0.8571428571428572
+org.junit.internal.runners.JUnit4ClassRunner.sort(org.junit.runner.manipulation.Sorter);org.junit.runner.manipulation.Sorter;1;0.8571428571428572
+org.junit.internal.runners.JUnit4ClassRunner.compare(java.lang.reflect.Method, java.lang.reflect.Method);org.junit.internal.runners.JUnit4ClassRunner;1;0.95
+org.junit.internal.runners.JUnit4ClassRunner.compare(java.lang.reflect.Method, java.lang.reflect.Method);org.junit.runner.manipulation.Sorter;1;0.75
+org.junit.internal.runners.MethodValidator.validateInstanceMethods();org.junit.internal.runners.MethodValidator;2;0.9090909090909091
+org.junit.internal.runners.MethodValidator.validateInstanceMethods();org.junit.internal.runners.TestClass;1;0.9333333333333333
+org.junit.internal.runners.MethodValidator.validateNoArgConstructor();org.junit.internal.runners.MethodValidator;1;0.8888888888888888
+org.junit.internal.runners.MethodValidator.validateNoArgConstructor();org.junit.internal.runners.TestClass;1;0.9230769230769231
+org.junit.internal.runners.MethodValidator.validateTestMethods(boolean, java.lang.Class<? extends java.lang.annotation.Annotation>);org.junit.internal.runners.MethodValidator;1;0.9473684210526316
+org.junit.internal.runners.MethodValidator.validateTestMethods(boolean, java.lang.Class<? extends java.lang.annotation.Annotation>);org.junit.internal.runners.TestClass;1;0.9565217391304348
+org.junit.internal.runners.ErrorReportingRunner.getDescription();org.junit.internal.runners.ErrorReportingRunner;3;0.625
+org.junit.internal.runners.ErrorReportingRunner.getDescription();org.junit.runner.Description;1;0.9545454545454546
+org.junit.internal.runners.ErrorReportingRunner.getCauses(java.lang.Throwable);org.junit.internal.runners.ErrorReportingRunner;1;0.9090909090909091
+org.junit.internal.runners.ErrorReportingRunner.getCauses(java.lang.Throwable);org.junit.runners.model.InitializationError;1;0.8
+org.junit.internal.runners.ErrorReportingRunner.getCauses(java.lang.Throwable);org.junit.internal.runners.InitializationError;1;0.8
+org.junit.internal.runners.ErrorReportingRunner.describeCause(java.lang.Throwable);org.junit.internal.runners.ErrorReportingRunner;1;0.8571428571428572
+org.junit.internal.runners.ErrorReportingRunner.describeCause(java.lang.Throwable);org.junit.runner.Description;0;1.0
+org.junit.internal.runners.ErrorReportingRunner.runCause(java.lang.Throwable, org.junit.runner.notification.RunNotifier);org.junit.internal.runners.ErrorReportingRunner;1;0.9
+org.junit.internal.runners.ErrorReportingRunner.runCause(java.lang.Throwable, org.junit.runner.notification.RunNotifier);org.junit.runner.notification.RunNotifier;3;0.8125
+org.junit.internal.runners.statements.FailOnTimeout.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.internal.runners.statements.FailOnTimeout.evaluate();org.junit.internal.runners.statements.FailOnTimeout;4;0.6363636363636364
+org.junit.internal.runners.statements.FailOnTimeout.run();org.junit.runners.model.Statement;1;1.0
+org.junit.internal.runners.statements.FailOnTimeout.run();org.junit.internal.runners.statements.FailOnTimeout;2;0.6666666666666667
+org.junit.internal.runners.statements.RunBefores.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.internal.runners.statements.RunBefores.evaluate();org.junit.runners.model.FrameworkMethod;1;0.9375
+org.junit.internal.runners.statements.RunBefores.evaluate();org.junit.internal.runners.statements.RunBefores;2;0.6
+org.junit.internal.runners.statements.InvokeMethod.evaluate();org.junit.internal.runners.statements.InvokeMethod;1;0.6666666666666667
+org.junit.internal.runners.statements.InvokeMethod.evaluate();org.junit.runners.model.FrameworkMethod;1;0.9285714285714286
+org.junit.internal.runners.statements.ExpectException.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.internal.runners.statements.ExpectException.evaluate();org.junit.internal.runners.statements.ExpectException;1;0.8571428571428572
+org.junit.internal.runners.statements.RunAfters.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.internal.runners.statements.RunAfters.evaluate();org.junit.internal.runners.model.MultipleFailureException;0;1.0
+org.junit.internal.runners.statements.RunAfters.evaluate();org.junit.runners.model.FrameworkMethod;1;0.9444444444444444
+org.junit.internal.runners.statements.RunAfters.evaluate();org.junit.internal.runners.statements.RunAfters;2;0.7142857142857143
+org.junit.internal.runners.ClassRoadie.addFailure(java.lang.Throwable);org.junit.internal.runners.ClassRoadie;0;1.0
+org.junit.internal.runners.ClassRoadie.addFailure(java.lang.Throwable);org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.runners.ClassRoadie.runBefores();org.junit.internal.runners.ClassRoadie;1;0.8888888888888888
+org.junit.internal.runners.ClassRoadie.runBefores();org.junit.internal.runners.TestClass;1;0.9285714285714286
+org.junit.internal.runners.ClassRoadie.runAfters();org.junit.internal.runners.ClassRoadie;1;0.8888888888888888
+org.junit.internal.runners.ClassRoadie.runAfters();org.junit.internal.runners.TestClass;1;0.9285714285714286
+org.junit.internal.runners.model.EachTestNotifier.addFailure(java.lang.Throwable);org.junit.internal.runners.model.EachTestNotifier;1;0.8571428571428572
+org.junit.internal.runners.model.EachTestNotifier.addFailure(java.lang.Throwable);org.junit.runner.notification.RunNotifier;1;0.9375
+org.junit.internal.runners.model.EachTestNotifier.addMultipleFailureException(org.junit.internal.runners.model.MultipleFailureException);org.junit.internal.runners.model.MultipleFailureException;1;0.5
+org.junit.internal.runners.model.EachTestNotifier.addMultipleFailureException(org.junit.internal.runners.model.MultipleFailureException);org.junit.internal.runners.model.EachTestNotifier;1;0.8571428571428572
+org.junit.internal.runners.model.EachTestNotifier.addFailedAssumption(org.junit.internal.AssumptionViolatedException);org.junit.internal.runners.model.EachTestNotifier;0;1.0
+org.junit.internal.runners.model.EachTestNotifier.addFailedAssumption(org.junit.internal.AssumptionViolatedException);org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.runners.model.EachTestNotifier.fireTestFinished();org.junit.internal.runners.model.EachTestNotifier;0;1.0
+org.junit.internal.runners.model.EachTestNotifier.fireTestFinished();org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.runners.model.EachTestNotifier.fireTestStarted();org.junit.internal.runners.model.EachTestNotifier;0;1.0
+org.junit.internal.runners.model.EachTestNotifier.fireTestStarted();org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.runners.model.EachTestNotifier.fireTestIgnored();org.junit.internal.runners.model.EachTestNotifier;0;1.0
+org.junit.internal.runners.model.EachTestNotifier.fireTestIgnored();org.junit.runner.notification.RunNotifier;1;0.9333333333333333
+org.junit.internal.ExactComparisonCriteria.assertElementsEqual(java.lang.Object, java.lang.Object);org.junit.Assert;0;1.0
+org.junit.internal.matchers.StringContains.evalSubstringOf(java.lang.String);org.junit.internal.matchers.SubstringMatcher;1;0.75
+org.junit.rules.Verifier.apply(org.junit.runner.Description, org.junit.runners.model.Statement);org.junit.runners.model.Statement;1;1.0
+org.junit.rules.Verifier.apply(org.junit.runner.Description, org.junit.runners.model.Statement);org.junit.rules.Verifier;2;0.5
+org.junit.rules.Verifier.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.rules.Verifier.evaluate();org.junit.rules.Verifier;1;0.75
+org.junit.rules.TestName.starting(org.junit.runner.Description);org.junit.rules.TestName;1;0.6666666666666667
+org.junit.rules.TestName.starting(org.junit.runner.Description);org.junit.runner.Description;1;0.95
+org.junit.rules.ErrorCollector.verify();org.junit.internal.runners.model.MultipleFailureException;0;1.0
+org.junit.rules.ErrorCollector.verify();org.junit.rules.ErrorCollector;1;0.8333333333333334
+org.junit.rules.TestWatchman.apply(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.model.Statement;1;1.0
+org.junit.rules.TestWatchman.apply(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.rules.TestWatchman;5;0.2857142857142857
+org.junit.rules.TestWatchman.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.rules.TestWatchman.evaluate();org.junit.rules.TestWatchman;4;0.4285714285714286
+org.junit.rules.ExpectedException.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.rules.ExpectedException.evaluate();org.junit.Assert;1;1.0
+org.junit.rules.ExpectedException.evaluate();org.junit.rules.ExpectedException;1;0.9166666666666666
+org.junit.rules.ExternalResource.statement(org.junit.runners.model.Statement);org.junit.runners.model.Statement;1;1.0
+org.junit.rules.ExternalResource.statement(org.junit.runners.model.Statement);org.junit.rules.ExternalResource;3;0.5
+org.junit.rules.ExternalResource.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.rules.ExternalResource.evaluate();org.junit.rules.ExternalResource;2;0.6666666666666667
+org.junit.rules.TestWatcher.apply(org.junit.runner.Description, org.junit.runners.model.Statement);org.junit.rules.TestWatcher;5;0.2857142857142857
+org.junit.rules.TestWatcher.apply(org.junit.runner.Description, org.junit.runners.model.Statement);org.junit.runners.model.Statement;1;1.0
+org.junit.rules.TestWatcher.evaluate();org.junit.rules.TestWatcher;4;0.4285714285714286
+org.junit.rules.TestWatcher.evaluate();org.junit.runners.model.Statement;1;1.0
+org.junit.runners.Parameterized.createTest();org.junit.runners.model.TestClass;1;0.9375
+org.junit.runners.Parameterized.createTest();org.junit.runners.Parameterized;1;0.9285714285714286
+org.junit.runners.Parameterized.computeParams();org.junit.runners.model.FrameworkMethod;1;0.95
+org.junit.runners.Parameterized.computeParams();org.junit.runners.model.TestClass;1;0.95
+org.junit.runners.Parameterized.computeParams();org.junit.runners.Parameterized;3;0.8125
+org.junit.runners.Parameterized.testName(org.junit.runners.model.FrameworkMethod);org.junit.runners.model.FrameworkMethod;1;0.9333333333333333
+org.junit.runners.Parameterized.testName(org.junit.runners.model.FrameworkMethod);org.junit.runners.Parameterized;1;0.9230769230769231
+org.junit.runners.Parameterized.validateConstructor(java.util.List<java.lang.Throwable>);org.junit.runners.BlockJUnit4ClassRunner;1;0.9714285714285714
+org.junit.runners.Parameterized.getParametersList(org.junit.runners.model.TestClass);org.junit.runners.model.FrameworkMethod;1;0.9285714285714286
+org.junit.runners.Parameterized.getParametersList(org.junit.runners.model.TestClass);org.junit.runners.Parameterized;1;0.9166666666666666
+org.junit.runners.Parameterized.getParametersMethod(org.junit.runners.model.TestClass);org.junit.runners.model.FrameworkMethod;1;0.9444444444444444
+org.junit.runners.Parameterized.getParametersMethod(org.junit.runners.model.TestClass);org.junit.runners.model.TestClass;2;0.8823529411764706
+org.junit.runners.Suite.describeChild(org.junit.runner.Runner);org.junit.runner.Runner;1;1.0
+org.junit.runners.Suite.runChild(org.junit.runner.notification.RunNotifier, org.junit.runner.Runner);org.junit.runner.Runner;1;1.0
+org.junit.runners.model.TestClass.getOnlyConstructor();org.junit.runners.model.TestClass;1;0.9285714285714286
+org.junit.runners.model.TestClass.getOnlyConstructor();org.junit.Assert;0;1.0
+org.junit.runners.model.TestClass.getAnnotatedFieldValues(java.lang.Class<? extends java.lang.annotation.Annotation>, java.lang.Class<T>, java.lang.Object);org.junit.runners.model.TestClass;1;0.9411764705882353
+org.junit.runners.model.TestClass.getAnnotatedFieldValues(java.lang.Class<? extends java.lang.annotation.Annotation>, java.lang.Class<T>, java.lang.Object);org.junit.runners.model.FrameworkField;1;0.8888888888888888
+org.junit.runners.model.FrameworkMethod.invokeExplosively(java.lang.Object, java.lang.Object[]);org.junit.runners.model.FrameworkMethod;2;0.8666666666666667
+org.junit.runners.model.FrameworkMethod.invokeExplosively(java.lang.Object, java.lang.Object[]);org.junit.internal.runners.model.ReflectiveCallable;1;0.75
+org.junit.runners.BlockJUnit4ClassRunner.runChild(org.junit.runner.notification.RunNotifier, org.junit.runners.model.FrameworkMethod);org.junit.runners.BlockJUnit4ClassRunner;3;0.9736842105263158
+org.junit.runners.BlockJUnit4ClassRunner.runChild(org.junit.runner.notification.RunNotifier, org.junit.runners.model.FrameworkMethod);org.junit.runners.model.FrameworkMethod;1;0.9375
+org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(org.junit.internal.runners.model.EachTestNotifier, org.junit.runners.model.FrameworkMethod);org.junit.runners.BlockJUnit4ClassRunner;1;0.975
+org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(org.junit.internal.runners.model.EachTestNotifier, org.junit.runners.model.FrameworkMethod);org.junit.runners.model.Statement;1;1.0
+org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(org.junit.internal.runners.model.EachTestNotifier, org.junit.runners.model.FrameworkMethod);org.junit.internal.runners.model.EachTestNotifier;4;0.5
+org.junit.runners.BlockJUnit4ClassRunner.runIgnored(org.junit.internal.runners.model.EachTestNotifier);org.junit.internal.runners.model.EachTestNotifier;1;0.8333333333333334
+org.junit.runners.BlockJUnit4ClassRunner.describeChild(org.junit.runners.model.FrameworkMethod);org.junit.runners.BlockJUnit4ClassRunner;1;0.9743589743589743
+org.junit.runners.BlockJUnit4ClassRunner.describeChild(org.junit.runners.model.FrameworkMethod);org.junit.runners.model.FrameworkMethod;1;0.9411764705882353
+org.junit.runners.BlockJUnit4ClassRunner.describeChild(org.junit.runners.model.FrameworkMethod);org.junit.runners.model.TestClass;1;0.9411764705882353
+org.junit.runners.BlockJUnit4ClassRunner.describeChild(org.junit.runners.model.FrameworkMethod);org.junit.runner.Description;1;1.0
+org.junit.runners.BlockJUnit4ClassRunner.computeTestMethods();org.junit.runners.model.TestClass;1;0.9285714285714286
+org.junit.runners.BlockJUnit4ClassRunner.validateZeroArgConstructor(java.util.List<java.lang.Throwable>);org.junit.runners.BlockJUnit4ClassRunner;1;0.9743589743589743
+org.junit.runners.BlockJUnit4ClassRunner.validateZeroArgConstructor(java.util.List<java.lang.Throwable>);org.junit.runners.model.TestClass;1;0.9411764705882353
+org.junit.runners.BlockJUnit4ClassRunner.hasOneConstructor();org.junit.runners.model.TestClass;1;0.9333333333333333
+org.junit.runners.BlockJUnit4ClassRunner.validateFields(java.util.List<java.lang.Throwable>);org.junit.runners.BlockJUnit4ClassRunner;1;0.9736842105263158
+org.junit.runners.BlockJUnit4ClassRunner.validateFields(java.util.List<java.lang.Throwable>);org.junit.runners.model.TestClass;1;0.9375
+org.junit.runners.BlockJUnit4ClassRunner.validateFields(java.util.List<java.lang.Throwable>);org.junit.runners.model.FrameworkField;1;0.875
+org.junit.runners.BlockJUnit4ClassRunner.createTest();org.junit.runners.model.TestClass;1;0.9333333333333333
+org.junit.runners.BlockJUnit4ClassRunner.testName(org.junit.runners.model.FrameworkMethod);org.junit.runners.model.FrameworkMethod;1;0.9230769230769231
+org.junit.runners.BlockJUnit4ClassRunner.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.runners.BlockJUnit4ClassRunner;8;0.9523809523809523
+org.junit.runners.BlockJUnit4ClassRunner.methodBlock(org.junit.runners.model.FrameworkMethod);org.junit.internal.runners.model.ReflectiveCallable;1;0.8888888888888888
+org.junit.runners.BlockJUnit4ClassRunner.possiblyExpectingExceptions(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.BlockJUnit4ClassRunner;2;0.9444444444444444
+org.junit.runners.BlockJUnit4ClassRunner.possiblyExpectingExceptions(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.model.FrameworkMethod;1;0.9333333333333333
+org.junit.runners.BlockJUnit4ClassRunner.withPotentialTimeout(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.BlockJUnit4ClassRunner;1;0.9722222222222222
+org.junit.runners.BlockJUnit4ClassRunner.withPotentialTimeout(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.model.FrameworkMethod;1;0.9285714285714286
+org.junit.runners.BlockJUnit4ClassRunner.withBefores(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.model.TestClass;1;0.9333333333333333
+org.junit.runners.BlockJUnit4ClassRunner.withAfters(java.lang.Object, org.junit.runners.model.FrameworkMethod, org.junit.runners.model.Statement);org.junit.runners.model.TestClass;1;0.9333333333333333
+org.junit.runners.BlockJUnit4ClassRunner.getMethodRules(java.lang.Object);org.junit.runners.model.TestClass;1;1.0
+org.junit.runners.BlockJUnit4ClassRunner.getTestRules(java.lang.Object);org.junit.runners.model.TestClass;1;1.0
+org.junit.runners.ParentRunner.validatePublicVoidNoArgMethods(boolean, java.lang.Class<? extends java.lang.annotation.Annotation>, java.util.List<java.lang.Throwable>);org.junit.runners.model.FrameworkMethod;1;0.9333333333333333
+org.junit.runners.ParentRunner.validatePublicVoidNoArgMethods(boolean, java.lang.Class<? extends java.lang.annotation.Annotation>, java.util.List<java.lang.Throwable>);org.junit.runners.model.TestClass;1;0.9333333333333333
+org.junit.runners.ParentRunner.withBeforeClasses(org.junit.runners.model.Statement);org.junit.runners.model.TestClass;1;0.9285714285714286
+org.junit.runners.ParentRunner.withAfterClasses(org.junit.runners.model.Statement);org.junit.runners.model.TestClass;1;0.9285714285714286
+org.junit.runners.ParentRunner.getClassRule(org.junit.runners.model.FrameworkField);org.junit.runners.model.FrameworkField;1;0.8
+org.junit.runners.ParentRunner.classRuleFields();org.junit.runners.model.TestClass;1;0.9230769230769231
+org.junit.runners.ParentRunner.getName();org.junit.runners.model.TestClass;1;0.9230769230769231
+org.junit.runners.ParentRunner.getDescription();org.junit.runners.model.TestClass;1;0.9444444444444444
+org.junit.runners.ParentRunner.getDescription();org.junit.runner.Description;2;0.9583333333333334
+org.junit.runners.ParentRunner.run(org.junit.runner.notification.RunNotifier);org.junit.runners.model.Statement;1;1.0
+org.junit.runners.ParentRunner.run(org.junit.runner.notification.RunNotifier);org.junit.internal.runners.model.EachTestNotifier;2;0.7777777777777778
+org.junit.runners.ParentRunner.sortChild(T);org.junit.runner.manipulation.Sorter;1;0.6666666666666667
+org.junit.runners.ParentRunner.filterChild(T);org.junit.runner.manipulation.Filter;1;0.6666666666666667
+org.junit.runners.ParentRunner.shouldRun(T);org.junit.runner.manipulation.Filter;1;0.75
+org.junit.runners.ParentRunner.comparator();org.junit.runners.ParentRunner;2;0.9642857142857143
+org.junit.runners.ParentRunner.comparator();org.junit.runner.manipulation.Sorter;1;0.8
+org.junit.runners.ParentRunner.compare(T, T);org.junit.runner.manipulation.Sorter;1;0.75

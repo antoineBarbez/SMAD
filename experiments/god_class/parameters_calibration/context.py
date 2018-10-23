@@ -8,7 +8,6 @@ import utils.dataUtils as dataUtils
 import utils.experimentUtils as experimentUtils
 import utils.nnUtils as nnUtils
 
-import detection_tools.god_class.hist       as hist
+import detection_tools.god_class.hist as hist
 
-
-import neural_networks.model as md
+import neural_networks.smad.model as md
