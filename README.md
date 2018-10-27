@@ -19,3 +19,8 @@ For this category, we used the refactoring operations Extract Class and Move Met
 Then, we selected the core-metrics, i.e., metrics that reflect best the internal decision process of each tool, as input metrics for our model. 
 Finally, we perform classification through a logistic regression. 
 Our model is a fully-connected neural-network composed of *tanh* hidden layers connected to a *softmax* output layer.
+
+<p align="center">
+  <img src="images/SMAD.png" alt="alt text" width=400 height=300, class="center"/>
+</p>
+  
