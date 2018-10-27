@@ -13,7 +13,7 @@ import utils.nnUtils		 as nnUtils
 import detection_tools.feature_envy.hist   as hist
 import detection_tools.feature_envy.incode as incode
 
-import experiments.feature_envy.mergedDetection as mergedDetection 
+import experiments.feature_envy.smad_fe as smad_fe 
 
 import neural_networks.smad.model as md
 import neural_networks.liu_replication.liu_model as liu_model

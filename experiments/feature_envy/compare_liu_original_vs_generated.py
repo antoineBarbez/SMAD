@@ -174,6 +174,7 @@ if __name__ == "__main__":
         y_test.append(nnUtils.getLabels(system, 'feature_envy'))
 
     # Load the model
+    # fold 4 is the fold that performed the best on our test set 
     modelPath = get_model_path_original(4)
     modelWeights = get_model_weights_original(4)
 
@@ -182,7 +183,7 @@ if __name__ == "__main__":
 
     session = tf.Session()
 
-    # Compute performances
+    # Compute and print performances
     preo = []
     reco = []
     f_mo = []

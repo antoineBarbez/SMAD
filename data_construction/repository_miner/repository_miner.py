@@ -31,8 +31,8 @@ class RepositoryMiner(object):
 		if not os.path.exists(self.TEMP):
 			os.makedirs(self.TEMP)
 
-		#cloneCommand = 'git clone ' + self.repositoryURL + ' ' + self.TEMP + self.systemName
-		#subprocess.call(cloneCommand, shell=True)
+		cloneCommand = 'git clone ' + self.repositoryURL + ' ' + self.TEMP + self.systemName
+		subprocess.call(cloneCommand, shell=True)
 
 		self.cwd = os.getcwd()
 		os.chdir(self.TEMP + self.systemName)
@@ -44,23 +44,23 @@ class RepositoryMiner(object):
 		os.chdir(self.cwd)
 
 		# Remove the TEMP directory
-		#subprocess.call("rm -rf " + self.TEMP, shell=True)
+		subprocess.call("rm -rf " + self.TEMP, shell=True)
 
 	def mine(self, system):
 		self.setup(system)
 
-		#he = history_extractor.HistoryExtractor()
+		he = history_extractor.HistoryExtractor()
 
-		#he.createHistoryFile(self.HISTORY_CLASS, "C")
-		#self.__correctExceptions(self.HISTORY_CLASS, he.exceptionDirs, he.package_dirs_dictionary)
-		#he.createHistoryFile(self.HISTORY_METHOD, "M")
+		he.createHistoryFile(self.HISTORY_CLASS, "C")
+		self.__correctExceptions(self.HISTORY_CLASS, he.exceptionDirs, he.package_dirs_dictionary)
+		he.createHistoryFile(self.HISTORY_METHOD, "M")
 
-		#self.__createClassFiles(he.package_dirs_dictionary)
-		#self.__createMethodFile(self.ENTITY_METHOD, he.package_dirs_dictionary)
+		self.__createClassFiles(he.package_dirs_dictionary)
+		self.__createMethodFile(self.ENTITY_METHOD, he.package_dirs_dictionary)
 
-		#self.__createMetricsFile("DECOR")
-		#self.__createMetricsFile("INCODE")
-		#self.__createMetricsFile("JDEODORANT")
+		self.__createMetricsFile("DECOR")
+		self.__createMetricsFile("INCODE")
+		self.__createMetricsFile("JDEODORANT")
 
 
 		self.close()

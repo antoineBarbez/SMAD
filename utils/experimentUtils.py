@@ -18,7 +18,6 @@ def precision(detected, true):
 	truePositive = [entity for entity in detected if entity in true]
 
 	if len(detected) == 0:
-		#return float('nan')
 		return 0.0
 
 	return len(truePositive) / len(detected)
@@ -38,7 +37,7 @@ def f_measure(detected, true, alpha=0.5):
 # Outputs instances (i.e, class for God Class and method;enviedClass for Feature Envy) 
 # detected using a vote over various tools outputs.
 # tools_outputs: list containing the lists of instances detected by each tool
-# k: mininum number of tools agreement to detect an instance
+# k: mininum number of agreement to detect an instance
 def vote(tools_outputs, k):
 	assert k <= len(tools_outputs), "k can't be greater than the number of tools"
 

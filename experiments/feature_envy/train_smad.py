@@ -11,7 +11,7 @@ def get_save_path(net_number):
 	return os.path.join(ROOT_DIR, 'neural_networks/smad/trained_models/feature_envy/network' + str(net_number))	
 
 
-#Performs training on the current model
+#Performs training of the current model
 def optimize():
 	learning_rate = starter_learning_rate
 
@@ -27,10 +27,7 @@ def optimize():
 
 		#Imballanced batch trainning
 		l_train = []
-		#shuffled_x_train, shuffled_y_train = nnUtils.shuffle(x_train,  y_train)
 		for i in range(len(x_train)):
-			#batch_x, batch_y = nnUtils.shuffle(x_train[i] ,  y_train[i])
-			#batch_x, batch_y = shuffled_x_train[i],  shuffled_y_train[i]
 			constants, batch_x, batch_y = c_train[i], x_train[i], y_train[i]
 			feed_dict_train = {
 						model.input_x: batch_x,
@@ -45,10 +42,10 @@ def optimize():
 			l = session.run(model.loss, feed_dict=feed_dict_train)
 			l_train.append(l)
 
+		# Retrieve loss on test set (to plot learning curves)
 		l_test = []
 		for i in range(len(x_test)):
 			constants, batch_x = c_test[i], x_test[i]
-			#print(system_size)
 			feed_dict_valid = {
 						model.input_x: batch_x,
 						model.input_y: y_test[i],
@@ -99,7 +96,7 @@ if __name__ == "__main__":
 	num_steps             = 400
 	num_networks          = 5
 
-	layers =[86, 44]
+	layers = [86, 44]
 
 	# Create datasets
 	x_train = []
@@ -125,12 +122,12 @@ if __name__ == "__main__":
 		c_test.append(c)
 
 
-	# Create model
+	# Model constants
 	input_size     = 7
 	constants_size = 2
 	output_size    = 2
 
-
+	# Create model
 	model = md.SMAD(layers, input_size, constants_size)
 
 	# To save and restore a trained model
@@ -140,12 +137,10 @@ if __name__ == "__main__":
 
 	l_tr = []
 	l_te = []
-	l_r = []
-
-
+	l_r  = []
 	# For each of the neural networks.
 	for i in range(num_networks):
-		print('Training the Neural Network :' + str(i))
+		print('Training Neural Network :' + str(i+1))
 
 		# Initialize the variables of the TensorFlow graph.
 		session.run(tf.global_variables_initializer())
@@ -160,7 +155,7 @@ if __name__ == "__main__":
 	    # Save the optimized variables to disk.
 		saver.save(sess=session, save_path=get_save_path(i))
 
-	# Evaluate the ensemble model on the test set
+	# Print performances of the ensemble model on test set
 	pre = []
 	rec = []
 	f_m = []
@@ -194,5 +189,6 @@ if __name__ == "__main__":
 	print('Accuracy  :' + str(np.mean(np.array(acc))))
 	print('')
 
+	# Plot learning curves
 	plt.plot(range(num_steps), np.mean(np.array(l_tr), axis=0), range(num_steps), np.mean(np.array(l_te), axis=0), range(num_steps), l_r)
 	plt.show()

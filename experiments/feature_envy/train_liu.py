@@ -4,7 +4,7 @@ import tensorflow        as tf
 import numpy             as np
 import matplotlib.pyplot as plt
 
-import smad
+import smad_fe
 import os
 import progressbar
 
@@ -13,7 +13,7 @@ def get_save_path():
 
 def generateLabels(systemName):
     entities = dataUtils.getCandidateFeatureEnvy(systemName)
-    true = smad.getSmells(systemName)
+    true = smad_fe.getSmells(systemName)
 
     labels = []
     for entity in entities:
@@ -47,7 +47,7 @@ if __name__ == "__main__":
     
     test_systems = ['apache-tomcat', 'jedit', 'android-platform-support']
 
-
+    # Get train and test data
     x_train_distances = []
     x_train_names = []
     y_train = []
@@ -68,11 +68,10 @@ if __name__ == "__main__":
 		
 
 	#constants
-    learning_rate = 0.16201542516
     num_steps     = 100
-    
-    dropout = 0.5
-    beta = 0.00180316867055
+    learning_rate = 0.16201542516
+    beta          = 0.00180316867055
+    dropout       = 0.5
 
 
     model = liu_model.LiuCNN()
@@ -87,8 +86,8 @@ if __name__ == "__main__":
     bar.start()
 
 
-    losses_train   = []
-    losses_test    = []
+    losses_train = []
+    losses_test  = []
     for step in range(num_steps):
         # Asymmetric training
         if (step<40):
@@ -114,6 +113,7 @@ if __name__ == "__main__":
             l = session.run(model.loss, feed_dict=feed_dict_train)
             l_train.append(l)
 
+        # Retieve test loss to plot learning curves
         l_test = []
         for i in range(len(y_test)):
             distances, names, labels = x_test_distances[i], x_test_names[i], y_test[i]

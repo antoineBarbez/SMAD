@@ -40,7 +40,6 @@ def optimize(learning_rate, beta, layers, dropout):
 
 	# Ensemble prediction
 	predictions = []
-	# For each of the neural networks.
 	for _ in range(num_networks):
 		# Initialize the variables of the TensorFlow graph.
 		session.run(tf.global_variables_initializer())

@@ -8,10 +8,8 @@ import entityUtils
 import os
 import progressbar
 
-
-
-# returns a list containing the history of the system.
-# granularity can be C or M for class or method history respectively.
+# Returns a list containing the history of the system.
+# Granularity can be C or M for class or method history respectively.
 def getHistory(systemName, granularity):
     assert granularity in ['M', 'C'], str(granularity) + " is not a valid granularity, choose C or M"
     
@@ -205,7 +203,7 @@ def getFEHistMetrics(systemName):
 
     # Matrix representing co-occurences between methods and classes, i.e, the number of time each 
     # methods of the system has been changed in commits involving methods of each class of the system.
-    # For example, occurence[i, j] = 5 means that the ith method of the system have been involved
+    # For example, coOcc[i, j] = 5 means that the ith method of the system have been involved
     # 5 times in commits involving methods of the jth class of the system.
     coOcc = np.zeros((len(methods), len(classes)))
     

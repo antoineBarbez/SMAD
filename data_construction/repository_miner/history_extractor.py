@@ -96,22 +96,6 @@ class HistoryExtractor(object):
 			package = directory
 
 		changes = []
-		'''if changeType == "A":
-			self.__updateWorkingFile("../actualFile.java", filePath, SHA)
-
-			methods = entityUtils.getMethodsInFile("../actualFile.java")
-			for method in methods:
-				change = entityUtils.normalizeMethodName(method) + ";" + "ADDED"
-				changes.append(change)
-
-		if changeType == "D":
-			self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
-
-			methods = entityUtils.getMethodsInFile("../previousFile.java")
-			for method in methods:
-				change = entityUtils.normalizeMethodName(method) + ";" + "DELETED"
-				changes.append(change)'''
-
 		if changeType == "M":
 			self.__updateWorkingFile("../actualFile.java", filePath, SHA)
 			self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
@@ -146,7 +130,7 @@ class HistoryExtractor(object):
 					if (method in previous_method_class_dictionary):
 						method = previous_method_class_dictionary[method] + '.' + method
 
-						# tSore change like that, so it is hashable
+						# Store change like that, so it is hashable
 						change = method + ";" + ct
 						changes.append(change)
 

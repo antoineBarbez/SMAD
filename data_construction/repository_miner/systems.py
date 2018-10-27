@@ -1,6 +1,6 @@
 
 
-# List of the systems that uses Git as versionning system
+# List of the systems that use Git as versionning system
 systems_git = [
 	{
 	"name"     :'pmd', 
@@ -143,9 +143,8 @@ systems_git = [
 ]
 
 
-# List of the systems that uses SVN as versionning system.
+# List of the systems that use SVN as versionning system.
 # For these systems, you must first transform them into a git repository using "git svn" command.
-# Put the obtained git repositories in the "./dataConstruction" directory and now you can do what you want.
 
 #argouml version 0.15.6 : r5998 = bd70644e7afff38ba024a5db7c90e286623c2a49
 #argouml version 0.19.8 : r9304 = 6edc166ff845cf9926bc7dbb70d93181471552c1

@@ -2,7 +2,7 @@ from context import dataUtils, experimentUtils, hist, decor, jdeodorant
 
 import numpy as np
 
-import smad
+import smad_gc
 
 # This script is used to compare the performances of:
 # - The detection tools aggregated through SMAD
@@ -116,7 +116,7 @@ for system in systems:
 	f_v3.append(f_measure_vote_3)
 
 	# SMAD
-	detected_smad = smad.getSmells(system)
+	detected_smad = smad_gc.getSmells(system)
 
 	precision_smad = experimentUtils.precision(detected_smad, true)
 	recall_smad = experimentUtils.recall(detected_smad, true)

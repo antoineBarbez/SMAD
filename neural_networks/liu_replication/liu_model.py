@@ -8,13 +8,13 @@ class LiuCNN(object):
 		# Placeholders for instances and labels
 		self.input_names     = tf.placeholder(tf.float32,[None, 15, 200], name="input_names")
 		self.input_distances = tf.placeholder(tf.float32,[None, 2], name="input_distances")
-		self.input_y = tf.placeholder(tf.float32,[None, 2], name="input_y")
+		self.input_y         = tf.placeholder(tf.float32,[None, 2], name="input_y")
 
 		# Placeholders for learning parameters
 		self.learning_rate     = tf.placeholder(tf.float32, name="learning_rate")
 		self.dropout_keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")
-		self.beta = tf.placeholder(tf.float32, name="beta")
-		self.cut_names = tf.placeholder(tf.float32, shape=(), name="cut_names")
+		self.beta              = tf.placeholder(tf.float32, name="beta")
+		self.cut_names         = tf.placeholder(tf.float32, shape=(), name="cut_names")
 
 		regularizer = tf.contrib.layers.l2_regularizer(scale=self.beta)
 		init_xavier = tf.contrib.layers.xavier_initializer()
@@ -82,6 +82,7 @@ class LiuCNN(object):
 								activation=tf.tanh,
 								kernel_regularizer=regularizer,
 								kernel_initializer=init_xavier)
+		
 		self.logits = tf.layers.dense(dense,
 										2,
 										kernel_regularizer=regularizer,

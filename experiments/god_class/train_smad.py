@@ -11,7 +11,7 @@ def get_save_path(net_number):
 	return os.path.join(ROOT_DIR, 'neural_networks/smad/trained_models/god_class/network' + str(net_number))	
 
 
-#Performs training on the current model
+#Performs training of the current model
 def optimize():
 	learning_rate = starter_learning_rate
 
@@ -42,6 +42,7 @@ def optimize():
 			l = session.run(model.loss, feed_dict=feed_dict_train)
 			l_train.append(l)
 
+		# Retrieve loss on test set (to plot learning curves)
 		l_test = []
 		for i in range(len(x_test)):
 			constants, batch_x = c_test[i], x_test[i]
@@ -137,16 +138,14 @@ if __name__ == "__main__":
 	l_tr = []
 	l_te = []
 	l_r = []
-
-
 	# For each of the neural networks.
 	for i in range(num_networks):
-		print('Training the Neural Network :' + str(i))
+		print('Training Neural Network :' + str(i+1))
 
 		# Initialize the variables of the TensorFlow graph.
 		session.run(tf.global_variables_initializer())
 
-		#Begin the learning process
+		#Train the model
 		learning_rates, losses_train, losses_test = optimize() 
 
 		l_tr.append(losses_train)
@@ -190,5 +189,6 @@ if __name__ == "__main__":
 	print('Accuracy  :' + str(np.mean(np.array(acc))))
 	print('')
 
+	# Plot learning curves 
 	plt.plot(range(num_steps), np.mean(np.array(l_tr), axis=0), range(num_steps), np.mean(np.array(l_te), axis=0), range(num_steps), l_r)
 	plt.show()

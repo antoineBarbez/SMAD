@@ -1,9 +1,7 @@
-from context import ROOT_DIR, nnUtils, dataUtils, entityUtils, liuUtils, liu_model
+from context import ROOT_DIR, nnUtils, dataUtils, entityUtils, liuUtils, liu_model, smad
 
 import tensorflow        as tf
 import numpy             as np
-
-import mergedDetection
 
 import math
 import os
@@ -64,8 +62,7 @@ def optimize(learning_rate, beta):
 
 def generateLabels(systemName):
     entities = dataUtils.getCandidateFeatureEnvy(systemName)
-    true = mergedDetection.getSmells(systemName)
-    print(systemName + ': ' + str(len(true)))
+    true = smad_fe.getSmells(systemName)
 
     labels = []
     for entity in entities:
