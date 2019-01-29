@@ -10,8 +10,9 @@ import utils.dataUtils       as dataUtils
 import utils.liuUtils        as liuUtils
 import utils.nnUtils		 as nnUtils
 
-import detection_tools.feature_envy.hist   as hist
-import detection_tools.feature_envy.incode as incode
+import detection_tools.feature_envy.hist       as hist
+import detection_tools.feature_envy.incode     as incode
+import detection_tools.feature_envy.jdeodorant as jdeodorant
 
 import experiments.feature_envy.smad_fe as smad_fe 
 

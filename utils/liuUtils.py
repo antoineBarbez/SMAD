@@ -104,7 +104,8 @@ def getEmbeddingMatrix(entity):
         if word in embeddings_index:
             embeddingMatrix[i] = embeddings_index[word]
 
-    return embeddingMatrix 
+    return embeddingMatrix
+ 
 
 def getInstances(systemName):
     entities = dataUtils.getCandidateFeatureEnvy(systemName)

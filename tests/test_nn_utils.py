@@ -80,7 +80,7 @@ class TestNNUtils(unittest.TestCase):
 	def test_get_Instances_god_class(self):
 		for system in self.systems:
 			classes = dataUtils.getClasses(system)
-			instances = nnUtils.getGodClassInstances(system)
+			instances = nnUtils.getInstances(system, 'god_class')
 
 			self.assertEqual(len(classes), len(instances))
 

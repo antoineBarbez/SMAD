@@ -41,9 +41,9 @@ class TestExperimentUtils(unittest.TestCase):
 		self.assertEqual(experimentUtils.precision(self.set_2, self.set_3), 0.0)
 		self.assertEqual(experimentUtils.precision(self.set_3, self.set_1), 1.0)
 		self.assertEqual(experimentUtils.precision(self.set_3, self.set_4), 0.0)
-		self.assertTrue(math.isnan(experimentUtils.precision(self.set_4, self.set_1)))
-		self.assertTrue(math.isnan(experimentUtils.precision(self.set_4, self.set_3)))
-		self.assertTrue(math.isnan(experimentUtils.precision(self.set_4, self.set_4)))
+		self.assertEqual(experimentUtils.precision(self.set_4, self.set_1), 0.0)
+		self.assertEqual(experimentUtils.precision(self.set_4, self.set_3), 0.0)
+		self.assertEqual(experimentUtils.precision(self.set_4, self.set_4), 0.0)
 
 	def test_recall(self):
 		self.assertEqual(experimentUtils.recall(self.set_1, self.set_1), 1.0)
@@ -69,8 +69,8 @@ class TestExperimentUtils(unittest.TestCase):
 		self.assertEqual(experimentUtils.f_measure(self.set_2, self.set_3), 0.0)
 		self.assertEqual(experimentUtils.f_measure(self.set_3, self.set_1), 0.33333333333333337)
 		self.assertTrue(math.isnan(experimentUtils.f_measure(self.set_3, self.set_4)))
-		self.assertTrue(math.isnan(experimentUtils.f_measure(self.set_4, self.set_1)))
-		self.assertTrue(math.isnan(experimentUtils.f_measure(self.set_4, self.set_3)))
+		self.assertEqual(experimentUtils.f_measure(self.set_4, self.set_1), 0.0)
+		self.assertEqual(experimentUtils.f_measure(self.set_4, self.set_3), 0.0)
 		self.assertTrue(math.isnan(experimentUtils.f_measure(self.set_4, self.set_4)))
 
 	def test_vote(self):

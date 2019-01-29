@@ -2,11 +2,12 @@ from context import dataUtils, experimentUtils, hist, incode, jdeodorant
 
 import numpy as np
 
-import smad_fe
+import smad_fe, asci
 
 # This script is used to compare the performances of:
 # - The detection tools aggregated through SMAD
-# - The voting technique with k in {1, 2, 3}
+# - The voting technique with k=1
+# - ASCI
 # - SMAD
 # for Feature Envy detection on the three subject systems.
 
@@ -28,13 +29,9 @@ p_v1 = []
 r_v1 = []
 f_v1 = []
 
-p_v2 = []
-r_v2 = []
-f_v2 = []
-
-p_v3 = []
-r_v3 = []
-f_v3 = []
+p_asci = []
+r_asci = []
+f_asci = []
 
 p_smad = []
 r_smad = []
@@ -96,27 +93,18 @@ for system in systems:
 	r_v1.append(recall_vote_1)
 	f_v1.append(f_measure_vote_1)
 
-	# Compute vote for k = 2
-	detected_vote_2 = experimentUtils.vote(tools_outputs, 2)
 
-	precision_vote_2 = experimentUtils.precision(detected_vote_2, true)
-	recall_vote_2 = experimentUtils.recall(detected_vote_2, true)
-	f_measure_vote_2 = experimentUtils.f_measure(detected_vote_2, true)
+	# ASCI
+	detected_asci = asci.getSmells(system)
 
-	p_v2.append(precision_vote_2)
-	r_v2.append(recall_vote_2)
-	f_v2.append(f_measure_vote_2)
+	precision_asci = experimentUtils.precision(detected_asci, true)
+	recall_asci = experimentUtils.recall(detected_asci, true)
+	f_measure_asci = experimentUtils.f_measure(detected_asci, true)
 
-	# Compute vote for k = 3
-	detected_vote_3 = experimentUtils.vote(tools_outputs, 3)
+	p_asci.append(precision_asci)
+	r_asci.append(recall_asci)
+	f_asci.append(f_measure_asci)
 
-	precision_vote_3 = experimentUtils.precision(detected_vote_3, true)
-	recall_vote_3 = experimentUtils.recall(detected_vote_3, true)
-	f_measure_vote_3 = experimentUtils.f_measure(detected_vote_3, true)
-
-	p_v3.append(precision_vote_3)
-	r_v3.append(recall_vote_3)
-	f_v3.append(f_measure_vote_3)
 
 	# SMAD
 	detected_smad = smad_fe.getSmells(system)
@@ -141,9 +129,7 @@ for system in systems:
 	print('-------------------------------------------------')
 	print('Vote 1     |' + "{0:.3f}".format(precision_vote_1) + '      |' + "{0:.3f}".format(recall_vote_1) + '   |' + "{0:.3f}".format(f_measure_vote_1))
 	print('-------------------------------------------------')
-	print('Vote 2     |' + "{0:.3f}".format(precision_vote_2) + '      |' + "{0:.3f}".format(recall_vote_2) + '   |' + "{0:.3f}".format(f_measure_vote_2))
-	print('-------------------------------------------------')
-	print('Vote 3     |' + "{0:.3f}".format(precision_vote_3) + '      |' + "{0:.3f}".format(recall_vote_3) + '   |' + "{0:.3f}".format(f_measure_vote_3))
+	print('ASCI       |' + "{0:.3f}".format(precision_asci) + '      |' + "{0:.3f}".format(recall_asci) + '   |' + "{0:.3f}".format(f_measure_asci))
 	print('-------------------------------------------------')
 	print('SMAD       |' + "{0:.3f}".format(precision_smad) + '      |' + "{0:.3f}".format(recall_smad) + '   |' + "{0:.3f}".format(f_measure_smad))
 	print('-------------------------------------------------')
@@ -163,9 +149,7 @@ print('-------------------------------------------------')
 print('-------------------------------------------------')
 print('Vote 1     |' + "{0:.3f}".format(np.mean(p_v1)) + '      |' + "{0:.3f}".format(np.mean(r_v1)) + '   |' + "{0:.3f}".format(np.mean(f_v1)))
 print('-------------------------------------------------')
-print('Vote 2     |' + "{0:.3f}".format(np.mean(p_v2)) + '      |' + "{0:.3f}".format(np.mean(r_v2)) + '   |' + "{0:.3f}".format(np.mean(f_v2)))
-print('-------------------------------------------------')
-print('Vote 3     |' + "{0:.3f}".format(np.mean(p_v3)) + '      |' + "{0:.3f}".format(np.mean(r_v3)) + '   |' + "{0:.3f}".format(np.mean(f_v3)))
+print('ASCI       |' + "{0:.3f}".format(np.mean(p_asci)) + '      |' + "{0:.3f}".format(np.mean(r_asci)) + '   |' + "{0:.3f}".format(np.mean(f_asci)))
 print('-------------------------------------------------')
 print('SMAD       |' + "{0:.3f}".format(np.mean(p_smad)) + '      |' + "{0:.3f}".format(np.mean(r_smad)) + '   |' + "{0:.3f}".format(np.mean(f_smad)))
 print('-------------------------------------------------')

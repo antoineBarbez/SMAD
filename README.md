@@ -9,11 +9,11 @@ The key idea behind SMAD is to combine various anti-pattern detection tools by c
 their core-metrics for each input instance and use these metrics to feed a machine-learning based classifier. 
 First, for each anti-pattern considered in this study, we selected three state-of-the-art detection tools. 
 These tools respectively rely on:
-* **Rule Card**s: Affected entities are identified using a combination of source-code metrics designed to reflect the formal definition of the anti-patterns.
+* **Rule Cards:** Affected entities are identified using a combination of source-code metrics designed to reflect the formal definition of the anti-patterns.
 For this category, we selected DECOR for God Class and InCode for Feature Envy detection.
-* **Historical** Information: Affected entities are identified via an analysis of change history information derived from versioning systems. 
+* **Historical Information:** Affected entities are identified via an analysis of change history information derived from versioning systems. 
 For this category, we used HIST for both God Class and Feature Envy detection.
-* **Refactoring Opportunities**: Anti-patterns are detected by identifying the opportunities to apply their corresponding refactoring operations. 
+* **Refactoring Opportunities:** Anti-patterns are detected by identifying the opportunities to apply their corresponding refactoring operations. 
 For this category, we used the refactoring operations Extract Class and Move Method provided by JDeodorant, respectively for God Class and Feature Envy detection.
 
 Then, we selected the core-metrics, i.e., metrics that reflect best the internal decision process of each tool, as input metrics for our model. 

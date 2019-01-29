@@ -3,6 +3,7 @@ from sklearn.preprocessing import StandardScaler
 
 import numpy      as np
 import tensorflow as tf
+import liuUtils
 
 import dataUtils
 import random
@@ -74,7 +75,7 @@ def getLabels(systemName, antipattern):
 	return np.array(labels)
 
 
-def getInstances(systemName, antipattern):
+def getInstances(systemName, antipattern, normalized=True):
 	assert antipattern in ['god_class', 'feature_envy']
 
 	metrics = []
@@ -99,11 +100,12 @@ def getInstances(systemName, antipattern):
 	instances = np.array(instances).astype(float)
 
 	# Batch normalization
-	scaler = StandardScaler()
-	scaler.fit(instances)
-	rescaledInstances = scaler.transform(instances)
+	if normalized:
+		scaler = StandardScaler()
+		scaler.fit(instances)
+		return scaler.transform(instances)
 
-	return rescaledInstances
+	return instances
 
 
 def getSystemConstants(systemName):

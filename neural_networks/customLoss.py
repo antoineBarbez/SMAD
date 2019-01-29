@@ -9,7 +9,7 @@ def f_measure_approx(logits, labels, gamma):
     Martin Jansche (2005):
         [Maximum Expected F-Measure Training of Logistic Regression Models]
 
-    true_positive:  sum(sigmoid(gamma*logits)) for label = +1
+    true_positive: sum(sigmoid(gamma*logits)) for label = +1
     detected: sum(sigmoid(gamma*logits))
     gamma > 0
     '''

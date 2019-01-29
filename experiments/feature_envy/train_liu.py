@@ -8,6 +8,8 @@ import smad_fe
 import os
 import progressbar
 
+# Train Liu's model on instances detected by SMAD
+
 def get_save_path():
 	return os.path.join(ROOT_DIR, 'neural_networks/liu_replication/trained_models/generated/network')
 
