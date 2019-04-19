@@ -1,9 +1,9 @@
 from context               import ROOT_DIR
 from sklearn.preprocessing import StandardScaler
 
-import numpy      as np
-import tensorflow as tf
-import liuUtils
+import numpy             as np
+import tensorflow        as tf
+import matplotlib.pyplot as plt
 
 import dataUtils
 import random
@@ -40,16 +40,52 @@ def accuracy(output, labels):
 
 
 ### UTILS ###
-def shuffle(instances, labels):
-	assert len(instances) == len(labels), 'instances and labels must have the same number of elements'
+def shuffle(X, Y):
+	assert len(X) == len(Y), 'X and Y must have the same number of elements'
 
-	idx = range(len(instances))
+	idx = range(len(X))
 	random.shuffle(idx)
 
-	x = np.array([instances[i] for i in idx])
-	y = np.array([labels[i] for i in idx])
+	shuffled_X = np.array([X[i] for i in idx])
+	shuffled_Y = np.array([Y[i] for i in idx])
 	
-	return x, y
+	return shuffled_X, shuffled_Y
+
+# Returns the Bayesian averaging between many network's predictions
+def ensemble_prediction(model, save_paths, input_x):
+	saver = tf.train.Saver(max_to_keep=len(save_paths))
+	predictions = []
+	with tf.Session() as session:
+		for save_path in save_paths:
+			saver.restore(sess=session, save_path=save_path)
+			prediction = session.run(model.inference, feed_dict={model.input_x: input_x})
+			predictions.append(prediction)
+
+	return np.mean(np.array(predictions), axis=0)
+
+def plot_learning_curves(losses_train, losses_test):
+	plt.figure()
+	plt.ylim((0.0, 1.0))
+	plt.xlabel("Epochs")
+	plt.ylabel("Loss")
+	mean_train = np.mean(losses_train, axis=0)
+	mean_test = np.mean(losses_test, axis=0)
+	percentile90_train = np.percentile(losses_train, 90, axis=0)
+	percentile90_test  = np.percentile(losses_test, 90, axis=0)
+	percentile10_train = np.percentile(losses_train, 10, axis=0)
+	percentile10_test = np.percentile(losses_test, 10, axis=0)
+	plt.grid()
+
+	plt.fill_between(range(len(losses_train[0])), percentile90_train,
+	                 percentile10_train, alpha=0.2,
+	                 color="r")
+	plt.fill_between(range(len(losses_test[0])), percentile90_test,
+	                 percentile10_test, alpha=0.2,
+	                 color="g")
+	plt.plot(range(len(losses_train[0])), mean_train, color="r", label='Training set')
+	plt.plot(range(len(losses_test[0])), mean_test, color="g", label='Test set')
+	plt.legend(loc='best')
+	plt.show()
 
 
 ### INSTANCES AND LABELS GETTERS ###
@@ -100,10 +136,16 @@ def getInstances(systemName, antipattern, normalized=True):
 	instances = np.array(instances).astype(float)
 
 	# Batch normalization
-	if normalized:
+	'''if normalized:
 		scaler = StandardScaler()
 		scaler.fit(instances)
-		return scaler.transform(instances)
+		return scaler.transform(instances)'''
+
+	scaler = StandardScaler()
+	scaler.fit(instances)
+	instances = scaler.transform(instances)
+
+	instances = np.concatenate((instances, np.tile(getSystemConstants(systemName), (instances.shape[0],1))), axis=1)
 
 	return instances
 
