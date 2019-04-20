@@ -106,14 +106,11 @@ def getCandidateFeatureEnvy(systemName):
     methods = getMethods(systemName)
     classes = getAllClasses(systemName)
 
-    candidates = []
     with open(JDMetricFile, 'rb') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
 
         return [entityUtils.normalizeMethodName(row['Method']) + ';' + row['TargetClass'] for row in reader \
-            if (entityUtils.getEmbeddingClass(entityUtils.normalizeMethodName(row['Method']))!=row['TargetClass']) & (entityUtils.normalizeMethodName(row['Method']) in methods) & (row['TargetClass'] in classes)]
-    
-    return candidates   
+            if (entityUtils.getEmbeddingClass(entityUtils.normalizeMethodName(row['Method']))!=row['TargetClass']) & (entityUtils.normalizeMethodName(row['Method']) in methods) & (row['TargetClass'] in classes)]  
 
 
 ### METRICS GETTERS FOR GOD CLASS ###

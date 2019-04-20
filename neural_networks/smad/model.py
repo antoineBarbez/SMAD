@@ -11,7 +11,6 @@ class SMAD(object):
 		self.input_y = tf.placeholder(tf.float32,[None, 1], name="input_y")
 		
 		# Placeholders for training parameters
-		self.training      = tf.placeholder(tf.bool, name="training")
 		self.learning_rate = tf.placeholder(tf.float32, name="learning_rate")
 		self.beta          = tf.placeholder(tf.float32, name="beta")
 

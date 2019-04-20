@@ -29,13 +29,16 @@ def parse_args():
 	parser.add_argument('-dense_sizes', nargs='+', type=int, help="The sizes of each (dense) hidden layer in the network.")
 	parser.add_argument("-n_net", type=int, default=10, help="The number of distinct networks to be trained and saved.")
 	parser.add_argument("-n_step", type=int, default=300, help="The number of training steps.")
-	parser.add_argument("-decay_step", type=int, default=300, help="The number of training steps after which the learning rate is decayed")
+	parser.add_argument("-decay_step", type=int, default=100, help="The number of training steps after which the learning rate is decayed")
 	parser.add_argument("-lr_decay", type=float, default=0.5, help="The factor by which the learning rate is multiplied every 'decay_step' steps")
 	return parser.parse_args()
 
 # Get the path of a trained model
-def get_save_path(antipattern, net_number):
-	return os.path.join(ROOT_DIR, 'neural_networks', 'smad', 'trained_models', antipattern, 'network' + str(net_number))
+def get_save_path(antipattern, test_system, net_number):
+	directory = os.path.join(ROOT_DIR, 'neural_networks', 'smad', 'trained_models', antipattern, test_system)
+	if not os.path.exists(directory):
+			os.makedirs(directory)
+	return os.path.join(directory, 'network' + str(net_number))
 
 def build_dataset(antipattern, systems):
 	input_size = {'god_class':8, 'feature_envy':9}
@@ -60,14 +63,13 @@ def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, 
 		feed_dict_train = {
 					model.input_x: x_train,
 					model.input_y: y_train,
-					model.training: True,
 					model.learning_rate:learning_rate,
 					model.beta:beta}
 
 		session.run(model.learning_step, feed_dict=feed_dict_train)
 
-		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train, model.training: False})
-		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test, model.training: False})
+		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train})
+		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test})
 		losses_train.append(loss_train)
 		losses_test.append(loss_test)
 	return losses_train, losses_test
@@ -83,7 +85,7 @@ if __name__ == "__main__":
 	# Create model
 	model = md.SMAD(
 		shape=args.dense_sizes, 
-		input_size=x_train[0].shape[-1])
+		input_size=x_train.shape[-1])
 
 	# To save and restore a trained model
 	saver = tf.train.Saver(max_to_keep=args.n_net)
@@ -116,13 +118,13 @@ if __name__ == "__main__":
 			all_losses_test.append(losses_test)
 
 			# Save the model
-			saver.save(sess=session, save_path=get_save_path(args.antipattern, i))
+			saver.save(sess=session, save_path=get_save_path(args.antipattern, args.test_system, i))
 
 
 	# Compute the ensemble prediction on the test system
 	ensemble_prediction = nnUtils.ensemble_prediction(
 		model=model, 
-		save_paths=[get_save_path(args.antipattern, i) for i in range(args.n_net)], 
+		save_paths=[get_save_path(args.antipattern, args.test_system, i) for i in range(args.n_net)], 
 		input_x=x_test)
 
 	# Print Ensemble performances

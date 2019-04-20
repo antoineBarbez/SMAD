@@ -44,6 +44,14 @@ def shuffle(X, Y):
 	
 	return shuffled_X, shuffled_Y
 
+def split(X, Y, nb_split):
+	assert len(X) == len(Y), 'X and Y must have the same number of elements' 
+	
+	length = len(X)//nb_split
+	sections  = [(i+1)*length for i in range(nb_split-1)]
+
+	return np.split(X, sections), np.split(Y, sections)
+
 # Returns the Bayesian averaging between many network's predictions
 def ensemble_prediction(model, save_paths, input_x):
 	saver = tf.train.Saver(max_to_keep=len(save_paths))
@@ -51,7 +59,7 @@ def ensemble_prediction(model, save_paths, input_x):
 	with tf.Session() as session:
 		for save_path in save_paths:
 			saver.restore(sess=session, save_path=save_path)
-			prediction = session.run(model.inference, feed_dict={model.input_x: input_x, model.training: False})
+			prediction = session.run(model.inference, feed_dict={model.input_x: input_x})
 			predictions.append(prediction)
 
 	return np.mean(np.array(predictions), axis=0)
