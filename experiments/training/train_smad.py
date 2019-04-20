@@ -29,7 +29,7 @@ def parse_args():
 	parser.add_argument('-dense_sizes', nargs='+', type=int, help="The sizes of each (dense) hidden layer in the network.")
 	parser.add_argument("-n_net", type=int, default=10, help="The number of distinct networks to be trained and saved.")
 	parser.add_argument("-n_step", type=int, default=300, help="The number of training steps.")
-	parser.add_argument("-decay_step", type=int, default=100, help="The number of training steps after which the learning rate is decayed")
+	parser.add_argument("-decay_step", type=int, default=300, help="The number of training steps after which the learning rate is decayed")
 	parser.add_argument("-lr_decay", type=float, default=0.5, help="The factor by which the learning rate is multiplied every 'decay_step' steps")
 	return parser.parse_args()
 
@@ -40,7 +40,7 @@ def get_save_path(antipattern, net_number):
 def build_dataset(antipattern, systems):
 	input_size = {'god_class':8, 'feature_envy':9}
 	X = np.empty(shape=[0, input_size[antipattern]])
-	Y = np.empty(shape=[0, 2])
+	Y = np.empty(shape=[0, 1])
 	for systemName in systems:
 		X = np.concatenate((X, nnUtils.getInstances(systemName, antipattern)), axis=0)
 		Y = np.concatenate((Y, nnUtils.getLabels(systemName, antipattern)), axis=0)
@@ -60,13 +60,14 @@ def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, 
 		feed_dict_train = {
 					model.input_x: x_train,
 					model.input_y: y_train,
+					model.training: True,
 					model.learning_rate:learning_rate,
 					model.beta:beta}
 
 		session.run(model.learning_step, feed_dict=feed_dict_train)
 
-		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train})
-		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test})
+		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train, model.training: False})
+		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test, model.training: False})
 		losses_train.append(loss_train)
 		losses_test.append(loss_test)
 	return losses_train, losses_test
@@ -126,10 +127,9 @@ if __name__ == "__main__":
 
 	# Print Ensemble performances
 	print("\nPerformances on " + args.test_system + ": ")
-	print('Precision :')
-	print('Recall    :')
-	print('F-Mesure  :')
-	print('Accuracy  :')
+	print('Precision: ' + str(nnUtils.precision(ensemble_prediction, y_test)))
+	print('Recall   : ' + str(nnUtils.recall(ensemble_prediction, y_test)))
+	print('F-Mesure : ' + str(nnUtils.f_measure(ensemble_prediction, y_test)))
 
 	# Plot learning curves
 	nnUtils.plot_learning_curves(all_losses_train, all_losses_test)

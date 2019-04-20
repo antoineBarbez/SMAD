@@ -10,33 +10,26 @@ import random
 import sys
 
 ### EVALUATION ####
-def true_positive(output, labels):
-	tp = tf.cast(tf.equal(tf.argmax(output,1) + tf.argmax(labels,1), 0), tf.float32)
+def detected(output):
+	return np.sum((output > 0.5).astype(float))
 
-	return tp
+def positive(labels):
+	return np.sum(labels)
+
+def true_positive(output, labels):
+	return np.sum((output + labels > 1.5).astype(float))
 
 def precision(output, labels):
-	tp = true_positive(output, labels)
-	detected = tf.cast(tf.equal(tf.argmax(output,1), 0), tf.float32)
-
-	return tf.reduce_sum(tp)/tf.reduce_sum(detected)
+	return true_positive(output, labels)/detected(output)
 
 def recall(output, labels):
-	tp = true_positive(output, labels)
-	positive = tf.cast(tf.equal(tf.argmax(labels,1), 0), tf.float32)
-
-	return tf.reduce_sum(tp)/tf.reduce_sum(positive)
+	return true_positive(output, labels)/positive(labels)
 
 def f_measure(output, labels):
-	prec = precision(output, labels)
-	rec = recall(output, labels)
+	p = precision(output, labels)
+	r = recall(output, labels)
 
-	return 2*prec*rec/(prec+rec)
-
-def accuracy(output, labels):
-	correct_prediction = tf.equal(tf.argmax(output, 1), tf.argmax(labels,1))
-
-	return tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
+	return 2*p*r/(p+r)
 
 
 ### UTILS ###
@@ -58,7 +51,7 @@ def ensemble_prediction(model, save_paths, input_x):
 	with tf.Session() as session:
 		for save_path in save_paths:
 			saver.restore(sess=session, save_path=save_path)
-			prediction = session.run(model.inference, feed_dict={model.input_x: input_x})
+			prediction = session.run(model.inference, feed_dict={model.input_x: input_x, model.training: False})
 			predictions.append(prediction)
 
 	return np.mean(np.array(predictions), axis=0)
@@ -104,9 +97,9 @@ def getLabels(systemName, antipattern):
 	true = dataUtils.getAntipatterns(systemName, antipattern)
 	for entity in entities:
 		if entity in true:
-			labels.append([1, 0])
+			labels.append([1.])
 		else:
-			labels.append([0, 1])
+			labels.append([0.])
 
 	return np.array(labels)
 
@@ -125,7 +118,6 @@ def getInstances(systemName, antipattern, normalized=True):
 		metrics.append(dataUtils.getFEHistMetrics(systemName))
 		metrics.append(dataUtils.getFEInCodeMetrics(systemName))
 		metrics.append(dataUtils.getFEJDeodorantMetrics(systemName))
-
 
 	instances = []
 	for entity in entities:
