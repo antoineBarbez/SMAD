@@ -12,4 +12,4 @@ import detection_tools.feature_envy.hist       as hist_fe
 import detection_tools.feature_envy.incode     as incode_fe
 import detection_tools.feature_envy.jdeodorant as jdeodorant_fe
 
-import utils.nnUtils as nnUtils
+import utils.dataUtils as dataUtils

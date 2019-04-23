@@ -8,3 +8,4 @@ import utils.nnUtils as nnUtils
 
 import neural_networks.asci.predict as asci
 import neural_networks.smad.model   as md
+import neural_networks.vote.predict as vote
