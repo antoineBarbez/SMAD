@@ -33,23 +33,6 @@ def parse_args():
 	parser.add_argument("-lr_decay", type=float, default=0.5, help="The factor by which the learning rate is multiplied every 'decay_step' steps")
 	return parser.parse_args()
 
-# Get the path of a trained model
-def get_save_path(antipattern, test_system, net_number):
-	directory = os.path.join(ROOT_DIR, 'neural_networks', 'smad', 'trained_models', antipattern, test_system)
-	if not os.path.exists(directory):
-			os.makedirs(directory)
-	return os.path.join(directory, 'network' + str(net_number))
-
-def build_dataset(antipattern, systems):
-	input_size = {'god_class':8, 'feature_envy':9}
-	X = np.empty(shape=[0, input_size[antipattern]])
-	Y = np.empty(shape=[0, 1])
-	for systemName in systems:
-		X = np.concatenate((X, nnUtils.getInstances(systemName, antipattern)), axis=0)
-		Y = np.concatenate((Y, nnUtils.getLabels(systemName, antipattern)), axis=0)
-
-	return X, Y
-
 # Train a single network
 def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, beta, decay_step, lr_decay):
 	learning_rate = start_lr
@@ -79,8 +62,8 @@ if __name__ == "__main__":
 
 	# Remove the test system from the training set and build dataset
 	training_systems.remove(args.test_system)
-	x_train, y_train = build_dataset(args.antipattern, training_systems)
-	x_test, y_test = build_dataset(args.antipattern, [args.test_system])
+	x_train, y_train = nnUtils.build_dataset(args.antipattern, training_systems)
+	x_test, y_test = nnUtils.build_dataset(args.antipattern, [args.test_system])
 
 	# Create model
 	model = md.SMAD(
@@ -118,13 +101,13 @@ if __name__ == "__main__":
 			all_losses_test.append(losses_test)
 
 			# Save the model
-			saver.save(sess=session, save_path=get_save_path(args.antipattern, args.test_system, i))
+			saver.save(sess=session, save_path=nnUtils.get_save_path('smad', args.antipattern, args.test_system, i))
 
 
 	# Compute the ensemble prediction on the test system
 	ensemble_prediction = nnUtils.ensemble_prediction(
 		model=model, 
-		save_paths=[get_save_path(args.antipattern, args.test_system, i) for i in range(args.n_net)], 
+		save_paths=[nnUtils.get_save_path('smad', args.antipattern, args.test_system, i) for i in range(args.n_net)], 
 		input_x=x_test)
 
 	# Print Ensemble performances

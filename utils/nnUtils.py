@@ -6,6 +6,7 @@ import tensorflow        as tf
 import matplotlib.pyplot as plt
 
 import dataUtils
+import os
 import random
 import sys
 
@@ -33,24 +34,16 @@ def f_measure(output, labels):
 
 
 ### UTILS ###
-def shuffle(X, Y):
-	assert len(X) == len(Y), 'X and Y must have the same number of elements'
 
-	idx = range(len(X))
-	random.shuffle(idx)
+def build_dataset(antipattern, systems):
+	input_size = {'god_class':8, 'feature_envy':9}
+	X = np.empty(shape=[0, input_size[antipattern]])
+	Y = np.empty(shape=[0, 1])
+	for systemName in systems:
+		X = np.concatenate((X, getInstances(antipattern, systemName)), axis=0)
+		Y = np.concatenate((Y, getLabels(antipattern, systemName)), axis=0)
 
-	shuffled_X = np.array([X[i] for i in idx])
-	shuffled_Y = np.array([Y[i] for i in idx])
-	
-	return shuffled_X, shuffled_Y
-
-def split(X, Y, nb_split):
-	assert len(X) == len(Y), 'X and Y must have the same number of elements' 
-	
-	length = len(X)//nb_split
-	sections  = [(i+1)*length for i in range(nb_split-1)]
-
-	return np.split(X, sections), np.split(Y, sections)
+	return X, Y
 
 # Returns the Bayesian averaging between many network's predictions
 def ensemble_prediction(model, save_paths, input_x):
@@ -63,6 +56,13 @@ def ensemble_prediction(model, save_paths, input_x):
 			predictions.append(prediction)
 
 	return np.mean(np.array(predictions), axis=0)
+
+# Get the path of a trained model for a given approach (smad or asci)
+def get_save_path(approach, antipattern, test_system, model_number):
+	directory = os.path.join(ROOT_DIR, 'neural_networks', approach, 'trained_models', antipattern, test_system)
+	if not os.path.exists(directory):
+			os.makedirs(directory)
+	return os.path.join(directory, 'model_' + str(model_number))
 
 def plot_learning_curves(losses_train, losses_test):
 	plt.figure()
@@ -88,21 +88,35 @@ def plot_learning_curves(losses_train, losses_test):
 	plt.legend(loc='best')
 	plt.show()
 
+def shuffle(X, Y):
+	assert len(X) == len(Y), 'X and Y must have the same number of elements'
+
+	idx = range(len(X))
+	random.shuffle(idx)
+
+	shuffled_X = np.array([X[i] for i in idx])
+	shuffled_Y = np.array([Y[i] for i in idx])
+	
+	return shuffled_X, shuffled_Y
+
+def split(X, Y, nb_split):
+	assert len(X) == len(Y), 'X and Y must have the same number of elements' 
+	
+	length = len(X)//nb_split
+	sections  = [(i+1)*length for i in range(nb_split-1)]
+
+	return np.split(X, sections), np.split(Y, sections)
+
 
 ### INSTANCES AND LABELS GETTERS ###
 
 # Get labels in vector form for a given system
 # antipattern in ['god_class', 'feature_envy']
-def getLabels(systemName, antipattern):
-	assert antipattern in ['god_class', 'feature_envy']
-
-	if antipattern == 'god_class':
-		entities = dataUtils.getClasses(systemName)
-	else:
-		entities = dataUtils.getCandidateFeatureEnvy(systemName)
+def getLabels(antipattern, systemName):
+	entities = dataUtils.getEntities(antipattern, systemName)
+	true = dataUtils.getAntipatterns(antipattern, systemName)
 
 	labels = []
-	true = dataUtils.getAntipatterns(systemName, antipattern)
 	for entity in entities:
 		if entity in true:
 			labels.append([1.])
@@ -112,7 +126,7 @@ def getLabels(systemName, antipattern):
 	return np.array(labels)
 
 
-def getInstances(systemName, antipattern, normalized=True):
+def getInstances(antipattern, systemName, normalized=True):
 	assert antipattern in ['god_class', 'feature_envy']
 
 	metrics = []

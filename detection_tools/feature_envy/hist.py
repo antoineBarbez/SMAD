@@ -87,3 +87,17 @@ def getSmells(systemName, alpha=2.6):
 
 		
 	return smells
+
+
+def predict(systemName):
+	entities = dataUtils.getEntities('feature_envy', systemName)
+	smells = getSmells(systemName)
+
+	prediction = []
+	for entity in entities:
+		if entity in smells:
+			prediction.append([1.])
+		else:
+			prediction.append([0.])
+
+	return np.array(prediction)

@@ -1,4 +1,4 @@
-from context import ROOT_DIR, nnUtils, train_smad, md
+from context import ROOT_DIR, nnUtils, md
 
 import tensorflow        as tf
 import numpy             as np
@@ -8,6 +8,17 @@ import os
 import progressbar
 import random
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
+
+training_systems = {
+	'android-frameworks-opt-telephony',
+	'android-platform-support',
+	'apache-ant',
+	'lucene',
+	'apache-tomcat',
+	'argouml',
+	'jedit',
+	'xerces-2_7_0'
+}
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -58,15 +69,15 @@ if __name__ == "__main__":
 	args = parse_args()
 
 	# Remove the test system from the training set and build dataset
-	train_smad.training_systems.remove(args.test_system)
-	data_x, data_y = train_smad.build_dataset(args.antipattern, train_smad.training_systems)
+	training_systems.remove(args.test_system)
+	data_x, data_y = nnUtils.build_dataset(args.antipattern, training_systems)
 	data_x, data_y = nnUtils.shuffle(data_x, data_y)
 
 	bar = progressbar.ProgressBar(maxval=args.n_test, \
 		widgets=['Performing cross validation for ' + args.test_system + ': ' ,progressbar.Percentage()])
 	bar.start()
 
-	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad_' + args.antipattern + '_' + args.test_system + '.csv')
+	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', args.antipattern, args.test_system + '.csv')
 
 	params = []
 	perfs  = []

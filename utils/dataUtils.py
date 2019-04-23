@@ -87,7 +87,7 @@ def getMethods(systemName):
     return methods
 
 # Get the hand-validated occurences reported in the considered system for antipattern in [god_class, feature_envy].
-def getAntipatterns(systemName, antipattern):
+def getAntipatterns(antipattern, systemName):
     assert antipattern in ['god_class', 'feature_envy'], antipattern + ' not valid antipattern name. Choose "god_class" or "feature_envy instead"'
 
     labelFile = os.path.join(ROOT_DIR, 'data/antipatterns/' + antipattern + '/' + systemName + '.txt')
@@ -112,6 +112,14 @@ def getCandidateFeatureEnvy(systemName):
         return [entityUtils.normalizeMethodName(row['Method']) + ';' + row['TargetClass'] for row in reader \
             if (entityUtils.getEmbeddingClass(entityUtils.normalizeMethodName(row['Method']))!=row['TargetClass']) & (entityUtils.normalizeMethodName(row['Method']) in methods) & (row['TargetClass'] in classes)]  
 
+
+def getEntities(antipattern, systemName):
+    assert antipattern in ['god_class', 'feature_envy']
+
+    if antipattern == 'god_class':
+        return getClasses(systemName)
+    else:
+        return getCandidateFeatureEnvy(systemName)
 
 ### METRICS GETTERS FOR GOD CLASS ###
 

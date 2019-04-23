@@ -1,4 +1,4 @@
-from context import loss
+from __future__ import division
 
 import tensorflow as tf
 
@@ -42,9 +42,28 @@ class SMAD(object):
 
 		# Loss function
 		with tf.name_scope("loss"):
-			self.loss = loss.compute(self.logits, self.input_y)
+			self.loss = loss(self.logits, self.input_y)
 			l2_loss = tf.losses.get_regularization_loss()
 			loss_reg = self.loss + l2_loss
 
 		# Learning mechanism
 		self.learning_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(loss_reg)
+
+
+def loss(logits, labels):
+	''' 
+	This function implements the Differentiable approximation of the f-measure from:
+	Martin Jansche (2005):
+	    [Maximum Expected F-Measure Training of Logistic Regression Models]
+
+	true_positive:  sum(sigmoid(gamma*logits)) for label = +1
+	detected: sum(sigmoid(gamma*logits))
+	gamma > 0
+	'''
+	gamma = 4
+
+	true_positive = tf.reduce_sum(tf.multiply(labels, tf.nn.sigmoid(gamma*logits)))
+	positive = tf.reduce_sum(labels)
+	detected = tf.reduce_sum(tf.nn.sigmoid(gamma*logits))
+
+	return 1 - 2*true_positive/(positive+detected)

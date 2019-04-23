@@ -1,6 +1,8 @@
 from __future__ import division
 from context    import ROOT_DIR, dataUtils, entityUtils
 
+import numpy as np
+
 import csv
 import os
 
@@ -82,6 +84,20 @@ def getEnviedClasses(className, classAttributeMap, atfd, laa, fdp):
 		enviedClass = []
 
 	return enviedClass
+
+
+def predict(systemName):
+	entities = dataUtils.getEntities('feature_envy', systemName)
+	smells = getSmells(systemName)
+
+	prediction = []
+	for entity in entities:
+		if entity in smells:
+			prediction.append([1.])
+		else:
+			prediction.append([0.])
+
+	return np.array(prediction)
 
 
 	

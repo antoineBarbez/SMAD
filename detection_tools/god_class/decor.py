@@ -1,5 +1,7 @@
 from __future__ import division
-from context    import ROOT_DIR
+from context    import ROOT_DIR, dataUtils
+
+import numpy as np
 
 import csv
 import os
@@ -31,3 +33,17 @@ def getSmells(systemName):
 					smells.append(row['ClassName'])
 
 	return smells
+
+
+def predict(systemName):
+	entities = dataUtils.getEntities('god_class', systemName)
+	smells = getSmells(systemName)
+
+	prediction = []
+	for entity in entities:
+		if entity in smells:
+			prediction.append([1.])
+		else:
+			prediction.append([0.])
+
+	return np.array(prediction)

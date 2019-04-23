@@ -42,3 +42,16 @@ def getSmells(systemName, alpha=8.0):
 
 	return smells
 
+def predict(systemName):
+	entities = dataUtils.getEntities('god_class', systemName)
+	smells = getSmells(systemName)
+
+	prediction = []
+	for entity in entities:
+		if entity in smells:
+			prediction.append([1.])
+		else:
+			prediction.append([0.])
+
+	return np.array(prediction)
+
