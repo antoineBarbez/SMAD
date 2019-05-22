@@ -44,6 +44,14 @@ def generateRandomHyperParameters():
 
 	return learning_rate, beta, dense_sizes
 
+# Returns a training and a testing dataset from an input dataset (instances and labels)
+# The input dataset is first split into n_folds folds.
+# The test dataset is the fold of index fold_index
+# The training dataset is obtained by concatenating the n_folds-1 remaining folds. 
+# X         : instances
+# Y         : labels
+# fold_index: the index of the fold we want to be returned as the test dataset
+# n_fold    : the number of folds, i.e., k for a k-fold cross-validation 
 def get_cross_validation_dataset(X, Y, fold_index, n_fold):
 	folds_x, folds_y = nnUtils.split(X, Y, n_fold)
 	x_train = np.empty(shape=[0, X.shape[-1]])
@@ -87,6 +95,7 @@ if __name__ == "__main__":
 
 		predictions = np.empty(shape=[0, 1])
 		for j in range(args.n_fold):
+			# Create the training and testing datasets for this fold
 			x_train, y_train, x_test, y_test = get_cross_validation_dataset(data_x, data_y, j, args.n_fold)
 
 			# New graph
@@ -101,6 +110,7 @@ if __name__ == "__main__":
 				# Initialize the variables of the TensorFlow graph.
 				session.run(tf.global_variables_initializer())
 
+				# Train the model
 				train(
 					session=session,
 					model=model,

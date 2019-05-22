@@ -1,9 +1,12 @@
-from context import ROOT_DIR, dataUtils, decor_gc, incode_fe, hist_gc, hist_fe, jdeodorant_gc, jdeodorant_fe
+from context import ROOT_DIR, dataUtils, decor, incode, hist_gc, hist_fe, jdeodorant_gc, jdeodorant_fe
 
 import numpy as np
 
+import csv
+import os
+
 def getOptimalPolicy(antipattern, test_system):
-	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', antipattern, test_system + '.csv')
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'vote', antipattern, test_system + '.csv')
 
 	with open(tuning_file, 'r') as file:
 		reader = csv.DictReader(file, delimiter=';')
@@ -12,31 +15,18 @@ def getOptimalPolicy(antipattern, test_system):
 			if row['F-measure'] != 'nan':
 				return int(row['Policy'])
 
-def getSmells(antipattern, system, k):
+def detectWithPolicy(antipattern, system, k):
 	assert antipattern in ['god_class', 'feature_envy']
 	if antipattern == 'god_class':
-		tools_outputs = [decor_gc.getSmells(system), hist_gc.getSmells(system), jdeodorant_gc.getSmells(system)]
+		tools_outputs = [decor.detect(system), hist_gc.detect(system), jdeodorant_gc.detect(system)]
 	else:
-		tools_outputs = [incode_fe.getSmells(system), hist_fe.getSmells(system), jdeodorant_fe.getSmells(system)]
+		tools_outputs = [incode.detect(system), hist_fe.detect(system), jdeodorant_fe.detect(system)]
 
 	return vote(tools_outputs, k)
 
-def predictWithPolicy(antipattern, system, k):
-	entities = dataUtils.getEntities(antipattern, system)
-	smells = getSmells(antipattern, system, k)
-
-	prediction = []
-	for entity in entities:
-		if entity in smells:
-			prediction.append([1.])
-		else:
-			prediction.append([0.])
-
-	return np.array(prediction)
-
-def predict(antipattern, system):
-	k = getOptimalPolicy()
-	return predictWithPolicy(antipattern, system, k)
+def detect(antipattern, system):
+	k = getOptimalPolicy(antipattern, system)
+	return detectWithPolicy(antipattern, system, k)
 
 # Outputs instances (i.e, class for God Class and method;enviedClass for Feature Envy) 
 # detected using a vote over various tools outputs.

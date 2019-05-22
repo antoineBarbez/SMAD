@@ -5,9 +5,7 @@ import numpy as np
 
 import progressbar
 
-
-
-def getSmells(systemName, alpha=2.6):
+def detect(systemName, alpha=2.6):
 	# Get and prepare all data needed (methods, classes, history)
 	methods = dataUtils.getMethods(systemName)
 	methodToIndexMap = {m: i for i, m in enumerate(methods)}
@@ -87,17 +85,3 @@ def getSmells(systemName, alpha=2.6):
 
 		
 	return smells
-
-
-def predict(systemName):
-	entities = dataUtils.getEntities('feature_envy', systemName)
-	smells = getSmells(systemName)
-
-	prediction = []
-	for entity in entities:
-		if entity in smells:
-			prediction.append([1.])
-		else:
-			prediction.append([0.])
-
-	return np.array(prediction)

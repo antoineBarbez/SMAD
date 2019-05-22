@@ -36,7 +36,7 @@ if __name__ == "__main__":
 		overall_prediction = np.empty(shape=[0, 1])
 		overall_labels = np.empty(shape=[0, 1])
 		for system in training_systems:
-			prediction = vote.predictWithPolicy(args.antipattern, system, k)
+			prediction = nnUtils.predictFromDetect(args.antipattern, system, vote.detectWithPolicy(args.antipattern, system, k))
 			labels = nnUtils.getLabels(args.antipattern, system)
 
 			overall_prediction = np.concatenate((overall_prediction, prediction), axis=0)

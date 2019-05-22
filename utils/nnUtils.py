@@ -64,6 +64,9 @@ def get_save_path(approach, antipattern, test_system, model_number):
 			os.makedirs(directory)
 	return os.path.join(directory, 'model_' + str(model_number))
 
+# Plot learning curves with mean and standard deviations
+# losses_train: a list of lists which contain losses values for training
+# losses_test : same for testing
 def plot_learning_curves(losses_train, losses_test):
 	plt.figure()
 	plt.ylim((0.0, 1.0))
@@ -87,6 +90,21 @@ def plot_learning_curves(losses_train, losses_test):
 	plt.plot(range(len(losses_test[0])), mean_test, color="g", label='Test set')
 	plt.legend(loc='best')
 	plt.show()
+
+# Returns an array of predictions for each input instances from a set of smells
+# i.e., the set of occurrences detected by an approach.
+# smells: a set of entities' names (i.e., those that have been detected) 
+def predictFromDetect(antipattern, systemName, smells):
+	entities = dataUtils.getEntities(antipattern, systemName)
+
+	prediction = []
+	for entity in entities:
+		if entity in smells:
+			prediction.append([1.])
+		else:
+			prediction.append([0.])
+
+	return np.array(prediction)
 
 def shuffle(X, Y):
 	assert len(X) == len(Y), 'X and Y must have the same number of elements'
