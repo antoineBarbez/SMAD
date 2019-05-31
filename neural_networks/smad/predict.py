@@ -6,18 +6,10 @@ import ast
 import csv
 import os
 
-def get_optimal_parameters(antipattern, system):
-	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', antipattern, test_system + '.csv')
-
-	with open(tuning_file, 'r') as file:
-		reader = csv.DictReader(file, delimiter=';')
-
-		for row in reader:
-			if row['F-measure'] != 'nan':
-				return {key:ast.literal_eval(row[key]) for key in row}
-
 def predict(antipattern, system):
-	params = get_optimal_parameters(antipattern, system)
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', antipattern, system + '.csv')
+
+	params = nnUtils.get_optimal_hyperparameters(tuning_file)
 	X = nnUtils.getInstances(antipattern, system)
 
 	# New graph

@@ -1,11 +1,18 @@
 from __future__ import division
-from context    import dataUtils, entityUtils
+from context import ROOT_DIR, dataUtils, entityUtils, nnUtils
 
 import numpy as np
 
 import progressbar
+import os
 
-def detect(systemName, alpha=2.6):
+def detect(systemName):
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'hist', 'feature_envy', systemName + '.csv')
+
+	params = nnUtils.get_optimal_hyperparameters(tuning_file)
+	return detect_with_params(systemName, params['Alpha'])
+
+def detect_with_params(systemName, alpha):
 	# Get and prepare all data needed (methods, classes, history)
 	methods = dataUtils.getMethods(systemName)
 	methodToIndexMap = {m: i for i, m in enumerate(methods)}

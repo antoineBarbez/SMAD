@@ -5,6 +5,8 @@ import numpy             as np
 import tensorflow        as tf
 import matplotlib.pyplot as plt
 
+import ast
+import csv
 import dataUtils
 import os
 import random
@@ -32,15 +34,21 @@ def f_measure(output, labels):
 
 	return 2*p*r/(p+r)
 
+def accuracy(output, labels):
+	true = np.sum((output == labels).astype(float))
+	size = len(output)
+
+	return true/size
+
 
 ### UTILS ###
 
-def build_dataset(antipattern, systems):
-	input_size = {'god_class':8, 'feature_envy':9}
+def build_dataset(antipattern, systems, normalized=True):
+	input_size = {'god_class':6, 'feature_envy':7}
 	X = np.empty(shape=[0, input_size[antipattern]])
 	Y = np.empty(shape=[0, 1])
 	for systemName in systems:
-		X = np.concatenate((X, getInstances(antipattern, systemName)), axis=0)
+		X = np.concatenate((X, getInstances(antipattern, systemName, normalized)), axis=0)
 		Y = np.concatenate((Y, getLabels(antipattern, systemName)), axis=0)
 
 	return X, Y
@@ -56,6 +64,33 @@ def ensemble_prediction(model, save_paths, input_x):
 			predictions.append(prediction)
 
 	return np.mean(np.array(predictions), axis=0)
+
+# Returns a training and a testing dataset from an input dataset (instances and labels)
+# The input dataset is first split into n_folds folds.
+# The test dataset is the fold of index fold_index
+# The training dataset is obtained by concatenating the n_folds-1 remaining folds. 
+# X         : instances
+# Y         : labels
+# fold_index: the index of the fold we want to be returned as the test dataset
+# n_fold    : the number of folds, i.e., k for a k-fold cross-validation 
+def get_cross_validation_dataset(X, Y, fold_index, n_fold):
+	folds_x, folds_y = split(X, Y, n_fold)
+	x_train = np.empty(shape=[0, X.shape[-1]])
+	y_train = np.empty(shape=[0, 1])
+	for i in range(n_fold):
+		if i != fold_index:
+			x_train = np.concatenate((x_train, folds_x[i]), axis=0)
+			y_train = np.concatenate((y_train, folds_y[i]), axis=0)
+
+	return x_train, y_train, folds_x[fold_index], folds_y[fold_index]
+
+def get_optimal_hyperparameters(tuning_file):
+	with open(tuning_file, 'r') as file:
+		reader = csv.DictReader(file, delimiter=';')
+
+		for row in reader:
+			if row['F-measure'] != 'nan':
+				return {key:ast.literal_eval(row[key]) for key in row}
 
 # Get the path of a trained model for a given approach (smad or asci)
 def get_save_path(approach, antipattern, test_system, model_number):
@@ -106,16 +141,19 @@ def predictFromDetect(antipattern, systemName, smells):
 
 	return np.array(prediction)
 
-def shuffle(X, Y):
-	assert len(X) == len(Y), 'X and Y must have the same number of elements'
+# Shuffle identically several arrays
+def shuffle(X, *args):
+	for arg in args:
+		assert len(X) == len(arg), 'all arrays to be shuffled must have the same number of elements'
 
 	idx = range(len(X))
 	random.shuffle(idx)
 
-	shuffled_X = np.array([X[i] for i in idx])
-	shuffled_Y = np.array([Y[i] for i in idx])
+	output = [np.array([X[i] for i in idx])]
+	for arg in args:
+		output.append(np.array([arg[i] for i in idx]))
 	
-	return shuffled_X, shuffled_Y
+	return tuple(output)
 
 def split(X, Y, nb_split):
 	assert len(X) == len(Y), 'X and Y must have the same number of elements' 
@@ -168,16 +206,16 @@ def getInstances(antipattern, systemName, normalized=True):
 	instances = np.array(instances).astype(float)
 
 	# Batch normalization
-	'''if normalized:
+	if normalized:
 		scaler = StandardScaler()
 		scaler.fit(instances)
-		return scaler.transform(instances)'''
+		instances = scaler.transform(instances)
 
-	scaler = StandardScaler()
+	'''scaler = StandardScaler()
 	scaler.fit(instances)
-	instances = scaler.transform(instances)
+	instances = scaler.transform(instances)'''
 
-	instances = np.concatenate((instances, np.tile(getSystemConstants(systemName), (instances.shape[0],1))), axis=1)
+	#instances = np.concatenate((instances, np.tile(getSystemConstants(systemName), (instances.shape[0],1))), axis=1)
 
 	return instances
 

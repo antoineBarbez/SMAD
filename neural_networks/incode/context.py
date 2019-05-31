@@ -6,3 +6,4 @@ sys.path.insert(0, ROOT_DIR)
 
 import utils.dataUtils   as dataUtils
 import utils.entityUtils as entityUtils
+import utils.nnUtils     as nnUtils

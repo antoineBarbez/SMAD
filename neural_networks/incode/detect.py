@@ -1,11 +1,16 @@
 from __future__ import division
-from context    import ROOT_DIR, dataUtils, entityUtils
+from context    import ROOT_DIR, dataUtils, entityUtils, nnUtils
 
 import csv
 import os
 
+def detect(systemName):
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'incode', systemName + '.csv')
 
-def detect(systemName, atfd=2.0, laa=3.0 , fdp=3.0):
+	params = nnUtils.get_optimal_hyperparameters(tuning_file)
+	return detect_with_params(systemName, params['ATFD'], params['LAA'], params['FDP'])
+
+def detect_with_params(systemName, atfd, laa, fdp):
 	incodeMetricsFile = os.path.join(ROOT_DIR, 'data/metric_files/incode/' + systemName + '.csv')
 
 	classes = dataUtils.getAllClasses(systemName)

@@ -4,12 +4,12 @@ import sys
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.insert(0, ROOT_DIR)
 
-import detection_tools.god_class.hist       as hist_gc
-import detection_tools.god_class.decor      as decor_gc
-import detection_tools.god_class.jdeodorant as jdeodorant_gc
+import neural_networks.decor.detect                as decor
+import neural_networks.hist.detect_god_class       as hist_gc
+import neural_networks.jdeodorant.detect_god_class as jdeodorant_gc
 
-import detection_tools.feature_envy.hist       as hist_fe
-import detection_tools.feature_envy.incode     as incode_fe
-import detection_tools.feature_envy.jdeodorant as jdeodorant_fe
+import neural_networks.incode.detect                  as incode
+import neural_networks.hist.detect_feature_envy       as hist_fe
+import neural_networks.jdeodorant.detect_feature_envy as jdeodorant_fe
 
 import utils.nnUtils as nnUtils

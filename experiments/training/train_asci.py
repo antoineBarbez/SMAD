@@ -22,10 +22,10 @@ def parse_args():
 	parser.add_argument("antipattern", help="Either 'god_class' or 'feature_envy'.")
 	parser.add_argument("test_system", help="The name of the system to be used for testing.\n Hence, the training will be performed using all the systems except this one.")
 	parser.add_argument("-n_tree", type=int, default=10, help="The number of distinct trees to be trained and saved.")
-	parser.add_argument("-min_samples_split", type=int, default=5)
-	parser.add_argument("-max_features", default='log2')
+	parser.add_argument("-min_samples_split", type=float, default=0.01)
+	parser.add_argument("-max_features", default=None)
 	parser.add_argument("-max_depth", type=int, default=None)
-	parser.add_argument("-min_samples_leaf", type=int, default=2)
+	parser.add_argument("-min_samples_leaf", type=int, default=1)
 	return parser.parse_args()
 
 # Build the dataset for asci, i.e., the labels are the indexes of the best tool for each input instance.
@@ -35,7 +35,7 @@ def parse_args():
 # idx = 2: JDeodorant
 def build_asci_dataset(antipattern, systems):
 	# Get real instances and labels
-	instances, labels = nnUtils.build_dataset(antipattern, systems)
+	instances, labels = nnUtils.build_dataset(antipattern, systems, True)
 	
 	# Compute the performances of each tool in order to sort them accordingly
 	nb_tools = 3
@@ -46,7 +46,7 @@ def build_asci_dataset(antipattern, systems):
 			toolsOverallPredictions[i] = np.concatenate((toolsOverallPredictions[i], toolsPredictions[i]), axis=0)
 
 	toolsPerformances = [nnUtils.f_measure(pred, labels) for pred in toolsOverallPredictions]
-
+	
 	# Indexes of the tools, sorted according to their performances on the training set
 	toolsSortedIndexes = np.argsort(np.array(toolsPerformances))
 
@@ -68,9 +68,9 @@ if __name__ == "__main__":
 	# Remove the test system from the training set and build dataset
 	training_systems.remove(args.test_system)
 	x_train, y_train = build_asci_dataset(args.antipattern, training_systems)
-
+	
 	# Test dataset, note that here y_test contains the real labels while y_train contains tools' indexes
-	x_test, y_test = nnUtils.build_dataset(args.antipattern, [args.test_system])
+	x_test, y_test = nnUtils.build_dataset(args.antipattern, [args.test_system], True)
 	toolsPredictions = asci.getToolsPredictions(args.antipattern, args.test_system)
 	
 	# Train and compute ensemble prediction on test set

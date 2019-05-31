@@ -1,15 +1,23 @@
 from __future__ import division
-from context    import dataUtils
+from context    import ROOT_DIR, dataUtils, nnUtils
 
 import numpy as np
 
-def detect(systemName, alpha=8.0):
+import os
+
+def detect(systemName):
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'hist', 'god_class', systemName + '.csv')
+
+	params = nnUtils.get_optimal_hyperparameters(tuning_file)
+	return detect_with_params(systemName, params['Alpha'])
+
+
+def detect_with_params(systemName, alpha):
 	# Get and prepare all data needed (classes, history)
 	classes = dataUtils.getClasses(systemName)
 	classToIndexMap = {klass: i for i, klass in enumerate(classes)}
     
 	history = dataUtils.getHistory(systemName, "C")
-
 	
 	# Compute for each class, the number of commit involving at least another class,
 	# and the number of occurences in this set of commit.
