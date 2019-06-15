@@ -94,7 +94,7 @@ def get_optimal_hyperparameters(tuning_file):
 
 # Get the path of a trained model for a given approach (smad or asci)
 def get_save_path(approach, antipattern, test_system, model_number):
-	directory = os.path.join(ROOT_DIR, 'neural_networks', approach, 'trained_models', antipattern, test_system)
+	directory = os.path.join(ROOT_DIR, 'approaches', approach, 'trained_models', antipattern, test_system)
 	if not os.path.exists(directory):
 			os.makedirs(directory)
 	return os.path.join(directory, 'model_' + str(model_number))
@@ -211,44 +211,4 @@ def getInstances(antipattern, systemName, normalized=True):
 		scaler.fit(instances)
 		instances = scaler.transform(instances)
 
-	'''scaler = StandardScaler()
-	scaler.fit(instances)
-	instances = scaler.transform(instances)'''
-
-	#instances = np.concatenate((instances, np.tile(getSystemConstants(systemName), (instances.shape[0],1))), axis=1)
-
 	return instances
-
-
-def getSystemConstants(systemName):
-	systemToIndexMap = {
-		'android-frameworks-opt-telephony': 0,
-		'android-platform-support': 1,
-		'apache-ant': 2,
-		'apache-tomcat': 3,
-		'lucene': 4,
-		'argouml': 5,
-		'jedit': 6,
-		'xerces-2_7_0': 7
-	}
-
-	# Sizes of the systems (i.e, number of classes)
-	sizes = [190, 104, 755, 1005, 160, 1246, 437, 658]
-
-	# History length of the systems (i.e, number of commits)
-	nb_commit = [98, 195, 6397, 3289, 429, 5559, 1181, 3453]
-
-	constants = np.array([[sizes[i], nb_commit[i]] for i in range(8)]).astype(float)
-
-	# Normalization
-	scaler = StandardScaler()
-	scaler.fit(constants)
-
-	if systemName in systemToIndexMap:
-		rescaledConstants = scaler.transform(constants)
-		return rescaledConstants[systemToIndexMap[systemName]]
-	else:
-		size = len(dataUtils.getAllClasses(systemName))
-		history_length = len(dataUtils.getHistory(systemName, 'C'))
-		rescaledConstants = scaler.transform([[size, history_length]])
-		return rescaledConstants[0] 

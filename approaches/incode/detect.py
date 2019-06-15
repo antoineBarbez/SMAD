@@ -11,7 +11,7 @@ def detect(systemName):
 	return detect_with_params(systemName, params['ATFD'], params['LAA'], params['FDP'])
 
 def detect_with_params(systemName, atfd, laa, fdp):
-	incodeMetricsFile = os.path.join(ROOT_DIR, 'data/metric_files/incode/' + systemName + '.csv')
+	incodeMetricsFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'incode', systemName + '.csv')
 
 	classes = dataUtils.getAllClasses(systemName)
 	methods = dataUtils.getMethods(systemName)

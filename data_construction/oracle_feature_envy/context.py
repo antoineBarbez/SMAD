@@ -6,6 +6,6 @@ sys.path.insert(0, ROOT_DIR)
 
 import utils.entityUtils as entityUtils
 
-import neural_networks.hist.detect_feature_envy       as hist
-import neural_networks.incode.detect                  as incode
-import neural_networks.jdeodorant.detect_feature_envy as jdeodorant
+import approaches.hist.detect_feature_envy       as hist
+import approaches.incode.detect                  as incode
+import approaches.jdeodorant.detect_feature_envy as jdeodorant
