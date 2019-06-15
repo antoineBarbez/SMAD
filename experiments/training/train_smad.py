@@ -28,7 +28,7 @@ def parse_args():
 	parser.add_argument("-beta", type=float, help="The L2 regularization scale to be used for training.")
 	parser.add_argument('-dense_sizes', nargs='+', type=int, help="The sizes of each (dense) hidden layer in the network.")
 	parser.add_argument("-n_net", type=int, default=10, help="The number of distinct networks to be trained and saved.")
-	parser.add_argument("-n_step", type=int, default=300, help="The number of training steps.")
+	parser.add_argument("-n_step", type=int, default=200, help="The number of training steps.")
 	parser.add_argument("-decay_step", type=int, default=100, help="The number of training steps after which the learning rate is decayed")
 	parser.add_argument("-lr_decay", type=float, default=0.5, help="The factor by which the learning rate is multiplied every 'decay_step' steps")
 	return parser.parse_args()

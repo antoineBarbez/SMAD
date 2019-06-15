@@ -65,7 +65,7 @@ def generateRandomHyperparameters():
 	max_features = random.choice(['sqrt', 'log2', None])
 	max_depth = random.choice([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, None])
 	min_samples_leaf = random.choice([1, 2, 3, 4, 5])
-	min_samples_split = 10**-random.uniform(1.0, 3.0)
+	min_samples_split = 10**-random.uniform(1.0, 4.0)
 
 	return max_features, max_depth, min_samples_leaf, min_samples_split 
 

@@ -26,7 +26,7 @@ def parse_args():
 	parser.add_argument("test_system", help="The name of the system to be used for testing.\n Hence, the cross-validation will be performed using all the systems except this one.")
 	parser.add_argument("-n_fold", type=int, default=5, help="Number of folds (k) for a k-fold-cross-validation")
 	parser.add_argument("-n_step", type=int, default=100, help="Number of training steps (i.e., epochs) to be performed for each fold")
-	parser.add_argument("-n_test", type=int, default=100, help="Number of random hyper-parameters sets to be tested")
+	parser.add_argument("-n_test", type=int, default=200, help="Number of random hyper-parameters sets to be tested")
 	return parser.parse_args()
 
 def generateRandomHyperParameters():

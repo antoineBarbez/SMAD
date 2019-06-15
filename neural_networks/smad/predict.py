@@ -1,6 +1,7 @@
 from context import ROOT_DIR, nnUtils
 
-import model as md
+import model      as md
+import tensorflow as tf
 
 import ast
 import csv

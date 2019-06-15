@@ -16,3 +16,4 @@ import neural_networks.jdeodorant.detect_feature_envy as jdeodorant_fe
 
 import neural_networks.vote.detect  as vote
 import neural_networks.asci.predict as asci
+import neural_networks.smad.predict as smad
