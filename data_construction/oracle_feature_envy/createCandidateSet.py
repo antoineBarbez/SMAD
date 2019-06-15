@@ -7,6 +7,9 @@ import os
 import random
 import subprocess
 
+'''This script has been used to generate the files in ./candidate_set.
+These files have then been used to create some google forms that have been filled 
+by several peoples to create our oracle'''
 
 
 ###  PARAMETERS ###
@@ -60,9 +63,9 @@ systems = [
 def getSmells(system):
 	#Get smells
 	smells = []
-	smells += jdeodorant.getSmells(system['name'])
-	smells += hist.getSmells(system['name'], system['hist_params'])
-	smells += incode.getSmells(system['name'], *system['incode_params'])
+	smells += jdeodorant.detect(system['name'])
+	smells += hist.detect_with_params(system['name'], system['hist_params'])
+	smells += incode.detect_with_params(system['name'], *system['incode_params'])
 
 	#Shuffle and remove duplicates
 	random.shuffle(smells)
@@ -104,7 +107,6 @@ def getMethodToNameMap(systemName):
 
 
 if __name__ == "__main__":
-	'''
 	# Must create a directory TEMP/ containing all the systems repositories
 	# at the considered snapshots before using this script
 
@@ -135,9 +137,7 @@ if __name__ == "__main__":
 			embeddingClassFileName = classToPathMap[embeddingClass].split('/')[-1]
 
 			for method in MAP[embeddingClass]:
-				
 				for enviedClass in MAP[embeddingClass][method]:
-					
 					if countSmell%52 == 0:
 						countCSV = countCSV + 1
 
@@ -166,16 +166,4 @@ if __name__ == "__main__":
 					f.write(',')
 					f.write('"' + startURL + enviedClassFileName + '"')
 					f.write('\n')
-'''
-
-	nb = 0
-	for system in systems:
-		smells = []
-		smells += jdeodorant.getSmells(system['name'])
-		smells += hist.getSmells(system['name'], system['hist_params'])
-		smells += incode.getSmells(system['name'], *system['incode_params'])
-
-		nb += len(set(smells))
-
-		print(system['name'] + ': ' + str(nb))
 
