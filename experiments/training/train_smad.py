@@ -26,6 +26,7 @@ def parse_args():
 	parser.add_argument("test_system", help="The name of the system to be used for testing.\n Hence, the training will be performed using all the systems except this one.")
 	parser.add_argument("-lr", type=float, help="The learning rate to be used for training.")
 	parser.add_argument("-beta", type=float, help="The L2 regularization scale to be used for training.")
+	parser.add_argument("-gamma", type=int, help="Learning hyper-parameter, used to compute the network's loss function (to compute a differentiable approximation of the Matheus Correlation Coefficient)")
 	parser.add_argument('-dense_sizes', nargs='+', type=int, help="The sizes of each (dense) hidden layer in the network.")
 	parser.add_argument("-n_net", type=int, default=10, help="The number of distinct networks to be trained and saved.")
 	parser.add_argument("-n_step", type=int, default=200, help="The number of training steps.")
@@ -34,7 +35,7 @@ def parse_args():
 	return parser.parse_args()
 
 # Train a single network
-def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, beta, decay_step, lr_decay):
+def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, beta, gamma, decay_step, lr_decay):
 	learning_rate = start_lr
 	losses_train = []
 	losses_test  = []
@@ -47,12 +48,13 @@ def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, 
 					model.input_x: x_train,
 					model.input_y: y_train,
 					model.learning_rate:learning_rate,
-					model.beta:beta}
+					model.beta:beta,
+					model.gamma: gamma}
 
 		session.run(model.learning_step, feed_dict=feed_dict_train)
 
-		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train})
-		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test})
+		loss_train = session.run(model.loss, feed_dict={model.input_x:x_train, model.input_y:y_train, model.gamma: gamma})
+		loss_test  = session.run(model.loss, feed_dict={model.input_x:x_test, model.input_y:y_test, model.gamma: gamma})
 		losses_train.append(loss_train)
 		losses_test.append(loss_test)
 	return losses_train, losses_test
@@ -94,6 +96,7 @@ if __name__ == "__main__":
 				num_step=args.n_step,
 				start_lr=args.lr,
 				beta=args.beta,
+				gamma=args.gamma,
 				decay_step=args.decay_step,
 				lr_decay=args.lr_decay)
 
@@ -115,6 +118,7 @@ if __name__ == "__main__":
 	print('Precision: ' + str(nnUtils.precision(ensemble_prediction, y_test)))
 	print('Recall   : ' + str(nnUtils.recall(ensemble_prediction, y_test)))
 	print('F-Mesure : ' + str(nnUtils.f_measure(ensemble_prediction, y_test)))
+	print('MCC      : ' + str(nnUtils.mcc(ensemble_prediction, y_test)))
 
 	# Plot learning curves
 	nnUtils.plot_learning_curves(all_losses_train, all_losses_test)

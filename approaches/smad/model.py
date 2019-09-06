@@ -13,6 +13,7 @@ class SMAD(object):
 		# Placeholders for training parameters
 		self.learning_rate = tf.placeholder(tf.float32, name="learning_rate")
 		self.beta          = tf.placeholder(tf.float32, name="beta")
+		self.gamma         = tf.placeholder(tf.float32, name="gamma")
 
 		# L2 regularization & initialization
 		l2_reg = tf.contrib.layers.l2_regularizer(scale=self.beta)
@@ -42,28 +43,25 @@ class SMAD(object):
 
 		# Loss function
 		with tf.name_scope("loss"):
-			self.loss = loss(self.logits, self.input_y)
+			self.loss = 1 - mcc(self.logits, self.input_y, self.gamma)
 			l2_loss = tf.losses.get_regularization_loss()
 			loss_reg = self.loss + l2_loss
 
 		# Learning mechanism
 		self.learning_step = tf.train.GradientDescentOptimizer(self.learning_rate).minimize(loss_reg)
 
-
-def loss(logits, labels):
-	''' 
-	This function implements the Differentiable approximation of the f-measure from:
-	Martin Jansche (2005):
-	    [Maximum Expected F-Measure Training of Logistic Regression Models]
-
-	true_positive:  sum(sigmoid(gamma*logits)) for label = +1
-	detected: sum(sigmoid(gamma*logits))
-	gamma > 0
+def mcc(logits, labels, gamma):
 	'''
-	gamma = 4
+	This function returns a differentiable approximation of the Matthew Correlation
+	Coefficient.
 
-	true_positive = tf.reduce_sum(tf.multiply(labels, tf.nn.sigmoid(gamma*logits)))
-	positive = tf.reduce_sum(labels)
-	detected = tf.reduce_sum(tf.nn.sigmoid(gamma*logits))
+	It approximates the network's prediction as:
+	floor(logits + 0.5) ~ sigmoid(gamma*logits) with gamma > 0
+	'''
 
-	return 1 - 2*true_positive/(positive+detected)
+	N = tf.cast(tf.size(logits), tf.float32) # TN + TP + FN + FP
+	S = tf.reduce_sum(labels)/N # (TP + FN) / N
+	P = tf.reduce_sum(tf.nn.sigmoid(gamma*logits))/N # (TP + FP) / N
+	TP = tf.reduce_sum(tf.multiply(labels, tf.nn.sigmoid(gamma*logits)))
+
+	return ((TP/N) - S*P)/(P*S*(1-S)*(1-P))**0.5

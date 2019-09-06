@@ -40,6 +40,15 @@ def accuracy(output, labels):
 
 	return true/size
 
+def mcc(output, labels):
+	N = labels.size
+	S = positive(labels)/N
+	P = detected(output)/N
+	TP = true_positive(output, labels)
+
+	return ((TP/N) - S*P)/(P*S*(1-S)*(1-P))**0.5
+
+
 
 ### UTILS ###
 
@@ -94,7 +103,7 @@ def get_optimal_hyperparameters(tuning_file):
 
 # Get the path of a trained model for a given approach (smad or asci)
 def get_save_path(approach, antipattern, test_system, model_number):
-	directory = os.path.join(ROOT_DIR, 'approaches', approach, 'trained_models', antipattern, test_system)
+	directory = os.path.join(ROOT_DIR, 'approaches', approach, 'trained_models_2', antipattern, test_system)
 	if not os.path.exists(directory):
 			os.makedirs(directory)
 	return os.path.join(directory, 'model_' + str(model_number))
