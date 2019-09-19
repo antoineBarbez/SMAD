@@ -61,11 +61,19 @@ if __name__ == "__main__":
 	# Remove the test system from the set of systems
 	systems.remove(args.test_system)
 
+	# Store instances and labels for each system
+	instances = {}
+	labels    = {}
+	for system in systems:
+		instances[system] = nnUtils.getInstances(args.antipattern, system, True)
+		labels[system]    = nnUtils.getLabels(args.antipattern, system)
+
+	# Initialize progress bar
 	bar = progressbar.ProgressBar(maxval=args.n_test, \
 		widgets=['Performing cross validation for ' + args.test_system + ': ' ,progressbar.Percentage()])
 	bar.start()
 
-	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results_2', 'smad', args.antipattern, args.test_system + '.csv')
+	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', args.antipattern, args.test_system + '.csv')
 
 	params = []
 	perfs  = []
@@ -73,12 +81,18 @@ if __name__ == "__main__":
 		learning_rate, beta, gamma, dense_sizes = generateRandomHyperParameters()
 		params.append([learning_rate, beta, gamma, dense_sizes])
 
-		predictions = np.empty(shape=[0, 1])
-		labels      = np.empty(shape=[0, 1])
+		pred_overall   = np.empty(shape=[0, 1])
+		labels_overall = np.empty(shape=[0, 1])
 		for validation_system in systems:
-			x_train, y_train = nnUtils.build_dataset(args.antipattern, [s for s in systems if s != validation_system])
-			x_valid, y_valid = nnUtils.build_dataset(args.antipattern, [validation_system])
-			labels = np.concatenate((labels, y_valid), axis=0)
+			# Build validation and training datasets for this system
+			x_valid = instances[validation_system]
+			y_valid = labels[validation_system]
+			x_train = np.empty(shape=[0, x_valid.shape[1]])
+			y_train = np.empty(shape=[0, 1])
+			for system in systems:
+				if system != validation_system:
+					x_train = np.concatenate((x_train, instances[system]), axis=0)
+					y_train = np.concatenate((y_train, labels[system]), axis=0)
 
 			# New graph
 			tf.reset_default_graph()
@@ -103,8 +117,9 @@ if __name__ == "__main__":
 					beta=beta,
 					gamma=gamma)
 
-				predictions = np.concatenate((predictions, session.run(model.inference, feed_dict={model.input_x: x_valid})), axis=0)
-		perfs.append(nnUtils.mcc(predictions, labels))
+				pred_overall   = np.concatenate((pred_overall, session.run(model.inference, feed_dict={model.input_x: x_valid})), axis=0)
+				labels_overall = np.concatenate((labels_overall, y_valid), axis=0)
+		perfs.append(nnUtils.mcc(pred_overall, labels_overall))
 
 		indexes = np.argsort(np.array(perfs))
 		with open(output_file_path, 'w') as file:

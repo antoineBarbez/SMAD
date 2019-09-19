@@ -24,7 +24,7 @@ def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("antipattern", help="Either 'god_class' or 'feature_envy'")
 	parser.add_argument("test_system", help="The name of the system to be used for testing.\n Hence, the training will be performed using all the systems except this one.")
-	parser.add_argument("-lr", type=float, help="The learning rate to be used for training.")
+	parser.add_argument("-learning_rate", type=float, help="The learning rate to be used for training.")
 	parser.add_argument("-beta", type=float, help="The L2 regularization scale to be used for training.")
 	parser.add_argument("-gamma", type=int, help="Learning hyper-parameter, used to compute the network's loss function (to compute a differentiable approximation of the Matheus Correlation Coefficient)")
 	parser.add_argument('-dense_sizes', nargs='+', type=int, help="The sizes of each (dense) hidden layer in the network.")
@@ -62,6 +62,15 @@ def train(session, model, x_train, y_train, x_test, y_test, num_step, start_lr, 
 if __name__ == "__main__":
 	args = parse_args()
 
+	# Use the "optimal" hyper-parameters found via tuning if unspecified
+	hyper_parameters = None
+	for key in ['learning_rate', 'beta', 'gamma', 'dense_sizes']:
+		if args.__dict__[key] == None:
+			if hyper_parameters == None:
+				tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', args.antipattern, args.test_system + '.csv')
+				hyper_parameters = nnUtils.get_optimal_hyperparameters(tuning_file)
+			args.__dict__[key] = hyper_parameters[' '.join(key.split('_')).capitalize()]
+
 	# Remove the test system from the training set and build dataset
 	training_systems.remove(args.test_system)
 	x_train, y_train = nnUtils.build_dataset(args.antipattern, training_systems)
@@ -94,7 +103,7 @@ if __name__ == "__main__":
 				x_test=x_test,
 				y_test=y_test,
 				num_step=args.n_step,
-				start_lr=args.lr,
+				start_lr=args.learning_rate,
 				beta=args.beta,
 				gamma=args.gamma,
 				decay_step=args.decay_step,
@@ -117,7 +126,6 @@ if __name__ == "__main__":
 	print("\nPerformances on " + args.test_system + ": ")
 	print('Precision: ' + str(nnUtils.precision(ensemble_prediction, y_test)))
 	print('Recall   : ' + str(nnUtils.recall(ensemble_prediction, y_test)))
-	print('F-Mesure : ' + str(nnUtils.f_measure(ensemble_prediction, y_test)))
 	print('MCC      : ' + str(nnUtils.mcc(ensemble_prediction, y_test)))
 
 	# Plot learning curves

@@ -52,16 +52,16 @@ class SMAD(object):
 
 def mcc(logits, labels, gamma):
 	'''
-	This function returns a differentiable approximation of the Matthew Correlation
+	This function returns a differentiable approximation of the Matthew's Correlation
 	Coefficient.
 
 	It approximates the network's prediction as:
 	floor(logits + 0.5) ~ sigmoid(gamma*logits) with gamma > 0
 	'''
 
-	N = tf.cast(tf.size(logits), tf.float32) # TN + TP + FN + FP
-	S = tf.reduce_sum(labels)/N # (TP + FN) / N
-	P = tf.reduce_sum(tf.nn.sigmoid(gamma*logits))/N # (TP + FP) / N
+	N = tf.cast(tf.size(logits), tf.float32)
+	N_pos = tf.reduce_sum(labels)
+	M_pos = tf.reduce_sum(tf.nn.sigmoid(gamma*logits))
 	TP = tf.reduce_sum(tf.multiply(labels, tf.nn.sigmoid(gamma*logits)))
 
-	return ((TP/N) - S*P)/(P*S*(1-S)*(1-P))**0.5
+	return (TP*N - N_pos*M_pos)/(N_pos*M_pos*(N-N_pos)*(N-M_pos))**0.5

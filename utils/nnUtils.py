@@ -34,21 +34,16 @@ def f_measure(output, labels):
 
 	return 2*p*r/(p+r)
 
-def accuracy(output, labels):
-	true = np.sum((output == labels).astype(float))
-	size = len(output)
-
-	return true/size
-
 def mcc(output, labels):
+	'''
+	Matthew's Correlation Coefficient
+	'''
 	N = labels.size
-	S = positive(labels)/N
-	P = detected(output)/N
+	N_pos = positive(labels)
+	M_pos = detected(output)
 	TP = true_positive(output, labels)
 
-	return ((TP/N) - S*P)/(P*S*(1-S)*(1-P))**0.5
-
-
+	return (TP*N - N_pos*M_pos)/(N_pos*M_pos*(N-N_pos)*(N-M_pos))**0.5
 
 ### UTILS ###
 
@@ -98,12 +93,12 @@ def get_optimal_hyperparameters(tuning_file):
 		reader = csv.DictReader(file, delimiter=';')
 
 		for row in reader:
-			if row['F-measure'] != 'nan':
+			if row['MCC'] != 'nan':
 				return {key:ast.literal_eval(row[key]) for key in row}
 
 # Get the path of a trained model for a given approach (smad or asci)
 def get_save_path(approach, antipattern, test_system, model_number):
-	directory = os.path.join(ROOT_DIR, 'approaches', approach, 'trained_models_2', antipattern, test_system)
+	directory = os.path.join(ROOT_DIR, 'approaches', approach, 'trained_models', antipattern, test_system)
 	if not os.path.exists(directory):
 			os.makedirs(directory)
 	return os.path.join(directory, 'model_' + str(model_number))
@@ -149,6 +144,11 @@ def predictFromDetect(antipattern, systemName, smells):
 			prediction.append([0.])
 
 	return np.array(prediction)
+
+def detectFromPredict(antipattern, systemName, prediction):
+	entities = dataUtils.getEntities(antipattern, systemName)
+
+	return [entities[i] for i in range(len(entities)) if prediction[i]>0.5]
 
 # Shuffle identically several arrays
 def shuffle(X, *args):
