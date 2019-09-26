@@ -50,14 +50,14 @@ if __name__ == '__main__':
 		for system in systems:
 			prediction = nnUtils.predictFromDetect('feature_envy', system, incode.detect_with_params(system, atfd, laa, fdp))
 			overall_prediction = np.concatenate((overall_prediction, prediction), axis=0)
-		perfs.append(nnUtils.f_measure(overall_prediction, overall_labels))
+		perfs.append(nnUtils.mcc(overall_prediction, overall_labels))
 	bar.finish()
 
 	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'incode', args.test_system + '.csv')
 
 	indexes = np.argsort(np.array(perfs))
 	with open(output_file_path, 'w') as file:
-		file.write("ATFD;LAA;FDP;F-measure\n")
+		file.write("ATFD;LAA;FDP;MCC\n")
 		for i in reversed(indexes):
 			atfd, laa, fdp = params[i]
 			file.write(str(atfd) + ';' + str(laa) + ';' + str(fdp) + ';')

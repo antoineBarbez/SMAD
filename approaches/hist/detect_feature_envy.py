@@ -24,7 +24,7 @@ def detect_with_params(systemName, alpha):
 
 	# Initialize progressbar
 	bar = progressbar.ProgressBar(maxval=len(history), \
-		widgets=['Analyzing ' + systemName + ' History : ' ,progressbar.Percentage()])
+		widgets=['Analyzing ' + systemName + ' History: ' ,progressbar.Percentage()])
 	bar.start()
 
 

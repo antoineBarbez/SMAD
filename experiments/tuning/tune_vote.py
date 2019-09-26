@@ -42,7 +42,7 @@ if __name__ == "__main__":
 			overall_prediction = np.concatenate((overall_prediction, prediction), axis=0)
 			overall_labels = np.concatenate((overall_labels, labels), axis=0)
 
-		performance = nnUtils.f_measure(overall_prediction, overall_labels)
+		performance = nnUtils.mcc(overall_prediction, overall_labels)
 		if math.isnan(performance):
 			performances.append(0.0)
 		else:
@@ -52,7 +52,7 @@ if __name__ == "__main__":
 
 	indexes = np.argsort(np.array(performances))
 	with open(output_file_path, 'w') as file:
-		file.write("Policy;F-measure\n")
+		file.write("Policy;MCC\n")
 		for i in reversed(indexes):
 			file.write(str(i+1) + ';')
 			file.write(str(performances[i]) + '\n')

@@ -35,7 +35,7 @@ if __name__ == '__main__':
 	for system in systems:
 		overall_labels = np.concatenate((overall_labels, nnUtils.getLabels(args.antipattern, system)), axis=0) 
 
-	params = np.arange(0.0, 20.0, 0.5) if args.antipattern == 'god_class' else np.arange(1.0, 3.0, 0.1)
+	params = np.arange(0.0, 20.0, 0.5) if args.antipattern == 'god_class' else np.arange(1.0, 4.0, 0.1)
 	hist_detect = hist_gc.detect_with_params if args.antipattern == 'god_class' else hist_fe.detect_with_params
 	
 	# Initialize progressbar
@@ -52,13 +52,13 @@ if __name__ == '__main__':
 		for system in systems:
 			prediction = nnUtils.predictFromDetect(args.antipattern, system, hist_detect(system, alpha))
 			overall_prediction = np.concatenate((overall_prediction, prediction), axis=0)
-		perfs.append(nnUtils.f_measure(overall_prediction, overall_labels))
+		perfs.append(nnUtils.mcc(overall_prediction, overall_labels))
 	bar.finish()
 
 	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'hist', args.antipattern, args.test_system + '.csv')
 
 	indexes = np.argsort(np.array(perfs))
 	with open(output_file_path, 'w') as file:
-		file.write("Alpha;F-measure\n")
+		file.write("Alpha;MCC\n")
 		for i in reversed(indexes):
 			file.write(str(params[i]) + ';' + str(perfs[i]) + '\n')
