@@ -14,6 +14,6 @@ import approaches.incode.detect                  as incode
 import approaches.hist.detect_feature_envy       as hist_fe
 import approaches.jdeodorant.detect_feature_envy as jdeodorant_fe
 
-import approaches.vote.detect  as vote
+import approaches.vote.predict  as vote
 import approaches.asci.predict as asci
 import approaches.smad.predict as smad

@@ -16,7 +16,7 @@ systems = [
 overall_prediction_incode = np.empty(shape=[0, 1])
 overall_prediction_hist = np.empty(shape=[0, 1])
 overall_prediction_jd = np.empty(shape=[0, 1])
-#overall_prediction_vote = np.empty(shape=[0, 1])
+overall_prediction_vote = np.empty(shape=[0, 1])
 #overall_prediction_asci = np.empty(shape=[0, 1])
 overall_prediction_smad = np.empty(shape=[0, 1])
 
@@ -39,8 +39,8 @@ for system in systems:
 	overall_prediction_jd = np.concatenate((overall_prediction_jd, prediction_jd), axis=0)
 
 	# Compute performances for Vote
-	#prediction_vote = nnUtils.predictFromDetect('feature_envy', system, vote.detect('feature_envy', system))
-	#overall_prediction_vote = np.concatenate((overall_prediction_vote, prediction_vote), axis=0)
+	prediction_vote = vote.predict('feature_envy', system)
+	overall_prediction_vote = np.concatenate((overall_prediction_vote, prediction_vote), axis=0)
 
 	# Compute performances for ASCI
 	#prediction_asci = asci.predict('feature_envy', system)
@@ -60,8 +60,8 @@ for system in systems:
 	print('-------------------------------------------')
 	print('JDeodorant |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(prediction_jd, labels), nnUtils.recall(prediction_jd, labels), nnUtils.mcc(prediction_jd, labels)))
 	print('-------------------------------------------')
-	#print('Vote       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(prediction_vote, labels), nnUtils.recall(prediction_vote, labels), nnUtils.mcc(prediction_vote, labels)))
-	#print('-------------------------------------------')
+	print('Vote       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(prediction_vote, labels), nnUtils.recall(prediction_vote, labels), nnUtils.mcc(prediction_vote, labels)))
+	print('-------------------------------------------')
 	#print('ASCI       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(prediction_asci, labels), nnUtils.recall(prediction_asci, labels), nnUtils.mcc(prediction_asci, labels)))
 	#print('-------------------------------------------')
 	print('SMAD       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(prediction_smad, labels), nnUtils.recall(prediction_smad, labels), nnUtils.mcc(prediction_smad, labels)))
@@ -79,8 +79,8 @@ print('HIST       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(o
 print('-------------------------------------------')
 print('JDeodorant |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(overall_prediction_jd, overall_labels), nnUtils.recall(overall_prediction_jd, overall_labels), nnUtils.mcc(overall_prediction_jd, overall_labels)))
 print('-------------------------------------------')
-#print('Vote       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(overall_prediction_vote, overall_labels), nnUtils.recall(overall_prediction_vote, overall_labels), nnUtils.mcc(overall_prediction_vote, overall_labels)))
-#print('-------------------------------------------')
+print('Vote       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(overall_prediction_vote, overall_labels), nnUtils.recall(overall_prediction_vote, overall_labels), nnUtils.mcc(overall_prediction_vote, overall_labels)))
+print('-------------------------------------------')
 #print('ASCI       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(overall_prediction_asci, overall_labels), nnUtils.recall(overall_prediction_asci, overall_labels), nnUtils.mcc(overall_prediction_asci, overall_labels)))
 #sprint('-------------------------------------------')
 print('SMAD       |{0:.3f}     |{1:.3f}     |{2:.3f}'.format(nnUtils.precision(overall_prediction_smad, overall_labels), nnUtils.recall(overall_prediction_smad, overall_labels), nnUtils.mcc(overall_prediction_smad, overall_labels)))
