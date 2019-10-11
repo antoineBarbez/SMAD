@@ -1,5 +1,6 @@
-from context import ROOT_DIR, entityUtils
+from context import ROOT_DIR
 
+import utils.entity_utils as entity_utils
 import numpy as np
 
 import csv
@@ -80,7 +81,7 @@ def getCandidates():
 		for file in fnmatch.filter(sorted(files), '*.csv'):
 			with open(os.path.join(path, file), 'r') as csvFile:
 				reader = csv.DictReader(csvFile)
-				candidates += [row['EMBED_CLASS'] + '.' + entityUtils.normalizeMethodName(row['METHOD']) + ';' + row['ENVIED_CLASS'] for row in reader]
+				candidates += [row['EMBED_CLASS'] + '.' + entity_utils.normalizeMethodName(row['METHOD']) + ';' + row['ENVIED_CLASS'] for row in reader]
 
 	return candidates
 

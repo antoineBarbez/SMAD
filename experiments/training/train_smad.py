@@ -1,24 +1,17 @@
-from context import ROOT_DIR, nnUtils, md
+from context import ROOT_DIR
 
-import tensorflow        as tf
+import utils.data_utils           as data_utils
+import utils.detection_utils      as detection_utils
+import approaches.smad.smad_utils as smad_utils
+import approaches.smad.model as md
 import numpy             as np
 import matplotlib.pyplot as plt
+import tensorflow        as tf
 
 import argparse
 import os
 
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-
-training_systems = {
-	'android-frameworks-opt-telephony',
-	'android-platform-support',
-	'apache-ant',
-	'lucene',
-	'apache-tomcat',
-	'argouml',
-	'jedit',
-	'xerces-2_7_0'
-}
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -68,13 +61,21 @@ if __name__ == "__main__":
 		if args.__dict__[key] == None:
 			if hyper_parameters == None:
 				tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'smad', args.antipattern, args.test_system + '.csv')
-				hyper_parameters = nnUtils.get_optimal_hyperparameters(tuning_file)
+				hyper_parameters = detection_utils.get_optimal_hyperparameters(tuning_file)
 			args.__dict__[key] = hyper_parameters[' '.join(key.split('_')).capitalize()]
 
-	# Remove the test system from the training set and build dataset
-	training_systems.remove(args.test_system)
-	x_train, y_train = nnUtils.build_dataset(args.antipattern, training_systems)
-	x_test, y_test = nnUtils.build_dataset(args.antipattern, [args.test_system])
+	# Remove the test system from the training set
+	systems = data_utils.getSystems()
+	systems.remove(args.test_system)
+	systems = list(systems)
+
+	# Get training data
+	x_train = reduce(lambda x1, x2: np.concatenate((x1, x2), axis=0), [detection_utils.getInstances(args.antipattern, s) for s in systems])
+	y_train = reduce(lambda x1, x2: np.concatenate((x1, x2), axis=0), [detection_utils.getLabels(args.antipattern, s) for s in systems])
+	
+	# Get test data
+	x_test = detection_utils.getInstances(args.antipattern, args.test_system)
+	y_test = detection_utils.getLabels(args.antipattern, args.test_system)
 
 	# Create model
 	model = md.SMAD(
@@ -113,20 +114,19 @@ if __name__ == "__main__":
 			all_losses_test.append(losses_test)
 
 			# Save the model
-			saver.save(sess=session, save_path=nnUtils.get_save_path('smad', args.antipattern, args.test_system, i))
-
+			saver.save(sess=session, save_path=smad_utils.get_save_path(args.antipattern, args.test_system, i))
 
 	# Compute the ensemble prediction on the test system
-	ensemble_prediction = nnUtils.ensemble_prediction(
+	ensemble_prediction = smad_utils.ensemble_prediction(
 		model=model, 
-		save_paths=[nnUtils.get_save_path('smad', args.antipattern, args.test_system, i) for i in range(args.n_net)], 
+		save_paths=[smad_utils.get_save_path(args.antipattern, args.test_system, i) for i in range(args.n_net)], 
 		input_x=x_test)
 
 	# Print Ensemble performances
 	print("\nPerformances on " + args.test_system + ": ")
-	print('Precision: ' + str(nnUtils.precision(ensemble_prediction, y_test)))
-	print('Recall   : ' + str(nnUtils.recall(ensemble_prediction, y_test)))
-	print('MCC      : ' + str(nnUtils.mcc(ensemble_prediction, y_test)))
+	print('Precision: ' + str(detection_utils.precision(ensemble_prediction, y_test)))
+	print('Recall   : ' + str(detection_utils.recall(ensemble_prediction, y_test)))
+	print('MCC      : ' + str(detection_utils.mcc(ensemble_prediction, y_test)))
 
 	# Plot learning curves
-	nnUtils.plot_learning_curves(all_losses_train, all_losses_test)
+	smad_utils.plot_learning_curves(all_losses_train, all_losses_test)

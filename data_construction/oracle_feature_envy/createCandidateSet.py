@@ -1,4 +1,4 @@
-from context import ROOT_DIR, entityUtils, hist, incode, jdeodorant
+from context import ROOT_DIR, hist, incode, jdeodorant
 
 import numpy as np
 
@@ -6,6 +6,8 @@ import csv
 import os
 import random
 import subprocess
+
+# !!!! THIS FILE NEEDS TO BE UPDATED
 
 '''This script has been used to generate the files in ./candidate_set.
 These files have then been used to create some google forms that have been filled 

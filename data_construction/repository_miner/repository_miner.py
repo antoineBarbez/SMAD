@@ -1,4 +1,6 @@
-from context import ROOT_DIR, entityUtils
+from context import ROOT_DIR
+
+import utils.entity_utils as entity_utils
 
 import fnmatch
 import os
@@ -19,23 +21,23 @@ class RepositoryMiner(object):
 		self.sources         = system['sources']
 
 		# Directories
-		self.TEMP = os.path.join(ROOT_DIR, 'data_construction/repository_miner/TEMP/')
+		self.TEMP = os.path.join(ROOT_DIR, 'data_construction', 'repository_miner', 'TEMP')
 
 		# Files
-		self.HISTORY_CLASS    = os.path.join(ROOT_DIR, 'data/history/class_changes/' + self.systemName + '.csv')
-		self.HISTORY_METHOD   = os.path.join(ROOT_DIR, 'data/history/method_changes/' + self.systemName + '.csv')
-		self.ENTITY_CLASS     = os.path.join(ROOT_DIR, 'data/entities/classes/' + self.systemName + '.csv')
-		self.ENTITY_CLASS_ALL = os.path.join(ROOT_DIR, 'data/entities/classes_all/' + self.systemName + '.csv')
-		self.ENTITY_METHOD    = os.path.join(ROOT_DIR, 'data/entities/methods/' + self.systemName + '.csv')
+		self.HISTORY_CLASS    = os.path.join(ROOT_DIR, 'data', 'history', 'class_changes', self.systemName + '.csv')
+		self.HISTORY_METHOD   = os.path.join(ROOT_DIR, 'data', 'history', 'method_changes', self.systemName + '.csv')
+		self.ENTITY_CLASS     = os.path.join(ROOT_DIR, 'data', 'entities', 'classes', self.systemName + '.csv')
+		self.ENTITY_CLASS_ALL = os.path.join(ROOT_DIR, 'data', 'entities', 'classes_all', self.systemName + '.csv')
+		self.ENTITY_METHOD    = os.path.join(ROOT_DIR, 'data', 'entities', 'methods', self.systemName + '.csv')
 
 		if not os.path.exists(self.TEMP):
 			os.makedirs(self.TEMP)
 
-		cloneCommand = 'git clone ' + self.repositoryURL + ' ' + self.TEMP + self.systemName
+		cloneCommand = 'git clone ' + self.repositoryURL + ' ' + os.path.join(self.TEMP, self.systemName)
 		subprocess.call(cloneCommand, shell=True)
 
 		self.cwd = os.getcwd()
-		os.chdir(self.TEMP + self.systemName)
+		os.chdir(os.path.join(self.TEMP, self.systemName))
 		subprocess.call('git checkout -f '+ self.snapshot, shell=True)
 
 
@@ -96,11 +98,11 @@ class RepositoryMiner(object):
 					package = direc
 
 				for f in fnmatch.filter(files,'*.java'):
-					name = entityUtils.getClassName(os.path.join(direc,f))
+					name = entity_utils.getClassName(os.path.join(direc,f))
 					mainClass = package + '.' + name
 					F1.write(mainClass + '\n')
 
-					classes = entityUtils.getClassesInFile(os.path.join(direc,f))
+					classes = entity_utils.getClassesInFile(os.path.join(direc,f))
 					for klass in classes:
 						F2.write(os.path.join(direc,f) + ';' + package + '.' + klass + '\n')
 
@@ -119,10 +121,10 @@ class RepositoryMiner(object):
 					package = direc
 
 				for f in fnmatch.filter(files,'*.java'):
-					methods = entityUtils.getMethodsInFile(os.path.join(direc,f))
+					methods = entity_utils.getMethodsInFile(os.path.join(direc,f))
 
 					for methodName in methods:
-						normalizedMethodName = entityUtils.normalizeMethodName(methodName)
+						normalizedMethodName = entity_utils.normalizeMethodName(methodName)
 						F.write(package + '.' + normalizedMethodName + '\n')
 
 		F.close()
@@ -148,9 +150,9 @@ class RepositoryMiner(object):
 			directories = "@".join(self.sources)
 
 
-		repositoryPath = self.TEMP + self.systemName + "/"
+		repositoryPath = os.path.join(self.TEMP, self.systemName)
 
-		createCommand = "java -jar " + jarFile + " " + self.systemName + " " + repositoryPath + " " + directories + " " + metricFile
+		createCommand = "java -jar " + jarFile + " " + self.systemName + " " + repositoryPath + "/ " + directories + " " + metricFile
 		subprocess.call(createCommand, shell=True)
 
 

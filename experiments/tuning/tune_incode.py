@@ -1,21 +1,13 @@
-from context import ROOT_DIR, nnUtils, incode
+from context import ROOT_DIR
 
+import utils.data_utils as data_utils
+import utils.detection_utils as detection_utils
+import approaches.incode.detection as incode
 import numpy as np
 
 import argparse
 import os
 import progressbar
-
-systems = {
-	'android-frameworks-opt-telephony',
-	'android-platform-support',
-	'apache-ant',
-	'lucene',
-	'apache-tomcat',
-	'argouml',
-	'jedit',
-	'xerces-2_7_0'
-}
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -26,13 +18,14 @@ if __name__ == '__main__':
 	args = parse_args()
 
 	# Remove the test system from the training set and build dataset
+	systems = data_utils.getSystems()
 	systems.remove(args.test_system)
 	systems = list(systems)
 
 	# Get overall labels
 	overall_labels = np.empty(shape=[0, 1])
 	for system in systems:
-		overall_labels = np.concatenate((overall_labels, nnUtils.getLabels('feature_envy', system)), axis=0) 
+		overall_labels = np.concatenate((overall_labels, detection_utils.getLabels('feature_envy', system)), axis=0) 
 
 	params = [(atfd, laa, fdp) for atfd in range(1, 6) for laa in range(1, 6) for fdp in range(1, 6)]
 	
@@ -48,9 +41,9 @@ if __name__ == '__main__':
 		bar.update(count)
 		overall_prediction = np.empty(shape=[0, 1])
 		for system in systems:
-			prediction = nnUtils.predictFromDetect('feature_envy', system, incode.detect_with_params(system, atfd, laa, fdp))
+			prediction = detection_utils.predictFromDetect('feature_envy', system, incode.detect_with_params(system, atfd, laa, fdp))
 			overall_prediction = np.concatenate((overall_prediction, prediction), axis=0)
-		perfs.append(nnUtils.mcc(overall_prediction, overall_labels))
+		perfs.append(detection_utils.mcc(overall_prediction, overall_labels))
 	bar.finish()
 
 	output_file_path = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'incode', args.test_system + '.csv')

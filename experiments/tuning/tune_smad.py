@@ -1,24 +1,16 @@
-from context import ROOT_DIR, nnUtils, md
+from context import ROOT_DIR
 
-import tensorflow as tf
+import utils.data_utils as data_utils
+import utils.detection_utils as detection_utils
+import approaches.smad.model as md
 import numpy      as np
+import tensorflow as tf
 
 import argparse
 import os
 import progressbar
 import random
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
-
-systems = {
-	'android-frameworks-opt-telephony',
-	'android-platform-support',
-	'apache-ant',
-	'lucene',
-	'apache-tomcat',
-	'argouml',
-	'jedit',
-	'xerces-2_7_0'
-}
 
 def parse_args():
 	parser = argparse.ArgumentParser()
@@ -59,14 +51,15 @@ if __name__ == "__main__":
 	args = parse_args()
 
 	# Remove the test system from the set of systems
+	systems = data_utils.getSystems()
 	systems.remove(args.test_system)
 
 	# Store instances and labels for each system
 	instances = {}
 	labels    = {}
 	for system in systems:
-		instances[system] = nnUtils.getInstances(args.antipattern, system, True)
-		labels[system]    = nnUtils.getLabels(args.antipattern, system)
+		instances[system] = detection_utils.getInstances(args.antipattern, system, True)
+		labels[system]    = detection_utils.getLabels(args.antipattern, system)
 
 	# Initialize progress bar
 	bar = progressbar.ProgressBar(maxval=args.n_test, \
@@ -119,7 +112,7 @@ if __name__ == "__main__":
 
 				pred_overall   = np.concatenate((pred_overall, session.run(model.inference, feed_dict={model.input_x: x_valid})), axis=0)
 				labels_overall = np.concatenate((labels_overall, y_valid), axis=0)
-		perfs.append(nnUtils.mcc(pred_overall, labels_overall))
+		perfs.append(detection_utils.mcc(pred_overall, labels_overall))
 
 		indexes = np.argsort(np.array(perfs))
 		with open(output_file_path, 'w') as file:

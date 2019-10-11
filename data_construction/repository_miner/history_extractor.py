@@ -1,11 +1,12 @@
-from context import ROOT_DIR, entityUtils
+from context import ROOT_DIR
+
+import utils.entity_utils as entity_utils
 
 import javalang
 import os
 import progressbar
 import re
 import subprocess
-
 
 
 class HistoryExtractor(object):
@@ -60,21 +61,21 @@ class HistoryExtractor(object):
 
 
 	def __getClassChange(self, SHA, date, filePath, changeType):
-		directory = entityUtils.getDirectory(filePath)
+		directory = entity_utils.getDirectory(filePath)
 		if directory in self.package_dirs_dictionary:
 			package = self.package_dirs_dictionary[directory]
 		else:
 			try:
 				if os.path.isfile(filePath):
-					package = entityUtils.getPackage(filePath)
+					package = entity_utils.getPackage(filePath)
 				else:
 					if changeType == 'D':
 						self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
-						package = entityUtils.getPackage("../previousFile.java")
+						package = entity_utils.getPackage("../previousFile.java")
 				
 					else:
 						self.__updateWorkingFile("../actualFile.java", filePath, SHA)
-						package = entityUtils.getPackage("../actualFile.java")
+						package = entity_utils.getPackage("../actualFile.java")
 			except (javalang.tokenizer.LexerError, javalang.parser.JavaSyntaxError, AttributeError):
 				package = directory
 				self.exceptionDirs.append(directory)
@@ -84,12 +85,12 @@ class HistoryExtractor(object):
 				self.package_dirs_dictionary[directory] = package
 
 
-		line = SHA + ';' + date + ';' + package + '.' + entityUtils.getClassName(filePath) + ';' + changeType + '\n'
+		line = SHA + ';' + date + ';' + package + '.' + entity_utils.getClassName(filePath) + ';' + changeType + '\n'
 		return line
 
 
 	def __getMethodeChange(self, SHA, date, filePath, changeType):
-		directory = entityUtils.getDirectory(filePath)
+		directory = entity_utils.getDirectory(filePath)
 		if directory in self.package_dirs_dictionary:
 			package = self.package_dirs_dictionary[directory]
 		else:
@@ -112,9 +113,9 @@ class HistoryExtractor(object):
 
 				if (ct == "ADDED") | (ct == "BODY_MODIFIED"):
 					if actual_method_class_dictionary is None:
-						actual_method_class_dictionary = entityUtils.getMethodClassDictionary("../actualFile.java")
+						actual_method_class_dictionary = entity_utils.getMethodClassDictionary("../actualFile.java")
 
-					method = entityUtils.normalizeMethodName(method)
+					method = entity_utils.normalizeMethodName(method)
 					if (method in actual_method_class_dictionary):
 						method = actual_method_class_dictionary[method] + '.' + method
 
@@ -124,9 +125,9 @@ class HistoryExtractor(object):
 
 				if ct == "DELETED":
 					if previous_method_class_dictionary is None:
-						previous_method_class_dictionary = entityUtils.getMethodClassDictionary("../previousFile.java")
+						previous_method_class_dictionary = entity_utils.getMethodClassDictionary("../previousFile.java")
 
-					method = entityUtils.normalizeMethodName(method)
+					method = entity_utils.normalizeMethodName(method)
 					if (method in previous_method_class_dictionary):
 						method = previous_method_class_dictionary[method] + '.' + method
 
