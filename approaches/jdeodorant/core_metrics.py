@@ -1,13 +1,13 @@
 from context import ROOT_DIR
 
 import utils.data_utils as data_utils
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 
 import csv
 import os
 
 def getGCCoreMetrics(systemName):
-	JDMetricsFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'jdeodorant', 'god_class_output', systemName + '.txt')
+	JDMetricsFile = os.path.join(ROOT_DIR, 'approaches', 'jdeodorant', 'metric_files', 'god_class_output', systemName + '.txt')
 
 	dictionnary = {c: [0] for c in data_utils.getClasses(systemName)}
 	with open(JDMetricsFile, 'r') as file:
@@ -21,7 +21,7 @@ def getGCCoreMetrics(systemName):
 
 
 def getFECoreMetrics(systemName):
-	JDMetricsFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'jdeodorant', 'feature_envy_metrics', systemName + '.csv')
+	JDMetricsFile = os.path.join(ROOT_DIR, 'approaches', 'jdeodorant', 'metric_files', 'feature_envy_metrics', systemName + '.csv')
 
 	dictionnary = {e:[0., 0., 0.] for e in data_utils.getEntities('feature_envy', systemName)}
 	with open(JDMetricsFile, 'rb') as metricfile:
@@ -34,7 +34,7 @@ def getFECoreMetrics(systemName):
 		method = data[0]['Method']
 		for i, line in enumerate(data):
 			if method != line['Method']:
-				normMethodName = entity_utils.normalizeMethodName(method)
+				normMethodName = java_utils.normalizeMethodName(method)
 				for tc in targetClasses:
 					entityName = normMethodName + ';' + tc['name']
 
@@ -53,14 +53,14 @@ def getFECoreMetrics(systemName):
 				distanceToEnclosingClass = 1.0
 				method = line['Method']
 
-			if entity_utils.getEmbeddingClass(entity_utils.normalizeMethodName(method)) == line['TargetClass']:
+			if java_utils.getEmbeddingClass(java_utils.normalizeMethodName(method)) == line['TargetClass']:
 				nbAccessToEnclosingClass = float(line['NbAccessedEntities'])
 				distanceToEnclosingClass = float(line['Distance_TC'])
 			else:
 				targetClasses.append({'name':line['TargetClass'], 'nbAccess':float(line['NbAccessedEntities']), 'distance':float(line['Distance_TC'])})
 
 			if i == len(data)-1:
-				normMethodName = entity_utils.normalizeMethodName(method)
+				normMethodName = java_utils.normalizeMethodName(method)
 				for tc in targetClasses:
 					entityName = normMethodName + ';' + tc['name']
 
@@ -74,14 +74,14 @@ def getFECoreMetrics(systemName):
 					if entityName in dictionnary:
 						dictionnary[entityName] = [nbAccessMetric, distanceMetric, 0.0]
 					
-	JDOutputFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'jdeodorant', 'feature_envy_output', systemName + '.txt')
+	JDOutputFile = os.path.join(ROOT_DIR, 'approaches', 'jdeodorant', 'metric_files', 'feature_envy_output', systemName + '.txt')
 	with open(JDOutputFile, 'r') as file:
 		i = 0
 		for line in file:
 			if i > 0:
 				method = line.split('\t')[1].replace('::', '.')
 				method = method.split(':')[0]
-				method = entity_utils.normalizeMethodName(method)
+				method = java_utils.normalizeMethodName(method)
 				targetClass = line.split('\t')[2]
 				entityName = method + ';' + targetClass;
 

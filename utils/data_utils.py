@@ -1,7 +1,7 @@
 from context import ROOT_DIR
 
 import csv
-import entity_utils
+import java_utils
 import os
 
 # Get the name of the classes in a system, except nested classes.  
@@ -57,7 +57,7 @@ def getAntipatterns(antipattern, systemName):
 
 # Returns the filtered Feature Envy candidates by looking at JDeodorant metric file (that implements the above conditions).
 def getCandidateFeatureEnvy(systemName):
-    JDMetricFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'jdeodorant', 'feature_envy_metrics', systemName + '.csv')
+    JDMetricFile = os.path.join(ROOT_DIR, 'approaches', 'jdeodorant', 'metric_files', 'feature_envy_metrics', systemName + '.csv')
 
     methods = getMethods(systemName)
     classes = getAllClasses(systemName)
@@ -65,8 +65,8 @@ def getCandidateFeatureEnvy(systemName):
     with open(JDMetricFile, 'rb') as csvfile:
         reader = csv.DictReader(csvfile, delimiter=';')
 
-        return [entity_utils.normalizeMethodName(row['Method']) + ';' + row['TargetClass'] for row in reader \
-            if (entity_utils.getEmbeddingClass(entity_utils.normalizeMethodName(row['Method']))!=row['TargetClass']) & (entity_utils.normalizeMethodName(row['Method']) in methods) & (row['TargetClass'] in classes)]  
+        return [java_utils.normalizeMethodName(row['Method']) + ';' + row['TargetClass'] for row in reader \
+            if (java_utils.getEmbeddingClass(java_utils.normalizeMethodName(row['Method']))!=row['TargetClass']) & (java_utils.normalizeMethodName(row['Method']) in methods) & (row['TargetClass'] in classes)]  
 
 
 def getEntities(antipattern, systemName):

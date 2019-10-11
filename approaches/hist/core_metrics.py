@@ -1,7 +1,7 @@
 from context import ROOT_DIR
 
 import utils.data_utils as data_utils
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 import numpy as np
 
 import csv
@@ -54,7 +54,7 @@ def getFECoreMetrics(systemName):
 
 	for i, m in enumerate(methods):
 		# Get the number of co-occurrences with methods of its own class (i.e., the embedding class)
-		idx_embedding_class = classToIndexMap[entity_utils.getEmbeddingClass(m)]
+		idx_embedding_class = classToIndexMap[java_utils.getEmbeddingClass(m)]
 		nb_co_occ_ec = 0.5 if co_occ_matrix[i, idx_embedding_class] == 0 else co_occ_matrix[i, idx_embedding_class]
 
 		co_occ_matrix[i,:] = co_occ_matrix[i,:]/nb_co_occ_ec
@@ -84,7 +84,7 @@ def getHistory(systemName, granularity):
 	'''
 
 	dirName = {"C": "class_changes", "M": "method_changes"}
-	historyFile = os.path.join(ROOT_DIR, 'data', 'history', dirName[granularity], systemName + '.csv')
+	historyFile = os.path.join(ROOT_DIR, 'approaches', 'hist', 'history', dirName[granularity], systemName + '.csv')
 	with open(historyFile, 'rb') as csvfile:
 		reader = csv.DictReader(csvfile, delimiter=';')
 		rawHistory = [{key: row[key] for key in row} for row in reader]
@@ -143,7 +143,7 @@ def getCoOccurrenceMatrix(systemName):
 				# Get the classes where these "other methods" are implemented
 				klasses = []
 				for m in coMethods:
-					embeddingClass = entity_utils.getEmbeddingClass(m)
+					embeddingClass = java_utils.getEmbeddingClass(m)
 					if embeddingClass in classes:
 						klasses.append(embeddingClass)
 

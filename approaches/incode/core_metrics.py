@@ -1,14 +1,14 @@
 from context import ROOT_DIR
 
 import utils.data_utils as data_utils
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 
 import csv
 import os
 
 
 def getFECoreMetrics(systemName):
-	incodeMetricsFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'incode', systemName + '.csv')
+	incodeMetricsFile = os.path.join(ROOT_DIR, 'approaches', 'incode', 'metric_files', systemName + '.csv')
 
 	dictionnary = {e:[0., 0., 0.] for e in data_utils.getEntities('feature_envy', systemName)}
 
@@ -29,7 +29,7 @@ def getFECoreMetrics(systemName):
 
 			if (currentMethodName != methodName):
 				classToMetricMap = getClassToMetricMap(currentClassName, classAttributeMap)
-				normMethodName = entity_utils.normalizeMethodName(currentMethodName)
+				normMethodName = java_utils.normalizeMethodName(currentMethodName)
 				for klass in classToMetricMap:
 					entityName = normMethodName + ';' + klass
 					if entityName in dictionnary:
@@ -48,7 +48,7 @@ def getFECoreMetrics(systemName):
 				classAttributeMap[row['DeclaringClass']] = int(row['NbFields'])
 
 				classToMetricMap = getClassToMetricMap(currentClassName, classAttributeMap)
-				normMethodName = entity_utils.normalizeMethodName(currentMethodName)
+				normMethodName = java_utils.normalizeMethodName(currentMethodName)
 				for klass in classToMetricMap:
 					entityName = normMethodName + ';' + klass
 					if entityName in dictionnary:

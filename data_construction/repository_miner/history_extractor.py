@@ -1,6 +1,6 @@
 from context import ROOT_DIR
 
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 
 import javalang
 import os
@@ -61,21 +61,21 @@ class HistoryExtractor(object):
 
 
 	def __getClassChange(self, SHA, date, filePath, changeType):
-		directory = entity_utils.getDirectory(filePath)
+		directory = java_utils.getDirectory(filePath)
 		if directory in self.package_dirs_dictionary:
 			package = self.package_dirs_dictionary[directory]
 		else:
 			try:
 				if os.path.isfile(filePath):
-					package = entity_utils.getPackage(filePath)
+					package = java_utils.getPackage(filePath)
 				else:
 					if changeType == 'D':
 						self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
-						package = entity_utils.getPackage("../previousFile.java")
+						package = java_utils.getPackage("../previousFile.java")
 				
 					else:
 						self.__updateWorkingFile("../actualFile.java", filePath, SHA)
-						package = entity_utils.getPackage("../actualFile.java")
+						package = java_utils.getPackage("../actualFile.java")
 			except (javalang.tokenizer.LexerError, javalang.parser.JavaSyntaxError, AttributeError):
 				package = directory
 				self.exceptionDirs.append(directory)
@@ -85,12 +85,12 @@ class HistoryExtractor(object):
 				self.package_dirs_dictionary[directory] = package
 
 
-		line = SHA + ';' + date + ';' + package + '.' + entity_utils.getClassName(filePath) + ';' + changeType + '\n'
+		line = SHA + ';' + date + ';' + package + '.' + java_utils.getClassName(filePath) + ';' + changeType + '\n'
 		return line
 
 
 	def __getMethodeChange(self, SHA, date, filePath, changeType):
-		directory = entity_utils.getDirectory(filePath)
+		directory = java_utils.getDirectory(filePath)
 		if directory in self.package_dirs_dictionary:
 			package = self.package_dirs_dictionary[directory]
 		else:
@@ -101,7 +101,9 @@ class HistoryExtractor(object):
 			self.__updateWorkingFile("../actualFile.java", filePath, SHA)
 			self.__updateWorkingFile("../previousFile.java", filePath, SHA + "^")
 
-			diffjCommand = "java -jar " + ROOT_DIR + "/assets/jar/diffj-1.6.3.jar --brief ../previousFile.java ../actualFile.java"
+			diffj_jar = os.path.join(ROOT_DIR, 'assets', 'jar', 'diffj-1.6.3.jar')
+
+			diffjCommand = "java -jar " + diffj_jar + " --brief ../previousFile.java ../actualFile.java"
 			ps = subprocess.Popen(diffjCommand.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 			output, error = ps.communicate()
 
@@ -113,9 +115,9 @@ class HistoryExtractor(object):
 
 				if (ct == "ADDED") | (ct == "BODY_MODIFIED"):
 					if actual_method_class_dictionary is None:
-						actual_method_class_dictionary = entity_utils.getMethodClassDictionary("../actualFile.java")
+						actual_method_class_dictionary = java_utils.getMethodClassDictionary("../actualFile.java")
 
-					method = entity_utils.normalizeMethodName(method)
+					method = java_utils.normalizeMethodName(method)
 					if (method in actual_method_class_dictionary):
 						method = actual_method_class_dictionary[method] + '.' + method
 
@@ -125,9 +127,9 @@ class HistoryExtractor(object):
 
 				if ct == "DELETED":
 					if previous_method_class_dictionary is None:
-						previous_method_class_dictionary = entity_utils.getMethodClassDictionary("../previousFile.java")
+						previous_method_class_dictionary = java_utils.getMethodClassDictionary("../previousFile.java")
 
-					method = entity_utils.normalizeMethodName(method)
+					method = java_utils.normalizeMethodName(method)
 					if (method in previous_method_class_dictionary):
 						method = previous_method_class_dictionary[method] + '.' + method
 

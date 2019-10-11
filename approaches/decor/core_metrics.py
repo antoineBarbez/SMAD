@@ -6,7 +6,7 @@ import csv
 import os
 
 def getGCCoreMetrics(systemName):
-	decorMetricsFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'decor', systemName + '.csv')
+	decorMetricsFile = os.path.join(ROOT_DIR, 'approaches', 'decor', 'metric_files', systemName + '.csv')
 
 	dictionnary = {c:[0., 0., 0, 0] for c in data_utils.getClasses(systemName)}
 	with open(decorMetricsFile, 'rb') as csvfile:

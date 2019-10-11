@@ -1,6 +1,6 @@
 from context import ROOT_DIR
 
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 import numpy as np
 
 import csv
@@ -62,7 +62,7 @@ def getScore(answers):
 	return np.mean(np.array(floatValues))
 
 def getAnswers():
-	answerDir = os.path.join(ROOT_DIR, 'data_construction/oracle_feature_envy/forms_answers')
+	answerDir = os.path.join(ROOT_DIR, 'data_construction', 'oracle_feature_envy','forms_answers')
 
 	answers = []
 	for path, dirs, files in os.walk(answerDir):
@@ -74,14 +74,14 @@ def getAnswers():
 	return answers
 
 def getCandidates():
-	candidateDir = os.path.join(ROOT_DIR, 'data_construction/oracle_feature_envy/candidate_set/')
+	candidateDir = os.path.join(ROOT_DIR, 'data_construction', 'oracle_feature_envy' 'candidate_set')
 
 	candidates = []
 	for path, dirs, files in os.walk(candidateDir):
 		for file in fnmatch.filter(sorted(files), '*.csv'):
 			with open(os.path.join(path, file), 'r') as csvFile:
 				reader = csv.DictReader(csvFile)
-				candidates += [row['EMBED_CLASS'] + '.' + entity_utils.normalizeMethodName(row['METHOD']) + ';' + row['ENVIED_CLASS'] for row in reader]
+				candidates += [row['EMBED_CLASS'] + '.' + java_utils.normalizeMethodName(row['METHOD']) + ';' + row['ENVIED_CLASS'] for row in reader]
 
 	return candidates
 
@@ -95,7 +95,7 @@ if __name__ == "__main__":
 		smells = [candidates[i] for i in range(startIndex, endIndex) if getScore(answers[i]) >= 0.5]
 		startIndex = endIndex
 
-		labelFile = os.path.join(ROOT_DIR, 'data/antipatterns/feature_envy/' + system['name'] + '.txt')
+		labelFile = os.path.join(ROOT_DIR, 'data', 'antipatterns', 'feature_envy', system['name'] + '.txt')
 
 		with open(labelFile, 'w') as file:
 			for smell in smells:

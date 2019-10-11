@@ -2,7 +2,7 @@ from context import ROOT_DIR
 
 import utils.data_utils as data_utils
 import utils.detection_utils as detection_utils
-import utils.entity_utils as entity_utils
+import utils.java_utils as java_utils
 
 import os
 
@@ -18,7 +18,7 @@ def detect(systemName):
 			if i > 0:
 				source_entity = line.split('\t')[1].replace('::', '.')
 				source_entity = source_entity.split(':')[0]
-				source_entity = entity_utils.normalizeMethodName(source_entity)
+				source_entity = java_utils.normalizeMethodName(source_entity)
 				target_class = line.split('\t')[2]
 
 				if source_entity in methods:
