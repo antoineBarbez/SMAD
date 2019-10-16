@@ -32,6 +32,7 @@ if __name__ == "__main__":
 		# Remove the test system from the tuning set
 		tuning_systems = set(systems)
 		tuning_systems.remove(test_system)
+		tuning_systems = list(tuning_systems)
 
 		# Get overall labels and overall tools predictions
 		overall_labels = reduce(lambda x1, x2: np.concatenate((x1, x2), axis=0), [labels[s] for s in tuning_systems])

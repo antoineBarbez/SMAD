@@ -5,6 +5,7 @@ import model      as md
 import tensorflow as tf
 
 import os
+import smad_utils
 
 # Returns the set of detected occurrences
 def detect(antipattern, systemName):
@@ -25,7 +26,7 @@ def predict(antipattern, system):
 		shape=params['Dense sizes'], 
 		input_size=X.shape[-1])
 
-	return nnUtils.ensemble_prediction(
+	return smad_utils.ensemble_prediction(
 		model=model,
-		save_paths=[detection_utils.get_save_path('smad', antipattern, system, i) for i in range(10)], 
+		save_paths=[smad_utils.get_save_path(antipattern, system, i) for i in range(10)], 
 		input_x=X)

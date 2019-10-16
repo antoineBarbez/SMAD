@@ -31,7 +31,7 @@ if __name__ == '__main__':
 		else:
 			core_metrics[system] = hist_cm.getFECoreMetrics(system)
 
-	params = np.arange(0.0, 20.0, 0.5)/100. if args.antipattern == 'god_class' else np.arange(1.0, 4.0, 0.1)/100.
+	params = np.arange(0.0, 20.0, 0.5)/100. if args.antipattern == 'god_class' else np.arange(100., 300., 5)/100.
 
 	# Initialize progressbar
 	bar = progressbar.ProgressBar(maxval=len(params), \

@@ -8,7 +8,7 @@ import os
 
 # Returns the set of detected occurrences
 def detect(systemName):
-	JDFEFile = os.path.join(ROOT_DIR, 'data', 'metric_files', 'jdeodorant', 'feature_envy_output', systemName + '.txt')
+	JDFEFile = os.path.join(ROOT_DIR, 'approaches', 'jdeodorant', 'metric_files', 'feature_envy_output', systemName + '.txt')
 
 	methods = data_utils.getMethods(systemName)
 	smells = []

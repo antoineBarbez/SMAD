@@ -11,11 +11,11 @@ def detect(antipattern, systemName):
 	return detectionUtils.detectFromPredict(antipattern, systemName, predict(antipattern, systemName))
 
 # Returns a vector containing the predictions for each code component of the system
-def predict(antipattern, system):
-	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'vote', antipattern, test_system + '.csv')
+def predict(antipattern, systemName):
+	tuning_file = os.path.join(ROOT_DIR, 'experiments', 'tuning', 'results', 'vote', antipattern, systemName + '.csv')
 	params = detection_utils.get_optimal_hyperparameters(tuning_file)
 	k = params['Policy']
 	
-	toolsPredictions = asci_utils.get_tools_predictions(antipattern, system)
+	toolsPredictions = asci_utils.get_tools_predictions(antipattern, systemName)
 
 	return (np.sum(toolsPredictions, axis=0) >= k).astype(float)
