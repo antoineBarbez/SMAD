@@ -1,5 +1,5 @@
-javalang==0.13.0
-sklearn==0.20.4
-progressbar==2.5
+javalang
+sklearn
+progressbar
 tensorflow==1.15
-matplotlib==2.2.5
+matplotlib
