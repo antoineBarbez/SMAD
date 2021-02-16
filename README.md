@@ -16,8 +16,25 @@ This repository is organized as follows:
 * **java:** Jars and src of the Java code implemented in this work. These jars are used in *~/data_construction/repository_miner/repository_miner.py* to extract the data related to HIST, InCode, DECOR and JDeodorant.
 * **utils:** Some utility modules.
 
+## Setup
+This code has been tested under Python 2.7.16, and the following steps assume you have already installed Python 2.7 on your machine.
+1. **Create a Python 2.7 virtual environment:**
+To be able to run the code you should preferably setup this repository within a virtual environment. The command below uses [virtualenvwrapper](https://virtualenvwrapper.readthedocs.io/en/latest/) to do so.
+```
+mkvirtualenv --python=/usr/bin/python2.7 smad
+workon smad
+```
+2. **Add the root of the repository to your PYTHONPATH:**
+```
+export PYTHONPATH="$PYTHONPATH:PATH_TO_SMAD_DIRECTORY"
+```
+3. **Install requirements:**
+```
+pip install -r requirements.txt
+```
+
 ## Research
-The paper associated to this repository is under review at *Journal of Systems and Software*.
+The [paper](https://arxiv.org/pdf/1903.01899.pdf) associated to this repository has been published in *Journal of Systems and Software*.
 
   
 
